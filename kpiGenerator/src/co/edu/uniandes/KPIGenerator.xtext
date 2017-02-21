@@ -1,0 +1,80 @@
+grammar co.edu.uniandes.KPIGenerator with org.eclipse.xtext.common.Terminals
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate kPIGenerator "http://www.edu.co/uniandes/KPIGenerator"
+
+Task returns Task:
+	{Task}
+	taskId = INT
+	SEMICOLON
+	taskList = STRING
+	SEMICOLON
+	(milestone = STRING)?
+	SEMICOLON
+	Task+=TaskName
+	SEMICOLON
+	(TaskDescription = STRING)?
+	SEMICOLON
+	startDate = STRING //OJOOOOO
+	SEMICOLON
+	DueDate = STRING //OJOOOOO
+	SEMICOLON
+	(priority =STRING)?
+	SEMICOLON
+	private = BOOL
+	SEMICOLON
+	progress = INT
+	SEMICOLON
+	Task+=Status
+	SEMICOLON
+	assignedTo = STRING
+	SEMICOLON
+	createdDate = STRING //OJOOOOO
+	SEMICOLON
+	completedDate = STRING //OJOOOO
+	SEMICOLON 
+	(timeLogged = INT)?
+	SEMICOLON 
+	(billableMinutes = INT)?
+	SEMICOLON 
+	TaskParent=INT
+	SEMICOLON 
+	completedOnTime = BOOL
+	SEMICOLON 
+	timeEstimated = INT
+	SEMICOLON 
+	(tags = STRING)?
+	NEWLINE
+;
+
+Status returns Status:
+	statusName = ('completed'|'new')
+	text = STRING 
+;
+
+BOOL returns BOOL:
+	('FALSO'|'VERDADERO')
+;
+
+TaskName returns TaskName:
+	PIPE phase = STRING
+	(PIPE subphase = STRING)?	
+	PIPE useCase = STRING
+	PIPE version = INT|EDouble
+;
+
+EDouble returns ecore::EDouble:
+	INT('.'INT)?
+;
+
+terminal SEMICOLON:
+	';'
+;
+
+terminal PIPE:
+	'|'
+;
+
+terminal NEWLINE:
+	"/n"
+;
