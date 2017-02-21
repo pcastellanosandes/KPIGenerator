@@ -7,19 +7,19 @@ Task returns Task:
 	{Task}
 	taskId = INT
 	SEMICOLON
-	taskList = STRING
+	taskList = CADENA
 	SEMICOLON
-	(milestone = STRING)?
+	(milestone = CADENA)?
 	SEMICOLON
 	Task+=TaskName
 	SEMICOLON
-	(TaskDescription = STRING)?
+	(TaskDescription = CADENA)?
 	SEMICOLON
-	startDate = STRING //OJOOOOO
+	startDate = CADENA //OJOOOOO
 	SEMICOLON
-	DueDate = STRING //OJOOOOO
+	DueDate = CADENA //OJOOOOO
 	SEMICOLON
-	(priority =STRING)?
+	(priority =CADENA)?
 	SEMICOLON
 	private = BOOL
 	SEMICOLON
@@ -27,11 +27,11 @@ Task returns Task:
 	SEMICOLON
 	Task+=Status
 	SEMICOLON
-	assignedTo = STRING
+	assignedTo = CADENA
 	SEMICOLON
-	createdDate = STRING //OJOOOOO
+	createdDate = CADENA //OJOOOOO
 	SEMICOLON
-	completedDate = STRING //OJOOOO
+	completedDate = CADENA //OJOOOO
 	SEMICOLON 
 	(timeLogged = INT)?
 	SEMICOLON 
@@ -43,13 +43,13 @@ Task returns Task:
 	SEMICOLON 
 	timeEstimated = INT
 	SEMICOLON 
-	(tags = STRING)?
+	(tags = CADENA)?
 	NEWLINE
 ;
 
 Status returns Status:
 	statusName = ('completed'|'new')
-	text = STRING 
+	text = CADENA 
 ;
 
 BOOL returns BOOL:
@@ -57,9 +57,9 @@ BOOL returns BOOL:
 ;
 
 TaskName returns TaskName:
-	PIPE phase = STRING
-	(PIPE subphase = STRING)?	
-	PIPE useCase = STRING
+	PIPE phase = CADENA
+	(PIPE subphase = CADENA)?	
+	PIPE useCase = CADENA
 	PIPE version = INT|EDouble
 ;
 
@@ -78,3 +78,7 @@ terminal PIPE:
 terminal NEWLINE:
 	"/n"
 ;
+
+terminal CADENA: 
+	('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' ')+
+; 
