@@ -21,33 +21,31 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected KPIGeneratorGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_BOOL_FALSOKeyword_0_or_VERDADEROKeyword_1;
+	protected AbstractElementAlias match_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (KPIGeneratorGrammarAccess) access;
-		match_BOOL_FALSOKeyword_0_or_VERDADEROKeyword_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBOOLAccess().getFALSOKeyword_0()), new TokenAlias(false, false, grammarAccess.getBOOLAccess().getVERDADEROKeyword_1()));
+		match_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBOOLAccess().getFALSOKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getBOOLAccess().getVERDADEROKeyword_1_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getEDoubleRule())
-			return getEDoubleToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getCADENARule())
+			return getCADENAToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getNEWLINERule())
 			return getNEWLINEToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getPIPERule())
-			return getPIPEToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getSEMICOLONRule())
 			return getSEMICOLONToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * EDouble returns ecore::EDouble:
-	 * 	INT('.'INT)?
+	 * terminal CADENA: 
+	 * 	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.')+('0'..'9')*)+
 	 * ;
 	 */
-	protected String getEDoubleToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getCADENAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return "";
@@ -55,24 +53,13 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * terminal NEWLINE:
-	 * 	"/n"
+	 * 	('\n'|EOF)
 	 * ;
 	 */
 	protected String getNEWLINEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "/n";
-	}
-	
-	/**
-	 * terminal PIPE:
-	 * 	'|'
-	 * ;
-	 */
-	protected String getPIPEToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "|";
+		return "\n";
 	}
 	
 	/**
@@ -92,8 +79,8 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_BOOL_FALSOKeyword_0_or_VERDADEROKeyword_1.equals(syntax))
-				emit_BOOL_FALSOKeyword_0_or_VERDADEROKeyword_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1.equals(syntax))
+				emit_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -105,7 +92,7 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_BOOL_FALSOKeyword_0_or_VERDADEROKeyword_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

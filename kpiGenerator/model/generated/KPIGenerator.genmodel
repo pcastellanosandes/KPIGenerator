@@ -7,22 +7,23 @@
   <genPackages prefix="KPIGenerator" basePackage="co.edu.uniandes" disposableProviderFactory="true"
       fileExtensions="kpiGenerator" ecorePackage="KPIGenerator.ecore#/">
     <genClasses ecoreClass="KPIGenerator.ecore#//Task">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/taskId"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/taskList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/project"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/milestone"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KPIGenerator.ecore#//Task/Task"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/TaskDescription"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/DueDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/priority"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KPIGenerator.ecore#//Task/private"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/progress"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KPIGenerator.ecore#//Task/Task"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/assignedTo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/createdDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/completedDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/timeLogged"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/billableMinutes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/TaskParent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference KPIGenerator.ecore#//Task/parentTask"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KPIGenerator.ecore#//Task/completedOnTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/timeEstimated"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/tags"/>
@@ -32,11 +33,5 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Status/text"/>
     </genClasses>
     <genClasses ecoreClass="KPIGenerator.ecore#//BOOL"/>
-    <genClasses ecoreClass="KPIGenerator.ecore#//TaskName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//TaskName/phase"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//TaskName/subphase"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//TaskName/useCase"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//TaskName/version"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

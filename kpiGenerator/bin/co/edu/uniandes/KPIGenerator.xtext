@@ -5,39 +5,47 @@ generate kPIGenerator "http://www.edu.co/uniandes/KPIGenerator"
 
 Task returns Task:
 	{Task}
-	taskId = INT
+	id = INT 
 	SEMICOLON
-	taskList = CADENA
+	project = CADENA
 	SEMICOLON
 	(milestone = CADENA)?
 	SEMICOLON
-	Task+=TaskName
+	name = CADENA
 	SEMICOLON
 	(TaskDescription = CADENA)?
 	SEMICOLON
-	startDate = CADENA //OJOOOOO
+	startDate = DATE
 	SEMICOLON
-	DueDate = CADENA //OJOOOOO
+	DueDate = DATE
 	SEMICOLON
-	(priority =CADENA)?
+	(priority =STRING)?
 	SEMICOLON
 	private = BOOL
 	SEMICOLON
 	progress = INT
 	SEMICOLON
-	Task+=Status
+	Task+= Status
 	SEMICOLON
 	assignedTo = CADENA
 	SEMICOLON
-	createdDate = CADENA //OJOOOOO
+	createdDate = DATEHOUR
 	SEMICOLON
-	completedDate = CADENA //OJOOOO
+	CADENA  //Created By Firstname
+	SEMICOLON
+	CADENA // Created By Lastname
+	SEMICOLON
+	completedDate = DATEHOUR
+	SEMICOLON
+	CADENA  //Completed By Firstname
+	SEMICOLON
+	CADENA //Completed By Lastname
 	SEMICOLON 
 	(timeLogged = INT)?
 	SEMICOLON 
 	(billableMinutes = INT)?
 	SEMICOLON 
-	TaskParent=INT
+	(parentTask =[Task])?
 	SEMICOLON 
 	completedOnTime = BOOL
 	SEMICOLON 
@@ -49,36 +57,33 @@ Task returns Task:
 
 Status returns Status:
 	statusName = ('completed'|'new')
+	SEMICOLON
 	text = CADENA 
 ;
 
 BOOL returns BOOL:
+	{BOOL}
 	('FALSO'|'VERDADERO')
-;
-
-TaskName returns TaskName:
-	PIPE phase = CADENA
-	(PIPE subphase = CADENA)?	
-	PIPE useCase = CADENA
-	PIPE version = INT|EDouble
-;
-
-EDouble returns ecore::EDouble:
-	INT('.'INT)?
 ;
 
 terminal SEMICOLON:
 	';'
 ;
 
-terminal PIPE:
-	'|'
-;
-
 terminal NEWLINE:
-	"/n"
+	('\n'|EOF)
 ;
 
 terminal CADENA: 
-	('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' ')+
+	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.')+('0'..'9')*)+
 ; 
+
+terminal DATEHOUR:
+	//28/07/2016 10:17 PM
+	'0'..'9''0'..'9''/''0'..'9''0'..'9''/''0'..'9''0'..'9''0'..'9''0'..'9'' ''0'..'9''0'..'9'':''0'..'9''0'..'9'' '('AM'|'PM')
+;
+
+terminal DATE:
+	//28/07/2016
+	'0'..'9''0'..'9''/''0'..'9''0'..'9''/''0'..'9''0'..'9''0'..'9''0'..'9'
+;

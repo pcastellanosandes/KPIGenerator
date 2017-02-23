@@ -94,13 +94,6 @@ public class KPIGeneratorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case KPIGeneratorPackage.TASK_NAME:
-      {
-        TaskName taskName = (TaskName)theEObject;
-        T result = caseTaskName(taskName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       default: return defaultCase(theEObject);
     }
   }
@@ -149,22 +142,6 @@ public class KPIGeneratorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBOOL(BOOL object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Task Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Task Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTaskName(TaskName object)
   {
     return null;
   }

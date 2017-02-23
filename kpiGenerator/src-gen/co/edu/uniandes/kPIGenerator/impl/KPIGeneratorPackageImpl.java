@@ -7,7 +7,6 @@ import co.edu.uniandes.kPIGenerator.KPIGeneratorFactory;
 import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
 import co.edu.uniandes.kPIGenerator.Status;
 import co.edu.uniandes.kPIGenerator.Task;
-import co.edu.uniandes.kPIGenerator.TaskName;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -44,13 +43,6 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * @generated
    */
   private EClass boolEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass taskNameEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -130,7 +122,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_TaskId()
+  public EAttribute getTask_Id()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(0);
   }
@@ -140,7 +132,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_TaskList()
+  public EAttribute getTask_Project()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
   }
@@ -160,9 +152,9 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTask_Task()
+  public EAttribute getTask_Name()
   {
-    return (EReference)taskEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -230,9 +222,9 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_AssignedTo()
+  public EReference getTask_Task()
   {
-    return (EAttribute)taskEClass.getEStructuralFeatures().get(10);
+    return (EReference)taskEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -240,7 +232,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_CreatedDate()
+  public EAttribute getTask_AssignedTo()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(11);
   }
@@ -250,7 +242,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_CompletedDate()
+  public EAttribute getTask_CreatedDate()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(12);
   }
@@ -260,7 +252,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_TimeLogged()
+  public EAttribute getTask_CompletedDate()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(13);
   }
@@ -270,7 +262,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_BillableMinutes()
+  public EAttribute getTask_TimeLogged()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(14);
   }
@@ -280,7 +272,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTask_TaskParent()
+  public EAttribute getTask_BillableMinutes()
   {
     return (EAttribute)taskEClass.getEStructuralFeatures().get(15);
   }
@@ -290,7 +282,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTask_CompletedOnTime()
+  public EReference getTask_ParentTask()
   {
     return (EReference)taskEClass.getEStructuralFeatures().get(16);
   }
@@ -300,9 +292,19 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getTask_CompletedOnTime()
+  {
+    return (EReference)taskEClass.getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getTask_TimeEstimated()
   {
-    return (EAttribute)taskEClass.getEStructuralFeatures().get(17);
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(18);
   }
 
   /**
@@ -312,7 +314,7 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    */
   public EAttribute getTask_Tags()
   {
-    return (EAttribute)taskEClass.getEStructuralFeatures().get(18);
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(19);
   }
 
   /**
@@ -360,56 +362,6 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTaskName()
-  {
-    return taskNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskName_Phase()
-  {
-    return (EAttribute)taskNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskName_Subphase()
-  {
-    return (EAttribute)taskNameEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskName_UseCase()
-  {
-    return (EAttribute)taskNameEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTaskName_Version()
-  {
-    return (EAttribute)taskNameEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public KPIGeneratorFactory getKPIGeneratorFactory()
   {
     return (KPIGeneratorFactory)getEFactoryInstance();
@@ -436,22 +388,23 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
 
     // Create classes and their features
     taskEClass = createEClass(TASK);
-    createEAttribute(taskEClass, TASK__TASK_ID);
-    createEAttribute(taskEClass, TASK__TASK_LIST);
+    createEAttribute(taskEClass, TASK__ID);
+    createEAttribute(taskEClass, TASK__PROJECT);
     createEAttribute(taskEClass, TASK__MILESTONE);
-    createEReference(taskEClass, TASK__TASK);
+    createEAttribute(taskEClass, TASK__NAME);
     createEAttribute(taskEClass, TASK__TASK_DESCRIPTION);
     createEAttribute(taskEClass, TASK__START_DATE);
     createEAttribute(taskEClass, TASK__DUE_DATE);
     createEAttribute(taskEClass, TASK__PRIORITY);
     createEReference(taskEClass, TASK__PRIVATE);
     createEAttribute(taskEClass, TASK__PROGRESS);
+    createEReference(taskEClass, TASK__TASK);
     createEAttribute(taskEClass, TASK__ASSIGNED_TO);
     createEAttribute(taskEClass, TASK__CREATED_DATE);
     createEAttribute(taskEClass, TASK__COMPLETED_DATE);
     createEAttribute(taskEClass, TASK__TIME_LOGGED);
     createEAttribute(taskEClass, TASK__BILLABLE_MINUTES);
-    createEAttribute(taskEClass, TASK__TASK_PARENT);
+    createEReference(taskEClass, TASK__PARENT_TASK);
     createEReference(taskEClass, TASK__COMPLETED_ON_TIME);
     createEAttribute(taskEClass, TASK__TIME_ESTIMATED);
     createEAttribute(taskEClass, TASK__TAGS);
@@ -461,12 +414,6 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
     createEAttribute(statusEClass, STATUS__TEXT);
 
     boolEClass = createEClass(BOOL);
-
-    taskNameEClass = createEClass(TASK_NAME);
-    createEAttribute(taskNameEClass, TASK_NAME__PHASE);
-    createEAttribute(taskNameEClass, TASK_NAME__SUBPHASE);
-    createEAttribute(taskNameEClass, TASK_NAME__USE_CASE);
-    createEAttribute(taskNameEClass, TASK_NAME__VERSION);
   }
 
   /**
@@ -501,22 +448,23 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
 
     // Initialize classes and features; add operations and parameters
     initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTask_TaskId(), ecorePackage.getEInt(), "taskId", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTask_TaskList(), ecorePackage.getEString(), "taskList", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTask_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTask_Project(), ecorePackage.getEString(), "project", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_Milestone(), ecorePackage.getEString(), "milestone", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTask_Task(), ecorePackage.getEObject(), null, "Task", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_TaskDescription(), ecorePackage.getEString(), "TaskDescription", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_StartDate(), ecorePackage.getEString(), "startDate", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_DueDate(), ecorePackage.getEString(), "DueDate", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_Priority(), ecorePackage.getEString(), "priority", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTask_Private(), this.getBOOL(), null, "private", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTask_Task(), this.getStatus(), null, "Task", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_AssignedTo(), ecorePackage.getEString(), "assignedTo", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_CreatedDate(), ecorePackage.getEString(), "createdDate", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_CompletedDate(), ecorePackage.getEString(), "completedDate", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_TimeLogged(), ecorePackage.getEInt(), "timeLogged", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_BillableMinutes(), ecorePackage.getEInt(), "billableMinutes", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTask_TaskParent(), ecorePackage.getEInt(), "TaskParent", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTask_ParentTask(), this.getTask(), null, "parentTask", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTask_CompletedOnTime(), this.getBOOL(), null, "completedOnTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_TimeEstimated(), ecorePackage.getEInt(), "timeEstimated", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_Tags(), ecorePackage.getEString(), "tags", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -526,12 +474,6 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
     initEAttribute(getStatus_Text(), ecorePackage.getEString(), "text", null, 0, 1, Status.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boolEClass, co.edu.uniandes.kPIGenerator.BOOL.class, "BOOL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(taskNameEClass, TaskName.class, "TaskName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTaskName_Phase(), ecorePackage.getEString(), "phase", null, 0, 1, TaskName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskName_Subphase(), ecorePackage.getEString(), "subphase", null, 0, 1, TaskName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskName_UseCase(), ecorePackage.getEString(), "useCase", null, 0, 1, TaskName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTaskName_Version(), ecorePackage.getEInt(), "version", null, 0, 1, TaskName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

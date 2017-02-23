@@ -85,9 +85,9 @@ ruleTask returns [EObject current=null]
 		)
 		(
 			(
-				lv_taskId_1_0=RULE_INT
+				lv_id_1_0=RULE_INT
 				{
-					newLeafNode(lv_taskId_1_0, grammarAccess.getTaskAccess().getTaskIdINTTerminalRuleCall_1_0());
+					newLeafNode(lv_id_1_0, grammarAccess.getTaskAccess().getIdINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -95,8 +95,8 @@ ruleTask returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"taskId",
-						lv_taskId_1_0,
+						"id",
+						lv_id_1_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -107,9 +107,9 @@ ruleTask returns [EObject current=null]
 		}
 		(
 			(
-				lv_taskList_3_0=RULE_CADENA
+				lv_project_3_0=RULE_CADENA
 				{
-					newLeafNode(lv_taskList_3_0, grammarAccess.getTaskAccess().getTaskListCADENATerminalRuleCall_3_0());
+					newLeafNode(lv_project_3_0, grammarAccess.getTaskAccess().getProjectCADENATerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -117,8 +117,8 @@ ruleTask returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"taskList",
-						lv_taskList_3_0,
+						"project",
+						lv_project_3_0,
 						"co.edu.uniandes.KPIGenerator.CADENA");
 				}
 			)
@@ -151,20 +151,19 @@ ruleTask returns [EObject current=null]
 		}
 		(
 			(
+				lv_name_7_0=RULE_CADENA
 				{
-					newCompositeNode(grammarAccess.getTaskAccess().getTaskTaskNameParserRuleCall_7_0());
+					newLeafNode(lv_name_7_0, grammarAccess.getTaskAccess().getNameCADENATerminalRuleCall_7_0());
 				}
-				lv_Task_7_0=ruleTaskName
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTaskRule());
+						$current = createModelElement(grammarAccess.getTaskRule());
 					}
-					add(
+					setWithLastConsumed(
 						$current,
-						"Task",
-						lv_Task_7_0,
-						"co.edu.uniandes.KPIGenerator.TaskName");
-					afterParserOrEnumRuleCall();
+						"name",
+						lv_name_7_0,
+						"co.edu.uniandes.KPIGenerator.CADENA");
 				}
 			)
 		)
@@ -196,9 +195,9 @@ ruleTask returns [EObject current=null]
 		}
 		(
 			(
-				lv_startDate_11_0=RULE_CADENA
+				lv_startDate_11_0=RULE_DATE
 				{
-					newLeafNode(lv_startDate_11_0, grammarAccess.getTaskAccess().getStartDateCADENATerminalRuleCall_11_0());
+					newLeafNode(lv_startDate_11_0, grammarAccess.getTaskAccess().getStartDateDATETerminalRuleCall_11_0());
 				}
 				{
 					if ($current==null) {
@@ -208,7 +207,7 @@ ruleTask returns [EObject current=null]
 						$current,
 						"startDate",
 						lv_startDate_11_0,
-						"co.edu.uniandes.KPIGenerator.CADENA");
+						"co.edu.uniandes.KPIGenerator.DATE");
 				}
 			)
 		)
@@ -218,9 +217,9 @@ ruleTask returns [EObject current=null]
 		}
 		(
 			(
-				lv_DueDate_13_0=RULE_CADENA
+				lv_DueDate_13_0=RULE_DATE
 				{
-					newLeafNode(lv_DueDate_13_0, grammarAccess.getTaskAccess().getDueDateCADENATerminalRuleCall_13_0());
+					newLeafNode(lv_DueDate_13_0, grammarAccess.getTaskAccess().getDueDateDATETerminalRuleCall_13_0());
 				}
 				{
 					if ($current==null) {
@@ -230,7 +229,7 @@ ruleTask returns [EObject current=null]
 						$current,
 						"DueDate",
 						lv_DueDate_13_0,
-						"co.edu.uniandes.KPIGenerator.CADENA");
+						"co.edu.uniandes.KPIGenerator.DATE");
 				}
 			)
 		)
@@ -240,9 +239,9 @@ ruleTask returns [EObject current=null]
 		}
 		(
 			(
-				lv_priority_15_0=RULE_CADENA
+				lv_priority_15_0=RULE_STRING
 				{
-					newLeafNode(lv_priority_15_0, grammarAccess.getTaskAccess().getPriorityCADENATerminalRuleCall_15_0());
+					newLeafNode(lv_priority_15_0, grammarAccess.getTaskAccess().getPrioritySTRINGTerminalRuleCall_15_0());
 				}
 				{
 					if ($current==null) {
@@ -252,7 +251,7 @@ ruleTask returns [EObject current=null]
 						$current,
 						"priority",
 						lv_priority_15_0,
-						"co.edu.uniandes.KPIGenerator.CADENA");
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)?
@@ -352,9 +351,9 @@ ruleTask returns [EObject current=null]
 		}
 		(
 			(
-				lv_createdDate_25_0=RULE_CADENA
+				lv_createdDate_25_0=RULE_DATEHOUR
 				{
-					newLeafNode(lv_createdDate_25_0, grammarAccess.getTaskAccess().getCreatedDateCADENATerminalRuleCall_25_0());
+					newLeafNode(lv_createdDate_25_0, grammarAccess.getTaskAccess().getCreatedDateDATEHOURTerminalRuleCall_25_0());
 				}
 				{
 					if ($current==null) {
@@ -364,7 +363,7 @@ ruleTask returns [EObject current=null]
 						$current,
 						"createdDate",
 						lv_createdDate_25_0,
-						"co.edu.uniandes.KPIGenerator.CADENA");
+						"co.edu.uniandes.KPIGenerator.DATEHOUR");
 				}
 			)
 		)
@@ -372,11 +371,27 @@ ruleTask returns [EObject current=null]
 		{
 			newLeafNode(this_SEMICOLON_26, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_26());
 		}
+		this_CADENA_27=RULE_CADENA
+		{
+			newLeafNode(this_CADENA_27, grammarAccess.getTaskAccess().getCADENATerminalRuleCall_27());
+		}
+		this_SEMICOLON_28=RULE_SEMICOLON
+		{
+			newLeafNode(this_SEMICOLON_28, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_28());
+		}
+		this_CADENA_29=RULE_CADENA
+		{
+			newLeafNode(this_CADENA_29, grammarAccess.getTaskAccess().getCADENATerminalRuleCall_29());
+		}
+		this_SEMICOLON_30=RULE_SEMICOLON
+		{
+			newLeafNode(this_SEMICOLON_30, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_30());
+		}
 		(
 			(
-				lv_completedDate_27_0=RULE_CADENA
+				lv_completedDate_31_0=RULE_DATEHOUR
 				{
-					newLeafNode(lv_completedDate_27_0, grammarAccess.getTaskAccess().getCompletedDateCADENATerminalRuleCall_27_0());
+					newLeafNode(lv_completedDate_31_0, grammarAccess.getTaskAccess().getCompletedDateDATEHOURTerminalRuleCall_31_0());
 				}
 				{
 					if ($current==null) {
@@ -385,20 +400,36 @@ ruleTask returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"completedDate",
-						lv_completedDate_27_0,
-						"co.edu.uniandes.KPIGenerator.CADENA");
+						lv_completedDate_31_0,
+						"co.edu.uniandes.KPIGenerator.DATEHOUR");
 				}
 			)
 		)
-		this_SEMICOLON_28=RULE_SEMICOLON
+		this_SEMICOLON_32=RULE_SEMICOLON
 		{
-			newLeafNode(this_SEMICOLON_28, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_28());
+			newLeafNode(this_SEMICOLON_32, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_32());
+		}
+		this_CADENA_33=RULE_CADENA
+		{
+			newLeafNode(this_CADENA_33, grammarAccess.getTaskAccess().getCADENATerminalRuleCall_33());
+		}
+		this_SEMICOLON_34=RULE_SEMICOLON
+		{
+			newLeafNode(this_SEMICOLON_34, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_34());
+		}
+		this_CADENA_35=RULE_CADENA
+		{
+			newLeafNode(this_CADENA_35, grammarAccess.getTaskAccess().getCADENATerminalRuleCall_35());
+		}
+		this_SEMICOLON_36=RULE_SEMICOLON
+		{
+			newLeafNode(this_SEMICOLON_36, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_36());
 		}
 		(
 			(
-				lv_timeLogged_29_0=RULE_INT
+				lv_timeLogged_37_0=RULE_INT
 				{
-					newLeafNode(lv_timeLogged_29_0, grammarAccess.getTaskAccess().getTimeLoggedINTTerminalRuleCall_29_0());
+					newLeafNode(lv_timeLogged_37_0, grammarAccess.getTaskAccess().getTimeLoggedINTTerminalRuleCall_37_0());
 				}
 				{
 					if ($current==null) {
@@ -407,20 +438,20 @@ ruleTask returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"timeLogged",
-						lv_timeLogged_29_0,
+						lv_timeLogged_37_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)?
-		this_SEMICOLON_30=RULE_SEMICOLON
+		this_SEMICOLON_38=RULE_SEMICOLON
 		{
-			newLeafNode(this_SEMICOLON_30, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_30());
+			newLeafNode(this_SEMICOLON_38, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_38());
 		}
 		(
 			(
-				lv_billableMinutes_31_0=RULE_INT
+				lv_billableMinutes_39_0=RULE_INT
 				{
-					newLeafNode(lv_billableMinutes_31_0, grammarAccess.getTaskAccess().getBillableMinutesINTTerminalRuleCall_31_0());
+					newLeafNode(lv_billableMinutes_39_0, grammarAccess.getTaskAccess().getBillableMinutesINTTerminalRuleCall_39_0());
 				}
 				{
 					if ($current==null) {
@@ -429,43 +460,38 @@ ruleTask returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"billableMinutes",
-						lv_billableMinutes_31_0,
+						lv_billableMinutes_39_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)?
-		this_SEMICOLON_32=RULE_SEMICOLON
+		this_SEMICOLON_40=RULE_SEMICOLON
 		{
-			newLeafNode(this_SEMICOLON_32, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_32());
+			newLeafNode(this_SEMICOLON_40, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_40());
 		}
 		(
 			(
-				lv_TaskParent_33_0=RULE_INT
-				{
-					newLeafNode(lv_TaskParent_33_0, grammarAccess.getTaskAccess().getTaskParentINTTerminalRuleCall_33_0());
-				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getTaskRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"TaskParent",
-						lv_TaskParent_33_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+				}
+				otherlv_41=RULE_ID
+				{
+					newLeafNode(otherlv_41, grammarAccess.getTaskAccess().getParentTaskTaskCrossReference_41_0());
 				}
 			)
-		)
-		this_SEMICOLON_34=RULE_SEMICOLON
+		)?
+		this_SEMICOLON_42=RULE_SEMICOLON
 		{
-			newLeafNode(this_SEMICOLON_34, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_34());
+			newLeafNode(this_SEMICOLON_42, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_42());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTaskAccess().getCompletedOnTimeBOOLParserRuleCall_35_0());
+					newCompositeNode(grammarAccess.getTaskAccess().getCompletedOnTimeBOOLParserRuleCall_43_0());
 				}
-				lv_completedOnTime_35_0=ruleBOOL
+				lv_completedOnTime_43_0=ruleBOOL
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTaskRule());
@@ -473,21 +499,21 @@ ruleTask returns [EObject current=null]
 					set(
 						$current,
 						"completedOnTime",
-						lv_completedOnTime_35_0,
+						lv_completedOnTime_43_0,
 						"co.edu.uniandes.KPIGenerator.BOOL");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		this_SEMICOLON_36=RULE_SEMICOLON
+		this_SEMICOLON_44=RULE_SEMICOLON
 		{
-			newLeafNode(this_SEMICOLON_36, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_36());
+			newLeafNode(this_SEMICOLON_44, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_44());
 		}
 		(
 			(
-				lv_timeEstimated_37_0=RULE_INT
+				lv_timeEstimated_45_0=RULE_INT
 				{
-					newLeafNode(lv_timeEstimated_37_0, grammarAccess.getTaskAccess().getTimeEstimatedINTTerminalRuleCall_37_0());
+					newLeafNode(lv_timeEstimated_45_0, grammarAccess.getTaskAccess().getTimeEstimatedINTTerminalRuleCall_45_0());
 				}
 				{
 					if ($current==null) {
@@ -496,20 +522,20 @@ ruleTask returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"timeEstimated",
-						lv_timeEstimated_37_0,
+						lv_timeEstimated_45_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		this_SEMICOLON_38=RULE_SEMICOLON
+		this_SEMICOLON_46=RULE_SEMICOLON
 		{
-			newLeafNode(this_SEMICOLON_38, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_38());
+			newLeafNode(this_SEMICOLON_46, grammarAccess.getTaskAccess().getSEMICOLONTerminalRuleCall_46());
 		}
 		(
 			(
-				lv_tags_39_0=RULE_CADENA
+				lv_tags_47_0=RULE_CADENA
 				{
-					newLeafNode(lv_tags_39_0, grammarAccess.getTaskAccess().getTagsCADENATerminalRuleCall_39_0());
+					newLeafNode(lv_tags_47_0, grammarAccess.getTaskAccess().getTagsCADENATerminalRuleCall_47_0());
 				}
 				{
 					if ($current==null) {
@@ -518,14 +544,14 @@ ruleTask returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"tags",
-						lv_tags_39_0,
+						lv_tags_47_0,
 						"co.edu.uniandes.KPIGenerator.CADENA");
 				}
 			)
 		)?
-		this_NEWLINE_40=RULE_NEWLINE
+		this_NEWLINE_48=RULE_NEWLINE
 		{
-			newLeafNode(this_NEWLINE_40, grammarAccess.getTaskAccess().getNEWLINETerminalRuleCall_40());
+			newLeafNode(this_NEWLINE_48, grammarAccess.getTaskAccess().getNEWLINETerminalRuleCall_48());
 		}
 	)
 ;
@@ -573,11 +599,15 @@ ruleStatus returns [EObject current=null]
 				)
 			)
 		)
+		this_SEMICOLON_1=RULE_SEMICOLON
+		{
+			newLeafNode(this_SEMICOLON_1, grammarAccess.getStatusAccess().getSEMICOLONTerminalRuleCall_1());
+		}
 		(
 			(
-				lv_text_1_0=RULE_CADENA
+				lv_text_2_0=RULE_CADENA
 				{
-					newLeafNode(lv_text_1_0, grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_1_0());
+					newLeafNode(lv_text_2_0, grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -586,7 +616,7 @@ ruleStatus returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"text",
-						lv_text_1_0,
+						lv_text_2_0,
 						"co.edu.uniandes.KPIGenerator.CADENA");
 				}
 			)
@@ -610,184 +640,36 @@ ruleBOOL returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='FALSO'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getBOOLAccess().getFALSOKeyword_0());
-		}
-		    |
-		otherlv_1='VERDADERO'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getBOOLAccess().getVERDADEROKeyword_1());
-		}
-	)
-;
-
-// Entry rule entryRuleTaskName
-entryRuleTaskName returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTaskNameRule()); }
-	iv_ruleTaskName=ruleTaskName
-	{ $current=$iv_ruleTaskName.current; }
-	EOF;
-
-// Rule TaskName
-ruleTaskName returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
 		(
-			this_PIPE_0=RULE_PIPE
 			{
-				newLeafNode(this_PIPE_0, grammarAccess.getTaskNameAccess().getPIPETerminalRuleCall_0_0());
+				$current = forceCreateModelElement(
+					grammarAccess.getBOOLAccess().getBOOLAction_0(),
+					$current);
 			}
-			(
-				(
-					lv_phase_1_0=RULE_CADENA
-					{
-						newLeafNode(lv_phase_1_0, grammarAccess.getTaskNameAccess().getPhaseCADENATerminalRuleCall_0_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTaskNameRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"phase",
-							lv_phase_1_0,
-							"co.edu.uniandes.KPIGenerator.CADENA");
-					}
-				)
-			)
-			(
-				this_PIPE_2=RULE_PIPE
-				{
-					newLeafNode(this_PIPE_2, grammarAccess.getTaskNameAccess().getPIPETerminalRuleCall_0_2_0());
-				}
-				(
-					(
-						lv_subphase_3_0=RULE_CADENA
-						{
-							newLeafNode(lv_subphase_3_0, grammarAccess.getTaskNameAccess().getSubphaseCADENATerminalRuleCall_0_2_1_0());
-						}
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getTaskNameRule());
-							}
-							setWithLastConsumed(
-								$current,
-								"subphase",
-								lv_subphase_3_0,
-								"co.edu.uniandes.KPIGenerator.CADENA");
-						}
-					)
-				)
-			)?
-			this_PIPE_4=RULE_PIPE
-			{
-				newLeafNode(this_PIPE_4, grammarAccess.getTaskNameAccess().getPIPETerminalRuleCall_0_3());
-			}
-			(
-				(
-					lv_useCase_5_0=RULE_CADENA
-					{
-						newLeafNode(lv_useCase_5_0, grammarAccess.getTaskNameAccess().getUseCaseCADENATerminalRuleCall_0_4_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTaskNameRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"useCase",
-							lv_useCase_5_0,
-							"co.edu.uniandes.KPIGenerator.CADENA");
-					}
-				)
-			)
-			this_PIPE_6=RULE_PIPE
-			{
-				newLeafNode(this_PIPE_6, grammarAccess.getTaskNameAccess().getPIPETerminalRuleCall_0_5());
-			}
-			(
-				(
-					lv_version_7_0=RULE_INT
-					{
-						newLeafNode(lv_version_7_0, grammarAccess.getTaskNameAccess().getVersionINTTerminalRuleCall_0_6_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTaskNameRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"version",
-							lv_version_7_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
-			)
 		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getTaskNameAccess().getEDoubleParserRuleCall_1());
-		}
-		ruleEDouble
-		{
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleEDouble
-entryRuleEDouble returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEDoubleRule()); }
-	iv_ruleEDouble=ruleEDouble
-	{ $current=$iv_ruleEDouble.current.getText(); }
-	EOF;
-
-// Rule EDouble
-ruleEDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_INT_0=RULE_INT
-		{
-			$current.merge(this_INT_0);
-		}
-		{
-			newLeafNode(this_INT_0, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_0());
-		}
 		(
-			kw='.'
+			otherlv_1='FALSO'
 			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getEDoubleAccess().getFullStopKeyword_1_0());
+				newLeafNode(otherlv_1, grammarAccess.getBOOLAccess().getFALSOKeyword_1_0());
 			}
-			this_INT_2=RULE_INT
+			    |
+			otherlv_2='VERDADERO'
 			{
-				$current.merge(this_INT_2);
+				newLeafNode(otherlv_2, grammarAccess.getBOOLAccess().getVERDADEROKeyword_1_1());
 			}
-			{
-				newLeafNode(this_INT_2, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_1_1());
-			}
-		)?
+		)
 	)
 ;
 
 RULE_SEMICOLON : ';';
 
-RULE_PIPE : '|';
+RULE_NEWLINE : ('\n'|EOF);
 
-RULE_NEWLINE : '/n';
+RULE_CADENA : (('a'..'z'|'A'..'Z'|'\u00C1'|'\u00E1'|'\u00C9'|'\u00E9'|'\u00CD'|'\u00ED'|'\u00D3'|'\u00F3'|'\u00DA'|'\u00FA'|'-'|' '|'|'|'.')+ ('0'..'9')*)+;
 
-RULE_CADENA : ('a'..'z'|'A'..'Z'|'\u00C1'|'\u00E1'|'\u00C9'|'\u00E9'|'\u00CD'|'\u00ED'|'\u00D3'|'\u00F3'|'\u00DA'|'\u00FA'|'-'|' ')+;
+RULE_DATEHOUR : '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '0'..'9' '0'..'9' ' ' '0'..'9' '0'..'9' ':' '0'..'9' '0'..'9' ' ' ('AM'|'PM');
+
+RULE_DATE : '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '0'..'9' '0'..'9';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

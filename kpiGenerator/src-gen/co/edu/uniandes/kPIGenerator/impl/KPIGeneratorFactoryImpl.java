@@ -68,7 +68,6 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
       case KPIGeneratorPackage.TASK: return createTask();
       case KPIGeneratorPackage.STATUS: return createStatus();
       case KPIGeneratorPackage.BOOL: return createBOOL();
-      case KPIGeneratorPackage.TASK_NAME: return createTaskName();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -105,17 +104,6 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
   {
     BOOLImpl bool = new BOOLImpl();
     return bool;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TaskName createTaskName()
-  {
-    TaskNameImpl taskName = new TaskNameImpl();
-    return taskName;
   }
 
   /**

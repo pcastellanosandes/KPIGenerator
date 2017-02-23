@@ -3,10 +3,10 @@
  */
 package co.edu.uniandes.serializer;
 
+import co.edu.uniandes.kPIGenerator.BOOL;
 import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
 import co.edu.uniandes.kPIGenerator.Status;
 import co.edu.uniandes.kPIGenerator.Task;
-import co.edu.uniandes.kPIGenerator.TaskName;
 import co.edu.uniandes.services.KPIGeneratorGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -32,19 +32,31 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == KPIGeneratorPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case KPIGeneratorPackage.BOOL:
+				sequence_BOOL(context, (BOOL) semanticObject); 
+				return; 
 			case KPIGeneratorPackage.STATUS:
 				sequence_Status(context, (Status) semanticObject); 
 				return; 
 			case KPIGeneratorPackage.TASK:
 				sequence_Task(context, (Task) semanticObject); 
 				return; 
-			case KPIGeneratorPackage.TASK_NAME:
-				sequence_TaskName(context, (TaskName) semanticObject); 
-				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     BOOL returns BOOL
+	 *
+	 * Constraint:
+	 *     {BOOL}
+	 */
+	protected void sequence_BOOL(ISerializationContext context, BOOL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -60,39 +72,27 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     TaskName returns TaskName
-	 *
-	 * Constraint:
-	 *     (phase=CADENA subphase=CADENA? useCase=CADENA version=INT)
-	 */
-	protected void sequence_TaskName(ISerializationContext context, TaskName semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Task returns Task
 	 *
 	 * Constraint:
 	 *     (
-	 *         taskId=INT 
-	 *         taskList=CADENA 
+	 *         id=INT 
+	 *         project=CADENA 
 	 *         milestone=CADENA? 
-	 *         Task+=TaskName 
+	 *         name=CADENA 
 	 *         TaskDescription=CADENA? 
-	 *         startDate=CADENA 
-	 *         DueDate=CADENA 
-	 *         priority=CADENA? 
+	 *         startDate=DATE 
+	 *         DueDate=DATE 
+	 *         priority=STRING? 
 	 *         private=BOOL 
 	 *         progress=INT 
 	 *         Task+=Status 
 	 *         assignedTo=CADENA 
-	 *         createdDate=CADENA 
-	 *         completedDate=CADENA 
+	 *         createdDate=DATEHOUR 
+	 *         completedDate=DATEHOUR 
 	 *         timeLogged=INT? 
 	 *         billableMinutes=INT? 
-	 *         TaskParent=INT 
+	 *         parentTask=[Task|ID]? 
 	 *         completedOnTime=BOOL 
 	 *         timeEstimated=INT 
 	 *         tags=CADENA?
