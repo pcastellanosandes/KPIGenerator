@@ -58,6 +58,34 @@ public interface KPIGeneratorPackage extends EPackage
   KPIGeneratorPackage eINSTANCE = co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link co.edu.uniandes.kPIGenerator.impl.RootImpl <em>Root</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see co.edu.uniandes.kPIGenerator.impl.RootImpl
+   * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getRoot()
+   * @generated
+   */
+  int ROOT = 0;
+
+  /**
+   * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT__TASKS = 0;
+
+  /**
+   * The number of structural features of the '<em>Root</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl <em>Task</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -65,25 +93,16 @@ public interface KPIGeneratorPackage extends EPackage
    * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getTask()
    * @generated
    */
-  int TASK = 0;
+  int TASK = 1;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Project</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Project</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__PROJECT = 1;
+  int TASK__PROJECT = 0;
 
   /**
    * The feature id for the '<em><b>Milestone</b></em>' attribute.
@@ -92,7 +111,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__MILESTONE = 2;
+  int TASK__MILESTONE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -101,7 +120,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__NAME = 3;
+  int TASK__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Task Description</b></em>' attribute.
@@ -110,7 +129,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__TASK_DESCRIPTION = 4;
+  int TASK__TASK_DESCRIPTION = 3;
 
   /**
    * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -119,7 +138,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__START_DATE = 5;
+  int TASK__START_DATE = 4;
 
   /**
    * The feature id for the '<em><b>Due Date</b></em>' attribute.
@@ -128,7 +147,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__DUE_DATE = 6;
+  int TASK__DUE_DATE = 5;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -137,7 +156,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PRIORITY = 7;
+  int TASK__PRIORITY = 6;
 
   /**
    * The feature id for the '<em><b>Private</b></em>' containment reference.
@@ -146,7 +165,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PRIVATE = 8;
+  int TASK__PRIVATE = 7;
 
   /**
    * The feature id for the '<em><b>Progress</b></em>' attribute.
@@ -155,16 +174,16 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PROGRESS = 9;
+  int TASK__PROGRESS = 8;
 
   /**
-   * The feature id for the '<em><b>Task</b></em>' containment reference list.
+   * The feature id for the '<em><b>Status</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__TASK = 10;
+  int TASK__STATUS = 9;
 
   /**
    * The feature id for the '<em><b>Assigned To</b></em>' attribute.
@@ -173,7 +192,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__ASSIGNED_TO = 11;
+  int TASK__ASSIGNED_TO = 10;
 
   /**
    * The feature id for the '<em><b>Created Date</b></em>' attribute.
@@ -182,7 +201,16 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__CREATED_DATE = 12;
+  int TASK__CREATED_DATE = 11;
+
+  /**
+   * The feature id for the '<em><b>Created Hour</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__CREATED_HOUR = 12;
 
   /**
    * The feature id for the '<em><b>Completed Date</b></em>' attribute.
@@ -194,13 +222,22 @@ public interface KPIGeneratorPackage extends EPackage
   int TASK__COMPLETED_DATE = 13;
 
   /**
+   * The feature id for the '<em><b>Completed Hour</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__COMPLETED_HOUR = 14;
+
+  /**
    * The feature id for the '<em><b>Time Logged</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__TIME_LOGGED = 14;
+  int TASK__TIME_LOGGED = 15;
 
   /**
    * The feature id for the '<em><b>Billable Minutes</b></em>' attribute.
@@ -209,7 +246,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__BILLABLE_MINUTES = 15;
+  int TASK__BILLABLE_MINUTES = 16;
 
   /**
    * The feature id for the '<em><b>Parent Task</b></em>' reference.
@@ -218,7 +255,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PARENT_TASK = 16;
+  int TASK__PARENT_TASK = 17;
 
   /**
    * The feature id for the '<em><b>Completed On Time</b></em>' containment reference.
@@ -227,7 +264,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__COMPLETED_ON_TIME = 17;
+  int TASK__COMPLETED_ON_TIME = 18;
 
   /**
    * The feature id for the '<em><b>Time Estimated</b></em>' attribute.
@@ -236,7 +273,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__TIME_ESTIMATED = 18;
+  int TASK__TIME_ESTIMATED = 19;
 
   /**
    * The feature id for the '<em><b>Tags</b></em>' attribute.
@@ -245,7 +282,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__TAGS = 19;
+  int TASK__TAGS = 20;
 
   /**
    * The number of structural features of the '<em>Task</em>' class.
@@ -254,7 +291,35 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_FEATURE_COUNT = 20;
+  int TASK_FEATURE_COUNT = 21;
+
+  /**
+   * The meta object id for the '{@link co.edu.uniandes.kPIGenerator.impl.ProjectImpl <em>Project</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see co.edu.uniandes.kPIGenerator.impl.ProjectImpl
+   * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getProject()
+   * @generated
+   */
+  int PROJECT = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Project</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link co.edu.uniandes.kPIGenerator.impl.StatusImpl <em>Status</em>}' class.
@@ -264,7 +329,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getStatus()
    * @generated
    */
-  int STATUS = 1;
+  int STATUS = 3;
 
   /**
    * The feature id for the '<em><b>Status Name</b></em>' attribute.
@@ -301,7 +366,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getBOOL()
    * @generated
    */
-  int BOOL = 2;
+  int BOOL = 4;
 
   /**
    * The number of structural features of the '<em>BOOL</em>' class.
@@ -314,6 +379,27 @@ public interface KPIGeneratorPackage extends EPackage
 
 
   /**
+   * Returns the meta object for class '{@link co.edu.uniandes.kPIGenerator.Root <em>Root</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Root</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Root
+   * @generated
+   */
+  EClass getRoot();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link co.edu.uniandes.kPIGenerator.Root#getTasks <em>Tasks</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Tasks</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Root#getTasks()
+   * @see #getRoot()
+   * @generated
+   */
+  EReference getRoot_Tasks();
+
+  /**
    * Returns the meta object for class '{@link co.edu.uniandes.kPIGenerator.Task <em>Task</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -324,26 +410,15 @@ public interface KPIGeneratorPackage extends EPackage
   EClass getTask();
 
   /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getId <em>Id</em>}'.
+   * Returns the meta object for the containment reference '{@link co.edu.uniandes.kPIGenerator.Task#getProject <em>Project</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Task#getId()
-   * @see #getTask()
-   * @generated
-   */
-  EAttribute getTask_Id();
-
-  /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getProject <em>Project</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Project</em>'.
+   * @return the meta object for the containment reference '<em>Project</em>'.
    * @see co.edu.uniandes.kPIGenerator.Task#getProject()
    * @see #getTask()
    * @generated
    */
-  EAttribute getTask_Project();
+  EReference getTask_Project();
 
   /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getMilestone <em>Milestone</em>}'.
@@ -434,15 +509,15 @@ public interface KPIGeneratorPackage extends EPackage
   EAttribute getTask_Progress();
 
   /**
-   * Returns the meta object for the containment reference list '{@link co.edu.uniandes.kPIGenerator.Task#getTask <em>Task</em>}'.
+   * Returns the meta object for the containment reference '{@link co.edu.uniandes.kPIGenerator.Task#getStatus <em>Status</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Task</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Task#getTask()
+   * @return the meta object for the containment reference '<em>Status</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getStatus()
    * @see #getTask()
    * @generated
    */
-  EReference getTask_Task();
+  EReference getTask_Status();
 
   /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getAssignedTo <em>Assigned To</em>}'.
@@ -467,6 +542,17 @@ public interface KPIGeneratorPackage extends EPackage
   EAttribute getTask_CreatedDate();
 
   /**
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getCreatedHour <em>Created Hour</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Created Hour</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getCreatedHour()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_CreatedHour();
+
+  /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getCompletedDate <em>Completed Date</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -476,6 +562,17 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    */
   EAttribute getTask_CompletedDate();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getCompletedHour <em>Completed Hour</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Completed Hour</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getCompletedHour()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_CompletedHour();
 
   /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getTimeLogged <em>Time Logged</em>}'.
@@ -544,6 +641,27 @@ public interface KPIGeneratorPackage extends EPackage
   EAttribute getTask_Tags();
 
   /**
+   * Returns the meta object for class '{@link co.edu.uniandes.kPIGenerator.Project <em>Project</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Project</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Project
+   * @generated
+   */
+  EClass getProject();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Project#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Project#getName()
+   * @see #getProject()
+   * @generated
+   */
+  EAttribute getProject_Name();
+
+  /**
    * Returns the meta object for class '{@link co.edu.uniandes.kPIGenerator.Status <em>Status</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -609,6 +727,24 @@ public interface KPIGeneratorPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link co.edu.uniandes.kPIGenerator.impl.RootImpl <em>Root</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see co.edu.uniandes.kPIGenerator.impl.RootImpl
+     * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getRoot()
+     * @generated
+     */
+    EClass ROOT = eINSTANCE.getRoot();
+
+    /**
+     * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOT__TASKS = eINSTANCE.getRoot_Tasks();
+
+    /**
      * The meta object literal for the '{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl <em>Task</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -619,20 +755,12 @@ public interface KPIGeneratorPackage extends EPackage
     EClass TASK = eINSTANCE.getTask();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Project</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TASK__ID = eINSTANCE.getTask_Id();
-
-    /**
-     * The meta object literal for the '<em><b>Project</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK__PROJECT = eINSTANCE.getTask_Project();
+    EReference TASK__PROJECT = eINSTANCE.getTask_Project();
 
     /**
      * The meta object literal for the '<em><b>Milestone</b></em>' attribute feature.
@@ -699,12 +827,12 @@ public interface KPIGeneratorPackage extends EPackage
     EAttribute TASK__PROGRESS = eINSTANCE.getTask_Progress();
 
     /**
-     * The meta object literal for the '<em><b>Task</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Status</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TASK__TASK = eINSTANCE.getTask_Task();
+    EReference TASK__STATUS = eINSTANCE.getTask_Status();
 
     /**
      * The meta object literal for the '<em><b>Assigned To</b></em>' attribute feature.
@@ -723,12 +851,28 @@ public interface KPIGeneratorPackage extends EPackage
     EAttribute TASK__CREATED_DATE = eINSTANCE.getTask_CreatedDate();
 
     /**
+     * The meta object literal for the '<em><b>Created Hour</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__CREATED_HOUR = eINSTANCE.getTask_CreatedHour();
+
+    /**
      * The meta object literal for the '<em><b>Completed Date</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute TASK__COMPLETED_DATE = eINSTANCE.getTask_CompletedDate();
+
+    /**
+     * The meta object literal for the '<em><b>Completed Hour</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__COMPLETED_HOUR = eINSTANCE.getTask_CompletedHour();
 
     /**
      * The meta object literal for the '<em><b>Time Logged</b></em>' attribute feature.
@@ -777,6 +921,24 @@ public interface KPIGeneratorPackage extends EPackage
      * @generated
      */
     EAttribute TASK__TAGS = eINSTANCE.getTask_Tags();
+
+    /**
+     * The meta object literal for the '{@link co.edu.uniandes.kPIGenerator.impl.ProjectImpl <em>Project</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see co.edu.uniandes.kPIGenerator.impl.ProjectImpl
+     * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getProject()
+     * @generated
+     */
+    EClass PROJECT = eINSTANCE.getProject();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROJECT__NAME = eINSTANCE.getProject_Name();
 
     /**
      * The meta object literal for the '{@link co.edu.uniandes.kPIGenerator.impl.StatusImpl <em>Status</em>}' class.

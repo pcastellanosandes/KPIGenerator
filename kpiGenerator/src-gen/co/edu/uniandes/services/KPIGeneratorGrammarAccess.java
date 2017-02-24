@@ -24,15 +24,38 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	
+	public class RootElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Root");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cHEADERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cTasksAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTasksTaskParserRuleCall_1_0 = (RuleCall)cTasksAssignment_1.eContents().get(0);
+		
+		//Root:
+		//	HEADER
+		//	tasks+=Task;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//HEADER tasks+=Task
+		public Group getGroup() { return cGroup; }
+		
+		//HEADER
+		public RuleCall getHEADERTerminalRuleCall_0() { return cHEADERTerminalRuleCall_0; }
+		
+		//tasks+=Task
+		public Assignment getTasksAssignment_1() { return cTasksAssignment_1; }
+		
+		//Task
+		public RuleCall getTasksTaskParserRuleCall_1_0() { return cTasksTaskParserRuleCall_1_0; }
+	}
 	public class TaskElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Task");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cTaskAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdINTTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cSEMICOLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cProjectAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cProjectCADENATerminalRuleCall_3_0 = (RuleCall)cProjectAssignment_3.eContents().get(0);
+		private final RuleCall cProjectProjectParserRuleCall_3_0 = (RuleCall)cProjectAssignment_3.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		private final Assignment cMilestoneAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cMilestoneCADENATerminalRuleCall_5_0 = (RuleCall)cMilestoneAssignment_5.eContents().get(0);
@@ -50,7 +73,7 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDueDateDATETerminalRuleCall_13_0 = (RuleCall)cDueDateAssignment_13.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_14 = (RuleCall)cGroup.eContents().get(14);
 		private final Assignment cPriorityAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cPrioritySTRINGTerminalRuleCall_15_0 = (RuleCall)cPriorityAssignment_15.eContents().get(0);
+		private final RuleCall cPriorityCADENATerminalRuleCall_15_0 = (RuleCall)cPriorityAssignment_15.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_16 = (RuleCall)cGroup.eContents().get(16);
 		private final Assignment cPrivateAssignment_17 = (Assignment)cGroup.eContents().get(17);
 		private final RuleCall cPrivateBOOLParserRuleCall_17_0 = (RuleCall)cPrivateAssignment_17.eContents().get(0);
@@ -58,50 +81,54 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cProgressAssignment_19 = (Assignment)cGroup.eContents().get(19);
 		private final RuleCall cProgressINTTerminalRuleCall_19_0 = (RuleCall)cProgressAssignment_19.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_20 = (RuleCall)cGroup.eContents().get(20);
-		private final Assignment cTaskAssignment_21 = (Assignment)cGroup.eContents().get(21);
-		private final RuleCall cTaskStatusParserRuleCall_21_0 = (RuleCall)cTaskAssignment_21.eContents().get(0);
+		private final Assignment cStatusAssignment_21 = (Assignment)cGroup.eContents().get(21);
+		private final RuleCall cStatusStatusParserRuleCall_21_0 = (RuleCall)cStatusAssignment_21.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_22 = (RuleCall)cGroup.eContents().get(22);
 		private final Assignment cAssignedToAssignment_23 = (Assignment)cGroup.eContents().get(23);
 		private final RuleCall cAssignedToCADENATerminalRuleCall_23_0 = (RuleCall)cAssignedToAssignment_23.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_24 = (RuleCall)cGroup.eContents().get(24);
 		private final Assignment cCreatedDateAssignment_25 = (Assignment)cGroup.eContents().get(25);
-		private final RuleCall cCreatedDateDATEHOURTerminalRuleCall_25_0 = (RuleCall)cCreatedDateAssignment_25.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_26 = (RuleCall)cGroup.eContents().get(26);
-		private final RuleCall cCADENATerminalRuleCall_27 = (RuleCall)cGroup.eContents().get(27);
-		private final RuleCall cSEMICOLONTerminalRuleCall_28 = (RuleCall)cGroup.eContents().get(28);
-		private final RuleCall cCADENATerminalRuleCall_29 = (RuleCall)cGroup.eContents().get(29);
-		private final RuleCall cSEMICOLONTerminalRuleCall_30 = (RuleCall)cGroup.eContents().get(30);
-		private final Assignment cCompletedDateAssignment_31 = (Assignment)cGroup.eContents().get(31);
-		private final RuleCall cCompletedDateDATEHOURTerminalRuleCall_31_0 = (RuleCall)cCompletedDateAssignment_31.eContents().get(0);
-		private final RuleCall cSEMICOLONTerminalRuleCall_32 = (RuleCall)cGroup.eContents().get(32);
-		private final RuleCall cCADENATerminalRuleCall_33 = (RuleCall)cGroup.eContents().get(33);
+		private final RuleCall cCreatedDateDATETerminalRuleCall_25_0 = (RuleCall)cCreatedDateAssignment_25.eContents().get(0);
+		private final Assignment cCreatedHourAssignment_26 = (Assignment)cGroup.eContents().get(26);
+		private final RuleCall cCreatedHourHOURTerminalRuleCall_26_0 = (RuleCall)cCreatedHourAssignment_26.eContents().get(0);
+		private final RuleCall cSEMICOLONTerminalRuleCall_27 = (RuleCall)cGroup.eContents().get(27);
+		private final RuleCall cCADENATerminalRuleCall_28 = (RuleCall)cGroup.eContents().get(28);
+		private final RuleCall cSEMICOLONTerminalRuleCall_29 = (RuleCall)cGroup.eContents().get(29);
+		private final RuleCall cCADENATerminalRuleCall_30 = (RuleCall)cGroup.eContents().get(30);
+		private final RuleCall cSEMICOLONTerminalRuleCall_31 = (RuleCall)cGroup.eContents().get(31);
+		private final Assignment cCompletedDateAssignment_32 = (Assignment)cGroup.eContents().get(32);
+		private final RuleCall cCompletedDateDATETerminalRuleCall_32_0 = (RuleCall)cCompletedDateAssignment_32.eContents().get(0);
+		private final Assignment cCompletedHourAssignment_33 = (Assignment)cGroup.eContents().get(33);
+		private final RuleCall cCompletedHourHOURTerminalRuleCall_33_0 = (RuleCall)cCompletedHourAssignment_33.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_34 = (RuleCall)cGroup.eContents().get(34);
 		private final RuleCall cCADENATerminalRuleCall_35 = (RuleCall)cGroup.eContents().get(35);
 		private final RuleCall cSEMICOLONTerminalRuleCall_36 = (RuleCall)cGroup.eContents().get(36);
-		private final Assignment cTimeLoggedAssignment_37 = (Assignment)cGroup.eContents().get(37);
-		private final RuleCall cTimeLoggedINTTerminalRuleCall_37_0 = (RuleCall)cTimeLoggedAssignment_37.eContents().get(0);
+		private final RuleCall cCADENATerminalRuleCall_37 = (RuleCall)cGroup.eContents().get(37);
 		private final RuleCall cSEMICOLONTerminalRuleCall_38 = (RuleCall)cGroup.eContents().get(38);
-		private final Assignment cBillableMinutesAssignment_39 = (Assignment)cGroup.eContents().get(39);
-		private final RuleCall cBillableMinutesINTTerminalRuleCall_39_0 = (RuleCall)cBillableMinutesAssignment_39.eContents().get(0);
+		private final Assignment cTimeLoggedAssignment_39 = (Assignment)cGroup.eContents().get(39);
+		private final RuleCall cTimeLoggedINTTerminalRuleCall_39_0 = (RuleCall)cTimeLoggedAssignment_39.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_40 = (RuleCall)cGroup.eContents().get(40);
-		private final Assignment cParentTaskAssignment_41 = (Assignment)cGroup.eContents().get(41);
-		private final CrossReference cParentTaskTaskCrossReference_41_0 = (CrossReference)cParentTaskAssignment_41.eContents().get(0);
-		private final RuleCall cParentTaskTaskIDTerminalRuleCall_41_0_1 = (RuleCall)cParentTaskTaskCrossReference_41_0.eContents().get(1);
+		private final Assignment cBillableMinutesAssignment_41 = (Assignment)cGroup.eContents().get(41);
+		private final RuleCall cBillableMinutesINTTerminalRuleCall_41_0 = (RuleCall)cBillableMinutesAssignment_41.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_42 = (RuleCall)cGroup.eContents().get(42);
-		private final Assignment cCompletedOnTimeAssignment_43 = (Assignment)cGroup.eContents().get(43);
-		private final RuleCall cCompletedOnTimeBOOLParserRuleCall_43_0 = (RuleCall)cCompletedOnTimeAssignment_43.eContents().get(0);
+		private final Assignment cParentTaskAssignment_43 = (Assignment)cGroup.eContents().get(43);
+		private final CrossReference cParentTaskTaskCrossReference_43_0 = (CrossReference)cParentTaskAssignment_43.eContents().get(0);
+		private final RuleCall cParentTaskTaskIDTerminalRuleCall_43_0_1 = (RuleCall)cParentTaskTaskCrossReference_43_0.eContents().get(1);
 		private final RuleCall cSEMICOLONTerminalRuleCall_44 = (RuleCall)cGroup.eContents().get(44);
-		private final Assignment cTimeEstimatedAssignment_45 = (Assignment)cGroup.eContents().get(45);
-		private final RuleCall cTimeEstimatedINTTerminalRuleCall_45_0 = (RuleCall)cTimeEstimatedAssignment_45.eContents().get(0);
+		private final Assignment cCompletedOnTimeAssignment_45 = (Assignment)cGroup.eContents().get(45);
+		private final RuleCall cCompletedOnTimeBOOLParserRuleCall_45_0 = (RuleCall)cCompletedOnTimeAssignment_45.eContents().get(0);
 		private final RuleCall cSEMICOLONTerminalRuleCall_46 = (RuleCall)cGroup.eContents().get(46);
-		private final Assignment cTagsAssignment_47 = (Assignment)cGroup.eContents().get(47);
-		private final RuleCall cTagsCADENATerminalRuleCall_47_0 = (RuleCall)cTagsAssignment_47.eContents().get(0);
-		private final RuleCall cNEWLINETerminalRuleCall_48 = (RuleCall)cGroup.eContents().get(48);
+		private final Assignment cTimeEstimatedAssignment_47 = (Assignment)cGroup.eContents().get(47);
+		private final RuleCall cTimeEstimatedINTTerminalRuleCall_47_0 = (RuleCall)cTimeEstimatedAssignment_47.eContents().get(0);
+		private final RuleCall cSEMICOLONTerminalRuleCall_48 = (RuleCall)cGroup.eContents().get(48);
+		private final Assignment cTagsAssignment_49 = (Assignment)cGroup.eContents().get(49);
+		private final RuleCall cTagsCADENATerminalRuleCall_49_0 = (RuleCall)cTagsAssignment_49.eContents().get(0);
+		private final Keyword cControl000dControl000aKeyword_50 = (Keyword)cGroup.eContents().get(50);
 		
 		//Task:
-		//	{Task} id=INT
+		//	{Task} INT
 		//	SEMICOLON
-		//	project=CADENA
+		//	project=Project
 		//	SEMICOLON
 		//	milestone=CADENA?
 		//	SEMICOLON
@@ -113,23 +140,25 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//	SEMICOLON
 		//	DueDate=DATE
 		//	SEMICOLON
-		//	priority=STRING?
+		//	priority=CADENA?
 		//	SEMICOLON
 		//	private=BOOL
 		//	SEMICOLON
 		//	progress=INT
 		//	SEMICOLON
-		//	Task+=Status
+		//	status=Status
 		//	SEMICOLON
 		//	assignedTo=CADENA
 		//	SEMICOLON
-		//	createdDate=DATEHOUR
+		//	createdDate=DATE
+		//	createdHour=HOUR
 		//	SEMICOLON
 		//	CADENA //Created By Firstname
 		//	SEMICOLON
 		//	CADENA // Created By Lastname
 		//	SEMICOLON
-		//	completedDate=DATEHOUR
+		//	completedDate=DATE
+		//	completedHour=HOUR
 		//	SEMICOLON
 		//	CADENA //Completed By Firstname
 		//	SEMICOLON
@@ -146,37 +175,34 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//	timeEstimated=INT
 		//	SEMICOLON
 		//	tags=CADENA?
-		//	NEWLINE;
+		//	'\r\n';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Task} id=INT SEMICOLON project=CADENA SEMICOLON milestone=CADENA? SEMICOLON name=CADENA SEMICOLON
-		//TaskDescription=CADENA? SEMICOLON startDate=DATE SEMICOLON DueDate=DATE SEMICOLON priority=STRING? SEMICOLON
-		//private=BOOL SEMICOLON progress=INT SEMICOLON Task+=Status SEMICOLON assignedTo=CADENA SEMICOLON createdDate=DATEHOUR
-		//SEMICOLON CADENA //Created By Firstname
+		//{Task} INT SEMICOLON project=Project SEMICOLON milestone=CADENA? SEMICOLON name=CADENA SEMICOLON TaskDescription=CADENA?
+		//SEMICOLON startDate=DATE SEMICOLON DueDate=DATE SEMICOLON priority=CADENA? SEMICOLON private=BOOL SEMICOLON
+		//progress=INT SEMICOLON status=Status SEMICOLON assignedTo=CADENA SEMICOLON createdDate=DATE createdHour=HOUR SEMICOLON
+		//CADENA //Created By Firstname
 		//SEMICOLON CADENA // Created By Lastname
-		//SEMICOLON completedDate=DATEHOUR SEMICOLON CADENA //Completed By Firstname
+		//SEMICOLON completedDate=DATE completedHour=HOUR SEMICOLON CADENA //Completed By Firstname
 		//SEMICOLON CADENA //Completed By Lastname
 		//SEMICOLON timeLogged=INT? SEMICOLON billableMinutes=INT? SEMICOLON parentTask=[Task]? SEMICOLON completedOnTime=BOOL
-		//SEMICOLON timeEstimated=INT SEMICOLON tags=CADENA? NEWLINE
+		//SEMICOLON timeEstimated=INT SEMICOLON tags=CADENA? '\r\n'
 		public Group getGroup() { return cGroup; }
 		
 		//{Task}
 		public Action getTaskAction_0() { return cTaskAction_0; }
 		
-		//id=INT
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
-		
 		//INT
-		public RuleCall getIdINTTerminalRuleCall_1_0() { return cIdINTTerminalRuleCall_1_0; }
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_2() { return cSEMICOLONTerminalRuleCall_2; }
 		
-		//project=CADENA
+		//project=Project
 		public Assignment getProjectAssignment_3() { return cProjectAssignment_3; }
 		
-		//CADENA
-		public RuleCall getProjectCADENATerminalRuleCall_3_0() { return cProjectCADENATerminalRuleCall_3_0; }
+		//Project
+		public RuleCall getProjectProjectParserRuleCall_3_0() { return cProjectProjectParserRuleCall_3_0; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_4() { return cSEMICOLONTerminalRuleCall_4; }
@@ -226,11 +252,11 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_14() { return cSEMICOLONTerminalRuleCall_14; }
 		
-		//priority=STRING?
+		//priority=CADENA?
 		public Assignment getPriorityAssignment_15() { return cPriorityAssignment_15; }
 		
-		//STRING
-		public RuleCall getPrioritySTRINGTerminalRuleCall_15_0() { return cPrioritySTRINGTerminalRuleCall_15_0; }
+		//CADENA
+		public RuleCall getPriorityCADENATerminalRuleCall_15_0() { return cPriorityCADENATerminalRuleCall_15_0; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_16() { return cSEMICOLONTerminalRuleCall_16; }
@@ -253,11 +279,11 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_20() { return cSEMICOLONTerminalRuleCall_20; }
 		
-		//Task+=Status
-		public Assignment getTaskAssignment_21() { return cTaskAssignment_21; }
+		//status=Status
+		public Assignment getStatusAssignment_21() { return cStatusAssignment_21; }
 		
 		//Status
-		public RuleCall getTaskStatusParserRuleCall_21_0() { return cTaskStatusParserRuleCall_21_0; }
+		public RuleCall getStatusStatusParserRuleCall_21_0() { return cStatusStatusParserRuleCall_21_0; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_22() { return cSEMICOLONTerminalRuleCall_22; }
@@ -271,108 +297,143 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_24() { return cSEMICOLONTerminalRuleCall_24; }
 		
-		//createdDate=DATEHOUR
+		//createdDate=DATE
 		public Assignment getCreatedDateAssignment_25() { return cCreatedDateAssignment_25; }
 		
-		//DATEHOUR
-		public RuleCall getCreatedDateDATEHOURTerminalRuleCall_25_0() { return cCreatedDateDATEHOURTerminalRuleCall_25_0; }
+		//DATE
+		public RuleCall getCreatedDateDATETerminalRuleCall_25_0() { return cCreatedDateDATETerminalRuleCall_25_0; }
+		
+		//createdHour=HOUR
+		public Assignment getCreatedHourAssignment_26() { return cCreatedHourAssignment_26; }
+		
+		//HOUR
+		public RuleCall getCreatedHourHOURTerminalRuleCall_26_0() { return cCreatedHourHOURTerminalRuleCall_26_0; }
 		
 		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_26() { return cSEMICOLONTerminalRuleCall_26; }
+		public RuleCall getSEMICOLONTerminalRuleCall_27() { return cSEMICOLONTerminalRuleCall_27; }
 		
 		//CADENA
-		public RuleCall getCADENATerminalRuleCall_27() { return cCADENATerminalRuleCall_27; }
+		public RuleCall getCADENATerminalRuleCall_28() { return cCADENATerminalRuleCall_28; }
 		
 		////Created By Firstname
 		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_28() { return cSEMICOLONTerminalRuleCall_28; }
+		public RuleCall getSEMICOLONTerminalRuleCall_29() { return cSEMICOLONTerminalRuleCall_29; }
 		
 		//CADENA
-		public RuleCall getCADENATerminalRuleCall_29() { return cCADENATerminalRuleCall_29; }
+		public RuleCall getCADENATerminalRuleCall_30() { return cCADENATerminalRuleCall_30; }
 		
 		//// Created By Lastname
 		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_30() { return cSEMICOLONTerminalRuleCall_30; }
+		public RuleCall getSEMICOLONTerminalRuleCall_31() { return cSEMICOLONTerminalRuleCall_31; }
 		
-		//completedDate=DATEHOUR
-		public Assignment getCompletedDateAssignment_31() { return cCompletedDateAssignment_31; }
+		//completedDate=DATE
+		public Assignment getCompletedDateAssignment_32() { return cCompletedDateAssignment_32; }
 		
-		//DATEHOUR
-		public RuleCall getCompletedDateDATEHOURTerminalRuleCall_31_0() { return cCompletedDateDATEHOURTerminalRuleCall_31_0; }
+		//DATE
+		public RuleCall getCompletedDateDATETerminalRuleCall_32_0() { return cCompletedDateDATETerminalRuleCall_32_0; }
 		
-		//SEMICOLON
-		public RuleCall getSEMICOLONTerminalRuleCall_32() { return cSEMICOLONTerminalRuleCall_32; }
+		//completedHour=HOUR
+		public Assignment getCompletedHourAssignment_33() { return cCompletedHourAssignment_33; }
 		
-		//CADENA
-		public RuleCall getCADENATerminalRuleCall_33() { return cCADENATerminalRuleCall_33; }
+		//HOUR
+		public RuleCall getCompletedHourHOURTerminalRuleCall_33_0() { return cCompletedHourHOURTerminalRuleCall_33_0; }
 		
-		////Completed By Firstname
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_34() { return cSEMICOLONTerminalRuleCall_34; }
 		
 		//CADENA
 		public RuleCall getCADENATerminalRuleCall_35() { return cCADENATerminalRuleCall_35; }
 		
-		////Completed By Lastname
+		////Completed By Firstname
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_36() { return cSEMICOLONTerminalRuleCall_36; }
 		
-		//timeLogged=INT?
-		public Assignment getTimeLoggedAssignment_37() { return cTimeLoggedAssignment_37; }
+		//CADENA
+		public RuleCall getCADENATerminalRuleCall_37() { return cCADENATerminalRuleCall_37; }
 		
-		//INT
-		public RuleCall getTimeLoggedINTTerminalRuleCall_37_0() { return cTimeLoggedINTTerminalRuleCall_37_0; }
-		
+		////Completed By Lastname
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_38() { return cSEMICOLONTerminalRuleCall_38; }
 		
-		//billableMinutes=INT?
-		public Assignment getBillableMinutesAssignment_39() { return cBillableMinutesAssignment_39; }
+		//timeLogged=INT?
+		public Assignment getTimeLoggedAssignment_39() { return cTimeLoggedAssignment_39; }
 		
 		//INT
-		public RuleCall getBillableMinutesINTTerminalRuleCall_39_0() { return cBillableMinutesINTTerminalRuleCall_39_0; }
+		public RuleCall getTimeLoggedINTTerminalRuleCall_39_0() { return cTimeLoggedINTTerminalRuleCall_39_0; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_40() { return cSEMICOLONTerminalRuleCall_40; }
 		
-		//parentTask=[Task]?
-		public Assignment getParentTaskAssignment_41() { return cParentTaskAssignment_41; }
+		//billableMinutes=INT?
+		public Assignment getBillableMinutesAssignment_41() { return cBillableMinutesAssignment_41; }
 		
-		//[Task]
-		public CrossReference getParentTaskTaskCrossReference_41_0() { return cParentTaskTaskCrossReference_41_0; }
-		
-		//ID
-		public RuleCall getParentTaskTaskIDTerminalRuleCall_41_0_1() { return cParentTaskTaskIDTerminalRuleCall_41_0_1; }
+		//INT
+		public RuleCall getBillableMinutesINTTerminalRuleCall_41_0() { return cBillableMinutesINTTerminalRuleCall_41_0; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_42() { return cSEMICOLONTerminalRuleCall_42; }
 		
-		//completedOnTime=BOOL
-		public Assignment getCompletedOnTimeAssignment_43() { return cCompletedOnTimeAssignment_43; }
+		//parentTask=[Task]?
+		public Assignment getParentTaskAssignment_43() { return cParentTaskAssignment_43; }
 		
-		//BOOL
-		public RuleCall getCompletedOnTimeBOOLParserRuleCall_43_0() { return cCompletedOnTimeBOOLParserRuleCall_43_0; }
+		//[Task]
+		public CrossReference getParentTaskTaskCrossReference_43_0() { return cParentTaskTaskCrossReference_43_0; }
+		
+		//ID
+		public RuleCall getParentTaskTaskIDTerminalRuleCall_43_0_1() { return cParentTaskTaskIDTerminalRuleCall_43_0_1; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_44() { return cSEMICOLONTerminalRuleCall_44; }
 		
-		//timeEstimated=INT
-		public Assignment getTimeEstimatedAssignment_45() { return cTimeEstimatedAssignment_45; }
+		//completedOnTime=BOOL
+		public Assignment getCompletedOnTimeAssignment_45() { return cCompletedOnTimeAssignment_45; }
 		
-		//INT
-		public RuleCall getTimeEstimatedINTTerminalRuleCall_45_0() { return cTimeEstimatedINTTerminalRuleCall_45_0; }
+		//BOOL
+		public RuleCall getCompletedOnTimeBOOLParserRuleCall_45_0() { return cCompletedOnTimeBOOLParserRuleCall_45_0; }
 		
 		//SEMICOLON
 		public RuleCall getSEMICOLONTerminalRuleCall_46() { return cSEMICOLONTerminalRuleCall_46; }
 		
+		//timeEstimated=INT
+		public Assignment getTimeEstimatedAssignment_47() { return cTimeEstimatedAssignment_47; }
+		
+		//INT
+		public RuleCall getTimeEstimatedINTTerminalRuleCall_47_0() { return cTimeEstimatedINTTerminalRuleCall_47_0; }
+		
+		//SEMICOLON
+		public RuleCall getSEMICOLONTerminalRuleCall_48() { return cSEMICOLONTerminalRuleCall_48; }
+		
 		//tags=CADENA?
-		public Assignment getTagsAssignment_47() { return cTagsAssignment_47; }
+		public Assignment getTagsAssignment_49() { return cTagsAssignment_49; }
 		
 		//CADENA
-		public RuleCall getTagsCADENATerminalRuleCall_47_0() { return cTagsCADENATerminalRuleCall_47_0; }
+		public RuleCall getTagsCADENATerminalRuleCall_49_0() { return cTagsCADENATerminalRuleCall_49_0; }
 		
-		//NEWLINE
-		public RuleCall getNEWLINETerminalRuleCall_48() { return cNEWLINETerminalRuleCall_48; }
+		//'\r\n'
+		public Keyword getControl000dControl000aKeyword_50() { return cControl000dControl000aKeyword_50; }
+	}
+	public class ProjectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Project");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cProjectAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameCADENATerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//Project:
+		//	{Project} name=CADENA;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Project} name=CADENA
+		public Group getGroup() { return cGroup; }
+		
+		//{Project}
+		public Action getProjectAction_0() { return cProjectAction_0; }
+		
+		//name=CADENA
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//CADENA
+		public RuleCall getNameCADENATerminalRuleCall_1_0() { return cNameCADENATerminalRuleCall_1_0; }
 	}
 	public class StatusElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Status");
@@ -443,14 +504,17 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
+	private final RootElements pRoot;
 	private final TaskElements pTask;
+	private final ProjectElements pProject;
 	private final StatusElements pStatus;
 	private final BOOLElements pBOOL;
 	private final TerminalRule tSEMICOLON;
-	private final TerminalRule tNEWLINE;
+	private final TerminalRule tENDLINE;
 	private final TerminalRule tCADENA;
-	private final TerminalRule tDATEHOUR;
 	private final TerminalRule tDATE;
+	private final TerminalRule tHOUR;
+	private final TerminalRule tHEADER;
 	
 	private final Grammar grammar;
 	
@@ -461,14 +525,17 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
+		this.pRoot = new RootElements();
 		this.pTask = new TaskElements();
+		this.pProject = new ProjectElements();
 		this.pStatus = new StatusElements();
 		this.pBOOL = new BOOLElements();
 		this.tSEMICOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.SEMICOLON");
-		this.tNEWLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.NEWLINE");
+		this.tENDLINE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.ENDLINE");
 		this.tCADENA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.CADENA");
-		this.tDATEHOUR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.DATEHOUR");
 		this.tDATE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.DATE");
+		this.tHOUR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.HOUR");
+		this.tHEADER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.HEADER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -498,10 +565,21 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//Root:
+	//	HEADER
+	//	tasks+=Task;
+	public RootElements getRootAccess() {
+		return pRoot;
+	}
+	
+	public ParserRule getRootRule() {
+		return getRootAccess().getRule();
+	}
+	
 	//Task:
-	//	{Task} id=INT
+	//	{Task} INT
 	//	SEMICOLON
-	//	project=CADENA
+	//	project=Project
 	//	SEMICOLON
 	//	milestone=CADENA?
 	//	SEMICOLON
@@ -513,23 +591,25 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	//	SEMICOLON
 	//	DueDate=DATE
 	//	SEMICOLON
-	//	priority=STRING?
+	//	priority=CADENA?
 	//	SEMICOLON
 	//	private=BOOL
 	//	SEMICOLON
 	//	progress=INT
 	//	SEMICOLON
-	//	Task+=Status
+	//	status=Status
 	//	SEMICOLON
 	//	assignedTo=CADENA
 	//	SEMICOLON
-	//	createdDate=DATEHOUR
+	//	createdDate=DATE
+	//	createdHour=HOUR
 	//	SEMICOLON
 	//	CADENA //Created By Firstname
 	//	SEMICOLON
 	//	CADENA // Created By Lastname
 	//	SEMICOLON
-	//	completedDate=DATEHOUR
+	//	completedDate=DATE
+	//	completedHour=HOUR
 	//	SEMICOLON
 	//	CADENA //Completed By Firstname
 	//	SEMICOLON
@@ -546,13 +626,23 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	//	timeEstimated=INT
 	//	SEMICOLON
 	//	tags=CADENA?
-	//	NEWLINE;
+	//	'\r\n';
 	public TaskElements getTaskAccess() {
 		return pTask;
 	}
 	
 	public ParserRule getTaskRule() {
 		return getTaskAccess().getRule();
+	}
+	
+	//Project:
+	//	{Project} name=CADENA;
+	public ProjectElements getProjectAccess() {
+		return pProject;
+	}
+	
+	public ParserRule getProjectRule() {
+		return getProjectAccess().getRule();
 	}
 	
 	//Status:
@@ -582,10 +672,10 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		return tSEMICOLON;
 	}
 	
-	//terminal NEWLINE:
-	//	'\n' | EOF;
-	public TerminalRule getNEWLINERule() {
-		return tNEWLINE;
+	//terminal ENDLINE:
+	//	'\r\n' | EOF;
+	public TerminalRule getENDLINERule() {
+		return tENDLINE;
 	}
 	
 	//terminal CADENA:
@@ -595,17 +685,22 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		return tCADENA;
 	}
 	
-	//terminal DATEHOUR: //28/07/2016 10:17 PM
-	//	'0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '0'..'9' '0'..'9' ' ' '0'..'9' '0'..'9' ':' '0'..'9'
-	//	'0'..'9' ' ' ('AM' | 'PM');
-	public TerminalRule getDATEHOURRule() {
-		return tDATEHOUR;
-	}
-	
 	//terminal DATE: //28/07/2016
 	//	'0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '0'..'9' '0'..'9';
 	public TerminalRule getDATERule() {
 		return tDATE;
+	}
+	
+	//terminal HOUR: //10:23 PM
+	//	' ' '0'..'9' '0'..'9' ':' '0'..'9' '0'..'9' (' AM' | ' PM');
+	public TerminalRule getHOURRule() {
+		return tHOUR;
+	}
+	
+	//terminal HEADER:
+	//	'Task ID;Task List;Milestone;Task Name;Task Description;Start Date;Due Date;Priority;Private;Progress;Status;Status Text;Assigned To;Date Created;Created By Firstname;Created By Lastname;Completed Date;Completed By Firstname;Completed By Lastname;Time Logged Minutes;Billable Minutes;Parent Task;Completed On Time;Time Estimate;Tags';
+	public TerminalRule getHEADERRule() {
+		return tHEADER;
 	}
 	
 	//terminal ID:

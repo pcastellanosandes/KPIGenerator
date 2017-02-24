@@ -24,6 +24,15 @@ public interface KPIGeneratorFactory extends EFactory
   KPIGeneratorFactory eINSTANCE = co.edu.uniandes.kPIGenerator.impl.KPIGeneratorFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Root</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Root</em>'.
+   * @generated
+   */
+  Root createRoot();
+
+  /**
    * Returns a new object of class '<em>Task</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -31,6 +40,15 @@ public interface KPIGeneratorFactory extends EFactory
    * @generated
    */
   Task createTask();
+
+  /**
+   * Returns a new object of class '<em>Project</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Project</em>'.
+   * @generated
+   */
+  Project createProject();
 
   /**
    * Returns a new object of class '<em>Status</em>'.

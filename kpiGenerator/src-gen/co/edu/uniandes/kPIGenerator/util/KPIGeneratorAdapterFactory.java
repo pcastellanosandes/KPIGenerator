@@ -76,9 +76,19 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
     new KPIGeneratorSwitch<Adapter>()
     {
       @Override
+      public Adapter caseRoot(Root object)
+      {
+        return createRootAdapter();
+      }
+      @Override
       public Adapter caseTask(Task object)
       {
         return createTaskAdapter();
+      }
+      @Override
+      public Adapter caseProject(Project object)
+      {
+        return createProjectAdapter();
       }
       @Override
       public Adapter caseStatus(Status object)
@@ -113,6 +123,21 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
 
 
   /**
+   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Root <em>Root</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.edu.uniandes.kPIGenerator.Root
+   * @generated
+   */
+  public Adapter createRootAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Task <em>Task</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -123,6 +148,21 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTaskAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Project <em>Project</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.edu.uniandes.kPIGenerator.Project
+   * @generated
+   */
+  public Adapter createProjectAdapter()
   {
     return null;
   }

@@ -73,10 +73,24 @@ public class KPIGeneratorSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case KPIGeneratorPackage.ROOT:
+      {
+        Root root = (Root)theEObject;
+        T result = caseRoot(root);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case KPIGeneratorPackage.TASK:
       {
         Task task = (Task)theEObject;
         T result = caseTask(task);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KPIGeneratorPackage.PROJECT:
+      {
+        Project project = (Project)theEObject;
+        T result = caseProject(project);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -99,6 +113,22 @@ public class KPIGeneratorSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Root</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Root</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRoot(Root object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Task</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -110,6 +140,22 @@ public class KPIGeneratorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTask(Task object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Project</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Project</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProject(Project object)
   {
     return null;
   }

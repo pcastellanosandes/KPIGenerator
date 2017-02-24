@@ -27,7 +27,7 @@ public class KPIGeneratorParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Task";
+		return "Root";
 	}
 
 	public KPIGeneratorGrammarAccess getGrammarAccess() {

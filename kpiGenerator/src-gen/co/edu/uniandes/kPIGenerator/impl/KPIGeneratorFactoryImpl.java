@@ -65,7 +65,9 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
   {
     switch (eClass.getClassifierID())
     {
+      case KPIGeneratorPackage.ROOT: return createRoot();
       case KPIGeneratorPackage.TASK: return createTask();
+      case KPIGeneratorPackage.PROJECT: return createProject();
       case KPIGeneratorPackage.STATUS: return createStatus();
       case KPIGeneratorPackage.BOOL: return createBOOL();
       default:
@@ -78,10 +80,32 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
+  public Root createRoot()
+  {
+    RootImpl root = new RootImpl();
+    return root;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Task createTask()
   {
     TaskImpl task = new TaskImpl();
     return task;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Project createProject()
+  {
+    ProjectImpl project = new ProjectImpl();
+    return project;
   }
 
   /**

@@ -37,10 +37,12 @@ public class KPIGeneratorParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getStatusAccess().getStatusNameAlternatives_0_0(), "rule__Status__StatusNameAlternatives_0_0");
 					put(grammarAccess.getBOOLAccess().getAlternatives_1(), "rule__BOOL__Alternatives_1");
+					put(grammarAccess.getRootAccess().getGroup(), "rule__Root__Group__0");
 					put(grammarAccess.getTaskAccess().getGroup(), "rule__Task__Group__0");
+					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
 					put(grammarAccess.getStatusAccess().getGroup(), "rule__Status__Group__0");
 					put(grammarAccess.getBOOLAccess().getGroup(), "rule__BOOL__Group__0");
-					put(grammarAccess.getTaskAccess().getIdAssignment_1(), "rule__Task__IdAssignment_1");
+					put(grammarAccess.getRootAccess().getTasksAssignment_1(), "rule__Root__TasksAssignment_1");
 					put(grammarAccess.getTaskAccess().getProjectAssignment_3(), "rule__Task__ProjectAssignment_3");
 					put(grammarAccess.getTaskAccess().getMilestoneAssignment_5(), "rule__Task__MilestoneAssignment_5");
 					put(grammarAccess.getTaskAccess().getNameAssignment_7(), "rule__Task__NameAssignment_7");
@@ -50,16 +52,19 @@ public class KPIGeneratorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTaskAccess().getPriorityAssignment_15(), "rule__Task__PriorityAssignment_15");
 					put(grammarAccess.getTaskAccess().getPrivateAssignment_17(), "rule__Task__PrivateAssignment_17");
 					put(grammarAccess.getTaskAccess().getProgressAssignment_19(), "rule__Task__ProgressAssignment_19");
-					put(grammarAccess.getTaskAccess().getTaskAssignment_21(), "rule__Task__TaskAssignment_21");
+					put(grammarAccess.getTaskAccess().getStatusAssignment_21(), "rule__Task__StatusAssignment_21");
 					put(grammarAccess.getTaskAccess().getAssignedToAssignment_23(), "rule__Task__AssignedToAssignment_23");
 					put(grammarAccess.getTaskAccess().getCreatedDateAssignment_25(), "rule__Task__CreatedDateAssignment_25");
-					put(grammarAccess.getTaskAccess().getCompletedDateAssignment_31(), "rule__Task__CompletedDateAssignment_31");
-					put(grammarAccess.getTaskAccess().getTimeLoggedAssignment_37(), "rule__Task__TimeLoggedAssignment_37");
-					put(grammarAccess.getTaskAccess().getBillableMinutesAssignment_39(), "rule__Task__BillableMinutesAssignment_39");
-					put(grammarAccess.getTaskAccess().getParentTaskAssignment_41(), "rule__Task__ParentTaskAssignment_41");
-					put(grammarAccess.getTaskAccess().getCompletedOnTimeAssignment_43(), "rule__Task__CompletedOnTimeAssignment_43");
-					put(grammarAccess.getTaskAccess().getTimeEstimatedAssignment_45(), "rule__Task__TimeEstimatedAssignment_45");
-					put(grammarAccess.getTaskAccess().getTagsAssignment_47(), "rule__Task__TagsAssignment_47");
+					put(grammarAccess.getTaskAccess().getCreatedHourAssignment_26(), "rule__Task__CreatedHourAssignment_26");
+					put(grammarAccess.getTaskAccess().getCompletedDateAssignment_32(), "rule__Task__CompletedDateAssignment_32");
+					put(grammarAccess.getTaskAccess().getCompletedHourAssignment_33(), "rule__Task__CompletedHourAssignment_33");
+					put(grammarAccess.getTaskAccess().getTimeLoggedAssignment_39(), "rule__Task__TimeLoggedAssignment_39");
+					put(grammarAccess.getTaskAccess().getBillableMinutesAssignment_41(), "rule__Task__BillableMinutesAssignment_41");
+					put(grammarAccess.getTaskAccess().getParentTaskAssignment_43(), "rule__Task__ParentTaskAssignment_43");
+					put(grammarAccess.getTaskAccess().getCompletedOnTimeAssignment_45(), "rule__Task__CompletedOnTimeAssignment_45");
+					put(grammarAccess.getTaskAccess().getTimeEstimatedAssignment_47(), "rule__Task__TimeEstimatedAssignment_47");
+					put(grammarAccess.getTaskAccess().getTagsAssignment_49(), "rule__Task__TagsAssignment_49");
+					put(grammarAccess.getProjectAccess().getNameAssignment_1(), "rule__Project__NameAssignment_1");
 					put(grammarAccess.getStatusAccess().getStatusNameAssignment_0(), "rule__Status__StatusNameAssignment_0");
 					put(grammarAccess.getStatusAccess().getTextAssignment_2(), "rule__Status__TextAssignment_2");
 				}
@@ -72,7 +77,7 @@ public class KPIGeneratorParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			InternalKPIGeneratorParser typedParser = (InternalKPIGeneratorParser) parser;
-			typedParser.entryRuleTask();
+			typedParser.entryRuleRoot();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
