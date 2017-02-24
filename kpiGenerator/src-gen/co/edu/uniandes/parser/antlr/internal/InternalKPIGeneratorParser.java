@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_CADENA", "RULE_INT", "RULE_DATE", "RULE_DATEHOUR", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'['", "']'", "'{'", "'\"name\":\"'", "'\",\"phases\":['", "'}'", "','", "'\",\"tasks\":['", "'\"id\":'", "'\",'", "'\"useCase\":\"'", "'\"sequenceNumber\":'", "'.'", "'\"description\":\"'", "'\"\"'", "'\"startDate\":\"'", "'\"dueDate\":\"'", "'\"priority\":\"'", "'\"isPrivate\":'", "'\"progress\":'", "'\"status\":'", "'\"assignedTo\":\"'", "'\"createdDate\":\"'", "'\"completedDate\":\"'", "'\"timeLoggedMin\":'", "'\"billableTime\":'", "'\"completedOnTime\":'", "'\"timeEstimated\":'", "'\"tags\":\"'", "'\"type\":\"'", "'\"text\":\"'", "'\"'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_CADENA", "RULE_INT", "RULE_DATE", "RULE_DATEHOUR", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'['", "']'", "'{\"name\":\"'", "'\",\"phases\":['", "']}'", "','", "'\",\"tasks\":['", "'{\"id\":'", "',\"name\":\"'", "'\",\"useCase\":\"'", "'\",\"sequenceNumber\":'", "'.'", "',\"description\":\"'", "'\"\"'", "'\",\"startDate\":\"'", "'\",\"dueDate\":\"'", "'\",\"priority\":\"'", "'\",\"isPrivate\":'", "',\"progress\":'", "',\"status\":'", "',\"assignedTo\":\"'", "'\",\"createdDate\":\"'", "'\",\"completedDate\":\"'", "'\",\"timeLoggedMin\":'", "',\"billableTime\":'", "',\"completedOnTime\":'", "',\"timeEstimated\":'", "',\"tags\":\"'", "'}'", "'{\"type\":\"'", "'\",\"text\":\"'", "'\"}'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -260,29 +260,27 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProject"
-    // InternalKPIGenerator.g:117:1: ruleProject returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_projectName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"phases\":[' ( (lv_phases_5_0= rulePhase ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? ) ;
+    // InternalKPIGenerator.g:117:1: ruleProject returns [EObject current=null] : ( () otherlv_1= '{\"name\":\"' ( (lv_projectName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"phases\":[' ( (lv_phases_4_0= rulePhase ) ) otherlv_5= ']}' (otherlv_6= ',' )? ) ;
     public final EObject ruleProject() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_projectName_3_0=null;
-        Token otherlv_4=null;
+        Token lv_projectName_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        EObject lv_phases_5_0 = null;
+        EObject lv_phases_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalKPIGenerator.g:123:2: ( ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_projectName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"phases\":[' ( (lv_phases_5_0= rulePhase ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? ) )
-            // InternalKPIGenerator.g:124:2: ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_projectName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"phases\":[' ( (lv_phases_5_0= rulePhase ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? )
+            // InternalKPIGenerator.g:123:2: ( ( () otherlv_1= '{\"name\":\"' ( (lv_projectName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"phases\":[' ( (lv_phases_4_0= rulePhase ) ) otherlv_5= ']}' (otherlv_6= ',' )? ) )
+            // InternalKPIGenerator.g:124:2: ( () otherlv_1= '{\"name\":\"' ( (lv_projectName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"phases\":[' ( (lv_phases_4_0= rulePhase ) ) otherlv_5= ']}' (otherlv_6= ',' )? )
             {
-            // InternalKPIGenerator.g:124:2: ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_projectName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"phases\":[' ( (lv_phases_5_0= rulePhase ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? )
-            // InternalKPIGenerator.g:125:3: () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_projectName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"phases\":[' ( (lv_phases_5_0= rulePhase ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )?
+            // InternalKPIGenerator.g:124:2: ( () otherlv_1= '{\"name\":\"' ( (lv_projectName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"phases\":[' ( (lv_phases_4_0= rulePhase ) ) otherlv_5= ']}' (otherlv_6= ',' )? )
+            // InternalKPIGenerator.g:125:3: () otherlv_1= '{\"name\":\"' ( (lv_projectName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"phases\":[' ( (lv_phases_4_0= rulePhase ) ) otherlv_5= ']}' (otherlv_6= ',' )?
             {
             // InternalKPIGenerator.g:125:3: ()
             // InternalKPIGenerator.g:126:4: 
@@ -297,21 +295,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,16,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getProjectAccess().getLeftCurlyBracketKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getProjectAccess().getNameKeyword_1());
             		
-            otherlv_2=(Token)match(input,17,FOLLOW_6); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getProjectAccess().getNameKeyword_2());
-            		
-            // InternalKPIGenerator.g:140:3: ( (lv_projectName_3_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:141:4: (lv_projectName_3_0= RULE_CADENA )
+            // InternalKPIGenerator.g:136:3: ( (lv_projectName_2_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:137:4: (lv_projectName_2_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:141:4: (lv_projectName_3_0= RULE_CADENA )
-            // InternalKPIGenerator.g:142:5: lv_projectName_3_0= RULE_CADENA
+            // InternalKPIGenerator.g:137:4: (lv_projectName_2_0= RULE_CADENA )
+            // InternalKPIGenerator.g:138:5: lv_projectName_2_0= RULE_CADENA
             {
-            lv_projectName_3_0=(Token)match(input,RULE_CADENA,FOLLOW_7); 
+            lv_projectName_2_0=(Token)match(input,RULE_CADENA,FOLLOW_6); 
 
-            					newLeafNode(lv_projectName_3_0, grammarAccess.getProjectAccess().getProjectNameCADENATerminalRuleCall_3_0());
+            					newLeafNode(lv_projectName_2_0, grammarAccess.getProjectAccess().getProjectNameCADENATerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -320,7 +314,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"projectName",
-            						lv_projectName_3_0,
+            						lv_projectName_2_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -329,21 +323,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_3); 
+            otherlv_3=(Token)match(input,17,FOLLOW_3); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getProjectAccess().getPhasesKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getProjectAccess().getPhasesKeyword_3());
             		
-            // InternalKPIGenerator.g:162:3: ( (lv_phases_5_0= rulePhase ) )
-            // InternalKPIGenerator.g:163:4: (lv_phases_5_0= rulePhase )
+            // InternalKPIGenerator.g:158:3: ( (lv_phases_4_0= rulePhase ) )
+            // InternalKPIGenerator.g:159:4: (lv_phases_4_0= rulePhase )
             {
-            // InternalKPIGenerator.g:163:4: (lv_phases_5_0= rulePhase )
-            // InternalKPIGenerator.g:164:5: lv_phases_5_0= rulePhase
+            // InternalKPIGenerator.g:159:4: (lv_phases_4_0= rulePhase )
+            // InternalKPIGenerator.g:160:5: lv_phases_4_0= rulePhase
             {
 
-            					newCompositeNode(grammarAccess.getProjectAccess().getPhasesPhaseParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getProjectAccess().getPhasesPhaseParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_4);
-            lv_phases_5_0=rulePhase();
+            pushFollow(FOLLOW_7);
+            lv_phases_4_0=rulePhase();
 
             state._fsp--;
 
@@ -354,7 +348,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"phases",
-            						lv_phases_5_0,
+            						lv_phases_4_0,
             						"co.edu.uniandes.KPIGenerator.Phase");
             					afterParserOrEnumRuleCall();
             				
@@ -364,28 +358,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FOLLOW_8); 
+            otherlv_5=(Token)match(input,18,FOLLOW_8); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getProjectAccess().getRightSquareBracketKeyword_6());
+            			newLeafNode(otherlv_5, grammarAccess.getProjectAccess().getRightSquareBracketRightCurlyBracketKeyword_5());
             		
-            otherlv_7=(Token)match(input,19,FOLLOW_9); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getProjectAccess().getRightCurlyBracketKeyword_7());
-            		
-            // InternalKPIGenerator.g:189:3: (otherlv_8= ',' )?
+            // InternalKPIGenerator.g:181:3: (otherlv_6= ',' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==20) ) {
+            if ( (LA1_0==19) ) {
                 alt1=1;
             }
             switch (alt1) {
                 case 1 :
-                    // InternalKPIGenerator.g:190:4: otherlv_8= ','
+                    // InternalKPIGenerator.g:182:4: otherlv_6= ','
                     {
-                    otherlv_8=(Token)match(input,20,FOLLOW_2); 
+                    otherlv_6=(Token)match(input,19,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getProjectAccess().getCommaKeyword_8());
+                    				newLeafNode(otherlv_6, grammarAccess.getProjectAccess().getCommaKeyword_6());
                     			
 
                     }
@@ -416,7 +406,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePhase"
-    // InternalKPIGenerator.g:199:1: entryRulePhase returns [EObject current=null] : iv_rulePhase= rulePhase EOF ;
+    // InternalKPIGenerator.g:191:1: entryRulePhase returns [EObject current=null] : iv_rulePhase= rulePhase EOF ;
     public final EObject entryRulePhase() throws RecognitionException {
         EObject current = null;
 
@@ -424,8 +414,8 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalKPIGenerator.g:199:46: (iv_rulePhase= rulePhase EOF )
-            // InternalKPIGenerator.g:200:2: iv_rulePhase= rulePhase EOF
+            // InternalKPIGenerator.g:191:46: (iv_rulePhase= rulePhase EOF )
+            // InternalKPIGenerator.g:192:2: iv_rulePhase= rulePhase EOF
             {
              newCompositeNode(grammarAccess.getPhaseRule()); 
             pushFollow(FOLLOW_1);
@@ -452,32 +442,30 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePhase"
-    // InternalKPIGenerator.g:206:1: rulePhase returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_phaseName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"tasks\":[' ( (lv_tasks_5_0= ruleTask ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? ) ;
+    // InternalKPIGenerator.g:198:1: rulePhase returns [EObject current=null] : ( () otherlv_1= '{\"name\":\"' ( (lv_phaseName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"tasks\":[' ( (lv_tasks_4_0= ruleTask ) ) otherlv_5= ']}' (otherlv_6= ',' )? ) ;
     public final EObject rulePhase() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_phaseName_3_0=null;
-        Token otherlv_4=null;
+        Token lv_phaseName_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        EObject lv_tasks_5_0 = null;
+        EObject lv_tasks_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalKPIGenerator.g:212:2: ( ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_phaseName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"tasks\":[' ( (lv_tasks_5_0= ruleTask ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? ) )
-            // InternalKPIGenerator.g:213:2: ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_phaseName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"tasks\":[' ( (lv_tasks_5_0= ruleTask ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? )
+            // InternalKPIGenerator.g:204:2: ( ( () otherlv_1= '{\"name\":\"' ( (lv_phaseName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"tasks\":[' ( (lv_tasks_4_0= ruleTask ) ) otherlv_5= ']}' (otherlv_6= ',' )? ) )
+            // InternalKPIGenerator.g:205:2: ( () otherlv_1= '{\"name\":\"' ( (lv_phaseName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"tasks\":[' ( (lv_tasks_4_0= ruleTask ) ) otherlv_5= ']}' (otherlv_6= ',' )? )
             {
-            // InternalKPIGenerator.g:213:2: ( () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_phaseName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"tasks\":[' ( (lv_tasks_5_0= ruleTask ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )? )
-            // InternalKPIGenerator.g:214:3: () otherlv_1= '{' otherlv_2= '\"name\":\"' ( (lv_phaseName_3_0= RULE_CADENA ) ) otherlv_4= '\",\"tasks\":[' ( (lv_tasks_5_0= ruleTask ) ) otherlv_6= ']' otherlv_7= '}' (otherlv_8= ',' )?
+            // InternalKPIGenerator.g:205:2: ( () otherlv_1= '{\"name\":\"' ( (lv_phaseName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"tasks\":[' ( (lv_tasks_4_0= ruleTask ) ) otherlv_5= ']}' (otherlv_6= ',' )? )
+            // InternalKPIGenerator.g:206:3: () otherlv_1= '{\"name\":\"' ( (lv_phaseName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"tasks\":[' ( (lv_tasks_4_0= ruleTask ) ) otherlv_5= ']}' (otherlv_6= ',' )?
             {
-            // InternalKPIGenerator.g:214:3: ()
-            // InternalKPIGenerator.g:215:4: 
+            // InternalKPIGenerator.g:206:3: ()
+            // InternalKPIGenerator.g:207:4: 
             {
 
             				current = forceCreateModelElement(
@@ -489,21 +477,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,16,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getPhaseAccess().getLeftCurlyBracketKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getPhaseAccess().getNameKeyword_1());
             		
-            otherlv_2=(Token)match(input,17,FOLLOW_6); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getPhaseAccess().getNameKeyword_2());
-            		
-            // InternalKPIGenerator.g:229:3: ( (lv_phaseName_3_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:230:4: (lv_phaseName_3_0= RULE_CADENA )
+            // InternalKPIGenerator.g:217:3: ( (lv_phaseName_2_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:218:4: (lv_phaseName_2_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:230:4: (lv_phaseName_3_0= RULE_CADENA )
-            // InternalKPIGenerator.g:231:5: lv_phaseName_3_0= RULE_CADENA
+            // InternalKPIGenerator.g:218:4: (lv_phaseName_2_0= RULE_CADENA )
+            // InternalKPIGenerator.g:219:5: lv_phaseName_2_0= RULE_CADENA
             {
-            lv_phaseName_3_0=(Token)match(input,RULE_CADENA,FOLLOW_10); 
+            lv_phaseName_2_0=(Token)match(input,RULE_CADENA,FOLLOW_9); 
 
-            					newLeafNode(lv_phaseName_3_0, grammarAccess.getPhaseAccess().getPhaseNameCADENATerminalRuleCall_3_0());
+            					newLeafNode(lv_phaseName_2_0, grammarAccess.getPhaseAccess().getPhaseNameCADENATerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -512,7 +496,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"phaseName",
-            						lv_phaseName_3_0,
+            						lv_phaseName_2_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -521,21 +505,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,21,FOLLOW_3); 
+            otherlv_3=(Token)match(input,20,FOLLOW_10); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getPhaseAccess().getTasksKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getPhaseAccess().getTasksKeyword_3());
             		
-            // InternalKPIGenerator.g:251:3: ( (lv_tasks_5_0= ruleTask ) )
-            // InternalKPIGenerator.g:252:4: (lv_tasks_5_0= ruleTask )
+            // InternalKPIGenerator.g:239:3: ( (lv_tasks_4_0= ruleTask ) )
+            // InternalKPIGenerator.g:240:4: (lv_tasks_4_0= ruleTask )
             {
-            // InternalKPIGenerator.g:252:4: (lv_tasks_5_0= ruleTask )
-            // InternalKPIGenerator.g:253:5: lv_tasks_5_0= ruleTask
+            // InternalKPIGenerator.g:240:4: (lv_tasks_4_0= ruleTask )
+            // InternalKPIGenerator.g:241:5: lv_tasks_4_0= ruleTask
             {
 
-            					newCompositeNode(grammarAccess.getPhaseAccess().getTasksTaskParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getPhaseAccess().getTasksTaskParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_4);
-            lv_tasks_5_0=ruleTask();
+            pushFollow(FOLLOW_7);
+            lv_tasks_4_0=ruleTask();
 
             state._fsp--;
 
@@ -546,7 +530,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"tasks",
-            						lv_tasks_5_0,
+            						lv_tasks_4_0,
             						"co.edu.uniandes.KPIGenerator.Task");
             					afterParserOrEnumRuleCall();
             				
@@ -556,28 +540,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FOLLOW_8); 
+            otherlv_5=(Token)match(input,18,FOLLOW_8); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getPhaseAccess().getRightSquareBracketKeyword_6());
+            			newLeafNode(otherlv_5, grammarAccess.getPhaseAccess().getRightSquareBracketRightCurlyBracketKeyword_5());
             		
-            otherlv_7=(Token)match(input,19,FOLLOW_9); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getPhaseAccess().getRightCurlyBracketKeyword_7());
-            		
-            // InternalKPIGenerator.g:278:3: (otherlv_8= ',' )?
+            // InternalKPIGenerator.g:262:3: (otherlv_6= ',' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==20) ) {
+            if ( (LA2_0==19) ) {
                 alt2=1;
             }
             switch (alt2) {
                 case 1 :
-                    // InternalKPIGenerator.g:279:4: otherlv_8= ','
+                    // InternalKPIGenerator.g:263:4: otherlv_6= ','
                     {
-                    otherlv_8=(Token)match(input,20,FOLLOW_2); 
+                    otherlv_6=(Token)match(input,19,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getPhaseAccess().getCommaKeyword_8());
+                    				newLeafNode(otherlv_6, grammarAccess.getPhaseAccess().getCommaKeyword_6());
                     			
 
                     }
@@ -608,7 +588,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTask"
-    // InternalKPIGenerator.g:288:1: entryRuleTask returns [EObject current=null] : iv_ruleTask= ruleTask EOF ;
+    // InternalKPIGenerator.g:272:1: entryRuleTask returns [EObject current=null] : iv_ruleTask= ruleTask EOF ;
     public final EObject entryRuleTask() throws RecognitionException {
         EObject current = null;
 
@@ -616,8 +596,8 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalKPIGenerator.g:288:45: (iv_ruleTask= ruleTask EOF )
-            // InternalKPIGenerator.g:289:2: iv_ruleTask= ruleTask EOF
+            // InternalKPIGenerator.g:272:45: (iv_ruleTask= ruleTask EOF )
+            // InternalKPIGenerator.g:273:2: iv_ruleTask= ruleTask EOF
             {
              newCompositeNode(grammarAccess.getTaskRule()); 
             pushFollow(FOLLOW_1);
@@ -644,89 +624,70 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTask"
-    // InternalKPIGenerator.g:295:1: ruleTask returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= '\"id\":' ( (lv_taskId_3_0= RULE_INT ) ) otherlv_4= ',' otherlv_5= '\"name\":\"' ( (lv_taskName_6_0= RULE_CADENA ) ) otherlv_7= '\",' otherlv_8= '\"useCase\":\"' ( (lv_useCase_9_0= RULE_CADENA ) ) otherlv_10= '\",' otherlv_11= '\"sequenceNumber\":' ( (lv_sequenceNumber_12_0= RULE_INT ) ) otherlv_13= '.' this_INT_14= RULE_INT otherlv_15= ',' otherlv_16= '\"description\":\"' ( ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) ) ) otherlv_18= '\",' otherlv_19= '\"startDate\":\"' ( (lv_startDate_20_0= RULE_DATE ) ) otherlv_21= '\",' otherlv_22= '\"dueDate\":\"' ( (lv_dueDate_23_0= RULE_DATE ) ) otherlv_24= '\",' otherlv_25= '\"priority\":\"' ( ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) ) ) otherlv_27= '\",' otherlv_28= '\"isPrivate\":' ( (lv_isPrivate_29_0= RULE_CADENA ) ) otherlv_30= ',' otherlv_31= '\"progress\":' ( (lv_progress_32_0= RULE_INT ) ) otherlv_33= ',' otherlv_34= '\"status\":' ( (lv_status_35_0= ruleStatus ) ) otherlv_36= ',' otherlv_37= '\"assignedTo\":\"' ( (lv_assignedTo_38_0= RULE_CADENA ) ) otherlv_39= '\",' otherlv_40= '\"createdDate\":\"' ( (lv_createdDate_41_0= RULE_DATEHOUR ) ) otherlv_42= '\",' otherlv_43= '\"completedDate\":\"' ( ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) ) ) otherlv_45= '\",' otherlv_46= '\"timeLoggedMin\":' ( (lv_timeLoggedMin_47_0= RULE_INT ) ) otherlv_48= ',' otherlv_49= '\"billableTime\":' ( (lv_billableTime_50_0= RULE_INT ) ) otherlv_51= ',' otherlv_52= '\"completedOnTime\":' ( (lv_completedOnTime_53_0= RULE_CADENA ) ) otherlv_54= ',' otherlv_55= '\"timeEstimated\":' ( (lv_timeEstimated_56_0= RULE_INT ) ) otherlv_57= ',' otherlv_58= '\"tags\":\"' ( ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) ) ) otherlv_60= '}' (otherlv_61= ',' )? ) ;
+    // InternalKPIGenerator.g:279:1: ruleTask returns [EObject current=null] : ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_INT ) ) otherlv_9= '.' this_INT_10= RULE_INT otherlv_11= ',\"description\":\"' ( ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) ) ) otherlv_13= '\",\"startDate\":\"' ( (lv_startDate_14_0= RULE_DATE ) ) otherlv_15= '\",\"dueDate\":\"' ( (lv_dueDate_16_0= RULE_DATE ) ) otherlv_17= '\",\"priority\":\"' ( ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) ) ) otherlv_19= '\",\"isPrivate\":' ( (lv_isPrivate_20_0= RULE_CADENA ) ) otherlv_21= ',\"progress\":' ( (lv_progress_22_0= RULE_INT ) ) otherlv_23= ',\"status\":' ( (lv_status_24_0= ruleStatus ) ) otherlv_25= ',\"assignedTo\":\"' ( (lv_assignedTo_26_0= RULE_CADENA ) ) otherlv_27= '\",\"createdDate\":\"' ( (lv_createdDate_28_0= RULE_DATEHOUR ) ) otherlv_29= '\",\"completedDate\":\"' ( ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) ) ) otherlv_31= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_32_0= RULE_INT ) ) otherlv_33= ',\"billableTime\":' ( (lv_billableTime_34_0= RULE_INT ) ) otherlv_35= ',\"completedOnTime\":' ( (lv_completedOnTime_36_0= RULE_CADENA ) ) otherlv_37= ',\"timeEstimated\":' ( (lv_timeEstimated_38_0= RULE_INT ) ) otherlv_39= ',\"tags\":\"' ( ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) ) ) otherlv_41= '}' (otherlv_42= ',' )? ) ;
     public final EObject ruleTask() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_taskId_3_0=null;
-        Token otherlv_4=null;
+        Token lv_taskId_2_0=null;
+        Token otherlv_3=null;
+        Token lv_taskName_4_0=null;
         Token otherlv_5=null;
-        Token lv_taskName_6_0=null;
+        Token lv_useCase_6_0=null;
         Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token lv_useCase_9_0=null;
-        Token otherlv_10=null;
+        Token lv_sequenceNumber_8_0=null;
+        Token otherlv_9=null;
+        Token this_INT_10=null;
         Token otherlv_11=null;
-        Token lv_sequenceNumber_12_0=null;
+        Token lv_description_12_1=null;
+        Token lv_description_12_2=null;
         Token otherlv_13=null;
-        Token this_INT_14=null;
+        Token lv_startDate_14_0=null;
         Token otherlv_15=null;
-        Token otherlv_16=null;
-        Token lv_description_17_1=null;
-        Token lv_description_17_2=null;
-        Token otherlv_18=null;
+        Token lv_dueDate_16_0=null;
+        Token otherlv_17=null;
+        Token lv_priority_18_1=null;
+        Token lv_priority_18_2=null;
         Token otherlv_19=null;
-        Token lv_startDate_20_0=null;
+        Token lv_isPrivate_20_0=null;
         Token otherlv_21=null;
-        Token otherlv_22=null;
-        Token lv_dueDate_23_0=null;
-        Token otherlv_24=null;
+        Token lv_progress_22_0=null;
+        Token otherlv_23=null;
         Token otherlv_25=null;
-        Token lv_priority_26_1=null;
-        Token lv_priority_26_2=null;
+        Token lv_assignedTo_26_0=null;
         Token otherlv_27=null;
-        Token otherlv_28=null;
-        Token lv_isPrivate_29_0=null;
-        Token otherlv_30=null;
+        Token lv_createdDate_28_0=null;
+        Token otherlv_29=null;
+        Token lv_completedDate_30_1=null;
+        Token lv_completedDate_30_2=null;
         Token otherlv_31=null;
-        Token lv_progress_32_0=null;
+        Token lv_timeLoggedMin_32_0=null;
         Token otherlv_33=null;
-        Token otherlv_34=null;
-        Token otherlv_36=null;
+        Token lv_billableTime_34_0=null;
+        Token otherlv_35=null;
+        Token lv_completedOnTime_36_0=null;
         Token otherlv_37=null;
-        Token lv_assignedTo_38_0=null;
+        Token lv_timeEstimated_38_0=null;
         Token otherlv_39=null;
-        Token otherlv_40=null;
-        Token lv_createdDate_41_0=null;
+        Token lv_tags_40_1=null;
+        Token lv_tags_40_2=null;
+        Token otherlv_41=null;
         Token otherlv_42=null;
-        Token otherlv_43=null;
-        Token lv_completedDate_44_1=null;
-        Token lv_completedDate_44_2=null;
-        Token otherlv_45=null;
-        Token otherlv_46=null;
-        Token lv_timeLoggedMin_47_0=null;
-        Token otherlv_48=null;
-        Token otherlv_49=null;
-        Token lv_billableTime_50_0=null;
-        Token otherlv_51=null;
-        Token otherlv_52=null;
-        Token lv_completedOnTime_53_0=null;
-        Token otherlv_54=null;
-        Token otherlv_55=null;
-        Token lv_timeEstimated_56_0=null;
-        Token otherlv_57=null;
-        Token otherlv_58=null;
-        Token lv_tags_59_1=null;
-        Token lv_tags_59_2=null;
-        Token otherlv_60=null;
-        Token otherlv_61=null;
-        EObject lv_status_35_0 = null;
+        EObject lv_status_24_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalKPIGenerator.g:301:2: ( ( () otherlv_1= '{' otherlv_2= '\"id\":' ( (lv_taskId_3_0= RULE_INT ) ) otherlv_4= ',' otherlv_5= '\"name\":\"' ( (lv_taskName_6_0= RULE_CADENA ) ) otherlv_7= '\",' otherlv_8= '\"useCase\":\"' ( (lv_useCase_9_0= RULE_CADENA ) ) otherlv_10= '\",' otherlv_11= '\"sequenceNumber\":' ( (lv_sequenceNumber_12_0= RULE_INT ) ) otherlv_13= '.' this_INT_14= RULE_INT otherlv_15= ',' otherlv_16= '\"description\":\"' ( ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) ) ) otherlv_18= '\",' otherlv_19= '\"startDate\":\"' ( (lv_startDate_20_0= RULE_DATE ) ) otherlv_21= '\",' otherlv_22= '\"dueDate\":\"' ( (lv_dueDate_23_0= RULE_DATE ) ) otherlv_24= '\",' otherlv_25= '\"priority\":\"' ( ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) ) ) otherlv_27= '\",' otherlv_28= '\"isPrivate\":' ( (lv_isPrivate_29_0= RULE_CADENA ) ) otherlv_30= ',' otherlv_31= '\"progress\":' ( (lv_progress_32_0= RULE_INT ) ) otherlv_33= ',' otherlv_34= '\"status\":' ( (lv_status_35_0= ruleStatus ) ) otherlv_36= ',' otherlv_37= '\"assignedTo\":\"' ( (lv_assignedTo_38_0= RULE_CADENA ) ) otherlv_39= '\",' otherlv_40= '\"createdDate\":\"' ( (lv_createdDate_41_0= RULE_DATEHOUR ) ) otherlv_42= '\",' otherlv_43= '\"completedDate\":\"' ( ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) ) ) otherlv_45= '\",' otherlv_46= '\"timeLoggedMin\":' ( (lv_timeLoggedMin_47_0= RULE_INT ) ) otherlv_48= ',' otherlv_49= '\"billableTime\":' ( (lv_billableTime_50_0= RULE_INT ) ) otherlv_51= ',' otherlv_52= '\"completedOnTime\":' ( (lv_completedOnTime_53_0= RULE_CADENA ) ) otherlv_54= ',' otherlv_55= '\"timeEstimated\":' ( (lv_timeEstimated_56_0= RULE_INT ) ) otherlv_57= ',' otherlv_58= '\"tags\":\"' ( ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) ) ) otherlv_60= '}' (otherlv_61= ',' )? ) )
-            // InternalKPIGenerator.g:302:2: ( () otherlv_1= '{' otherlv_2= '\"id\":' ( (lv_taskId_3_0= RULE_INT ) ) otherlv_4= ',' otherlv_5= '\"name\":\"' ( (lv_taskName_6_0= RULE_CADENA ) ) otherlv_7= '\",' otherlv_8= '\"useCase\":\"' ( (lv_useCase_9_0= RULE_CADENA ) ) otherlv_10= '\",' otherlv_11= '\"sequenceNumber\":' ( (lv_sequenceNumber_12_0= RULE_INT ) ) otherlv_13= '.' this_INT_14= RULE_INT otherlv_15= ',' otherlv_16= '\"description\":\"' ( ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) ) ) otherlv_18= '\",' otherlv_19= '\"startDate\":\"' ( (lv_startDate_20_0= RULE_DATE ) ) otherlv_21= '\",' otherlv_22= '\"dueDate\":\"' ( (lv_dueDate_23_0= RULE_DATE ) ) otherlv_24= '\",' otherlv_25= '\"priority\":\"' ( ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) ) ) otherlv_27= '\",' otherlv_28= '\"isPrivate\":' ( (lv_isPrivate_29_0= RULE_CADENA ) ) otherlv_30= ',' otherlv_31= '\"progress\":' ( (lv_progress_32_0= RULE_INT ) ) otherlv_33= ',' otherlv_34= '\"status\":' ( (lv_status_35_0= ruleStatus ) ) otherlv_36= ',' otherlv_37= '\"assignedTo\":\"' ( (lv_assignedTo_38_0= RULE_CADENA ) ) otherlv_39= '\",' otherlv_40= '\"createdDate\":\"' ( (lv_createdDate_41_0= RULE_DATEHOUR ) ) otherlv_42= '\",' otherlv_43= '\"completedDate\":\"' ( ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) ) ) otherlv_45= '\",' otherlv_46= '\"timeLoggedMin\":' ( (lv_timeLoggedMin_47_0= RULE_INT ) ) otherlv_48= ',' otherlv_49= '\"billableTime\":' ( (lv_billableTime_50_0= RULE_INT ) ) otherlv_51= ',' otherlv_52= '\"completedOnTime\":' ( (lv_completedOnTime_53_0= RULE_CADENA ) ) otherlv_54= ',' otherlv_55= '\"timeEstimated\":' ( (lv_timeEstimated_56_0= RULE_INT ) ) otherlv_57= ',' otherlv_58= '\"tags\":\"' ( ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) ) ) otherlv_60= '}' (otherlv_61= ',' )? )
+            // InternalKPIGenerator.g:285:2: ( ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_INT ) ) otherlv_9= '.' this_INT_10= RULE_INT otherlv_11= ',\"description\":\"' ( ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) ) ) otherlv_13= '\",\"startDate\":\"' ( (lv_startDate_14_0= RULE_DATE ) ) otherlv_15= '\",\"dueDate\":\"' ( (lv_dueDate_16_0= RULE_DATE ) ) otherlv_17= '\",\"priority\":\"' ( ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) ) ) otherlv_19= '\",\"isPrivate\":' ( (lv_isPrivate_20_0= RULE_CADENA ) ) otherlv_21= ',\"progress\":' ( (lv_progress_22_0= RULE_INT ) ) otherlv_23= ',\"status\":' ( (lv_status_24_0= ruleStatus ) ) otherlv_25= ',\"assignedTo\":\"' ( (lv_assignedTo_26_0= RULE_CADENA ) ) otherlv_27= '\",\"createdDate\":\"' ( (lv_createdDate_28_0= RULE_DATEHOUR ) ) otherlv_29= '\",\"completedDate\":\"' ( ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) ) ) otherlv_31= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_32_0= RULE_INT ) ) otherlv_33= ',\"billableTime\":' ( (lv_billableTime_34_0= RULE_INT ) ) otherlv_35= ',\"completedOnTime\":' ( (lv_completedOnTime_36_0= RULE_CADENA ) ) otherlv_37= ',\"timeEstimated\":' ( (lv_timeEstimated_38_0= RULE_INT ) ) otherlv_39= ',\"tags\":\"' ( ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) ) ) otherlv_41= '}' (otherlv_42= ',' )? ) )
+            // InternalKPIGenerator.g:286:2: ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_INT ) ) otherlv_9= '.' this_INT_10= RULE_INT otherlv_11= ',\"description\":\"' ( ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) ) ) otherlv_13= '\",\"startDate\":\"' ( (lv_startDate_14_0= RULE_DATE ) ) otherlv_15= '\",\"dueDate\":\"' ( (lv_dueDate_16_0= RULE_DATE ) ) otherlv_17= '\",\"priority\":\"' ( ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) ) ) otherlv_19= '\",\"isPrivate\":' ( (lv_isPrivate_20_0= RULE_CADENA ) ) otherlv_21= ',\"progress\":' ( (lv_progress_22_0= RULE_INT ) ) otherlv_23= ',\"status\":' ( (lv_status_24_0= ruleStatus ) ) otherlv_25= ',\"assignedTo\":\"' ( (lv_assignedTo_26_0= RULE_CADENA ) ) otherlv_27= '\",\"createdDate\":\"' ( (lv_createdDate_28_0= RULE_DATEHOUR ) ) otherlv_29= '\",\"completedDate\":\"' ( ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) ) ) otherlv_31= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_32_0= RULE_INT ) ) otherlv_33= ',\"billableTime\":' ( (lv_billableTime_34_0= RULE_INT ) ) otherlv_35= ',\"completedOnTime\":' ( (lv_completedOnTime_36_0= RULE_CADENA ) ) otherlv_37= ',\"timeEstimated\":' ( (lv_timeEstimated_38_0= RULE_INT ) ) otherlv_39= ',\"tags\":\"' ( ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) ) ) otherlv_41= '}' (otherlv_42= ',' )? )
             {
-            // InternalKPIGenerator.g:302:2: ( () otherlv_1= '{' otherlv_2= '\"id\":' ( (lv_taskId_3_0= RULE_INT ) ) otherlv_4= ',' otherlv_5= '\"name\":\"' ( (lv_taskName_6_0= RULE_CADENA ) ) otherlv_7= '\",' otherlv_8= '\"useCase\":\"' ( (lv_useCase_9_0= RULE_CADENA ) ) otherlv_10= '\",' otherlv_11= '\"sequenceNumber\":' ( (lv_sequenceNumber_12_0= RULE_INT ) ) otherlv_13= '.' this_INT_14= RULE_INT otherlv_15= ',' otherlv_16= '\"description\":\"' ( ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) ) ) otherlv_18= '\",' otherlv_19= '\"startDate\":\"' ( (lv_startDate_20_0= RULE_DATE ) ) otherlv_21= '\",' otherlv_22= '\"dueDate\":\"' ( (lv_dueDate_23_0= RULE_DATE ) ) otherlv_24= '\",' otherlv_25= '\"priority\":\"' ( ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) ) ) otherlv_27= '\",' otherlv_28= '\"isPrivate\":' ( (lv_isPrivate_29_0= RULE_CADENA ) ) otherlv_30= ',' otherlv_31= '\"progress\":' ( (lv_progress_32_0= RULE_INT ) ) otherlv_33= ',' otherlv_34= '\"status\":' ( (lv_status_35_0= ruleStatus ) ) otherlv_36= ',' otherlv_37= '\"assignedTo\":\"' ( (lv_assignedTo_38_0= RULE_CADENA ) ) otherlv_39= '\",' otherlv_40= '\"createdDate\":\"' ( (lv_createdDate_41_0= RULE_DATEHOUR ) ) otherlv_42= '\",' otherlv_43= '\"completedDate\":\"' ( ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) ) ) otherlv_45= '\",' otherlv_46= '\"timeLoggedMin\":' ( (lv_timeLoggedMin_47_0= RULE_INT ) ) otherlv_48= ',' otherlv_49= '\"billableTime\":' ( (lv_billableTime_50_0= RULE_INT ) ) otherlv_51= ',' otherlv_52= '\"completedOnTime\":' ( (lv_completedOnTime_53_0= RULE_CADENA ) ) otherlv_54= ',' otherlv_55= '\"timeEstimated\":' ( (lv_timeEstimated_56_0= RULE_INT ) ) otherlv_57= ',' otherlv_58= '\"tags\":\"' ( ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) ) ) otherlv_60= '}' (otherlv_61= ',' )? )
-            // InternalKPIGenerator.g:303:3: () otherlv_1= '{' otherlv_2= '\"id\":' ( (lv_taskId_3_0= RULE_INT ) ) otherlv_4= ',' otherlv_5= '\"name\":\"' ( (lv_taskName_6_0= RULE_CADENA ) ) otherlv_7= '\",' otherlv_8= '\"useCase\":\"' ( (lv_useCase_9_0= RULE_CADENA ) ) otherlv_10= '\",' otherlv_11= '\"sequenceNumber\":' ( (lv_sequenceNumber_12_0= RULE_INT ) ) otherlv_13= '.' this_INT_14= RULE_INT otherlv_15= ',' otherlv_16= '\"description\":\"' ( ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) ) ) otherlv_18= '\",' otherlv_19= '\"startDate\":\"' ( (lv_startDate_20_0= RULE_DATE ) ) otherlv_21= '\",' otherlv_22= '\"dueDate\":\"' ( (lv_dueDate_23_0= RULE_DATE ) ) otherlv_24= '\",' otherlv_25= '\"priority\":\"' ( ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) ) ) otherlv_27= '\",' otherlv_28= '\"isPrivate\":' ( (lv_isPrivate_29_0= RULE_CADENA ) ) otherlv_30= ',' otherlv_31= '\"progress\":' ( (lv_progress_32_0= RULE_INT ) ) otherlv_33= ',' otherlv_34= '\"status\":' ( (lv_status_35_0= ruleStatus ) ) otherlv_36= ',' otherlv_37= '\"assignedTo\":\"' ( (lv_assignedTo_38_0= RULE_CADENA ) ) otherlv_39= '\",' otherlv_40= '\"createdDate\":\"' ( (lv_createdDate_41_0= RULE_DATEHOUR ) ) otherlv_42= '\",' otherlv_43= '\"completedDate\":\"' ( ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) ) ) otherlv_45= '\",' otherlv_46= '\"timeLoggedMin\":' ( (lv_timeLoggedMin_47_0= RULE_INT ) ) otherlv_48= ',' otherlv_49= '\"billableTime\":' ( (lv_billableTime_50_0= RULE_INT ) ) otherlv_51= ',' otherlv_52= '\"completedOnTime\":' ( (lv_completedOnTime_53_0= RULE_CADENA ) ) otherlv_54= ',' otherlv_55= '\"timeEstimated\":' ( (lv_timeEstimated_56_0= RULE_INT ) ) otherlv_57= ',' otherlv_58= '\"tags\":\"' ( ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) ) ) otherlv_60= '}' (otherlv_61= ',' )?
+            // InternalKPIGenerator.g:286:2: ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_INT ) ) otherlv_9= '.' this_INT_10= RULE_INT otherlv_11= ',\"description\":\"' ( ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) ) ) otherlv_13= '\",\"startDate\":\"' ( (lv_startDate_14_0= RULE_DATE ) ) otherlv_15= '\",\"dueDate\":\"' ( (lv_dueDate_16_0= RULE_DATE ) ) otherlv_17= '\",\"priority\":\"' ( ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) ) ) otherlv_19= '\",\"isPrivate\":' ( (lv_isPrivate_20_0= RULE_CADENA ) ) otherlv_21= ',\"progress\":' ( (lv_progress_22_0= RULE_INT ) ) otherlv_23= ',\"status\":' ( (lv_status_24_0= ruleStatus ) ) otherlv_25= ',\"assignedTo\":\"' ( (lv_assignedTo_26_0= RULE_CADENA ) ) otherlv_27= '\",\"createdDate\":\"' ( (lv_createdDate_28_0= RULE_DATEHOUR ) ) otherlv_29= '\",\"completedDate\":\"' ( ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) ) ) otherlv_31= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_32_0= RULE_INT ) ) otherlv_33= ',\"billableTime\":' ( (lv_billableTime_34_0= RULE_INT ) ) otherlv_35= ',\"completedOnTime\":' ( (lv_completedOnTime_36_0= RULE_CADENA ) ) otherlv_37= ',\"timeEstimated\":' ( (lv_timeEstimated_38_0= RULE_INT ) ) otherlv_39= ',\"tags\":\"' ( ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) ) ) otherlv_41= '}' (otherlv_42= ',' )? )
+            // InternalKPIGenerator.g:287:3: () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_INT ) ) otherlv_9= '.' this_INT_10= RULE_INT otherlv_11= ',\"description\":\"' ( ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) ) ) otherlv_13= '\",\"startDate\":\"' ( (lv_startDate_14_0= RULE_DATE ) ) otherlv_15= '\",\"dueDate\":\"' ( (lv_dueDate_16_0= RULE_DATE ) ) otherlv_17= '\",\"priority\":\"' ( ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) ) ) otherlv_19= '\",\"isPrivate\":' ( (lv_isPrivate_20_0= RULE_CADENA ) ) otherlv_21= ',\"progress\":' ( (lv_progress_22_0= RULE_INT ) ) otherlv_23= ',\"status\":' ( (lv_status_24_0= ruleStatus ) ) otherlv_25= ',\"assignedTo\":\"' ( (lv_assignedTo_26_0= RULE_CADENA ) ) otherlv_27= '\",\"createdDate\":\"' ( (lv_createdDate_28_0= RULE_DATEHOUR ) ) otherlv_29= '\",\"completedDate\":\"' ( ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) ) ) otherlv_31= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_32_0= RULE_INT ) ) otherlv_33= ',\"billableTime\":' ( (lv_billableTime_34_0= RULE_INT ) ) otherlv_35= ',\"completedOnTime\":' ( (lv_completedOnTime_36_0= RULE_CADENA ) ) otherlv_37= ',\"timeEstimated\":' ( (lv_timeEstimated_38_0= RULE_INT ) ) otherlv_39= ',\"tags\":\"' ( ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) ) ) otherlv_41= '}' (otherlv_42= ',' )?
             {
-            // InternalKPIGenerator.g:303:3: ()
-            // InternalKPIGenerator.g:304:4: 
+            // InternalKPIGenerator.g:287:3: ()
+            // InternalKPIGenerator.g:288:4: 
             {
 
             				current = forceCreateModelElement(
@@ -736,23 +697,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_11); 
+            otherlv_1=(Token)match(input,21,FOLLOW_11); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getTaskAccess().getLeftCurlyBracketKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getTaskAccess().getIdKeyword_1());
             		
-            otherlv_2=(Token)match(input,22,FOLLOW_12); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getTaskAccess().getIdKeyword_2());
-            		
-            // InternalKPIGenerator.g:318:3: ( (lv_taskId_3_0= RULE_INT ) )
-            // InternalKPIGenerator.g:319:4: (lv_taskId_3_0= RULE_INT )
+            // InternalKPIGenerator.g:298:3: ( (lv_taskId_2_0= RULE_INT ) )
+            // InternalKPIGenerator.g:299:4: (lv_taskId_2_0= RULE_INT )
             {
-            // InternalKPIGenerator.g:319:4: (lv_taskId_3_0= RULE_INT )
-            // InternalKPIGenerator.g:320:5: lv_taskId_3_0= RULE_INT
+            // InternalKPIGenerator.g:299:4: (lv_taskId_2_0= RULE_INT )
+            // InternalKPIGenerator.g:300:5: lv_taskId_2_0= RULE_INT
             {
-            lv_taskId_3_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            lv_taskId_2_0=(Token)match(input,RULE_INT,FOLLOW_12); 
 
-            					newLeafNode(lv_taskId_3_0, grammarAccess.getTaskAccess().getTaskIdINTTerminalRuleCall_3_0());
+            					newLeafNode(lv_taskId_2_0, grammarAccess.getTaskAccess().getTaskIdINTTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -761,7 +718,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"taskId",
-            						lv_taskId_3_0,
+            						lv_taskId_2_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -770,23 +727,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,20,FOLLOW_5); 
+            otherlv_3=(Token)match(input,22,FOLLOW_5); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getTaskAccess().getCommaKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getTaskAccess().getNameKeyword_3());
             		
-            otherlv_5=(Token)match(input,17,FOLLOW_6); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getTaskAccess().getNameKeyword_5());
-            		
-            // InternalKPIGenerator.g:344:3: ( (lv_taskName_6_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:345:4: (lv_taskName_6_0= RULE_CADENA )
+            // InternalKPIGenerator.g:320:3: ( (lv_taskName_4_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:321:4: (lv_taskName_4_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:345:4: (lv_taskName_6_0= RULE_CADENA )
-            // InternalKPIGenerator.g:346:5: lv_taskName_6_0= RULE_CADENA
+            // InternalKPIGenerator.g:321:4: (lv_taskName_4_0= RULE_CADENA )
+            // InternalKPIGenerator.g:322:5: lv_taskName_4_0= RULE_CADENA
             {
-            lv_taskName_6_0=(Token)match(input,RULE_CADENA,FOLLOW_14); 
+            lv_taskName_4_0=(Token)match(input,RULE_CADENA,FOLLOW_13); 
 
-            					newLeafNode(lv_taskName_6_0, grammarAccess.getTaskAccess().getTaskNameCADENATerminalRuleCall_6_0());
+            					newLeafNode(lv_taskName_4_0, grammarAccess.getTaskAccess().getTaskNameCADENATerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -795,7 +748,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"taskName",
-            						lv_taskName_6_0,
+            						lv_taskName_4_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -804,23 +757,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,23,FOLLOW_15); 
+            otherlv_5=(Token)match(input,23,FOLLOW_5); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_7());
+            			newLeafNode(otherlv_5, grammarAccess.getTaskAccess().getUseCaseKeyword_5());
             		
-            otherlv_8=(Token)match(input,24,FOLLOW_6); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getTaskAccess().getUseCaseKeyword_8());
-            		
-            // InternalKPIGenerator.g:370:3: ( (lv_useCase_9_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:371:4: (lv_useCase_9_0= RULE_CADENA )
+            // InternalKPIGenerator.g:342:3: ( (lv_useCase_6_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:343:4: (lv_useCase_6_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:371:4: (lv_useCase_9_0= RULE_CADENA )
-            // InternalKPIGenerator.g:372:5: lv_useCase_9_0= RULE_CADENA
+            // InternalKPIGenerator.g:343:4: (lv_useCase_6_0= RULE_CADENA )
+            // InternalKPIGenerator.g:344:5: lv_useCase_6_0= RULE_CADENA
             {
-            lv_useCase_9_0=(Token)match(input,RULE_CADENA,FOLLOW_14); 
+            lv_useCase_6_0=(Token)match(input,RULE_CADENA,FOLLOW_14); 
 
-            					newLeafNode(lv_useCase_9_0, grammarAccess.getTaskAccess().getUseCaseCADENATerminalRuleCall_9_0());
+            					newLeafNode(lv_useCase_6_0, grammarAccess.getTaskAccess().getUseCaseCADENATerminalRuleCall_6_0());
             				
 
             					if (current==null) {
@@ -829,7 +778,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"useCase",
-            						lv_useCase_9_0,
+            						lv_useCase_6_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -838,23 +787,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,23,FOLLOW_16); 
+            otherlv_7=(Token)match(input,24,FOLLOW_11); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_10());
+            			newLeafNode(otherlv_7, grammarAccess.getTaskAccess().getSequenceNumberKeyword_7());
             		
-            otherlv_11=(Token)match(input,25,FOLLOW_12); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getTaskAccess().getSequenceNumberKeyword_11());
-            		
-            // InternalKPIGenerator.g:396:3: ( (lv_sequenceNumber_12_0= RULE_INT ) )
-            // InternalKPIGenerator.g:397:4: (lv_sequenceNumber_12_0= RULE_INT )
+            // InternalKPIGenerator.g:364:3: ( (lv_sequenceNumber_8_0= RULE_INT ) )
+            // InternalKPIGenerator.g:365:4: (lv_sequenceNumber_8_0= RULE_INT )
             {
-            // InternalKPIGenerator.g:397:4: (lv_sequenceNumber_12_0= RULE_INT )
-            // InternalKPIGenerator.g:398:5: lv_sequenceNumber_12_0= RULE_INT
+            // InternalKPIGenerator.g:365:4: (lv_sequenceNumber_8_0= RULE_INT )
+            // InternalKPIGenerator.g:366:5: lv_sequenceNumber_8_0= RULE_INT
             {
-            lv_sequenceNumber_12_0=(Token)match(input,RULE_INT,FOLLOW_17); 
+            lv_sequenceNumber_8_0=(Token)match(input,RULE_INT,FOLLOW_15); 
 
-            					newLeafNode(lv_sequenceNumber_12_0, grammarAccess.getTaskAccess().getSequenceNumberINTTerminalRuleCall_12_0());
+            					newLeafNode(lv_sequenceNumber_8_0, grammarAccess.getTaskAccess().getSequenceNumberINTTerminalRuleCall_8_0());
             				
 
             					if (current==null) {
@@ -863,7 +808,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"sequenceNumber",
-            						lv_sequenceNumber_12_0,
+            						lv_sequenceNumber_8_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -872,36 +817,32 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_13=(Token)match(input,26,FOLLOW_12); 
+            otherlv_9=(Token)match(input,25,FOLLOW_11); 
 
-            			newLeafNode(otherlv_13, grammarAccess.getTaskAccess().getFullStopKeyword_13());
+            			newLeafNode(otherlv_9, grammarAccess.getTaskAccess().getFullStopKeyword_9());
             		
-            this_INT_14=(Token)match(input,RULE_INT,FOLLOW_13); 
+            this_INT_10=(Token)match(input,RULE_INT,FOLLOW_16); 
 
-            			newLeafNode(this_INT_14, grammarAccess.getTaskAccess().getINTTerminalRuleCall_14());
+            			newLeafNode(this_INT_10, grammarAccess.getTaskAccess().getINTTerminalRuleCall_10());
             		
-            otherlv_15=(Token)match(input,20,FOLLOW_18); 
+            otherlv_11=(Token)match(input,26,FOLLOW_17); 
 
-            			newLeafNode(otherlv_15, grammarAccess.getTaskAccess().getCommaKeyword_15());
+            			newLeafNode(otherlv_11, grammarAccess.getTaskAccess().getDescriptionKeyword_11());
             		
-            otherlv_16=(Token)match(input,27,FOLLOW_19); 
-
-            			newLeafNode(otherlv_16, grammarAccess.getTaskAccess().getDescriptionKeyword_16());
-            		
-            // InternalKPIGenerator.g:430:3: ( ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) ) )
-            // InternalKPIGenerator.g:431:4: ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) )
+            // InternalKPIGenerator.g:394:3: ( ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) ) )
+            // InternalKPIGenerator.g:395:4: ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) )
             {
-            // InternalKPIGenerator.g:431:4: ( (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' ) )
-            // InternalKPIGenerator.g:432:5: (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' )
+            // InternalKPIGenerator.g:395:4: ( (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' ) )
+            // InternalKPIGenerator.g:396:5: (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' )
             {
-            // InternalKPIGenerator.g:432:5: (lv_description_17_1= RULE_CADENA | lv_description_17_2= '\"\"' )
+            // InternalKPIGenerator.g:396:5: (lv_description_12_1= RULE_CADENA | lv_description_12_2= '\"\"' )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
             if ( (LA3_0==RULE_CADENA) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==28) ) {
+            else if ( (LA3_0==27) ) {
                 alt3=2;
             }
             else {
@@ -912,11 +853,11 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalKPIGenerator.g:433:6: lv_description_17_1= RULE_CADENA
+                    // InternalKPIGenerator.g:397:6: lv_description_12_1= RULE_CADENA
                     {
-                    lv_description_17_1=(Token)match(input,RULE_CADENA,FOLLOW_14); 
+                    lv_description_12_1=(Token)match(input,RULE_CADENA,FOLLOW_18); 
 
-                    						newLeafNode(lv_description_17_1, grammarAccess.getTaskAccess().getDescriptionCADENATerminalRuleCall_17_0_0());
+                    						newLeafNode(lv_description_12_1, grammarAccess.getTaskAccess().getDescriptionCADENATerminalRuleCall_12_0_0());
                     					
 
                     						if (current==null) {
@@ -925,24 +866,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"description",
-                    							lv_description_17_1,
+                    							lv_description_12_1,
                     							"co.edu.uniandes.KPIGenerator.CADENA");
                     					
 
                     }
                     break;
                 case 2 :
-                    // InternalKPIGenerator.g:448:6: lv_description_17_2= '\"\"'
+                    // InternalKPIGenerator.g:412:6: lv_description_12_2= '\"\"'
                     {
-                    lv_description_17_2=(Token)match(input,28,FOLLOW_14); 
+                    lv_description_12_2=(Token)match(input,27,FOLLOW_18); 
 
-                    						newLeafNode(lv_description_17_2, grammarAccess.getTaskAccess().getDescriptionQuotationMarkQuotationMarkKeyword_17_0_1());
+                    						newLeafNode(lv_description_12_2, grammarAccess.getTaskAccess().getDescriptionQuotationMarkQuotationMarkKeyword_12_0_1());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getTaskRule());
                     						}
-                    						setWithLastConsumed(current, "description", lv_description_17_2, null);
+                    						setWithLastConsumed(current, "description", lv_description_12_2, null);
                     					
 
                     }
@@ -956,23 +897,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,23,FOLLOW_20); 
+            otherlv_13=(Token)match(input,28,FOLLOW_19); 
 
-            			newLeafNode(otherlv_18, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_18());
+            			newLeafNode(otherlv_13, grammarAccess.getTaskAccess().getStartDateKeyword_13());
             		
-            otherlv_19=(Token)match(input,29,FOLLOW_21); 
-
-            			newLeafNode(otherlv_19, grammarAccess.getTaskAccess().getStartDateKeyword_19());
-            		
-            // InternalKPIGenerator.g:469:3: ( (lv_startDate_20_0= RULE_DATE ) )
-            // InternalKPIGenerator.g:470:4: (lv_startDate_20_0= RULE_DATE )
+            // InternalKPIGenerator.g:429:3: ( (lv_startDate_14_0= RULE_DATE ) )
+            // InternalKPIGenerator.g:430:4: (lv_startDate_14_0= RULE_DATE )
             {
-            // InternalKPIGenerator.g:470:4: (lv_startDate_20_0= RULE_DATE )
-            // InternalKPIGenerator.g:471:5: lv_startDate_20_0= RULE_DATE
+            // InternalKPIGenerator.g:430:4: (lv_startDate_14_0= RULE_DATE )
+            // InternalKPIGenerator.g:431:5: lv_startDate_14_0= RULE_DATE
             {
-            lv_startDate_20_0=(Token)match(input,RULE_DATE,FOLLOW_14); 
+            lv_startDate_14_0=(Token)match(input,RULE_DATE,FOLLOW_20); 
 
-            					newLeafNode(lv_startDate_20_0, grammarAccess.getTaskAccess().getStartDateDATETerminalRuleCall_20_0());
+            					newLeafNode(lv_startDate_14_0, grammarAccess.getTaskAccess().getStartDateDATETerminalRuleCall_14_0());
             				
 
             					if (current==null) {
@@ -981,7 +918,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"startDate",
-            						lv_startDate_20_0,
+            						lv_startDate_14_0,
             						"co.edu.uniandes.KPIGenerator.DATE");
             				
 
@@ -990,23 +927,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_21=(Token)match(input,23,FOLLOW_22); 
+            otherlv_15=(Token)match(input,29,FOLLOW_19); 
 
-            			newLeafNode(otherlv_21, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_21());
+            			newLeafNode(otherlv_15, grammarAccess.getTaskAccess().getDueDateKeyword_15());
             		
-            otherlv_22=(Token)match(input,30,FOLLOW_21); 
-
-            			newLeafNode(otherlv_22, grammarAccess.getTaskAccess().getDueDateKeyword_22());
-            		
-            // InternalKPIGenerator.g:495:3: ( (lv_dueDate_23_0= RULE_DATE ) )
-            // InternalKPIGenerator.g:496:4: (lv_dueDate_23_0= RULE_DATE )
+            // InternalKPIGenerator.g:451:3: ( (lv_dueDate_16_0= RULE_DATE ) )
+            // InternalKPIGenerator.g:452:4: (lv_dueDate_16_0= RULE_DATE )
             {
-            // InternalKPIGenerator.g:496:4: (lv_dueDate_23_0= RULE_DATE )
-            // InternalKPIGenerator.g:497:5: lv_dueDate_23_0= RULE_DATE
+            // InternalKPIGenerator.g:452:4: (lv_dueDate_16_0= RULE_DATE )
+            // InternalKPIGenerator.g:453:5: lv_dueDate_16_0= RULE_DATE
             {
-            lv_dueDate_23_0=(Token)match(input,RULE_DATE,FOLLOW_14); 
+            lv_dueDate_16_0=(Token)match(input,RULE_DATE,FOLLOW_21); 
 
-            					newLeafNode(lv_dueDate_23_0, grammarAccess.getTaskAccess().getDueDateDATETerminalRuleCall_23_0());
+            					newLeafNode(lv_dueDate_16_0, grammarAccess.getTaskAccess().getDueDateDATETerminalRuleCall_16_0());
             				
 
             					if (current==null) {
@@ -1015,7 +948,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"dueDate",
-            						lv_dueDate_23_0,
+            						lv_dueDate_16_0,
             						"co.edu.uniandes.KPIGenerator.DATE");
             				
 
@@ -1024,28 +957,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_24=(Token)match(input,23,FOLLOW_23); 
+            otherlv_17=(Token)match(input,30,FOLLOW_17); 
 
-            			newLeafNode(otherlv_24, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_24());
+            			newLeafNode(otherlv_17, grammarAccess.getTaskAccess().getPriorityKeyword_17());
             		
-            otherlv_25=(Token)match(input,31,FOLLOW_19); 
-
-            			newLeafNode(otherlv_25, grammarAccess.getTaskAccess().getPriorityKeyword_25());
-            		
-            // InternalKPIGenerator.g:521:3: ( ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) ) )
-            // InternalKPIGenerator.g:522:4: ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) )
+            // InternalKPIGenerator.g:473:3: ( ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) ) )
+            // InternalKPIGenerator.g:474:4: ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) )
             {
-            // InternalKPIGenerator.g:522:4: ( (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' ) )
-            // InternalKPIGenerator.g:523:5: (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' )
+            // InternalKPIGenerator.g:474:4: ( (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' ) )
+            // InternalKPIGenerator.g:475:5: (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' )
             {
-            // InternalKPIGenerator.g:523:5: (lv_priority_26_1= RULE_CADENA | lv_priority_26_2= '\"\"' )
+            // InternalKPIGenerator.g:475:5: (lv_priority_18_1= RULE_CADENA | lv_priority_18_2= '\"\"' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
             if ( (LA4_0==RULE_CADENA) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==28) ) {
+            else if ( (LA4_0==27) ) {
                 alt4=2;
             }
             else {
@@ -1056,11 +985,11 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalKPIGenerator.g:524:6: lv_priority_26_1= RULE_CADENA
+                    // InternalKPIGenerator.g:476:6: lv_priority_18_1= RULE_CADENA
                     {
-                    lv_priority_26_1=(Token)match(input,RULE_CADENA,FOLLOW_14); 
+                    lv_priority_18_1=(Token)match(input,RULE_CADENA,FOLLOW_22); 
 
-                    						newLeafNode(lv_priority_26_1, grammarAccess.getTaskAccess().getPriorityCADENATerminalRuleCall_26_0_0());
+                    						newLeafNode(lv_priority_18_1, grammarAccess.getTaskAccess().getPriorityCADENATerminalRuleCall_18_0_0());
                     					
 
                     						if (current==null) {
@@ -1069,24 +998,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"priority",
-                    							lv_priority_26_1,
+                    							lv_priority_18_1,
                     							"co.edu.uniandes.KPIGenerator.CADENA");
                     					
 
                     }
                     break;
                 case 2 :
-                    // InternalKPIGenerator.g:539:6: lv_priority_26_2= '\"\"'
+                    // InternalKPIGenerator.g:491:6: lv_priority_18_2= '\"\"'
                     {
-                    lv_priority_26_2=(Token)match(input,28,FOLLOW_14); 
+                    lv_priority_18_2=(Token)match(input,27,FOLLOW_22); 
 
-                    						newLeafNode(lv_priority_26_2, grammarAccess.getTaskAccess().getPriorityQuotationMarkQuotationMarkKeyword_26_0_1());
+                    						newLeafNode(lv_priority_18_2, grammarAccess.getTaskAccess().getPriorityQuotationMarkQuotationMarkKeyword_18_0_1());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getTaskRule());
                     						}
-                    						setWithLastConsumed(current, "priority", lv_priority_26_2, null);
+                    						setWithLastConsumed(current, "priority", lv_priority_18_2, null);
                     					
 
                     }
@@ -1100,23 +1029,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_27=(Token)match(input,23,FOLLOW_24); 
+            otherlv_19=(Token)match(input,31,FOLLOW_5); 
 
-            			newLeafNode(otherlv_27, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_27());
+            			newLeafNode(otherlv_19, grammarAccess.getTaskAccess().getIsPrivateKeyword_19());
             		
-            otherlv_28=(Token)match(input,32,FOLLOW_6); 
-
-            			newLeafNode(otherlv_28, grammarAccess.getTaskAccess().getIsPrivateKeyword_28());
-            		
-            // InternalKPIGenerator.g:560:3: ( (lv_isPrivate_29_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:561:4: (lv_isPrivate_29_0= RULE_CADENA )
+            // InternalKPIGenerator.g:508:3: ( (lv_isPrivate_20_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:509:4: (lv_isPrivate_20_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:561:4: (lv_isPrivate_29_0= RULE_CADENA )
-            // InternalKPIGenerator.g:562:5: lv_isPrivate_29_0= RULE_CADENA
+            // InternalKPIGenerator.g:509:4: (lv_isPrivate_20_0= RULE_CADENA )
+            // InternalKPIGenerator.g:510:5: lv_isPrivate_20_0= RULE_CADENA
             {
-            lv_isPrivate_29_0=(Token)match(input,RULE_CADENA,FOLLOW_13); 
+            lv_isPrivate_20_0=(Token)match(input,RULE_CADENA,FOLLOW_23); 
 
-            					newLeafNode(lv_isPrivate_29_0, grammarAccess.getTaskAccess().getIsPrivateCADENATerminalRuleCall_29_0());
+            					newLeafNode(lv_isPrivate_20_0, grammarAccess.getTaskAccess().getIsPrivateCADENATerminalRuleCall_20_0());
             				
 
             					if (current==null) {
@@ -1125,7 +1050,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"isPrivate",
-            						lv_isPrivate_29_0,
+            						lv_isPrivate_20_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -1134,23 +1059,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_30=(Token)match(input,20,FOLLOW_25); 
+            otherlv_21=(Token)match(input,32,FOLLOW_11); 
 
-            			newLeafNode(otherlv_30, grammarAccess.getTaskAccess().getCommaKeyword_30());
+            			newLeafNode(otherlv_21, grammarAccess.getTaskAccess().getProgressKeyword_21());
             		
-            otherlv_31=(Token)match(input,33,FOLLOW_12); 
-
-            			newLeafNode(otherlv_31, grammarAccess.getTaskAccess().getProgressKeyword_31());
-            		
-            // InternalKPIGenerator.g:586:3: ( (lv_progress_32_0= RULE_INT ) )
-            // InternalKPIGenerator.g:587:4: (lv_progress_32_0= RULE_INT )
+            // InternalKPIGenerator.g:530:3: ( (lv_progress_22_0= RULE_INT ) )
+            // InternalKPIGenerator.g:531:4: (lv_progress_22_0= RULE_INT )
             {
-            // InternalKPIGenerator.g:587:4: (lv_progress_32_0= RULE_INT )
-            // InternalKPIGenerator.g:588:5: lv_progress_32_0= RULE_INT
+            // InternalKPIGenerator.g:531:4: (lv_progress_22_0= RULE_INT )
+            // InternalKPIGenerator.g:532:5: lv_progress_22_0= RULE_INT
             {
-            lv_progress_32_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            lv_progress_22_0=(Token)match(input,RULE_INT,FOLLOW_24); 
 
-            					newLeafNode(lv_progress_32_0, grammarAccess.getTaskAccess().getProgressINTTerminalRuleCall_32_0());
+            					newLeafNode(lv_progress_22_0, grammarAccess.getTaskAccess().getProgressINTTerminalRuleCall_22_0());
             				
 
             					if (current==null) {
@@ -1159,7 +1080,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"progress",
-            						lv_progress_32_0,
+            						lv_progress_22_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1168,25 +1089,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_33=(Token)match(input,20,FOLLOW_26); 
+            otherlv_23=(Token)match(input,33,FOLLOW_25); 
 
-            			newLeafNode(otherlv_33, grammarAccess.getTaskAccess().getCommaKeyword_33());
+            			newLeafNode(otherlv_23, grammarAccess.getTaskAccess().getStatusKeyword_23());
             		
-            otherlv_34=(Token)match(input,34,FOLLOW_3); 
-
-            			newLeafNode(otherlv_34, grammarAccess.getTaskAccess().getStatusKeyword_34());
-            		
-            // InternalKPIGenerator.g:612:3: ( (lv_status_35_0= ruleStatus ) )
-            // InternalKPIGenerator.g:613:4: (lv_status_35_0= ruleStatus )
+            // InternalKPIGenerator.g:552:3: ( (lv_status_24_0= ruleStatus ) )
+            // InternalKPIGenerator.g:553:4: (lv_status_24_0= ruleStatus )
             {
-            // InternalKPIGenerator.g:613:4: (lv_status_35_0= ruleStatus )
-            // InternalKPIGenerator.g:614:5: lv_status_35_0= ruleStatus
+            // InternalKPIGenerator.g:553:4: (lv_status_24_0= ruleStatus )
+            // InternalKPIGenerator.g:554:5: lv_status_24_0= ruleStatus
             {
 
-            					newCompositeNode(grammarAccess.getTaskAccess().getStatusStatusParserRuleCall_35_0());
+            					newCompositeNode(grammarAccess.getTaskAccess().getStatusStatusParserRuleCall_24_0());
             				
-            pushFollow(FOLLOW_13);
-            lv_status_35_0=ruleStatus();
+            pushFollow(FOLLOW_26);
+            lv_status_24_0=ruleStatus();
 
             state._fsp--;
 
@@ -1197,7 +1114,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"status",
-            						lv_status_35_0,
+            						lv_status_24_0,
             						"co.edu.uniandes.KPIGenerator.Status");
             					afterParserOrEnumRuleCall();
             				
@@ -1207,23 +1124,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_36=(Token)match(input,20,FOLLOW_27); 
+            otherlv_25=(Token)match(input,34,FOLLOW_5); 
 
-            			newLeafNode(otherlv_36, grammarAccess.getTaskAccess().getCommaKeyword_36());
+            			newLeafNode(otherlv_25, grammarAccess.getTaskAccess().getAssignedToKeyword_25());
             		
-            otherlv_37=(Token)match(input,35,FOLLOW_6); 
-
-            			newLeafNode(otherlv_37, grammarAccess.getTaskAccess().getAssignedToKeyword_37());
-            		
-            // InternalKPIGenerator.g:639:3: ( (lv_assignedTo_38_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:640:4: (lv_assignedTo_38_0= RULE_CADENA )
+            // InternalKPIGenerator.g:575:3: ( (lv_assignedTo_26_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:576:4: (lv_assignedTo_26_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:640:4: (lv_assignedTo_38_0= RULE_CADENA )
-            // InternalKPIGenerator.g:641:5: lv_assignedTo_38_0= RULE_CADENA
+            // InternalKPIGenerator.g:576:4: (lv_assignedTo_26_0= RULE_CADENA )
+            // InternalKPIGenerator.g:577:5: lv_assignedTo_26_0= RULE_CADENA
             {
-            lv_assignedTo_38_0=(Token)match(input,RULE_CADENA,FOLLOW_14); 
+            lv_assignedTo_26_0=(Token)match(input,RULE_CADENA,FOLLOW_27); 
 
-            					newLeafNode(lv_assignedTo_38_0, grammarAccess.getTaskAccess().getAssignedToCADENATerminalRuleCall_38_0());
+            					newLeafNode(lv_assignedTo_26_0, grammarAccess.getTaskAccess().getAssignedToCADENATerminalRuleCall_26_0());
             				
 
             					if (current==null) {
@@ -1232,7 +1145,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"assignedTo",
-            						lv_assignedTo_38_0,
+            						lv_assignedTo_26_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -1241,23 +1154,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_39=(Token)match(input,23,FOLLOW_28); 
+            otherlv_27=(Token)match(input,35,FOLLOW_28); 
 
-            			newLeafNode(otherlv_39, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_39());
+            			newLeafNode(otherlv_27, grammarAccess.getTaskAccess().getCreatedDateKeyword_27());
             		
-            otherlv_40=(Token)match(input,36,FOLLOW_29); 
-
-            			newLeafNode(otherlv_40, grammarAccess.getTaskAccess().getCreatedDateKeyword_40());
-            		
-            // InternalKPIGenerator.g:665:3: ( (lv_createdDate_41_0= RULE_DATEHOUR ) )
-            // InternalKPIGenerator.g:666:4: (lv_createdDate_41_0= RULE_DATEHOUR )
+            // InternalKPIGenerator.g:597:3: ( (lv_createdDate_28_0= RULE_DATEHOUR ) )
+            // InternalKPIGenerator.g:598:4: (lv_createdDate_28_0= RULE_DATEHOUR )
             {
-            // InternalKPIGenerator.g:666:4: (lv_createdDate_41_0= RULE_DATEHOUR )
-            // InternalKPIGenerator.g:667:5: lv_createdDate_41_0= RULE_DATEHOUR
+            // InternalKPIGenerator.g:598:4: (lv_createdDate_28_0= RULE_DATEHOUR )
+            // InternalKPIGenerator.g:599:5: lv_createdDate_28_0= RULE_DATEHOUR
             {
-            lv_createdDate_41_0=(Token)match(input,RULE_DATEHOUR,FOLLOW_14); 
+            lv_createdDate_28_0=(Token)match(input,RULE_DATEHOUR,FOLLOW_29); 
 
-            					newLeafNode(lv_createdDate_41_0, grammarAccess.getTaskAccess().getCreatedDateDATEHOURTerminalRuleCall_41_0());
+            					newLeafNode(lv_createdDate_28_0, grammarAccess.getTaskAccess().getCreatedDateDATEHOURTerminalRuleCall_28_0());
             				
 
             					if (current==null) {
@@ -1266,7 +1175,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"createdDate",
-            						lv_createdDate_41_0,
+            						lv_createdDate_28_0,
             						"co.edu.uniandes.KPIGenerator.DATEHOUR");
             				
 
@@ -1275,28 +1184,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_42=(Token)match(input,23,FOLLOW_30); 
+            otherlv_29=(Token)match(input,36,FOLLOW_30); 
 
-            			newLeafNode(otherlv_42, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_42());
+            			newLeafNode(otherlv_29, grammarAccess.getTaskAccess().getCompletedDateKeyword_29());
             		
-            otherlv_43=(Token)match(input,37,FOLLOW_31); 
-
-            			newLeafNode(otherlv_43, grammarAccess.getTaskAccess().getCompletedDateKeyword_43());
-            		
-            // InternalKPIGenerator.g:691:3: ( ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) ) )
-            // InternalKPIGenerator.g:692:4: ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) )
+            // InternalKPIGenerator.g:619:3: ( ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) ) )
+            // InternalKPIGenerator.g:620:4: ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) )
             {
-            // InternalKPIGenerator.g:692:4: ( (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' ) )
-            // InternalKPIGenerator.g:693:5: (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' )
+            // InternalKPIGenerator.g:620:4: ( (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' ) )
+            // InternalKPIGenerator.g:621:5: (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' )
             {
-            // InternalKPIGenerator.g:693:5: (lv_completedDate_44_1= RULE_DATEHOUR | lv_completedDate_44_2= '\"\"' )
+            // InternalKPIGenerator.g:621:5: (lv_completedDate_30_1= RULE_DATEHOUR | lv_completedDate_30_2= '\"\"' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==RULE_DATEHOUR) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==28) ) {
+            else if ( (LA5_0==27) ) {
                 alt5=2;
             }
             else {
@@ -1307,11 +1212,11 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalKPIGenerator.g:694:6: lv_completedDate_44_1= RULE_DATEHOUR
+                    // InternalKPIGenerator.g:622:6: lv_completedDate_30_1= RULE_DATEHOUR
                     {
-                    lv_completedDate_44_1=(Token)match(input,RULE_DATEHOUR,FOLLOW_14); 
+                    lv_completedDate_30_1=(Token)match(input,RULE_DATEHOUR,FOLLOW_31); 
 
-                    						newLeafNode(lv_completedDate_44_1, grammarAccess.getTaskAccess().getCompletedDateDATEHOURTerminalRuleCall_44_0_0());
+                    						newLeafNode(lv_completedDate_30_1, grammarAccess.getTaskAccess().getCompletedDateDATEHOURTerminalRuleCall_30_0_0());
                     					
 
                     						if (current==null) {
@@ -1320,24 +1225,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"completedDate",
-                    							lv_completedDate_44_1,
+                    							lv_completedDate_30_1,
                     							"co.edu.uniandes.KPIGenerator.DATEHOUR");
                     					
 
                     }
                     break;
                 case 2 :
-                    // InternalKPIGenerator.g:709:6: lv_completedDate_44_2= '\"\"'
+                    // InternalKPIGenerator.g:637:6: lv_completedDate_30_2= '\"\"'
                     {
-                    lv_completedDate_44_2=(Token)match(input,28,FOLLOW_14); 
+                    lv_completedDate_30_2=(Token)match(input,27,FOLLOW_31); 
 
-                    						newLeafNode(lv_completedDate_44_2, grammarAccess.getTaskAccess().getCompletedDateQuotationMarkQuotationMarkKeyword_44_0_1());
+                    						newLeafNode(lv_completedDate_30_2, grammarAccess.getTaskAccess().getCompletedDateQuotationMarkQuotationMarkKeyword_30_0_1());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getTaskRule());
                     						}
-                    						setWithLastConsumed(current, "completedDate", lv_completedDate_44_2, null);
+                    						setWithLastConsumed(current, "completedDate", lv_completedDate_30_2, null);
                     					
 
                     }
@@ -1351,23 +1256,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_45=(Token)match(input,23,FOLLOW_32); 
+            otherlv_31=(Token)match(input,37,FOLLOW_11); 
 
-            			newLeafNode(otherlv_45, grammarAccess.getTaskAccess().getQuotationMarkCommaKeyword_45());
+            			newLeafNode(otherlv_31, grammarAccess.getTaskAccess().getTimeLoggedMinKeyword_31());
             		
-            otherlv_46=(Token)match(input,38,FOLLOW_12); 
-
-            			newLeafNode(otherlv_46, grammarAccess.getTaskAccess().getTimeLoggedMinKeyword_46());
-            		
-            // InternalKPIGenerator.g:730:3: ( (lv_timeLoggedMin_47_0= RULE_INT ) )
-            // InternalKPIGenerator.g:731:4: (lv_timeLoggedMin_47_0= RULE_INT )
+            // InternalKPIGenerator.g:654:3: ( (lv_timeLoggedMin_32_0= RULE_INT ) )
+            // InternalKPIGenerator.g:655:4: (lv_timeLoggedMin_32_0= RULE_INT )
             {
-            // InternalKPIGenerator.g:731:4: (lv_timeLoggedMin_47_0= RULE_INT )
-            // InternalKPIGenerator.g:732:5: lv_timeLoggedMin_47_0= RULE_INT
+            // InternalKPIGenerator.g:655:4: (lv_timeLoggedMin_32_0= RULE_INT )
+            // InternalKPIGenerator.g:656:5: lv_timeLoggedMin_32_0= RULE_INT
             {
-            lv_timeLoggedMin_47_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            lv_timeLoggedMin_32_0=(Token)match(input,RULE_INT,FOLLOW_32); 
 
-            					newLeafNode(lv_timeLoggedMin_47_0, grammarAccess.getTaskAccess().getTimeLoggedMinINTTerminalRuleCall_47_0());
+            					newLeafNode(lv_timeLoggedMin_32_0, grammarAccess.getTaskAccess().getTimeLoggedMinINTTerminalRuleCall_32_0());
             				
 
             					if (current==null) {
@@ -1376,7 +1277,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"timeLoggedMin",
-            						lv_timeLoggedMin_47_0,
+            						lv_timeLoggedMin_32_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1385,23 +1286,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_48=(Token)match(input,20,FOLLOW_33); 
+            otherlv_33=(Token)match(input,38,FOLLOW_11); 
 
-            			newLeafNode(otherlv_48, grammarAccess.getTaskAccess().getCommaKeyword_48());
+            			newLeafNode(otherlv_33, grammarAccess.getTaskAccess().getBillableTimeKeyword_33());
             		
-            otherlv_49=(Token)match(input,39,FOLLOW_12); 
-
-            			newLeafNode(otherlv_49, grammarAccess.getTaskAccess().getBillableTimeKeyword_49());
-            		
-            // InternalKPIGenerator.g:756:3: ( (lv_billableTime_50_0= RULE_INT ) )
-            // InternalKPIGenerator.g:757:4: (lv_billableTime_50_0= RULE_INT )
+            // InternalKPIGenerator.g:676:3: ( (lv_billableTime_34_0= RULE_INT ) )
+            // InternalKPIGenerator.g:677:4: (lv_billableTime_34_0= RULE_INT )
             {
-            // InternalKPIGenerator.g:757:4: (lv_billableTime_50_0= RULE_INT )
-            // InternalKPIGenerator.g:758:5: lv_billableTime_50_0= RULE_INT
+            // InternalKPIGenerator.g:677:4: (lv_billableTime_34_0= RULE_INT )
+            // InternalKPIGenerator.g:678:5: lv_billableTime_34_0= RULE_INT
             {
-            lv_billableTime_50_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            lv_billableTime_34_0=(Token)match(input,RULE_INT,FOLLOW_33); 
 
-            					newLeafNode(lv_billableTime_50_0, grammarAccess.getTaskAccess().getBillableTimeINTTerminalRuleCall_50_0());
+            					newLeafNode(lv_billableTime_34_0, grammarAccess.getTaskAccess().getBillableTimeINTTerminalRuleCall_34_0());
             				
 
             					if (current==null) {
@@ -1410,7 +1307,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"billableTime",
-            						lv_billableTime_50_0,
+            						lv_billableTime_34_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1419,23 +1316,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_51=(Token)match(input,20,FOLLOW_34); 
+            otherlv_35=(Token)match(input,39,FOLLOW_5); 
 
-            			newLeafNode(otherlv_51, grammarAccess.getTaskAccess().getCommaKeyword_51());
+            			newLeafNode(otherlv_35, grammarAccess.getTaskAccess().getCompletedOnTimeKeyword_35());
             		
-            otherlv_52=(Token)match(input,40,FOLLOW_6); 
-
-            			newLeafNode(otherlv_52, grammarAccess.getTaskAccess().getCompletedOnTimeKeyword_52());
-            		
-            // InternalKPIGenerator.g:782:3: ( (lv_completedOnTime_53_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:783:4: (lv_completedOnTime_53_0= RULE_CADENA )
+            // InternalKPIGenerator.g:698:3: ( (lv_completedOnTime_36_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:699:4: (lv_completedOnTime_36_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:783:4: (lv_completedOnTime_53_0= RULE_CADENA )
-            // InternalKPIGenerator.g:784:5: lv_completedOnTime_53_0= RULE_CADENA
+            // InternalKPIGenerator.g:699:4: (lv_completedOnTime_36_0= RULE_CADENA )
+            // InternalKPIGenerator.g:700:5: lv_completedOnTime_36_0= RULE_CADENA
             {
-            lv_completedOnTime_53_0=(Token)match(input,RULE_CADENA,FOLLOW_13); 
+            lv_completedOnTime_36_0=(Token)match(input,RULE_CADENA,FOLLOW_34); 
 
-            					newLeafNode(lv_completedOnTime_53_0, grammarAccess.getTaskAccess().getCompletedOnTimeCADENATerminalRuleCall_53_0());
+            					newLeafNode(lv_completedOnTime_36_0, grammarAccess.getTaskAccess().getCompletedOnTimeCADENATerminalRuleCall_36_0());
             				
 
             					if (current==null) {
@@ -1444,7 +1337,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"completedOnTime",
-            						lv_completedOnTime_53_0,
+            						lv_completedOnTime_36_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -1453,23 +1346,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_54=(Token)match(input,20,FOLLOW_35); 
+            otherlv_37=(Token)match(input,40,FOLLOW_11); 
 
-            			newLeafNode(otherlv_54, grammarAccess.getTaskAccess().getCommaKeyword_54());
+            			newLeafNode(otherlv_37, grammarAccess.getTaskAccess().getTimeEstimatedKeyword_37());
             		
-            otherlv_55=(Token)match(input,41,FOLLOW_12); 
-
-            			newLeafNode(otherlv_55, grammarAccess.getTaskAccess().getTimeEstimatedKeyword_55());
-            		
-            // InternalKPIGenerator.g:808:3: ( (lv_timeEstimated_56_0= RULE_INT ) )
-            // InternalKPIGenerator.g:809:4: (lv_timeEstimated_56_0= RULE_INT )
+            // InternalKPIGenerator.g:720:3: ( (lv_timeEstimated_38_0= RULE_INT ) )
+            // InternalKPIGenerator.g:721:4: (lv_timeEstimated_38_0= RULE_INT )
             {
-            // InternalKPIGenerator.g:809:4: (lv_timeEstimated_56_0= RULE_INT )
-            // InternalKPIGenerator.g:810:5: lv_timeEstimated_56_0= RULE_INT
+            // InternalKPIGenerator.g:721:4: (lv_timeEstimated_38_0= RULE_INT )
+            // InternalKPIGenerator.g:722:5: lv_timeEstimated_38_0= RULE_INT
             {
-            lv_timeEstimated_56_0=(Token)match(input,RULE_INT,FOLLOW_13); 
+            lv_timeEstimated_38_0=(Token)match(input,RULE_INT,FOLLOW_35); 
 
-            					newLeafNode(lv_timeEstimated_56_0, grammarAccess.getTaskAccess().getTimeEstimatedINTTerminalRuleCall_56_0());
+            					newLeafNode(lv_timeEstimated_38_0, grammarAccess.getTaskAccess().getTimeEstimatedINTTerminalRuleCall_38_0());
             				
 
             					if (current==null) {
@@ -1478,7 +1367,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"timeEstimated",
-            						lv_timeEstimated_56_0,
+            						lv_timeEstimated_38_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -1487,28 +1376,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_57=(Token)match(input,20,FOLLOW_36); 
+            otherlv_39=(Token)match(input,41,FOLLOW_17); 
 
-            			newLeafNode(otherlv_57, grammarAccess.getTaskAccess().getCommaKeyword_57());
+            			newLeafNode(otherlv_39, grammarAccess.getTaskAccess().getTagsKeyword_39());
             		
-            otherlv_58=(Token)match(input,42,FOLLOW_19); 
-
-            			newLeafNode(otherlv_58, grammarAccess.getTaskAccess().getTagsKeyword_58());
-            		
-            // InternalKPIGenerator.g:834:3: ( ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) ) )
-            // InternalKPIGenerator.g:835:4: ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) )
+            // InternalKPIGenerator.g:742:3: ( ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) ) )
+            // InternalKPIGenerator.g:743:4: ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) )
             {
-            // InternalKPIGenerator.g:835:4: ( (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' ) )
-            // InternalKPIGenerator.g:836:5: (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' )
+            // InternalKPIGenerator.g:743:4: ( (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' ) )
+            // InternalKPIGenerator.g:744:5: (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' )
             {
-            // InternalKPIGenerator.g:836:5: (lv_tags_59_1= RULE_CADENA | lv_tags_59_2= '\"\"' )
+            // InternalKPIGenerator.g:744:5: (lv_tags_40_1= RULE_CADENA | lv_tags_40_2= '\"\"' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
             if ( (LA6_0==RULE_CADENA) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==28) ) {
+            else if ( (LA6_0==27) ) {
                 alt6=2;
             }
             else {
@@ -1519,11 +1404,11 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalKPIGenerator.g:837:6: lv_tags_59_1= RULE_CADENA
+                    // InternalKPIGenerator.g:745:6: lv_tags_40_1= RULE_CADENA
                     {
-                    lv_tags_59_1=(Token)match(input,RULE_CADENA,FOLLOW_8); 
+                    lv_tags_40_1=(Token)match(input,RULE_CADENA,FOLLOW_36); 
 
-                    						newLeafNode(lv_tags_59_1, grammarAccess.getTaskAccess().getTagsCADENATerminalRuleCall_59_0_0());
+                    						newLeafNode(lv_tags_40_1, grammarAccess.getTaskAccess().getTagsCADENATerminalRuleCall_40_0_0());
                     					
 
                     						if (current==null) {
@@ -1532,24 +1417,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"tags",
-                    							lv_tags_59_1,
+                    							lv_tags_40_1,
                     							"co.edu.uniandes.KPIGenerator.CADENA");
                     					
 
                     }
                     break;
                 case 2 :
-                    // InternalKPIGenerator.g:852:6: lv_tags_59_2= '\"\"'
+                    // InternalKPIGenerator.g:760:6: lv_tags_40_2= '\"\"'
                     {
-                    lv_tags_59_2=(Token)match(input,28,FOLLOW_8); 
+                    lv_tags_40_2=(Token)match(input,27,FOLLOW_36); 
 
-                    						newLeafNode(lv_tags_59_2, grammarAccess.getTaskAccess().getTagsQuotationMarkQuotationMarkKeyword_59_0_1());
+                    						newLeafNode(lv_tags_40_2, grammarAccess.getTaskAccess().getTagsQuotationMarkQuotationMarkKeyword_40_0_1());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getTaskRule());
                     						}
-                    						setWithLastConsumed(current, "tags", lv_tags_59_2, null);
+                    						setWithLastConsumed(current, "tags", lv_tags_40_2, null);
                     					
 
                     }
@@ -1563,24 +1448,24 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_60=(Token)match(input,19,FOLLOW_9); 
+            otherlv_41=(Token)match(input,42,FOLLOW_8); 
 
-            			newLeafNode(otherlv_60, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_60());
+            			newLeafNode(otherlv_41, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_41());
             		
-            // InternalKPIGenerator.g:869:3: (otherlv_61= ',' )?
+            // InternalKPIGenerator.g:777:3: (otherlv_42= ',' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==20) ) {
+            if ( (LA7_0==19) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalKPIGenerator.g:870:4: otherlv_61= ','
+                    // InternalKPIGenerator.g:778:4: otherlv_42= ','
                     {
-                    otherlv_61=(Token)match(input,20,FOLLOW_2); 
+                    otherlv_42=(Token)match(input,19,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_61, grammarAccess.getTaskAccess().getCommaKeyword_61());
+                    				newLeafNode(otherlv_42, grammarAccess.getTaskAccess().getCommaKeyword_42());
                     			
 
                     }
@@ -1611,7 +1496,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStatus"
-    // InternalKPIGenerator.g:879:1: entryRuleStatus returns [EObject current=null] : iv_ruleStatus= ruleStatus EOF ;
+    // InternalKPIGenerator.g:787:1: entryRuleStatus returns [EObject current=null] : iv_ruleStatus= ruleStatus EOF ;
     public final EObject entryRuleStatus() throws RecognitionException {
         EObject current = null;
 
@@ -1619,8 +1504,8 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalKPIGenerator.g:879:47: (iv_ruleStatus= ruleStatus EOF )
-            // InternalKPIGenerator.g:880:2: iv_ruleStatus= ruleStatus EOF
+            // InternalKPIGenerator.g:787:47: (iv_ruleStatus= ruleStatus EOF )
+            // InternalKPIGenerator.g:788:2: iv_ruleStatus= ruleStatus EOF
             {
              newCompositeNode(grammarAccess.getStatusRule()); 
             pushFollow(FOLLOW_1);
@@ -1647,31 +1532,28 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatus"
-    // InternalKPIGenerator.g:886:1: ruleStatus returns [EObject current=null] : ( () otherlv_1= '{' otherlv_2= '\"type\":\"' ( (lv_statusName_3_0= RULE_CADENA ) ) otherlv_4= '\",' otherlv_5= '\"text\":\"' ( (lv_text_6_0= RULE_CADENA ) ) otherlv_7= '\"' otherlv_8= '}' ) ;
+    // InternalKPIGenerator.g:794:1: ruleStatus returns [EObject current=null] : ( () otherlv_1= '{\"type\":\"' ( (lv_statusName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"text\":\"' ( (lv_text_4_0= RULE_CADENA ) ) otherlv_5= '\"}' ) ;
     public final EObject ruleStatus() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_statusName_3_0=null;
-        Token otherlv_4=null;
+        Token lv_statusName_2_0=null;
+        Token otherlv_3=null;
+        Token lv_text_4_0=null;
         Token otherlv_5=null;
-        Token lv_text_6_0=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
 
 
         	enterRule();
 
         try {
-            // InternalKPIGenerator.g:892:2: ( ( () otherlv_1= '{' otherlv_2= '\"type\":\"' ( (lv_statusName_3_0= RULE_CADENA ) ) otherlv_4= '\",' otherlv_5= '\"text\":\"' ( (lv_text_6_0= RULE_CADENA ) ) otherlv_7= '\"' otherlv_8= '}' ) )
-            // InternalKPIGenerator.g:893:2: ( () otherlv_1= '{' otherlv_2= '\"type\":\"' ( (lv_statusName_3_0= RULE_CADENA ) ) otherlv_4= '\",' otherlv_5= '\"text\":\"' ( (lv_text_6_0= RULE_CADENA ) ) otherlv_7= '\"' otherlv_8= '}' )
+            // InternalKPIGenerator.g:800:2: ( ( () otherlv_1= '{\"type\":\"' ( (lv_statusName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"text\":\"' ( (lv_text_4_0= RULE_CADENA ) ) otherlv_5= '\"}' ) )
+            // InternalKPIGenerator.g:801:2: ( () otherlv_1= '{\"type\":\"' ( (lv_statusName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"text\":\"' ( (lv_text_4_0= RULE_CADENA ) ) otherlv_5= '\"}' )
             {
-            // InternalKPIGenerator.g:893:2: ( () otherlv_1= '{' otherlv_2= '\"type\":\"' ( (lv_statusName_3_0= RULE_CADENA ) ) otherlv_4= '\",' otherlv_5= '\"text\":\"' ( (lv_text_6_0= RULE_CADENA ) ) otherlv_7= '\"' otherlv_8= '}' )
-            // InternalKPIGenerator.g:894:3: () otherlv_1= '{' otherlv_2= '\"type\":\"' ( (lv_statusName_3_0= RULE_CADENA ) ) otherlv_4= '\",' otherlv_5= '\"text\":\"' ( (lv_text_6_0= RULE_CADENA ) ) otherlv_7= '\"' otherlv_8= '}'
+            // InternalKPIGenerator.g:801:2: ( () otherlv_1= '{\"type\":\"' ( (lv_statusName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"text\":\"' ( (lv_text_4_0= RULE_CADENA ) ) otherlv_5= '\"}' )
+            // InternalKPIGenerator.g:802:3: () otherlv_1= '{\"type\":\"' ( (lv_statusName_2_0= RULE_CADENA ) ) otherlv_3= '\",\"text\":\"' ( (lv_text_4_0= RULE_CADENA ) ) otherlv_5= '\"}'
             {
-            // InternalKPIGenerator.g:894:3: ()
-            // InternalKPIGenerator.g:895:4: 
+            // InternalKPIGenerator.g:802:3: ()
+            // InternalKPIGenerator.g:803:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1681,23 +1563,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,16,FOLLOW_37); 
+            otherlv_1=(Token)match(input,43,FOLLOW_5); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getStatusAccess().getLeftCurlyBracketKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getStatusAccess().getTypeKeyword_1());
             		
-            otherlv_2=(Token)match(input,43,FOLLOW_6); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getStatusAccess().getTypeKeyword_2());
-            		
-            // InternalKPIGenerator.g:909:3: ( (lv_statusName_3_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:910:4: (lv_statusName_3_0= RULE_CADENA )
+            // InternalKPIGenerator.g:813:3: ( (lv_statusName_2_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:814:4: (lv_statusName_2_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:910:4: (lv_statusName_3_0= RULE_CADENA )
-            // InternalKPIGenerator.g:911:5: lv_statusName_3_0= RULE_CADENA
+            // InternalKPIGenerator.g:814:4: (lv_statusName_2_0= RULE_CADENA )
+            // InternalKPIGenerator.g:815:5: lv_statusName_2_0= RULE_CADENA
             {
-            lv_statusName_3_0=(Token)match(input,RULE_CADENA,FOLLOW_14); 
+            lv_statusName_2_0=(Token)match(input,RULE_CADENA,FOLLOW_37); 
 
-            					newLeafNode(lv_statusName_3_0, grammarAccess.getStatusAccess().getStatusNameCADENATerminalRuleCall_3_0());
+            					newLeafNode(lv_statusName_2_0, grammarAccess.getStatusAccess().getStatusNameCADENATerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -1706,7 +1584,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"statusName",
-            						lv_statusName_3_0,
+            						lv_statusName_2_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -1715,23 +1593,19 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,23,FOLLOW_38); 
+            otherlv_3=(Token)match(input,44,FOLLOW_5); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getStatusAccess().getQuotationMarkCommaKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getStatusAccess().getTextKeyword_3());
             		
-            otherlv_5=(Token)match(input,44,FOLLOW_6); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getStatusAccess().getTextKeyword_5());
-            		
-            // InternalKPIGenerator.g:935:3: ( (lv_text_6_0= RULE_CADENA ) )
-            // InternalKPIGenerator.g:936:4: (lv_text_6_0= RULE_CADENA )
+            // InternalKPIGenerator.g:835:3: ( (lv_text_4_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:836:4: (lv_text_4_0= RULE_CADENA )
             {
-            // InternalKPIGenerator.g:936:4: (lv_text_6_0= RULE_CADENA )
-            // InternalKPIGenerator.g:937:5: lv_text_6_0= RULE_CADENA
+            // InternalKPIGenerator.g:836:4: (lv_text_4_0= RULE_CADENA )
+            // InternalKPIGenerator.g:837:5: lv_text_4_0= RULE_CADENA
             {
-            lv_text_6_0=(Token)match(input,RULE_CADENA,FOLLOW_39); 
+            lv_text_4_0=(Token)match(input,RULE_CADENA,FOLLOW_38); 
 
-            					newLeafNode(lv_text_6_0, grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_6_0());
+            					newLeafNode(lv_text_4_0, grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -1740,7 +1614,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"text",
-            						lv_text_6_0,
+            						lv_text_4_0,
             						"co.edu.uniandes.KPIGenerator.CADENA");
             				
 
@@ -1749,13 +1623,9 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,45,FOLLOW_8); 
+            otherlv_5=(Token)match(input,45,FOLLOW_2); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getStatusAccess().getQuotationMarkKeyword_7());
-            		
-            otherlv_8=(Token)match(input,19,FOLLOW_2); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getStatusAccess().getRightCurlyBracketKeyword_8());
+            			newLeafNode(otherlv_5, grammarAccess.getStatusAccess().getQuotationMarkRightCurlyBracketKeyword_5());
             		
 
             }
@@ -1787,40 +1657,39 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000010L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008000010L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000010000080L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000008000080L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000200000000000L});
 
 }

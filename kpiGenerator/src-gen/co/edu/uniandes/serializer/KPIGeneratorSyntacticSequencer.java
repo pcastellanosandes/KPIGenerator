@@ -20,16 +20,16 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected KPIGeneratorGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Phase_CommaKeyword_8_q;
-	protected AbstractElementAlias match_Project_CommaKeyword_8_q;
-	protected AbstractElementAlias match_Task_CommaKeyword_61_q;
+	protected AbstractElementAlias match_Phase_CommaKeyword_6_q;
+	protected AbstractElementAlias match_Project_CommaKeyword_6_q;
+	protected AbstractElementAlias match_Task_CommaKeyword_42_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (KPIGeneratorGrammarAccess) access;
-		match_Phase_CommaKeyword_8_q = new TokenAlias(false, true, grammarAccess.getPhaseAccess().getCommaKeyword_8());
-		match_Project_CommaKeyword_8_q = new TokenAlias(false, true, grammarAccess.getProjectAccess().getCommaKeyword_8());
-		match_Task_CommaKeyword_61_q = new TokenAlias(false, true, grammarAccess.getTaskAccess().getCommaKeyword_61());
+		match_Phase_CommaKeyword_6_q = new TokenAlias(false, true, grammarAccess.getPhaseAccess().getCommaKeyword_6());
+		match_Project_CommaKeyword_6_q = new TokenAlias(false, true, grammarAccess.getProjectAccess().getCommaKeyword_6());
+		match_Task_CommaKeyword_42_q = new TokenAlias(false, true, grammarAccess.getTaskAccess().getCommaKeyword_42());
 	}
 	
 	@Override
@@ -54,12 +54,12 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Phase_CommaKeyword_8_q.equals(syntax))
-				emit_Phase_CommaKeyword_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Project_CommaKeyword_8_q.equals(syntax))
-				emit_Project_CommaKeyword_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Task_CommaKeyword_61_q.equals(syntax))
-				emit_Task_CommaKeyword_61_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Phase_CommaKeyword_6_q.equals(syntax))
+				emit_Phase_CommaKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Project_CommaKeyword_6_q.equals(syntax))
+				emit_Project_CommaKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Task_CommaKeyword_42_q.equals(syntax))
+				emit_Task_CommaKeyword_42_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -69,9 +69,9 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     tasks+=Task ']' '}' (ambiguity) (rule end)
+	 *     tasks+=Task ']}' (ambiguity) (rule end)
 	 */
-	protected void emit_Phase_CommaKeyword_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Phase_CommaKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -80,9 +80,9 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     phases+=Phase ']' '}' (ambiguity) (rule end)
+	 *     phases+=Phase ']}' (ambiguity) (rule end)
 	 */
-	protected void emit_Project_CommaKeyword_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Project_CommaKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -94,7 +94,7 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     tags='""' '}' (ambiguity) (rule end)
 	 *     tags=CADENA '}' (ambiguity) (rule end)
 	 */
-	protected void emit_Task_CommaKeyword_61_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Task_CommaKeyword_42_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

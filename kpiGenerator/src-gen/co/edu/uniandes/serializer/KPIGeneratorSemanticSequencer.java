@@ -107,8 +107,8 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, KPIGeneratorPackage.Literals.STATUS__TEXT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStatusAccess().getStatusNameCADENATerminalRuleCall_3_0(), semanticObject.getStatusName());
-		feeder.accept(grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_6_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getStatusAccess().getStatusNameCADENATerminalRuleCall_2_0(), semanticObject.getStatusName());
+		feeder.accept(grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_4_0(), semanticObject.getText());
 		feeder.finish();
 	}
 	
