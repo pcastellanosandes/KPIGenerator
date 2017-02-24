@@ -11,7 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,47 +20,23 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected KPIGeneratorGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1;
+	protected AbstractElementAlias match_Phase_CommaKeyword_8_q;
+	protected AbstractElementAlias match_Project_CommaKeyword_8_q;
+	protected AbstractElementAlias match_Task_CommaKeyword_61_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (KPIGeneratorGrammarAccess) access;
-		match_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBOOLAccess().getFALSOKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getBOOLAccess().getVERDADEROKeyword_1_1()));
+		match_Phase_CommaKeyword_8_q = new TokenAlias(false, true, grammarAccess.getPhaseAccess().getCommaKeyword_8());
+		match_Project_CommaKeyword_8_q = new TokenAlias(false, true, grammarAccess.getProjectAccess().getCommaKeyword_8());
+		match_Task_CommaKeyword_61_q = new TokenAlias(false, true, grammarAccess.getTaskAccess().getCommaKeyword_61());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getCADENARule())
-			return getCADENAToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getHEADERRule())
-			return getHEADERToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getINTRule())
+		if (ruleCall.getRule() == grammarAccess.getINTRule())
 			return getINTToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getSEMICOLONRule())
-			return getSEMICOLONToken(semanticObject, ruleCall, node);
 		return "";
-	}
-	
-	/**
-	 * terminal CADENA: 
-	 * 	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.')+('0'..'9')*)+
-	 * ;
-	 */
-	protected String getCADENAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
-	
-	/**
-	 * terminal HEADER:
-	 * 	'Task ID;Task List;Milestone;Task Name;Task Description;Start Date;Due Date;Priority;Private;Progress;Status;Status Text;Assigned To;Date Created;Created By Firstname;Created By Lastname;Completed Date;Completed By Firstname;Completed By Lastname;Time Logged Minutes;Billable Minutes;Parent Task;Completed On Time;Time Estimate;Tags'
-	 * ;
-	 */
-	protected String getHEADERToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "Task ID;Task List;Milestone;Task Name;Task Description;Start Date;Due Date;Priority;Private;Progress;Status;Status Text;Assigned To;Date Created;Created By Firstname;Created By Lastname;Completed Date;Completed By Firstname;Completed By Lastname;Time Logged Minutes;Billable Minutes;Parent Task;Completed On Time;Time Estimate;Tags";
 	}
 	
 	/**
@@ -73,37 +48,53 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "";
 	}
 	
-	/**
-	 * terminal SEMICOLON:
-	 * 	';'
-	 * ;
-	 */
-	protected String getSEMICOLONToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return ";";
-	}
-	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1.equals(syntax))
-				emit_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Phase_CommaKeyword_8_q.equals(syntax))
+				emit_Phase_CommaKeyword_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Project_CommaKeyword_8_q.equals(syntax))
+				emit_Project_CommaKeyword_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Task_CommaKeyword_61_q.equals(syntax))
+				emit_Task_CommaKeyword_61_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     'FALSO' | 'VERDADERO'
+	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
+	 *     tasks+=Task ']' '}' (ambiguity) (rule end)
 	 */
-	protected void emit_BOOL_FALSOKeyword_1_0_or_VERDADEROKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Phase_CommaKeyword_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     phases+=Phase ']' '}' (ambiguity) (rule end)
+	 */
+	protected void emit_Project_CommaKeyword_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ','?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     tags='""' '}' (ambiguity) (rule end)
+	 *     tags=CADENA '}' (ambiguity) (rule end)
+	 */
+	protected void emit_Task_CommaKeyword_61_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

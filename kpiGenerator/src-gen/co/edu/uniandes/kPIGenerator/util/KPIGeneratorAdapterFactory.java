@@ -81,24 +81,24 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
         return createRootAdapter();
       }
       @Override
-      public Adapter caseTask(Task object)
-      {
-        return createTaskAdapter();
-      }
-      @Override
       public Adapter caseProject(Project object)
       {
         return createProjectAdapter();
       }
       @Override
+      public Adapter casePhase(Phase object)
+      {
+        return createPhaseAdapter();
+      }
+      @Override
+      public Adapter caseTask(Task object)
+      {
+        return createTaskAdapter();
+      }
+      @Override
       public Adapter caseStatus(Status object)
       {
         return createStatusAdapter();
-      }
-      @Override
-      public Adapter caseBOOL(BOOL object)
-      {
-        return createBOOLAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -138,21 +138,6 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Task <em>Task</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.edu.uniandes.kPIGenerator.Task
-   * @generated
-   */
-  public Adapter createTaskAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Project <em>Project</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -168,6 +153,36 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Phase <em>Phase</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.edu.uniandes.kPIGenerator.Phase
+   * @generated
+   */
+  public Adapter createPhaseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Task <em>Task</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see co.edu.uniandes.kPIGenerator.Task
+   * @generated
+   */
+  public Adapter createTaskAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Status <em>Status</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -178,21 +193,6 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatusAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.BOOL <em>BOOL</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.edu.uniandes.kPIGenerator.BOOL
-   * @generated
-   */
-  public Adapter createBOOLAdapter()
   {
     return null;
   }

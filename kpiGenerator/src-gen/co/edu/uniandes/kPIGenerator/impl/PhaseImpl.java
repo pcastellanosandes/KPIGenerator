@@ -5,7 +5,7 @@ package co.edu.uniandes.kPIGenerator.impl;
 
 import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
 import co.edu.uniandes.kPIGenerator.Phase;
-import co.edu.uniandes.kPIGenerator.Project;
+import co.edu.uniandes.kPIGenerator.Task;
 
 import java.util.Collection;
 
@@ -25,56 +25,56 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Project</b></em>'.
+ * An implementation of the model object '<em><b>Phase</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.ProjectImpl#getProjectName <em>Project Name</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.ProjectImpl#getPhases <em>Phases</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.PhaseImpl#getPhaseName <em>Phase Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.PhaseImpl#getTasks <em>Tasks</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
+public class PhaseImpl extends MinimalEObjectImpl.Container implements Phase
 {
   /**
-   * The default value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
+   * The default value of the '{@link #getPhaseName() <em>Phase Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProjectName()
+   * @see #getPhaseName()
    * @generated
    * @ordered
    */
-  protected static final String PROJECT_NAME_EDEFAULT = null;
+  protected static final String PHASE_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getProjectName() <em>Project Name</em>}' attribute.
+   * The cached value of the '{@link #getPhaseName() <em>Phase Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProjectName()
+   * @see #getPhaseName()
    * @generated
    * @ordered
    */
-  protected String projectName = PROJECT_NAME_EDEFAULT;
+  protected String phaseName = PHASE_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPhases() <em>Phases</em>}' containment reference list.
+   * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPhases()
+   * @see #getTasks()
    * @generated
    * @ordered
    */
-  protected EList<Phase> phases;
+  protected EList<Task> tasks;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ProjectImpl()
+  protected PhaseImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   @Override
   protected EClass eStaticClass()
   {
-    return KPIGeneratorPackage.Literals.PROJECT;
+    return KPIGeneratorPackage.Literals.PHASE;
   }
 
   /**
@@ -95,9 +95,9 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getProjectName()
+  public String getPhaseName()
   {
-    return projectName;
+    return phaseName;
   }
 
   /**
@@ -105,12 +105,12 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProjectName(String newProjectName)
+  public void setPhaseName(String newPhaseName)
   {
-    String oldProjectName = projectName;
-    projectName = newProjectName;
+    String oldPhaseName = phaseName;
+    phaseName = newPhaseName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.PROJECT__PROJECT_NAME, oldProjectName, projectName));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.PHASE__PHASE_NAME, oldPhaseName, phaseName));
   }
 
   /**
@@ -118,13 +118,13 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Phase> getPhases()
+  public EList<Task> getTasks()
   {
-    if (phases == null)
+    if (tasks == null)
     {
-      phases = new EObjectContainmentEList<Phase>(Phase.class, this, KPIGeneratorPackage.PROJECT__PHASES);
+      tasks = new EObjectContainmentEList<Task>(Task.class, this, KPIGeneratorPackage.PHASE__TASKS);
     }
-    return phases;
+    return tasks;
   }
 
   /**
@@ -137,8 +137,8 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.PROJECT__PHASES:
-        return ((InternalEList<?>)getPhases()).basicRemove(otherEnd, msgs);
+      case KPIGeneratorPackage.PHASE__TASKS:
+        return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -153,10 +153,10 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.PROJECT__PROJECT_NAME:
-        return getProjectName();
-      case KPIGeneratorPackage.PROJECT__PHASES:
-        return getPhases();
+      case KPIGeneratorPackage.PHASE__PHASE_NAME:
+        return getPhaseName();
+      case KPIGeneratorPackage.PHASE__TASKS:
+        return getTasks();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -172,12 +172,12 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.PROJECT__PROJECT_NAME:
-        setProjectName((String)newValue);
+      case KPIGeneratorPackage.PHASE__PHASE_NAME:
+        setPhaseName((String)newValue);
         return;
-      case KPIGeneratorPackage.PROJECT__PHASES:
-        getPhases().clear();
-        getPhases().addAll((Collection<? extends Phase>)newValue);
+      case KPIGeneratorPackage.PHASE__TASKS:
+        getTasks().clear();
+        getTasks().addAll((Collection<? extends Task>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -193,11 +193,11 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.PROJECT__PROJECT_NAME:
-        setProjectName(PROJECT_NAME_EDEFAULT);
+      case KPIGeneratorPackage.PHASE__PHASE_NAME:
+        setPhaseName(PHASE_NAME_EDEFAULT);
         return;
-      case KPIGeneratorPackage.PROJECT__PHASES:
-        getPhases().clear();
+      case KPIGeneratorPackage.PHASE__TASKS:
+        getTasks().clear();
         return;
     }
     super.eUnset(featureID);
@@ -213,10 +213,10 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.PROJECT__PROJECT_NAME:
-        return PROJECT_NAME_EDEFAULT == null ? projectName != null : !PROJECT_NAME_EDEFAULT.equals(projectName);
-      case KPIGeneratorPackage.PROJECT__PHASES:
-        return phases != null && !phases.isEmpty();
+      case KPIGeneratorPackage.PHASE__PHASE_NAME:
+        return PHASE_NAME_EDEFAULT == null ? phaseName != null : !PHASE_NAME_EDEFAULT.equals(phaseName);
+      case KPIGeneratorPackage.PHASE__TASKS:
+        return tasks != null && !tasks.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -232,10 +232,10 @@ public class ProjectImpl extends MinimalEObjectImpl.Container implements Project
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (projectName: ");
-    result.append(projectName);
+    result.append(" (phaseName: ");
+    result.append(phaseName);
     result.append(')');
     return result.toString();
   }
 
-} //ProjectImpl
+} //PhaseImpl

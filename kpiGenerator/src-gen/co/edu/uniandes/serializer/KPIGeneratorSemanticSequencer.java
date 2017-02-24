@@ -3,8 +3,8 @@
  */
 package co.edu.uniandes.serializer;
 
-import co.edu.uniandes.kPIGenerator.BOOL;
 import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
+import co.edu.uniandes.kPIGenerator.Phase;
 import co.edu.uniandes.kPIGenerator.Project;
 import co.edu.uniandes.kPIGenerator.Root;
 import co.edu.uniandes.kPIGenerator.Status;
@@ -36,8 +36,8 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == KPIGeneratorPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case KPIGeneratorPackage.BOOL:
-				sequence_BOOL(context, (BOOL) semanticObject); 
+			case KPIGeneratorPackage.PHASE:
+				sequence_Phase(context, (Phase) semanticObject); 
 				return; 
 			case KPIGeneratorPackage.PROJECT:
 				sequence_Project(context, (Project) semanticObject); 
@@ -58,12 +58,12 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     BOOL returns BOOL
+	 *     Phase returns Phase
 	 *
 	 * Constraint:
-	 *     {BOOL}
+	 *     (phaseName=CADENA tasks+=Task)
 	 */
-	protected void sequence_BOOL(ISerializationContext context, BOOL semanticObject) {
+	protected void sequence_Phase(ISerializationContext context, Phase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -73,16 +73,10 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Project returns Project
 	 *
 	 * Constraint:
-	 *     name=CADENA
+	 *     (projectName=CADENA phases+=Phase)
 	 */
 	protected void sequence_Project(ISerializationContext context, Project semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, KPIGeneratorPackage.Literals.PROJECT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, KPIGeneratorPackage.Literals.PROJECT__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProjectAccess().getNameCADENATerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -91,7 +85,7 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Root returns Root
 	 *
 	 * Constraint:
-	 *     tasks+=Task
+	 *     projects+=Project
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -103,10 +97,19 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Status returns Status
 	 *
 	 * Constraint:
-	 *     ((statusName='completed' | statusName='new') text=CADENA)
+	 *     (statusName=CADENA text=CADENA)
 	 */
 	protected void sequence_Status(ISerializationContext context, Status semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, KPIGeneratorPackage.Literals.STATUS__STATUS_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, KPIGeneratorPackage.Literals.STATUS__STATUS_NAME));
+			if (transientValues.isValueTransient(semanticObject, KPIGeneratorPackage.Literals.STATUS__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, KPIGeneratorPackage.Literals.STATUS__TEXT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStatusAccess().getStatusNameCADENATerminalRuleCall_3_0(), semanticObject.getStatusName());
+		feeder.accept(grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_6_0(), semanticObject.getText());
+		feeder.finish();
 	}
 	
 	
@@ -116,27 +119,25 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *
 	 * Constraint:
 	 *     (
-	 *         project=Project 
-	 *         milestone=CADENA? 
-	 *         name=CADENA 
-	 *         TaskDescription=CADENA? 
+	 *         taskId=INT 
+	 *         taskName=CADENA 
+	 *         useCase=CADENA 
+	 *         sequenceNumber=INT 
+	 *         (description=CADENA | description='""') 
 	 *         startDate=DATE 
-	 *         DueDate=DATE 
-	 *         priority=CADENA? 
-	 *         private=BOOL 
+	 *         dueDate=DATE 
+	 *         (priority=CADENA | priority='""') 
+	 *         isPrivate=CADENA 
 	 *         progress=INT 
 	 *         status=Status 
 	 *         assignedTo=CADENA 
-	 *         createdDate=DATE 
-	 *         createdHour=HOUR 
-	 *         completedDate=DATE 
-	 *         completedHour=HOUR 
-	 *         timeLogged=INT? 
-	 *         billableMinutes=INT? 
-	 *         parentTask=[Task|ID]? 
-	 *         completedOnTime=BOOL 
+	 *         createdDate=DATEHOUR 
+	 *         (completedDate=DATEHOUR | completedDate='""') 
+	 *         timeLoggedMin=INT 
+	 *         billableTime=INT 
+	 *         completedOnTime=CADENA 
 	 *         timeEstimated=INT 
-	 *         tags=CADENA?
+	 *         (tags=CADENA | tags='""')
 	 *     )
 	 */
 	protected void sequence_Task(ISerializationContext context, Task semanticObject) {

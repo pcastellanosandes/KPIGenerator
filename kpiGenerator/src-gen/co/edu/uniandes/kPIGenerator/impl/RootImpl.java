@@ -4,8 +4,8 @@
 package co.edu.uniandes.kPIGenerator.impl;
 
 import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
+import co.edu.uniandes.kPIGenerator.Project;
 import co.edu.uniandes.kPIGenerator.Root;
-import co.edu.uniandes.kPIGenerator.Task;
 
 import java.util.Collection;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.RootImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.RootImpl#getProjects <em>Projects</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RootImpl extends MinimalEObjectImpl.Container implements Root
 {
   /**
-   * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference list.
+   * The cached value of the '{@link #getProjects() <em>Projects</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTasks()
+   * @see #getProjects()
    * @generated
    * @ordered
    */
-  protected EList<Task> tasks;
+  protected EList<Project> projects;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Task> getTasks()
+  public EList<Project> getProjects()
   {
-    if (tasks == null)
+    if (projects == null)
     {
-      tasks = new EObjectContainmentEList<Task>(Task.class, this, KPIGeneratorPackage.ROOT__TASKS);
+      projects = new EObjectContainmentEList<Project>(Project.class, this, KPIGeneratorPackage.ROOT__PROJECTS);
     }
-    return tasks;
+    return projects;
   }
 
   /**
@@ -91,8 +91,8 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.ROOT__TASKS:
-        return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
+      case KPIGeneratorPackage.ROOT__PROJECTS:
+        return ((InternalEList<?>)getProjects()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.ROOT__TASKS:
-        return getTasks();
+      case KPIGeneratorPackage.ROOT__PROJECTS:
+        return getProjects();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.ROOT__TASKS:
-        getTasks().clear();
-        getTasks().addAll((Collection<? extends Task>)newValue);
+      case KPIGeneratorPackage.ROOT__PROJECTS:
+        getProjects().clear();
+        getProjects().addAll((Collection<? extends Project>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.ROOT__TASKS:
-        getTasks().clear();
+      case KPIGeneratorPackage.ROOT__PROJECTS:
+        getProjects().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class RootImpl extends MinimalEObjectImpl.Container implements Root
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.ROOT__TASKS:
-        return tasks != null && !tasks.isEmpty();
+      case KPIGeneratorPackage.ROOT__PROJECTS:
+        return projects != null && !projects.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -33,15 +33,6 @@ public interface KPIGeneratorFactory extends EFactory
   Root createRoot();
 
   /**
-   * Returns a new object of class '<em>Task</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Task</em>'.
-   * @generated
-   */
-  Task createTask();
-
-  /**
    * Returns a new object of class '<em>Project</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -51,6 +42,24 @@ public interface KPIGeneratorFactory extends EFactory
   Project createProject();
 
   /**
+   * Returns a new object of class '<em>Phase</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Phase</em>'.
+   * @generated
+   */
+  Phase createPhase();
+
+  /**
+   * Returns a new object of class '<em>Task</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task</em>'.
+   * @generated
+   */
+  Task createTask();
+
+  /**
    * Returns a new object of class '<em>Status</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -58,15 +67,6 @@ public interface KPIGeneratorFactory extends EFactory
    * @generated
    */
   Status createStatus();
-
-  /**
-   * Returns a new object of class '<em>BOOL</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>BOOL</em>'.
-   * @generated
-   */
-  BOOL createBOOL();
 
   /**
    * Returns the package supported by this factory.

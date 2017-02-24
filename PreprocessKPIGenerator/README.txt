@@ -1,0 +1,1 @@
+Para generar el JSON se debe dejar en la carpeta del proyecto PreprocessKPIGenerator el archivo csv con el nombre input.csv y la aplicación generará el archivo output.json

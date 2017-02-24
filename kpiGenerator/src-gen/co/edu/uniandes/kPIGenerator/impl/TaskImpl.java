@@ -3,9 +3,7 @@
  */
 package co.edu.uniandes.kPIGenerator.impl;
 
-import co.edu.uniandes.kPIGenerator.BOOL;
 import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
-import co.edu.uniandes.kPIGenerator.Project;
 import co.edu.uniandes.kPIGenerator.Status;
 import co.edu.uniandes.kPIGenerator.Task;
 
@@ -26,24 +24,22 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getProject <em>Project</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getMilestone <em>Milestone</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getName <em>Name</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTaskDescription <em>Task Description</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTaskId <em>Task Id</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTaskName <em>Task Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getUseCase <em>Use Case</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getSequenceNumber <em>Sequence Number</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getPrivate <em>Private</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getIsPrivate <em>Is Private</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getProgress <em>Progress</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getAssignedTo <em>Assigned To</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getCreatedHour <em>Created Hour</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getCompletedDate <em>Completed Date</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getCompletedHour <em>Completed Hour</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTimeLogged <em>Time Logged</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getBillableMinutes <em>Billable Minutes</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getParentTask <em>Parent Task</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTimeLoggedMin <em>Time Logged Min</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getBillableTime <em>Billable Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getCompletedOnTime <em>Completed On Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTimeEstimated <em>Time Estimated</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTags <em>Tags</em>}</li>
@@ -54,74 +50,104 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class TaskImpl extends MinimalEObjectImpl.Container implements Task
 {
   /**
-   * The cached value of the '{@link #getProject() <em>Project</em>}' containment reference.
+   * The default value of the '{@link #getTaskId() <em>Task Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProject()
+   * @see #getTaskId()
    * @generated
    * @ordered
    */
-  protected Project project;
+  protected static final int TASK_ID_EDEFAULT = 0;
 
   /**
-   * The default value of the '{@link #getMilestone() <em>Milestone</em>}' attribute.
+   * The cached value of the '{@link #getTaskId() <em>Task Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMilestone()
+   * @see #getTaskId()
    * @generated
    * @ordered
    */
-  protected static final String MILESTONE_EDEFAULT = null;
+  protected int taskId = TASK_ID_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMilestone() <em>Milestone</em>}' attribute.
+   * The default value of the '{@link #getTaskName() <em>Task Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMilestone()
+   * @see #getTaskName()
    * @generated
    * @ordered
    */
-  protected String milestone = MILESTONE_EDEFAULT;
+  protected static final String TASK_NAME_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getTaskName() <em>Task Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTaskName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected String taskName = TASK_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getUseCase() <em>Use Case</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getUseCase()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected static final String USE_CASE_EDEFAULT = null;
 
   /**
-   * The default value of the '{@link #getTaskDescription() <em>Task Description</em>}' attribute.
+   * The cached value of the '{@link #getUseCase() <em>Use Case</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTaskDescription()
+   * @see #getUseCase()
    * @generated
    * @ordered
    */
-  protected static final String TASK_DESCRIPTION_EDEFAULT = null;
+  protected String useCase = USE_CASE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTaskDescription() <em>Task Description</em>}' attribute.
+   * The default value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTaskDescription()
+   * @see #getSequenceNumber()
    * @generated
    * @ordered
    */
-  protected String taskDescription = TASK_DESCRIPTION_EDEFAULT;
+  protected static final int SEQUENCE_NUMBER_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getSequenceNumber() <em>Sequence Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSequenceNumber()
+   * @generated
+   * @ordered
+   */
+  protected int sequenceNumber = SEQUENCE_NUMBER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
@@ -184,14 +210,24 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   protected String priority = PRIORITY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPrivate() <em>Private</em>}' containment reference.
+   * The default value of the '{@link #getIsPrivate() <em>Is Private</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrivate()
+   * @see #getIsPrivate()
    * @generated
    * @ordered
    */
-  protected BOOL private_;
+  protected static final String IS_PRIVATE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIsPrivate() <em>Is Private</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIsPrivate()
+   * @generated
+   * @ordered
+   */
+  protected String isPrivate = IS_PRIVATE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getProgress() <em>Progress</em>}' attribute.
@@ -264,26 +300,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   protected String createdDate = CREATED_DATE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getCreatedHour() <em>Created Hour</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCreatedHour()
-   * @generated
-   * @ordered
-   */
-  protected static final String CREATED_HOUR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCreatedHour() <em>Created Hour</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCreatedHour()
-   * @generated
-   * @ordered
-   */
-  protected String createdHour = CREATED_HOUR_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getCompletedDate() <em>Completed Date</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -304,84 +320,64 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   protected String completedDate = COMPLETED_DATE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getCompletedHour() <em>Completed Hour</em>}' attribute.
+   * The default value of the '{@link #getTimeLoggedMin() <em>Time Logged Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCompletedHour()
+   * @see #getTimeLoggedMin()
    * @generated
    * @ordered
    */
-  protected static final String COMPLETED_HOUR_EDEFAULT = null;
+  protected static final int TIME_LOGGED_MIN_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getCompletedHour() <em>Completed Hour</em>}' attribute.
+   * The cached value of the '{@link #getTimeLoggedMin() <em>Time Logged Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCompletedHour()
+   * @see #getTimeLoggedMin()
    * @generated
    * @ordered
    */
-  protected String completedHour = COMPLETED_HOUR_EDEFAULT;
+  protected int timeLoggedMin = TIME_LOGGED_MIN_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTimeLogged() <em>Time Logged</em>}' attribute.
+   * The default value of the '{@link #getBillableTime() <em>Billable Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeLogged()
+   * @see #getBillableTime()
    * @generated
    * @ordered
    */
-  protected static final int TIME_LOGGED_EDEFAULT = 0;
+  protected static final int BILLABLE_TIME_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getTimeLogged() <em>Time Logged</em>}' attribute.
+   * The cached value of the '{@link #getBillableTime() <em>Billable Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTimeLogged()
+   * @see #getBillableTime()
    * @generated
    * @ordered
    */
-  protected int timeLogged = TIME_LOGGED_EDEFAULT;
+  protected int billableTime = BILLABLE_TIME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getBillableMinutes() <em>Billable Minutes</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBillableMinutes()
-   * @generated
-   * @ordered
-   */
-  protected static final int BILLABLE_MINUTES_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getBillableMinutes() <em>Billable Minutes</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBillableMinutes()
-   * @generated
-   * @ordered
-   */
-  protected int billableMinutes = BILLABLE_MINUTES_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getParentTask() <em>Parent Task</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParentTask()
-   * @generated
-   * @ordered
-   */
-  protected Task parentTask;
-
-  /**
-   * The cached value of the '{@link #getCompletedOnTime() <em>Completed On Time</em>}' containment reference.
+   * The default value of the '{@link #getCompletedOnTime() <em>Completed On Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCompletedOnTime()
    * @generated
    * @ordered
    */
-  protected BOOL completedOnTime;
+  protected static final String COMPLETED_ON_TIME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCompletedOnTime() <em>Completed On Time</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCompletedOnTime()
+   * @generated
+   * @ordered
+   */
+  protected String completedOnTime = COMPLETED_ON_TIME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getTimeEstimated() <em>Time Estimated</em>}' attribute.
@@ -449,9 +445,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public Project getProject()
+  public int getTaskId()
   {
-    return project;
+    return taskId;
   }
 
   /**
@@ -459,16 +455,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetProject(Project newProject, NotificationChain msgs)
+  public void setTaskId(int newTaskId)
   {
-    Project oldProject = project;
-    project = newProject;
+    int oldTaskId = taskId;
+    taskId = newTaskId;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__PROJECT, oldProject, newProject);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__TASK_ID, oldTaskId, taskId));
   }
 
   /**
@@ -476,20 +468,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setProject(Project newProject)
+  public String getTaskName()
   {
-    if (newProject != project)
-    {
-      NotificationChain msgs = null;
-      if (project != null)
-        msgs = ((InternalEObject)project).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - KPIGeneratorPackage.TASK__PROJECT, null, msgs);
-      if (newProject != null)
-        msgs = ((InternalEObject)newProject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - KPIGeneratorPackage.TASK__PROJECT, null, msgs);
-      msgs = basicSetProject(newProject, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__PROJECT, newProject, newProject));
+    return taskName;
   }
 
   /**
@@ -497,22 +478,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMilestone()
+  public void setTaskName(String newTaskName)
   {
-    return milestone;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMilestone(String newMilestone)
-  {
-    String oldMilestone = milestone;
-    milestone = newMilestone;
+    String oldTaskName = taskName;
+    taskName = newTaskName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__MILESTONE, oldMilestone, milestone));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__TASK_NAME, oldTaskName, taskName));
   }
 
   /**
@@ -520,9 +491,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getUseCase()
   {
-    return name;
+    return useCase;
   }
 
   /**
@@ -530,12 +501,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setUseCase(String newUseCase)
   {
-    String oldName = name;
-    name = newName;
+    String oldUseCase = useCase;
+    useCase = newUseCase;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__USE_CASE, oldUseCase, useCase));
   }
 
   /**
@@ -543,9 +514,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTaskDescription()
+  public int getSequenceNumber()
   {
-    return taskDescription;
+    return sequenceNumber;
   }
 
   /**
@@ -553,12 +524,35 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTaskDescription(String newTaskDescription)
+  public void setSequenceNumber(int newSequenceNumber)
   {
-    String oldTaskDescription = taskDescription;
-    taskDescription = newTaskDescription;
+    int oldSequenceNumber = sequenceNumber;
+    sequenceNumber = newSequenceNumber;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__TASK_DESCRIPTION, oldTaskDescription, taskDescription));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__SEQUENCE_NUMBER, oldSequenceNumber, sequenceNumber));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -635,9 +629,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public BOOL getPrivate()
+  public String getIsPrivate()
   {
-    return private_;
+    return isPrivate;
   }
 
   /**
@@ -645,37 +639,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPrivate(BOOL newPrivate, NotificationChain msgs)
+  public void setIsPrivate(String newIsPrivate)
   {
-    BOOL oldPrivate = private_;
-    private_ = newPrivate;
+    String oldIsPrivate = isPrivate;
+    isPrivate = newIsPrivate;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__PRIVATE, oldPrivate, newPrivate);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPrivate(BOOL newPrivate)
-  {
-    if (newPrivate != private_)
-    {
-      NotificationChain msgs = null;
-      if (private_ != null)
-        msgs = ((InternalEObject)private_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - KPIGeneratorPackage.TASK__PRIVATE, null, msgs);
-      if (newPrivate != null)
-        msgs = ((InternalEObject)newPrivate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - KPIGeneratorPackage.TASK__PRIVATE, null, msgs);
-      msgs = basicSetPrivate(newPrivate, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__PRIVATE, newPrivate, newPrivate));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__IS_PRIVATE, oldIsPrivate, isPrivate));
   }
 
   /**
@@ -800,29 +769,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCreatedHour()
-  {
-    return createdHour;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCreatedHour(String newCreatedHour)
-  {
-    String oldCreatedHour = createdHour;
-    createdHour = newCreatedHour;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__CREATED_HOUR, oldCreatedHour, createdHour));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getCompletedDate()
   {
     return completedDate;
@@ -846,9 +792,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCompletedHour()
+  public int getTimeLoggedMin()
   {
-    return completedHour;
+    return timeLoggedMin;
   }
 
   /**
@@ -856,12 +802,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCompletedHour(String newCompletedHour)
+  public void setTimeLoggedMin(int newTimeLoggedMin)
   {
-    String oldCompletedHour = completedHour;
-    completedHour = newCompletedHour;
+    int oldTimeLoggedMin = timeLoggedMin;
+    timeLoggedMin = newTimeLoggedMin;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__COMPLETED_HOUR, oldCompletedHour, completedHour));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__TIME_LOGGED_MIN, oldTimeLoggedMin, timeLoggedMin));
   }
 
   /**
@@ -869,9 +815,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getTimeLogged()
+  public int getBillableTime()
   {
-    return timeLogged;
+    return billableTime;
   }
 
   /**
@@ -879,12 +825,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTimeLogged(int newTimeLogged)
+  public void setBillableTime(int newBillableTime)
   {
-    int oldTimeLogged = timeLogged;
-    timeLogged = newTimeLogged;
+    int oldBillableTime = billableTime;
+    billableTime = newBillableTime;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__TIME_LOGGED, oldTimeLogged, timeLogged));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__BILLABLE_TIME, oldBillableTime, billableTime));
   }
 
   /**
@@ -892,73 +838,7 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getBillableMinutes()
-  {
-    return billableMinutes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBillableMinutes(int newBillableMinutes)
-  {
-    int oldBillableMinutes = billableMinutes;
-    billableMinutes = newBillableMinutes;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__BILLABLE_MINUTES, oldBillableMinutes, billableMinutes));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Task getParentTask()
-  {
-    if (parentTask != null && parentTask.eIsProxy())
-    {
-      InternalEObject oldParentTask = (InternalEObject)parentTask;
-      parentTask = (Task)eResolveProxy(oldParentTask);
-      if (parentTask != oldParentTask)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, KPIGeneratorPackage.TASK__PARENT_TASK, oldParentTask, parentTask));
-      }
-    }
-    return parentTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Task basicGetParentTask()
-  {
-    return parentTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setParentTask(Task newParentTask)
-  {
-    Task oldParentTask = parentTask;
-    parentTask = newParentTask;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__PARENT_TASK, oldParentTask, parentTask));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BOOL getCompletedOnTime()
+  public String getCompletedOnTime()
   {
     return completedOnTime;
   }
@@ -968,37 +848,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCompletedOnTime(BOOL newCompletedOnTime, NotificationChain msgs)
+  public void setCompletedOnTime(String newCompletedOnTime)
   {
-    BOOL oldCompletedOnTime = completedOnTime;
+    String oldCompletedOnTime = completedOnTime;
     completedOnTime = newCompletedOnTime;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__COMPLETED_ON_TIME, oldCompletedOnTime, newCompletedOnTime);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCompletedOnTime(BOOL newCompletedOnTime)
-  {
-    if (newCompletedOnTime != completedOnTime)
-    {
-      NotificationChain msgs = null;
-      if (completedOnTime != null)
-        msgs = ((InternalEObject)completedOnTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - KPIGeneratorPackage.TASK__COMPLETED_ON_TIME, null, msgs);
-      if (newCompletedOnTime != null)
-        msgs = ((InternalEObject)newCompletedOnTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - KPIGeneratorPackage.TASK__COMPLETED_ON_TIME, null, msgs);
-      msgs = basicSetCompletedOnTime(newCompletedOnTime, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__COMPLETED_ON_TIME, newCompletedOnTime, newCompletedOnTime));
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__COMPLETED_ON_TIME, oldCompletedOnTime, completedOnTime));
   }
 
   /**
@@ -1057,14 +912,8 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.TASK__PROJECT:
-        return basicSetProject(null, msgs);
-      case KPIGeneratorPackage.TASK__PRIVATE:
-        return basicSetPrivate(null, msgs);
       case KPIGeneratorPackage.TASK__STATUS:
         return basicSetStatus(null, msgs);
-      case KPIGeneratorPackage.TASK__COMPLETED_ON_TIME:
-        return basicSetCompletedOnTime(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -1079,22 +928,24 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.TASK__PROJECT:
-        return getProject();
-      case KPIGeneratorPackage.TASK__MILESTONE:
-        return getMilestone();
-      case KPIGeneratorPackage.TASK__NAME:
-        return getName();
-      case KPIGeneratorPackage.TASK__TASK_DESCRIPTION:
-        return getTaskDescription();
+      case KPIGeneratorPackage.TASK__TASK_ID:
+        return getTaskId();
+      case KPIGeneratorPackage.TASK__TASK_NAME:
+        return getTaskName();
+      case KPIGeneratorPackage.TASK__USE_CASE:
+        return getUseCase();
+      case KPIGeneratorPackage.TASK__SEQUENCE_NUMBER:
+        return getSequenceNumber();
+      case KPIGeneratorPackage.TASK__DESCRIPTION:
+        return getDescription();
       case KPIGeneratorPackage.TASK__START_DATE:
         return getStartDate();
       case KPIGeneratorPackage.TASK__DUE_DATE:
         return getDueDate();
       case KPIGeneratorPackage.TASK__PRIORITY:
         return getPriority();
-      case KPIGeneratorPackage.TASK__PRIVATE:
-        return getPrivate();
+      case KPIGeneratorPackage.TASK__IS_PRIVATE:
+        return getIsPrivate();
       case KPIGeneratorPackage.TASK__PROGRESS:
         return getProgress();
       case KPIGeneratorPackage.TASK__STATUS:
@@ -1103,19 +954,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return getAssignedTo();
       case KPIGeneratorPackage.TASK__CREATED_DATE:
         return getCreatedDate();
-      case KPIGeneratorPackage.TASK__CREATED_HOUR:
-        return getCreatedHour();
       case KPIGeneratorPackage.TASK__COMPLETED_DATE:
         return getCompletedDate();
-      case KPIGeneratorPackage.TASK__COMPLETED_HOUR:
-        return getCompletedHour();
-      case KPIGeneratorPackage.TASK__TIME_LOGGED:
-        return getTimeLogged();
-      case KPIGeneratorPackage.TASK__BILLABLE_MINUTES:
-        return getBillableMinutes();
-      case KPIGeneratorPackage.TASK__PARENT_TASK:
-        if (resolve) return getParentTask();
-        return basicGetParentTask();
+      case KPIGeneratorPackage.TASK__TIME_LOGGED_MIN:
+        return getTimeLoggedMin();
+      case KPIGeneratorPackage.TASK__BILLABLE_TIME:
+        return getBillableTime();
       case KPIGeneratorPackage.TASK__COMPLETED_ON_TIME:
         return getCompletedOnTime();
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
@@ -1136,17 +980,20 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.TASK__PROJECT:
-        setProject((Project)newValue);
+      case KPIGeneratorPackage.TASK__TASK_ID:
+        setTaskId((Integer)newValue);
         return;
-      case KPIGeneratorPackage.TASK__MILESTONE:
-        setMilestone((String)newValue);
+      case KPIGeneratorPackage.TASK__TASK_NAME:
+        setTaskName((String)newValue);
         return;
-      case KPIGeneratorPackage.TASK__NAME:
-        setName((String)newValue);
+      case KPIGeneratorPackage.TASK__USE_CASE:
+        setUseCase((String)newValue);
         return;
-      case KPIGeneratorPackage.TASK__TASK_DESCRIPTION:
-        setTaskDescription((String)newValue);
+      case KPIGeneratorPackage.TASK__SEQUENCE_NUMBER:
+        setSequenceNumber((Integer)newValue);
+        return;
+      case KPIGeneratorPackage.TASK__DESCRIPTION:
+        setDescription((String)newValue);
         return;
       case KPIGeneratorPackage.TASK__START_DATE:
         setStartDate((String)newValue);
@@ -1157,8 +1004,8 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case KPIGeneratorPackage.TASK__PRIORITY:
         setPriority((String)newValue);
         return;
-      case KPIGeneratorPackage.TASK__PRIVATE:
-        setPrivate((BOOL)newValue);
+      case KPIGeneratorPackage.TASK__IS_PRIVATE:
+        setIsPrivate((String)newValue);
         return;
       case KPIGeneratorPackage.TASK__PROGRESS:
         setProgress((Integer)newValue);
@@ -1172,26 +1019,17 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case KPIGeneratorPackage.TASK__CREATED_DATE:
         setCreatedDate((String)newValue);
         return;
-      case KPIGeneratorPackage.TASK__CREATED_HOUR:
-        setCreatedHour((String)newValue);
-        return;
       case KPIGeneratorPackage.TASK__COMPLETED_DATE:
         setCompletedDate((String)newValue);
         return;
-      case KPIGeneratorPackage.TASK__COMPLETED_HOUR:
-        setCompletedHour((String)newValue);
+      case KPIGeneratorPackage.TASK__TIME_LOGGED_MIN:
+        setTimeLoggedMin((Integer)newValue);
         return;
-      case KPIGeneratorPackage.TASK__TIME_LOGGED:
-        setTimeLogged((Integer)newValue);
-        return;
-      case KPIGeneratorPackage.TASK__BILLABLE_MINUTES:
-        setBillableMinutes((Integer)newValue);
-        return;
-      case KPIGeneratorPackage.TASK__PARENT_TASK:
-        setParentTask((Task)newValue);
+      case KPIGeneratorPackage.TASK__BILLABLE_TIME:
+        setBillableTime((Integer)newValue);
         return;
       case KPIGeneratorPackage.TASK__COMPLETED_ON_TIME:
-        setCompletedOnTime((BOOL)newValue);
+        setCompletedOnTime((String)newValue);
         return;
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         setTimeEstimated((Integer)newValue);
@@ -1213,17 +1051,20 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.TASK__PROJECT:
-        setProject((Project)null);
+      case KPIGeneratorPackage.TASK__TASK_ID:
+        setTaskId(TASK_ID_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__MILESTONE:
-        setMilestone(MILESTONE_EDEFAULT);
+      case KPIGeneratorPackage.TASK__TASK_NAME:
+        setTaskName(TASK_NAME_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__NAME:
-        setName(NAME_EDEFAULT);
+      case KPIGeneratorPackage.TASK__USE_CASE:
+        setUseCase(USE_CASE_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__TASK_DESCRIPTION:
-        setTaskDescription(TASK_DESCRIPTION_EDEFAULT);
+      case KPIGeneratorPackage.TASK__SEQUENCE_NUMBER:
+        setSequenceNumber(SEQUENCE_NUMBER_EDEFAULT);
+        return;
+      case KPIGeneratorPackage.TASK__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
       case KPIGeneratorPackage.TASK__START_DATE:
         setStartDate(START_DATE_EDEFAULT);
@@ -1234,8 +1075,8 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case KPIGeneratorPackage.TASK__PRIORITY:
         setPriority(PRIORITY_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__PRIVATE:
-        setPrivate((BOOL)null);
+      case KPIGeneratorPackage.TASK__IS_PRIVATE:
+        setIsPrivate(IS_PRIVATE_EDEFAULT);
         return;
       case KPIGeneratorPackage.TASK__PROGRESS:
         setProgress(PROGRESS_EDEFAULT);
@@ -1249,26 +1090,17 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case KPIGeneratorPackage.TASK__CREATED_DATE:
         setCreatedDate(CREATED_DATE_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__CREATED_HOUR:
-        setCreatedHour(CREATED_HOUR_EDEFAULT);
-        return;
       case KPIGeneratorPackage.TASK__COMPLETED_DATE:
         setCompletedDate(COMPLETED_DATE_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__COMPLETED_HOUR:
-        setCompletedHour(COMPLETED_HOUR_EDEFAULT);
+      case KPIGeneratorPackage.TASK__TIME_LOGGED_MIN:
+        setTimeLoggedMin(TIME_LOGGED_MIN_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__TIME_LOGGED:
-        setTimeLogged(TIME_LOGGED_EDEFAULT);
-        return;
-      case KPIGeneratorPackage.TASK__BILLABLE_MINUTES:
-        setBillableMinutes(BILLABLE_MINUTES_EDEFAULT);
-        return;
-      case KPIGeneratorPackage.TASK__PARENT_TASK:
-        setParentTask((Task)null);
+      case KPIGeneratorPackage.TASK__BILLABLE_TIME:
+        setBillableTime(BILLABLE_TIME_EDEFAULT);
         return;
       case KPIGeneratorPackage.TASK__COMPLETED_ON_TIME:
-        setCompletedOnTime((BOOL)null);
+        setCompletedOnTime(COMPLETED_ON_TIME_EDEFAULT);
         return;
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         setTimeEstimated(TIME_ESTIMATED_EDEFAULT);
@@ -1290,22 +1122,24 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   {
     switch (featureID)
     {
-      case KPIGeneratorPackage.TASK__PROJECT:
-        return project != null;
-      case KPIGeneratorPackage.TASK__MILESTONE:
-        return MILESTONE_EDEFAULT == null ? milestone != null : !MILESTONE_EDEFAULT.equals(milestone);
-      case KPIGeneratorPackage.TASK__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case KPIGeneratorPackage.TASK__TASK_DESCRIPTION:
-        return TASK_DESCRIPTION_EDEFAULT == null ? taskDescription != null : !TASK_DESCRIPTION_EDEFAULT.equals(taskDescription);
+      case KPIGeneratorPackage.TASK__TASK_ID:
+        return taskId != TASK_ID_EDEFAULT;
+      case KPIGeneratorPackage.TASK__TASK_NAME:
+        return TASK_NAME_EDEFAULT == null ? taskName != null : !TASK_NAME_EDEFAULT.equals(taskName);
+      case KPIGeneratorPackage.TASK__USE_CASE:
+        return USE_CASE_EDEFAULT == null ? useCase != null : !USE_CASE_EDEFAULT.equals(useCase);
+      case KPIGeneratorPackage.TASK__SEQUENCE_NUMBER:
+        return sequenceNumber != SEQUENCE_NUMBER_EDEFAULT;
+      case KPIGeneratorPackage.TASK__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case KPIGeneratorPackage.TASK__START_DATE:
         return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
       case KPIGeneratorPackage.TASK__DUE_DATE:
         return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
       case KPIGeneratorPackage.TASK__PRIORITY:
         return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
-      case KPIGeneratorPackage.TASK__PRIVATE:
-        return private_ != null;
+      case KPIGeneratorPackage.TASK__IS_PRIVATE:
+        return IS_PRIVATE_EDEFAULT == null ? isPrivate != null : !IS_PRIVATE_EDEFAULT.equals(isPrivate);
       case KPIGeneratorPackage.TASK__PROGRESS:
         return progress != PROGRESS_EDEFAULT;
       case KPIGeneratorPackage.TASK__STATUS:
@@ -1314,20 +1148,14 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return ASSIGNED_TO_EDEFAULT == null ? assignedTo != null : !ASSIGNED_TO_EDEFAULT.equals(assignedTo);
       case KPIGeneratorPackage.TASK__CREATED_DATE:
         return CREATED_DATE_EDEFAULT == null ? createdDate != null : !CREATED_DATE_EDEFAULT.equals(createdDate);
-      case KPIGeneratorPackage.TASK__CREATED_HOUR:
-        return CREATED_HOUR_EDEFAULT == null ? createdHour != null : !CREATED_HOUR_EDEFAULT.equals(createdHour);
       case KPIGeneratorPackage.TASK__COMPLETED_DATE:
         return COMPLETED_DATE_EDEFAULT == null ? completedDate != null : !COMPLETED_DATE_EDEFAULT.equals(completedDate);
-      case KPIGeneratorPackage.TASK__COMPLETED_HOUR:
-        return COMPLETED_HOUR_EDEFAULT == null ? completedHour != null : !COMPLETED_HOUR_EDEFAULT.equals(completedHour);
-      case KPIGeneratorPackage.TASK__TIME_LOGGED:
-        return timeLogged != TIME_LOGGED_EDEFAULT;
-      case KPIGeneratorPackage.TASK__BILLABLE_MINUTES:
-        return billableMinutes != BILLABLE_MINUTES_EDEFAULT;
-      case KPIGeneratorPackage.TASK__PARENT_TASK:
-        return parentTask != null;
+      case KPIGeneratorPackage.TASK__TIME_LOGGED_MIN:
+        return timeLoggedMin != TIME_LOGGED_MIN_EDEFAULT;
+      case KPIGeneratorPackage.TASK__BILLABLE_TIME:
+        return billableTime != BILLABLE_TIME_EDEFAULT;
       case KPIGeneratorPackage.TASK__COMPLETED_ON_TIME:
-        return completedOnTime != null;
+        return COMPLETED_ON_TIME_EDEFAULT == null ? completedOnTime != null : !COMPLETED_ON_TIME_EDEFAULT.equals(completedOnTime);
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         return timeEstimated != TIME_ESTIMATED_EDEFAULT;
       case KPIGeneratorPackage.TASK__TAGS:
@@ -1347,34 +1175,38 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (milestone: ");
-    result.append(milestone);
-    result.append(", name: ");
-    result.append(name);
-    result.append(", TaskDescription: ");
-    result.append(taskDescription);
+    result.append(" (taskId: ");
+    result.append(taskId);
+    result.append(", taskName: ");
+    result.append(taskName);
+    result.append(", useCase: ");
+    result.append(useCase);
+    result.append(", sequenceNumber: ");
+    result.append(sequenceNumber);
+    result.append(", description: ");
+    result.append(description);
     result.append(", startDate: ");
     result.append(startDate);
-    result.append(", DueDate: ");
+    result.append(", dueDate: ");
     result.append(dueDate);
     result.append(", priority: ");
     result.append(priority);
+    result.append(", isPrivate: ");
+    result.append(isPrivate);
     result.append(", progress: ");
     result.append(progress);
     result.append(", assignedTo: ");
     result.append(assignedTo);
     result.append(", createdDate: ");
     result.append(createdDate);
-    result.append(", createdHour: ");
-    result.append(createdHour);
     result.append(", completedDate: ");
     result.append(completedDate);
-    result.append(", completedHour: ");
-    result.append(completedHour);
-    result.append(", timeLogged: ");
-    result.append(timeLogged);
-    result.append(", billableMinutes: ");
-    result.append(billableMinutes);
+    result.append(", timeLoggedMin: ");
+    result.append(timeLoggedMin);
+    result.append(", billableTime: ");
+    result.append(billableTime);
+    result.append(", completedOnTime: ");
+    result.append(completedOnTime);
     result.append(", timeEstimated: ");
     result.append(timeEstimated);
     result.append(", tags: ");

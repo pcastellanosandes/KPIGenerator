@@ -14,24 +14,22 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getProject <em>Project</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getMilestone <em>Milestone</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getName <em>Name</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTaskDescription <em>Task Description</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTaskId <em>Task Id</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTaskName <em>Task Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getUseCase <em>Use Case</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getSequenceNumber <em>Sequence Number</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getDescription <em>Description</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getPriority <em>Priority</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getPrivate <em>Private</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getIsPrivate <em>Is Private</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getProgress <em>Progress</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStatus <em>Status</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getAssignedTo <em>Assigned To</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCreatedDate <em>Created Date</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCreatedHour <em>Created Hour</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCompletedDate <em>Completed Date</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCompletedHour <em>Completed Hour</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTimeLogged <em>Time Logged</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getBillableMinutes <em>Billable Minutes</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getParentTask <em>Parent Task</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTimeLoggedMin <em>Time Logged Min</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getBillableTime <em>Billable Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCompletedOnTime <em>Completed On Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTimeEstimated <em>Time Estimated</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTags <em>Tags</em>}</li>
@@ -44,108 +42,134 @@ import org.eclipse.emf.ecore.EObject;
 public interface Task extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Project</b></em>' containment reference.
+   * Returns the value of the '<em><b>Task Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Project</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Task Id</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Project</em>' containment reference.
-   * @see #setProject(Project)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Project()
-   * @model containment="true"
-   * @generated
-   */
-  Project getProject();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getProject <em>Project</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Project</em>' containment reference.
-   * @see #getProject()
-   * @generated
-   */
-  void setProject(Project value);
-
-  /**
-   * Returns the value of the '<em><b>Milestone</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Milestone</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Milestone</em>' attribute.
-   * @see #setMilestone(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Milestone()
+   * @return the value of the '<em>Task Id</em>' attribute.
+   * @see #setTaskId(int)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_TaskId()
    * @model
    * @generated
    */
-  String getMilestone();
+  int getTaskId();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getMilestone <em>Milestone</em>}' attribute.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getTaskId <em>Task Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Milestone</em>' attribute.
-   * @see #getMilestone()
+   * @param value the new value of the '<em>Task Id</em>' attribute.
+   * @see #getTaskId()
    * @generated
    */
-  void setMilestone(String value);
+  void setTaskId(int value);
 
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Task Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Task Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Name()
+   * @return the value of the '<em>Task Name</em>' attribute.
+   * @see #setTaskName(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_TaskName()
    * @model
    * @generated
    */
-  String getName();
+  String getTaskName();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getTaskName <em>Task Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Task Name</em>' attribute.
+   * @see #getTaskName()
    * @generated
    */
-  void setName(String value);
+  void setTaskName(String value);
 
   /**
-   * Returns the value of the '<em><b>Task Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Use Case</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Task Description</em>' attribute isn't clear,
+   * If the meaning of the '<em>Use Case</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Task Description</em>' attribute.
-   * @see #setTaskDescription(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_TaskDescription()
+   * @return the value of the '<em>Use Case</em>' attribute.
+   * @see #setUseCase(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_UseCase()
    * @model
    * @generated
    */
-  String getTaskDescription();
+  String getUseCase();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getTaskDescription <em>Task Description</em>}' attribute.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getUseCase <em>Use Case</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Task Description</em>' attribute.
-   * @see #getTaskDescription()
+   * @param value the new value of the '<em>Use Case</em>' attribute.
+   * @see #getUseCase()
    * @generated
    */
-  void setTaskDescription(String value);
+  void setUseCase(String value);
+
+  /**
+   * Returns the value of the '<em><b>Sequence Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sequence Number</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sequence Number</em>' attribute.
+   * @see #setSequenceNumber(int)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_SequenceNumber()
+   * @model
+   * @generated
+   */
+  int getSequenceNumber();
+
+  /**
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getSequenceNumber <em>Sequence Number</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sequence Number</em>' attribute.
+   * @see #getSequenceNumber()
+   * @generated
+   */
+  void setSequenceNumber(int value);
+
+  /**
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Description()
+   * @model
+   * @generated
+   */
+  String getDescription();
+
+  /**
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(String value);
 
   /**
    * Returns the value of the '<em><b>Start Date</b></em>' attribute.
@@ -226,30 +250,30 @@ public interface Task extends EObject
   void setPriority(String value);
 
   /**
-   * Returns the value of the '<em><b>Private</b></em>' containment reference.
+   * Returns the value of the '<em><b>Is Private</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Private</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Is Private</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Private</em>' containment reference.
-   * @see #setPrivate(BOOL)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Private()
-   * @model containment="true"
+   * @return the value of the '<em>Is Private</em>' attribute.
+   * @see #setIsPrivate(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_IsPrivate()
+   * @model
    * @generated
    */
-  BOOL getPrivate();
+  String getIsPrivate();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getPrivate <em>Private</em>}' containment reference.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getIsPrivate <em>Is Private</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Private</em>' containment reference.
-   * @see #getPrivate()
+   * @param value the new value of the '<em>Is Private</em>' attribute.
+   * @see #getIsPrivate()
    * @generated
    */
-  void setPrivate(BOOL value);
+  void setIsPrivate(String value);
 
   /**
    * Returns the value of the '<em><b>Progress</b></em>' attribute.
@@ -356,32 +380,6 @@ public interface Task extends EObject
   void setCreatedDate(String value);
 
   /**
-   * Returns the value of the '<em><b>Created Hour</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Created Hour</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Created Hour</em>' attribute.
-   * @see #setCreatedHour(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_CreatedHour()
-   * @model
-   * @generated
-   */
-  String getCreatedHour();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getCreatedHour <em>Created Hour</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Created Hour</em>' attribute.
-   * @see #getCreatedHour()
-   * @generated
-   */
-  void setCreatedHour(String value);
-
-  /**
    * Returns the value of the '<em><b>Completed Date</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -408,134 +406,82 @@ public interface Task extends EObject
   void setCompletedDate(String value);
 
   /**
-   * Returns the value of the '<em><b>Completed Hour</b></em>' attribute.
+   * Returns the value of the '<em><b>Time Logged Min</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Completed Hour</em>' attribute isn't clear,
+   * If the meaning of the '<em>Time Logged Min</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Completed Hour</em>' attribute.
-   * @see #setCompletedHour(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_CompletedHour()
+   * @return the value of the '<em>Time Logged Min</em>' attribute.
+   * @see #setTimeLoggedMin(int)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_TimeLoggedMin()
    * @model
    * @generated
    */
-  String getCompletedHour();
+  int getTimeLoggedMin();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getCompletedHour <em>Completed Hour</em>}' attribute.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getTimeLoggedMin <em>Time Logged Min</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Completed Hour</em>' attribute.
-   * @see #getCompletedHour()
+   * @param value the new value of the '<em>Time Logged Min</em>' attribute.
+   * @see #getTimeLoggedMin()
    * @generated
    */
-  void setCompletedHour(String value);
+  void setTimeLoggedMin(int value);
 
   /**
-   * Returns the value of the '<em><b>Time Logged</b></em>' attribute.
+   * Returns the value of the '<em><b>Billable Time</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Time Logged</em>' attribute isn't clear,
+   * If the meaning of the '<em>Billable Time</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Time Logged</em>' attribute.
-   * @see #setTimeLogged(int)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_TimeLogged()
+   * @return the value of the '<em>Billable Time</em>' attribute.
+   * @see #setBillableTime(int)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_BillableTime()
    * @model
    * @generated
    */
-  int getTimeLogged();
+  int getBillableTime();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getTimeLogged <em>Time Logged</em>}' attribute.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getBillableTime <em>Billable Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Time Logged</em>' attribute.
-   * @see #getTimeLogged()
+   * @param value the new value of the '<em>Billable Time</em>' attribute.
+   * @see #getBillableTime()
    * @generated
    */
-  void setTimeLogged(int value);
+  void setBillableTime(int value);
 
   /**
-   * Returns the value of the '<em><b>Billable Minutes</b></em>' attribute.
+   * Returns the value of the '<em><b>Completed On Time</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Billable Minutes</em>' attribute isn't clear,
+   * If the meaning of the '<em>Completed On Time</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Billable Minutes</em>' attribute.
-   * @see #setBillableMinutes(int)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_BillableMinutes()
-   * @model
-   * @generated
-   */
-  int getBillableMinutes();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getBillableMinutes <em>Billable Minutes</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Billable Minutes</em>' attribute.
-   * @see #getBillableMinutes()
-   * @generated
-   */
-  void setBillableMinutes(int value);
-
-  /**
-   * Returns the value of the '<em><b>Parent Task</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Parent Task</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Parent Task</em>' reference.
-   * @see #setParentTask(Task)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_ParentTask()
-   * @model
-   * @generated
-   */
-  Task getParentTask();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getParentTask <em>Parent Task</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parent Task</em>' reference.
-   * @see #getParentTask()
-   * @generated
-   */
-  void setParentTask(Task value);
-
-  /**
-   * Returns the value of the '<em><b>Completed On Time</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Completed On Time</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Completed On Time</em>' containment reference.
-   * @see #setCompletedOnTime(BOOL)
+   * @return the value of the '<em>Completed On Time</em>' attribute.
+   * @see #setCompletedOnTime(String)
    * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_CompletedOnTime()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  BOOL getCompletedOnTime();
+  String getCompletedOnTime();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getCompletedOnTime <em>Completed On Time</em>}' containment reference.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getCompletedOnTime <em>Completed On Time</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Completed On Time</em>' containment reference.
+   * @param value the new value of the '<em>Completed On Time</em>' attribute.
    * @see #getCompletedOnTime()
    * @generated
    */
-  void setCompletedOnTime(BOOL value);
+  void setCompletedOnTime(String value);
 
   /**
    * Returns the value of the '<em><b>Time Estimated</b></em>' attribute.

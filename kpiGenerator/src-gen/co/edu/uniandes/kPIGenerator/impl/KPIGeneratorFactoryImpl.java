@@ -66,10 +66,10 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
     switch (eClass.getClassifierID())
     {
       case KPIGeneratorPackage.ROOT: return createRoot();
-      case KPIGeneratorPackage.TASK: return createTask();
       case KPIGeneratorPackage.PROJECT: return createProject();
+      case KPIGeneratorPackage.PHASE: return createPhase();
+      case KPIGeneratorPackage.TASK: return createTask();
       case KPIGeneratorPackage.STATUS: return createStatus();
-      case KPIGeneratorPackage.BOOL: return createBOOL();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -91,17 +91,6 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public Task createTask()
-  {
-    TaskImpl task = new TaskImpl();
-    return task;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Project createProject()
   {
     ProjectImpl project = new ProjectImpl();
@@ -113,10 +102,10 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public Status createStatus()
+  public Phase createPhase()
   {
-    StatusImpl status = new StatusImpl();
-    return status;
+    PhaseImpl phase = new PhaseImpl();
+    return phase;
   }
 
   /**
@@ -124,10 +113,21 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
-  public BOOL createBOOL()
+  public Task createTask()
   {
-    BOOLImpl bool = new BOOLImpl();
-    return bool;
+    TaskImpl task = new TaskImpl();
+    return task;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Status createStatus()
+  {
+    StatusImpl status = new StatusImpl();
+    return status;
   }
 
   /**

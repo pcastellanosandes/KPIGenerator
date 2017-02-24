@@ -3,6 +3,8 @@
  */
 package co.edu.uniandes.kPIGenerator;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Project#getName <em>Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Project#getProjectName <em>Project Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Project#getPhases <em>Phases</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getProject()
@@ -24,29 +27,45 @@ import org.eclipse.emf.ecore.EObject;
 public interface Project extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Project Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Project Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getProject_Name()
+   * @return the value of the '<em>Project Name</em>' attribute.
+   * @see #setProjectName(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getProject_ProjectName()
    * @model
    * @generated
    */
-  String getName();
+  String getProjectName();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Project#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Project#getProjectName <em>Project Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Project Name</em>' attribute.
+   * @see #getProjectName()
    * @generated
    */
-  void setName(String value);
+  void setProjectName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Phases</b></em>' containment reference list.
+   * The list contents are of type {@link co.edu.uniandes.kPIGenerator.Phase}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Phases</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Phases</em>' containment reference list.
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getProject_Phases()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Phase> getPhases();
 
 } // Project

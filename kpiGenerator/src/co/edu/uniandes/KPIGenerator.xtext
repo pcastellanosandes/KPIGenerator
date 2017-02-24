@@ -3,87 +3,69 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate kPIGenerator "http://www.edu.co/uniandes/KPIGenerator"
 Root returns Root:
-	HEADER
-	tasks+=Task
+	'['
+	projects+=Project
+	']'
 ;
-
-Task returns Task:
-	{Task}
-	INT
-	SEMICOLON
-	project =Project
-	SEMICOLON
-	(milestone = CADENA)?
-	SEMICOLON
-	name = CADENA
-	SEMICOLON
-	(TaskDescription = CADENA)?
-	SEMICOLON
-	startDate = DATE
-	SEMICOLON
-	DueDate = DATE
-	SEMICOLON
-	(priority =CADENA)?
-	SEMICOLON
-	private = BOOL
-	SEMICOLON
-	progress = INT
-	SEMICOLON
-	status = Status
-	SEMICOLON
-	assignedTo = CADENA
-	SEMICOLON
-	createdDate = DATE
-	createdHour = HOUR
-	SEMICOLON
-	CADENA  //Created By Firstname
-	SEMICOLON
-	CADENA // Created By Lastname
-	SEMICOLON
-	completedDate = DATE
-	completedHour = HOUR
-	SEMICOLON
-	CADENA  //Completed By Firstname
-	SEMICOLON
-	CADENA //Completed By Lastname
-	SEMICOLON 
-	(timeLogged = INT)?
-	SEMICOLON 
-	(billableMinutes = INT)?
-	SEMICOLON 
-	(parentTask =[Task])?
-	SEMICOLON 
-	completedOnTime = BOOL
-	SEMICOLON 
-	timeEstimated = INT
-	SEMICOLON 
-	(tags = CADENA)?
-	
-;
-
 Project returns Project:
 	{Project}
-	name = CADENA
+	'{'
+	'"name":"' projectName = CADENA '","phases":['
+	phases+=Phase
+	']'
+	'}'
+	','?
 	;
+
+Phase returns Phase:
+	{Phase}
+	'{'
+	'"name":"' phaseName = CADENA '","tasks":['
+	tasks+=Task
+	']'
+	'}'
+	','?
+;
+Task returns Task:
+	{Task}
+	'{'
+	'"id":' taskId = INT ','
+	'"name":"' taskName = CADENA '",'
+	'"useCase":"' useCase = CADENA '",'
+	'"sequenceNumber":' sequenceNumber = INT'.'INT ','
+	'"description":"' description = (CADENA|'""')'",'
+	'"startDate":"' startDate = DATE '",'
+	'"dueDate":"' dueDate = DATE '",'
+	'"priority":"' priority = (CADENA|'""') '",'
+	'"isPrivate":' isPrivate = CADENA ','
+	'"progress":' progress = INT ','
+	'"status":'
+	status = Status ','
+	'"assignedTo":"' assignedTo = CADENA '",'
+	'"createdDate":"' createdDate = DATEHOUR '",'
+	'"completedDate":"' completedDate = (DATEHOUR|'""') '",'
+	'"timeLoggedMin":' timeLoggedMin = INT ','
+	'"billableTime":' billableTime = INT ','
+	'"completedOnTime":' completedOnTime = CADENA ','
+	'"timeEstimated":' timeEstimated = INT ','
+	'"tags":"' tags = (CADENA|'""') 
+	'}'
+	','?
+;
+
+
 Status returns Status:
-	statusName = ('completed'|'new')
-	SEMICOLON
-	text = CADENA 
+	{Status}
+	'{'
+	'"type":"' statusName = CADENA '",'
+	'"text":"' text = CADENA '"'
+	'}'	
 ;
 
-BOOL returns BOOL:
-	{BOOL}
-	('FALSO'|'VERDADERO')
-;
 
-terminal SEMICOLON:
-	';'
-;
-terminal ENDLINE:
-	'\r\n'|EOF
-;
 terminal CADENA: 
-	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.')+('0'..'9')*)+
+	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.')+ ('0'..'9')*)+
+	
 ; 
 
 terminal DATE:
@@ -91,11 +73,7 @@ terminal DATE:
 	'0'..'9''0'..'9''/''0'..'9''0'..'9''/''0'..'9''0'..'9''0'..'9''0'..'9'
 ;
 
-terminal HOUR:
+terminal DATEHOUR:
 	//10:23 PM
-	' ''0'..'9''0'..'9'':''0'..'9''0'..'9'(' AM'|' PM')
-;
-
-terminal HEADER:
-	'Task ID;Task List;Milestone;Task Name;Task Description;Start Date;Due Date;Priority;Private;Progress;Status;Status Text;Assigned To;Date Created;Created By Firstname;Created By Lastname;Completed Date;Completed By Firstname;Completed By Lastname;Time Logged Minutes;Billable Minutes;Parent Task;Completed On Time;Time Estimate;Tags'
+	'0'..'9''0'..'9''/''0'..'9''0'..'9''/''0'..'9''0'..'9''0'..'9''0'..'9'' ''0'..'9''0'..'9'':''0'..'9''0'..'9'(' AM'|' PM')
 ;

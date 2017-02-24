@@ -47,7 +47,7 @@ public class GeneratorToJSON {
 		Task task = new  Task();
 		task.setId(Integer.parseInt(itemsLine[0]));
 		task.setName(itemsLine[3]);
-		task.setUseCase(taskName.length==5?itemsLine[3]:itemsLine[2]);
+		task.setUseCase(taskName.length==5?taskName[3]:taskName[2]);
 		task.setSequenceNumber(Double.parseDouble(taskName[taskName.length-1]));
 		task.setDescription(itemsLine[4]);
 		task.setStartDate(itemsLine[5]);

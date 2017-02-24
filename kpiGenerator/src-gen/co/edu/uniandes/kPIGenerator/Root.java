@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Root#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Root#getProjects <em>Projects</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getRoot()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Root extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Tasks</b></em>' containment reference list.
-   * The list contents are of type {@link co.edu.uniandes.kPIGenerator.Task}.
+   * Returns the value of the '<em><b>Projects</b></em>' containment reference list.
+   * The list contents are of type {@link co.edu.uniandes.kPIGenerator.Project}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Tasks</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Projects</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tasks</em>' containment reference list.
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getRoot_Tasks()
+   * @return the value of the '<em>Projects</em>' containment reference list.
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getRoot_Projects()
    * @model containment="true"
    * @generated
    */
-  EList<Task> getTasks();
+  EList<Project> getProjects();
 
 } // Root
