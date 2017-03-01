@@ -18,13 +18,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTaskName <em>Task Name</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getUseCase <em>Use Case</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getSequenceNumber <em>Sequence Number</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getDescription <em>Description</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getPriority <em>Priority</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getIsPrivate <em>Is Private</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getProgress <em>Progress</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStatus <em>Status</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStatusName <em>Status Name</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStatusText <em>Status Text</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getAssignedTo <em>Assigned To</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCreatedDate <em>Created Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCompletedDate <em>Completed Date</em>}</li>
@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getBillableTime <em>Billable Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCompletedOnTime <em>Completed On Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTimeEstimated <em>Time Estimated</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTags <em>Tags</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask()
@@ -144,32 +143,6 @@ public interface Task extends EObject
    * @generated
    */
   void setSequenceNumber(String value);
-
-  /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Description()
-   * @model
-   * @generated
-   */
-  String getDescription();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
-  void setDescription(String value);
 
   /**
    * Returns the value of the '<em><b>Start Date</b></em>' attribute.
@@ -302,30 +275,56 @@ public interface Task extends EObject
   void setProgress(int value);
 
   /**
-   * Returns the value of the '<em><b>Status</b></em>' containment reference.
+   * Returns the value of the '<em><b>Status Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Status</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Status Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Status</em>' containment reference.
-   * @see #setStatus(Status)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Status()
-   * @model containment="true"
+   * @return the value of the '<em>Status Name</em>' attribute.
+   * @see #setStatusName(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_StatusName()
+   * @model
    * @generated
    */
-  Status getStatus();
+  String getStatusName();
 
   /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getStatus <em>Status</em>}' containment reference.
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getStatusName <em>Status Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Status</em>' containment reference.
-   * @see #getStatus()
+   * @param value the new value of the '<em>Status Name</em>' attribute.
+   * @see #getStatusName()
    * @generated
    */
-  void setStatus(Status value);
+  void setStatusName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Status Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Status Text</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Status Text</em>' attribute.
+   * @see #setStatusText(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_StatusText()
+   * @model
+   * @generated
+   */
+  String getStatusText();
+
+  /**
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getStatusText <em>Status Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Status Text</em>' attribute.
+   * @see #getStatusText()
+   * @generated
+   */
+  void setStatusText(String value);
 
   /**
    * Returns the value of the '<em><b>Assigned To</b></em>' attribute.
@@ -508,31 +507,5 @@ public interface Task extends EObject
    * @generated
    */
   void setTimeEstimated(int value);
-
-  /**
-   * Returns the value of the '<em><b>Tags</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Tags</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Tags</em>' attribute.
-   * @see #setTags(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Tags()
-   * @model
-   * @generated
-   */
-  String getTags();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getTags <em>Tags</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tags</em>' attribute.
-   * @see #getTags()
-   * @generated
-   */
-  void setTags(String value);
 
 } // Task

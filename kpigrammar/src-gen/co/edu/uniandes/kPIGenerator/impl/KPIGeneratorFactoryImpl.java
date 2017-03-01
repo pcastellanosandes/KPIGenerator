@@ -69,7 +69,6 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
       case KPIGeneratorPackage.PROJECT: return createProject();
       case KPIGeneratorPackage.PHASE: return createPhase();
       case KPIGeneratorPackage.TASK: return createTask();
-      case KPIGeneratorPackage.STATUS: return createStatus();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -117,17 +116,6 @@ public class KPIGeneratorFactoryImpl extends EFactoryImpl implements KPIGenerato
   {
     TaskImpl task = new TaskImpl();
     return task;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Status createStatus()
-  {
-    StatusImpl status = new StatusImpl();
-    return status;
   }
 
   /**

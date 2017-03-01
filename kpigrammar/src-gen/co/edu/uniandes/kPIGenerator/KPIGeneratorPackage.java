@@ -206,22 +206,13 @@ public interface KPIGeneratorPackage extends EPackage
   int TASK__SEQUENCE_NUMBER = 3;
 
   /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__DESCRIPTION = 4;
-
-  /**
    * The feature id for the '<em><b>Start Date</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__START_DATE = 5;
+  int TASK__START_DATE = 4;
 
   /**
    * The feature id for the '<em><b>Due Date</b></em>' attribute.
@@ -230,7 +221,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__DUE_DATE = 6;
+  int TASK__DUE_DATE = 5;
 
   /**
    * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -239,7 +230,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PRIORITY = 7;
+  int TASK__PRIORITY = 6;
 
   /**
    * The feature id for the '<em><b>Is Private</b></em>' attribute.
@@ -248,7 +239,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__IS_PRIVATE = 8;
+  int TASK__IS_PRIVATE = 7;
 
   /**
    * The feature id for the '<em><b>Progress</b></em>' attribute.
@@ -257,16 +248,25 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PROGRESS = 9;
+  int TASK__PROGRESS = 8;
 
   /**
-   * The feature id for the '<em><b>Status</b></em>' containment reference.
+   * The feature id for the '<em><b>Status Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__STATUS = 10;
+  int TASK__STATUS_NAME = 9;
+
+  /**
+   * The feature id for the '<em><b>Status Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__STATUS_TEXT = 10;
 
   /**
    * The feature id for the '<em><b>Assigned To</b></em>' attribute.
@@ -332,59 +332,13 @@ public interface KPIGeneratorPackage extends EPackage
   int TASK__TIME_ESTIMATED = 17;
 
   /**
-   * The feature id for the '<em><b>Tags</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__TAGS = 18;
-
-  /**
    * The number of structural features of the '<em>Task</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK_FEATURE_COUNT = 19;
-
-  /**
-   * The meta object id for the '{@link co.edu.uniandes.kPIGenerator.impl.StatusImpl <em>Status</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see co.edu.uniandes.kPIGenerator.impl.StatusImpl
-   * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getStatus()
-   * @generated
-   */
-  int STATUS = 4;
-
-  /**
-   * The feature id for the '<em><b>Status Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATUS__STATUS_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATUS__TEXT = 1;
-
-  /**
-   * The number of structural features of the '<em>Status</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATUS_FEATURE_COUNT = 2;
+  int TASK_FEATURE_COUNT = 18;
 
 
   /**
@@ -527,17 +481,6 @@ public interface KPIGeneratorPackage extends EPackage
   EAttribute getTask_SequenceNumber();
 
   /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Task#getDescription()
-   * @see #getTask()
-   * @generated
-   */
-  EAttribute getTask_Description();
-
-  /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getStartDate <em>Start Date</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -593,15 +536,26 @@ public interface KPIGeneratorPackage extends EPackage
   EAttribute getTask_Progress();
 
   /**
-   * Returns the meta object for the containment reference '{@link co.edu.uniandes.kPIGenerator.Task#getStatus <em>Status</em>}'.
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getStatusName <em>Status Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Status</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Task#getStatus()
+   * @return the meta object for the attribute '<em>Status Name</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getStatusName()
    * @see #getTask()
    * @generated
    */
-  EReference getTask_Status();
+  EAttribute getTask_StatusName();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getStatusText <em>Status Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Status Text</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getStatusText()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_StatusText();
 
   /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getAssignedTo <em>Assigned To</em>}'.
@@ -679,49 +633,6 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    */
   EAttribute getTask_TimeEstimated();
-
-  /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getTags <em>Tags</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tags</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Task#getTags()
-   * @see #getTask()
-   * @generated
-   */
-  EAttribute getTask_Tags();
-
-  /**
-   * Returns the meta object for class '{@link co.edu.uniandes.kPIGenerator.Status <em>Status</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Status</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Status
-   * @generated
-   */
-  EClass getStatus();
-
-  /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Status#getStatusName <em>Status Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Status Name</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Status#getStatusName()
-   * @see #getStatus()
-   * @generated
-   */
-  EAttribute getStatus_StatusName();
-
-  /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Status#getText <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Text</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Status#getText()
-   * @see #getStatus()
-   * @generated
-   */
-  EAttribute getStatus_Text();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -859,14 +770,6 @@ public interface KPIGeneratorPackage extends EPackage
     EAttribute TASK__SEQUENCE_NUMBER = eINSTANCE.getTask_SequenceNumber();
 
     /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK__DESCRIPTION = eINSTANCE.getTask_Description();
-
-    /**
      * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -907,12 +810,20 @@ public interface KPIGeneratorPackage extends EPackage
     EAttribute TASK__PROGRESS = eINSTANCE.getTask_Progress();
 
     /**
-     * The meta object literal for the '<em><b>Status</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Status Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TASK__STATUS = eINSTANCE.getTask_Status();
+    EAttribute TASK__STATUS_NAME = eINSTANCE.getTask_StatusName();
+
+    /**
+     * The meta object literal for the '<em><b>Status Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__STATUS_TEXT = eINSTANCE.getTask_StatusText();
 
     /**
      * The meta object literal for the '<em><b>Assigned To</b></em>' attribute feature.
@@ -969,40 +880,6 @@ public interface KPIGeneratorPackage extends EPackage
      * @generated
      */
     EAttribute TASK__TIME_ESTIMATED = eINSTANCE.getTask_TimeEstimated();
-
-    /**
-     * The meta object literal for the '<em><b>Tags</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK__TAGS = eINSTANCE.getTask_Tags();
-
-    /**
-     * The meta object literal for the '{@link co.edu.uniandes.kPIGenerator.impl.StatusImpl <em>Status</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see co.edu.uniandes.kPIGenerator.impl.StatusImpl
-     * @see co.edu.uniandes.kPIGenerator.impl.KPIGeneratorPackageImpl#getStatus()
-     * @generated
-     */
-    EClass STATUS = eINSTANCE.getStatus();
-
-    /**
-     * The meta object literal for the '<em><b>Status Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STATUS__STATUS_NAME = eINSTANCE.getStatus_StatusName();
-
-    /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STATUS__TEXT = eINSTANCE.getStatus_Text();
 
   }
 

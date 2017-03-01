@@ -12,7 +12,8 @@ public class Task {
 	private String priority;
 	private boolean isPrivate;
 	private int progress;
-	private Status status;
+	private String status;
+	private String statusText;
 	private String assignedTo;
 	private String createdDate;
 	private String completedDate;
@@ -20,7 +21,7 @@ public class Task {
 	private int billableTime;
 	private boolean completedOnTime;
 	private int timeEstimated;
-	private String tags;
+	//private String tags;
 	
 	public int getId() {
 		return id;
@@ -82,11 +83,17 @@ public class Task {
 	public void setProgress(int progress) {
 		this.progress = progress;
 	}
-	public Status getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
+	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getStatusText() {
+		return statusText;
+	}
+	public void setStatusText(String statusText) {
+		this.statusText = statusText;
 	}
 	public String getAssignedTo() {
 		return assignedTo;
@@ -130,12 +137,12 @@ public class Task {
 	public void setTimeEstimated(int timeEstimated) {
 		this.timeEstimated = timeEstimated;
 	}
-	public String getTags() {
-		return tags;
-	}
-	public void setTags(String tags) {
-		this.tags = tags;
-	}
-	
+//	public String getTags() {
+//		return tags;
+//	}
+//	public void setTags(String tags) {
+//		this.tags = tags;
+//	}
+//	
 	
 }

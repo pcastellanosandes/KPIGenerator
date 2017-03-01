@@ -22,13 +22,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/taskName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/useCase"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/sequenceNumber"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/dueDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/isPrivate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/progress"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KPIGenerator.ecore#//Task/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/statusName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/statusText"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/assignedTo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/createdDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/completedDate"/>
@@ -36,11 +36,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/billableTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/completedOnTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/timeEstimated"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/tags"/>
-    </genClasses>
-    <genClasses ecoreClass="KPIGenerator.ecore#//Status">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Status/statusName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Status/text"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

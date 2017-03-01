@@ -16,7 +16,7 @@ Phase returns Phase:
 ;
 Task returns Task:
 	{Task}
-	'{"id":' taskId = INT ',"name":"' taskName = CADENA '","useCase":"' useCase = CADENA '","sequenceNumber":' sequenceNumber = INT'.'INT ',"description":"' description = (CADENA|'""')'","startDate":"' startDate = DATE '","dueDate":"' dueDate = DATE '","priority":"' priority = (CADENA|'""') '","isPrivate":' isPrivate = CADENA ',"progress":' progress = INT ',"status":'status = Status ',"assignedTo":"' assignedTo = CADENA '","createdDate":"' createdDate = DATEHOUR '","completedDate":"' completedDate = (DATEHOUR|'""') '","timeLoggedMin":' timeLoggedMin = INT ',"billableTime":' billableTime = INT ',"completedOnTime":' completedOnTime = CADENA ',"timeEstimated":' timeEstimated = INT ',"tags":"' tags = (CADENA|'""') '}'','?
+	'{"id":' taskId = INT ',"name":"' taskName = CADENA '","useCase":"' useCase = CADENA '","sequenceNumber":' sequenceNumber = INT'.'INT ',"description":"' description = (CADENA|'""')'","startDate":"' startDate = DATE '","dueDate":"' dueDate = DATE '","priority":"' priority = (CADENA|'""') '","isPrivate":' isPrivate = CADENA ',"progress":' progress = INT ',"status":'status = Status ',"assignedTo":"' assignedTo = CADENA '","createdDate":"' createdDate = DATEHOUR '","completedDate":"' completedDate = (DATEHOUR|'""') '","timeLoggedMin":' timeLoggedMin = INT ',"billableTime":' billableTime = INT ',"completedOnTime":' completedOnTime = CADENA ',"timeEstimated":' timeEstimated = INT ',"tags":"' tags = (CADENA|' ') '}'','?
 ;
 
 

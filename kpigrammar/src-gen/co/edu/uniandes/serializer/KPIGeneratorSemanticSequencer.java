@@ -7,7 +7,6 @@ import co.edu.uniandes.kPIGenerator.KPIGeneratorPackage;
 import co.edu.uniandes.kPIGenerator.Phase;
 import co.edu.uniandes.kPIGenerator.Project;
 import co.edu.uniandes.kPIGenerator.Root;
-import co.edu.uniandes.kPIGenerator.Status;
 import co.edu.uniandes.kPIGenerator.Task;
 import co.edu.uniandes.services.KPIGeneratorGrammarAccess;
 import com.google.inject.Inject;
@@ -18,9 +17,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -45,9 +42,6 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case KPIGeneratorPackage.ROOT:
 				sequence_Root(context, (Root) semanticObject); 
 				return; 
-			case KPIGeneratorPackage.STATUS:
-				sequence_Status(context, (Status) semanticObject); 
-				return; 
 			case KPIGeneratorPackage.TASK:
 				sequence_Task(context, (Task) semanticObject); 
 				return; 
@@ -61,7 +55,7 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Phase returns Phase
 	 *
 	 * Constraint:
-	 *     (phaseName=CADENA tasks+=Task)
+	 *     (phaseName=CADENA tasks+=Task+)
 	 */
 	protected void sequence_Phase(ISerializationContext context, Phase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -73,7 +67,7 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Project returns Project
 	 *
 	 * Constraint:
-	 *     (projectName=CADENA phases+=Phase)
+	 *     (projectName=CADENA phases+=Phase+)
 	 */
 	protected void sequence_Project(ISerializationContext context, Project semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -85,31 +79,10 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Root returns Root
 	 *
 	 * Constraint:
-	 *     projects+=Project
+	 *     projects+=Project+
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Status returns Status
-	 *
-	 * Constraint:
-	 *     (statusName=CADENA text=CADENA)
-	 */
-	protected void sequence_Status(ISerializationContext context, Status semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, KPIGeneratorPackage.Literals.STATUS__STATUS_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, KPIGeneratorPackage.Literals.STATUS__STATUS_NAME));
-			if (transientValues.isValueTransient(semanticObject, KPIGeneratorPackage.Literals.STATUS__TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, KPIGeneratorPackage.Literals.STATUS__TEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStatusAccess().getStatusNameCADENATerminalRuleCall_2_0(), semanticObject.getStatusName());
-		feeder.accept(grammarAccess.getStatusAccess().getTextCADENATerminalRuleCall_4_0(), semanticObject.getText());
-		feeder.finish();
 	}
 	
 	
@@ -123,21 +96,20 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         taskName=CADENA 
 	 *         useCase=CADENA 
 	 *         sequenceNumber=DOUBLE 
-	 *         description=CADENA 
 	 *         startDate=DATE 
 	 *         dueDate=DATE 
-	 *         (priority=CADENA | priority='""') 
+	 *         (priority=CADENA | priority='-') 
 	 *         isPrivate=CADENA 
 	 *         progress=INT 
-	 *         status=Status 
+	 *         statusName=CADENA 
+	 *         statusText=CADENA 
 	 *         assignedTo=CADENA 
 	 *         createdDate=DATEHOUR 
-	 *         (completedDate=DATEHOUR | completedDate='""') 
+	 *         (completedDate=DATEHOUR | completedDate='-') 
 	 *         timeLoggedMin=INT 
 	 *         billableTime=INT 
 	 *         completedOnTime=CADENA 
-	 *         timeEstimated=INT 
-	 *         (tags=CADENA | tags='"')
+	 *         timeEstimated=INT
 	 *     )
 	 */
 	protected void sequence_Task(ISerializationContext context, Task semanticObject) {

@@ -96,11 +96,6 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
         return createTaskAdapter();
       }
       @Override
-      public Adapter caseStatus(Status object)
-      {
-        return createStatusAdapter();
-      }
-      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -178,21 +173,6 @@ public class KPIGeneratorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTaskAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link co.edu.uniandes.kPIGenerator.Status <em>Status</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see co.edu.uniandes.kPIGenerator.Status
-   * @generated
-   */
-  public Adapter createStatusAdapter()
   {
     return null;
   }
