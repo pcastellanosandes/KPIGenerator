@@ -3,36 +3,40 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate kPIGenerator "http://www.edu.co/uniandes/KPIGenerator"
 Root returns Root:
-	'['projects+=Project+']'
+	'['projects+=Project (','projects+=Project)*']'
 ;
 Project returns Project:
 	{Project}
-	'{"name":"' projectName = CADENA '","phases":['phases+=Phase+']}'(',')?
+	'{"name":"' projectName = CADENA '","phases":['phases+=Phase (','phases+=Phase)*']}'
 	;
 
 Phase returns Phase:
 	{Phase}
-	'{"name":"' phaseName = CADENA '","tasks":['tasks+=Task+']}'(',')?
+	(',')?'{"name":"' phaseName = CADENA '","tasks":['tasks+=Task (','tasks+=Task)* ']}'
 ;
 Task returns Task:
 	{Task}
-	'{"id":' taskId = INT ',"name":"' taskName = CADENA '","useCase":"' useCase = CADENA '","sequenceNumber":' sequenceNumber = DOUBLE ',"description":"'(CADENA|'-') '","startDate":"' startDate = DATE '","dueDate":"' dueDate = DATE '","priority":"' priority = (CADENA|'-') '","isPrivate":' isPrivate = CADENA ',"progress":' progress = INT ',"status":"' statusName = CADENA '","statusText":"' statusText = CADENA '","assignedTo":"' assignedTo = CADENA '","createdDate":"' createdDate = DATEHOUR '","completedDate":"' completedDate = (DATEHOUR|'-') '","timeLoggedMin":' timeLoggedMin = INT ',"billableTime":' billableTime = INT ',"completedOnTime":' completedOnTime = CADENA ',"timeEstimated":' timeEstimated = INT '}'(',')?
+	'{"id":' taskId = INT ',"name":"' taskName = CADENA '","useCase":"' useCase = CADENA '","sequenceNumber":' sequenceNumber = DOUBLE ',"startDate":"' startDate = (DATE|'-') '","dueDate":"' dueDate = (DATE|'-') '","isPrivate":' isPrivate = CADENA ',"progress":' progress = INT ',"status":"' statusName = CADENA '","statusText":"' statusText = CADENA '","assignedTo":"' assignedTo = CADENA '","createdDate":"' createdDate = DATEHOUR '","completedDate":"' completedDate = (DATEHOUR|'-') '","timeLoggedMin":' timeLoggedMin = INT ',"billableTime":' billableTime = INT ',"completedOnTime":' completedOnTime = CADENA ',"timeEstimated":' timeEstimated = INT'}'
 ;
 
 terminal CADENA: 
-	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.'|'('|')')+ ('0'..'9')*)+
-	
-; 
+	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.'|'('|')'|'/'|':')+ ('0'..'9')*)+
+	; 
 terminal DOUBLE:
 	INT'.'INT
 ;
+
 terminal DATE:
 	//28/07/2016
-	'0'..'9''0'..'9''/''0'..'9''0'..'9''/''0'..'9''0'..'9''0'..'9''0'..'9'
+	(INT+'/'INT+'/'INT+)
 ;
 
 terminal DATEHOUR:
 	//28/07/2016 10:23 PM
-	'0'..'9''0'..'9''/''0'..'9''0'..'9''/''0'..'9''0'..'9''0'..'9''0'..'9'' ''0'..'9''0'..'9'':''0'..'9''0'..'9'(' AM'|' PM')
+	DATE SPACE (INT':'INT) SPACE ('AM'|'PM')
 ;
 
+terminal SPACE:	
+	' '	
+;
+	

@@ -29,26 +29,42 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cProjectsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cProjectsProjectParserRuleCall_1_0 = (RuleCall)cProjectsAssignment_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cProjectsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cProjectsProjectParserRuleCall_2_1_0 = (RuleCall)cProjectsAssignment_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Root:
-		//	'[' projects+=Project+ ']';
+		//	'[' projects+=Project (',' projects+=Project)* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'[' projects+=Project+ ']'
+		//'[' projects+=Project (',' projects+=Project)* ']'
 		public Group getGroup() { return cGroup; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 		
-		//projects+=Project+
+		//projects+=Project
 		public Assignment getProjectsAssignment_1() { return cProjectsAssignment_1; }
 		
 		//Project
 		public RuleCall getProjectsProjectParserRuleCall_1_0() { return cProjectsProjectParserRuleCall_1_0; }
 		
+		//(',' projects+=Project)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//','
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//projects+=Project
+		public Assignment getProjectsAssignment_2_1() { return cProjectsAssignment_2_1; }
+		
+		//Project
+		public RuleCall getProjectsProjectParserRuleCall_2_1_0() { return cProjectsProjectParserRuleCall_2_1_0; }
+		
 		//']'
-		public Keyword getRightSquareBracketKeyword_2() { return cRightSquareBracketKeyword_2; }
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 	public class ProjectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Project");
@@ -60,15 +76,18 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPhasesKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cPhasesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cPhasesPhaseParserRuleCall_4_0 = (RuleCall)cPhasesAssignment_4.eContents().get(0);
-		private final Keyword cRightSquareBracketRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cPhasesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cPhasesPhaseParserRuleCall_5_1_0 = (RuleCall)cPhasesAssignment_5_1.eContents().get(0);
+		private final Keyword cRightSquareBracketRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Project:
 		//	{Project}
-		//	'{"name":"' projectName=CADENA '","phases":[' phases+=Phase+ ']}' ','?;
+		//	'{"name":"' projectName=CADENA '","phases":[' phases+=Phase (',' phases+=Phase)* ']}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Project} '{"name":"' projectName=CADENA '","phases":[' phases+=Phase+ ']}' ','?
+		//{Project} '{"name":"' projectName=CADENA '","phases":[' phases+=Phase (',' phases+=Phase)* ']}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Project}
@@ -86,65 +105,89 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//'","phases":['
 		public Keyword getPhasesKeyword_3() { return cPhasesKeyword_3; }
 		
-		//phases+=Phase+
+		//phases+=Phase
 		public Assignment getPhasesAssignment_4() { return cPhasesAssignment_4; }
 		
 		//Phase
 		public RuleCall getPhasesPhaseParserRuleCall_4_0() { return cPhasesPhaseParserRuleCall_4_0; }
 		
-		//']}'
-		public Keyword getRightSquareBracketRightCurlyBracketKeyword_5() { return cRightSquareBracketRightCurlyBracketKeyword_5; }
+		//(',' phases+=Phase)*
+		public Group getGroup_5() { return cGroup_5; }
 		
-		//','?
-		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		//','
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//phases+=Phase
+		public Assignment getPhasesAssignment_5_1() { return cPhasesAssignment_5_1; }
+		
+		//Phase
+		public RuleCall getPhasesPhaseParserRuleCall_5_1_0() { return cPhasesPhaseParserRuleCall_5_1_0; }
+		
+		//']}'
+		public Keyword getRightSquareBracketRightCurlyBracketKeyword_6() { return cRightSquareBracketRightCurlyBracketKeyword_6; }
 	}
 	public class PhaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Phase");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cPhaseAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cNameKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cPhaseNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPhaseNameCADENATerminalRuleCall_2_0 = (RuleCall)cPhaseNameAssignment_2.eContents().get(0);
-		private final Keyword cTasksKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTasksAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTasksTaskParserRuleCall_4_0 = (RuleCall)cTasksAssignment_4.eContents().get(0);
-		private final Keyword cRightSquareBracketRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cNameKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPhaseNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPhaseNameCADENATerminalRuleCall_3_0 = (RuleCall)cPhaseNameAssignment_3.eContents().get(0);
+		private final Keyword cTasksKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTasksAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTasksTaskParserRuleCall_5_0 = (RuleCall)cTasksAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cTasksAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cTasksTaskParserRuleCall_6_1_0 = (RuleCall)cTasksAssignment_6_1.eContents().get(0);
+		private final Keyword cRightSquareBracketRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Phase:
-		//	{Phase}
-		//	'{"name":"' phaseName=CADENA '","tasks":[' tasks+=Task+ ']}' ','?;
+		//	{Phase} ','? '{"name":"' phaseName=CADENA '","tasks":[' tasks+=Task (',' tasks+=Task)* ']}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Phase} '{"name":"' phaseName=CADENA '","tasks":[' tasks+=Task+ ']}' ','?
+		//{Phase} ','? '{"name":"' phaseName=CADENA '","tasks":[' tasks+=Task (',' tasks+=Task)* ']}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Phase}
 		public Action getPhaseAction_0() { return cPhaseAction_0; }
 		
+		//','?
+		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
+		
 		//'{"name":"'
-		public Keyword getNameKeyword_1() { return cNameKeyword_1; }
+		public Keyword getNameKeyword_2() { return cNameKeyword_2; }
 		
 		//phaseName=CADENA
-		public Assignment getPhaseNameAssignment_2() { return cPhaseNameAssignment_2; }
+		public Assignment getPhaseNameAssignment_3() { return cPhaseNameAssignment_3; }
 		
 		//CADENA
-		public RuleCall getPhaseNameCADENATerminalRuleCall_2_0() { return cPhaseNameCADENATerminalRuleCall_2_0; }
+		public RuleCall getPhaseNameCADENATerminalRuleCall_3_0() { return cPhaseNameCADENATerminalRuleCall_3_0; }
 		
 		//'","tasks":['
-		public Keyword getTasksKeyword_3() { return cTasksKeyword_3; }
+		public Keyword getTasksKeyword_4() { return cTasksKeyword_4; }
 		
-		//tasks+=Task+
-		public Assignment getTasksAssignment_4() { return cTasksAssignment_4; }
+		//tasks+=Task
+		public Assignment getTasksAssignment_5() { return cTasksAssignment_5; }
 		
 		//Task
-		public RuleCall getTasksTaskParserRuleCall_4_0() { return cTasksTaskParserRuleCall_4_0; }
+		public RuleCall getTasksTaskParserRuleCall_5_0() { return cTasksTaskParserRuleCall_5_0; }
+		
+		//(',' tasks+=Task)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//','
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		
+		//tasks+=Task
+		public Assignment getTasksAssignment_6_1() { return cTasksAssignment_6_1; }
+		
+		//Task
+		public RuleCall getTasksTaskParserRuleCall_6_1_0() { return cTasksTaskParserRuleCall_6_1_0; }
 		
 		//']}'
-		public Keyword getRightSquareBracketRightCurlyBracketKeyword_5() { return cRightSquareBracketRightCurlyBracketKeyword_5; }
-		
-		//','?
-		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
+		public Keyword getRightSquareBracketRightCurlyBracketKeyword_7() { return cRightSquareBracketRightCurlyBracketKeyword_7; }
 	}
 	public class TaskElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.Task");
@@ -162,77 +205,69 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSequenceNumberKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cSequenceNumberAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cSequenceNumberDOUBLETerminalRuleCall_8_0 = (RuleCall)cSequenceNumberAssignment_8.eContents().get(0);
-		private final Keyword cDescriptionKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Alternatives cAlternatives_10 = (Alternatives)cGroup.eContents().get(10);
-		private final RuleCall cCADENATerminalRuleCall_10_0 = (RuleCall)cAlternatives_10.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_10_1 = (Keyword)cAlternatives_10.eContents().get(1);
-		private final Keyword cStartDateKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cStartDateAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cStartDateDATETerminalRuleCall_12_0 = (RuleCall)cStartDateAssignment_12.eContents().get(0);
-		private final Keyword cDueDateKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Assignment cDueDateAssignment_14 = (Assignment)cGroup.eContents().get(14);
-		private final RuleCall cDueDateDATETerminalRuleCall_14_0 = (RuleCall)cDueDateAssignment_14.eContents().get(0);
-		private final Keyword cPriorityKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Assignment cPriorityAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final Alternatives cPriorityAlternatives_16_0 = (Alternatives)cPriorityAssignment_16.eContents().get(0);
-		private final RuleCall cPriorityCADENATerminalRuleCall_16_0_0 = (RuleCall)cPriorityAlternatives_16_0.eContents().get(0);
-		private final Keyword cPriorityHyphenMinusKeyword_16_0_1 = (Keyword)cPriorityAlternatives_16_0.eContents().get(1);
-		private final Keyword cIsPrivateKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Assignment cIsPrivateAssignment_18 = (Assignment)cGroup.eContents().get(18);
-		private final RuleCall cIsPrivateCADENATerminalRuleCall_18_0 = (RuleCall)cIsPrivateAssignment_18.eContents().get(0);
-		private final Keyword cProgressKeyword_19 = (Keyword)cGroup.eContents().get(19);
-		private final Assignment cProgressAssignment_20 = (Assignment)cGroup.eContents().get(20);
-		private final RuleCall cProgressINTTerminalRuleCall_20_0 = (RuleCall)cProgressAssignment_20.eContents().get(0);
-		private final Keyword cStatusKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Assignment cStatusNameAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cStatusNameCADENATerminalRuleCall_22_0 = (RuleCall)cStatusNameAssignment_22.eContents().get(0);
-		private final Keyword cStatusTextKeyword_23 = (Keyword)cGroup.eContents().get(23);
-		private final Assignment cStatusTextAssignment_24 = (Assignment)cGroup.eContents().get(24);
-		private final RuleCall cStatusTextCADENATerminalRuleCall_24_0 = (RuleCall)cStatusTextAssignment_24.eContents().get(0);
-		private final Keyword cAssignedToKeyword_25 = (Keyword)cGroup.eContents().get(25);
-		private final Assignment cAssignedToAssignment_26 = (Assignment)cGroup.eContents().get(26);
-		private final RuleCall cAssignedToCADENATerminalRuleCall_26_0 = (RuleCall)cAssignedToAssignment_26.eContents().get(0);
-		private final Keyword cCreatedDateKeyword_27 = (Keyword)cGroup.eContents().get(27);
-		private final Assignment cCreatedDateAssignment_28 = (Assignment)cGroup.eContents().get(28);
-		private final RuleCall cCreatedDateDATEHOURTerminalRuleCall_28_0 = (RuleCall)cCreatedDateAssignment_28.eContents().get(0);
-		private final Keyword cCompletedDateKeyword_29 = (Keyword)cGroup.eContents().get(29);
-		private final Assignment cCompletedDateAssignment_30 = (Assignment)cGroup.eContents().get(30);
-		private final Alternatives cCompletedDateAlternatives_30_0 = (Alternatives)cCompletedDateAssignment_30.eContents().get(0);
-		private final RuleCall cCompletedDateDATEHOURTerminalRuleCall_30_0_0 = (RuleCall)cCompletedDateAlternatives_30_0.eContents().get(0);
-		private final Keyword cCompletedDateHyphenMinusKeyword_30_0_1 = (Keyword)cCompletedDateAlternatives_30_0.eContents().get(1);
-		private final Keyword cTimeLoggedMinKeyword_31 = (Keyword)cGroup.eContents().get(31);
-		private final Assignment cTimeLoggedMinAssignment_32 = (Assignment)cGroup.eContents().get(32);
-		private final RuleCall cTimeLoggedMinINTTerminalRuleCall_32_0 = (RuleCall)cTimeLoggedMinAssignment_32.eContents().get(0);
-		private final Keyword cBillableTimeKeyword_33 = (Keyword)cGroup.eContents().get(33);
-		private final Assignment cBillableTimeAssignment_34 = (Assignment)cGroup.eContents().get(34);
-		private final RuleCall cBillableTimeINTTerminalRuleCall_34_0 = (RuleCall)cBillableTimeAssignment_34.eContents().get(0);
-		private final Keyword cCompletedOnTimeKeyword_35 = (Keyword)cGroup.eContents().get(35);
-		private final Assignment cCompletedOnTimeAssignment_36 = (Assignment)cGroup.eContents().get(36);
-		private final RuleCall cCompletedOnTimeCADENATerminalRuleCall_36_0 = (RuleCall)cCompletedOnTimeAssignment_36.eContents().get(0);
-		private final Keyword cTimeEstimatedKeyword_37 = (Keyword)cGroup.eContents().get(37);
-		private final Assignment cTimeEstimatedAssignment_38 = (Assignment)cGroup.eContents().get(38);
-		private final RuleCall cTimeEstimatedINTTerminalRuleCall_38_0 = (RuleCall)cTimeEstimatedAssignment_38.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_39 = (Keyword)cGroup.eContents().get(39);
-		private final Keyword cCommaKeyword_40 = (Keyword)cGroup.eContents().get(40);
+		private final Keyword cStartDateKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cStartDateAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final Alternatives cStartDateAlternatives_10_0 = (Alternatives)cStartDateAssignment_10.eContents().get(0);
+		private final RuleCall cStartDateDATETerminalRuleCall_10_0_0 = (RuleCall)cStartDateAlternatives_10_0.eContents().get(0);
+		private final Keyword cStartDateHyphenMinusKeyword_10_0_1 = (Keyword)cStartDateAlternatives_10_0.eContents().get(1);
+		private final Keyword cDueDateKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cDueDateAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final Alternatives cDueDateAlternatives_12_0 = (Alternatives)cDueDateAssignment_12.eContents().get(0);
+		private final RuleCall cDueDateDATETerminalRuleCall_12_0_0 = (RuleCall)cDueDateAlternatives_12_0.eContents().get(0);
+		private final Keyword cDueDateHyphenMinusKeyword_12_0_1 = (Keyword)cDueDateAlternatives_12_0.eContents().get(1);
+		private final Keyword cIsPrivateKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cIsPrivateAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cIsPrivateCADENATerminalRuleCall_14_0 = (RuleCall)cIsPrivateAssignment_14.eContents().get(0);
+		private final Keyword cProgressKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cProgressAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cProgressINTTerminalRuleCall_16_0 = (RuleCall)cProgressAssignment_16.eContents().get(0);
+		private final Keyword cStatusKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cStatusNameAssignment_18 = (Assignment)cGroup.eContents().get(18);
+		private final RuleCall cStatusNameCADENATerminalRuleCall_18_0 = (RuleCall)cStatusNameAssignment_18.eContents().get(0);
+		private final Keyword cStatusTextKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Assignment cStatusTextAssignment_20 = (Assignment)cGroup.eContents().get(20);
+		private final RuleCall cStatusTextCADENATerminalRuleCall_20_0 = (RuleCall)cStatusTextAssignment_20.eContents().get(0);
+		private final Keyword cAssignedToKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Assignment cAssignedToAssignment_22 = (Assignment)cGroup.eContents().get(22);
+		private final RuleCall cAssignedToCADENATerminalRuleCall_22_0 = (RuleCall)cAssignedToAssignment_22.eContents().get(0);
+		private final Keyword cCreatedDateKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Assignment cCreatedDateAssignment_24 = (Assignment)cGroup.eContents().get(24);
+		private final RuleCall cCreatedDateDATEHOURTerminalRuleCall_24_0 = (RuleCall)cCreatedDateAssignment_24.eContents().get(0);
+		private final Keyword cCompletedDateKeyword_25 = (Keyword)cGroup.eContents().get(25);
+		private final Assignment cCompletedDateAssignment_26 = (Assignment)cGroup.eContents().get(26);
+		private final Alternatives cCompletedDateAlternatives_26_0 = (Alternatives)cCompletedDateAssignment_26.eContents().get(0);
+		private final RuleCall cCompletedDateDATEHOURTerminalRuleCall_26_0_0 = (RuleCall)cCompletedDateAlternatives_26_0.eContents().get(0);
+		private final Keyword cCompletedDateHyphenMinusKeyword_26_0_1 = (Keyword)cCompletedDateAlternatives_26_0.eContents().get(1);
+		private final Keyword cTimeLoggedMinKeyword_27 = (Keyword)cGroup.eContents().get(27);
+		private final Assignment cTimeLoggedMinAssignment_28 = (Assignment)cGroup.eContents().get(28);
+		private final RuleCall cTimeLoggedMinINTTerminalRuleCall_28_0 = (RuleCall)cTimeLoggedMinAssignment_28.eContents().get(0);
+		private final Keyword cBillableTimeKeyword_29 = (Keyword)cGroup.eContents().get(29);
+		private final Assignment cBillableTimeAssignment_30 = (Assignment)cGroup.eContents().get(30);
+		private final RuleCall cBillableTimeINTTerminalRuleCall_30_0 = (RuleCall)cBillableTimeAssignment_30.eContents().get(0);
+		private final Keyword cCompletedOnTimeKeyword_31 = (Keyword)cGroup.eContents().get(31);
+		private final Assignment cCompletedOnTimeAssignment_32 = (Assignment)cGroup.eContents().get(32);
+		private final RuleCall cCompletedOnTimeCADENATerminalRuleCall_32_0 = (RuleCall)cCompletedOnTimeAssignment_32.eContents().get(0);
+		private final Keyword cTimeEstimatedKeyword_33 = (Keyword)cGroup.eContents().get(33);
+		private final Assignment cTimeEstimatedAssignment_34 = (Assignment)cGroup.eContents().get(34);
+		private final RuleCall cTimeEstimatedINTTerminalRuleCall_34_0 = (RuleCall)cTimeEstimatedAssignment_34.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_35 = (Keyword)cGroup.eContents().get(35);
 		
 		//Task:
 		//	{Task}
 		//	'{"id":' taskId=INT ',"name":"' taskName=CADENA '","useCase":"' useCase=CADENA '","sequenceNumber":'
-		//	sequenceNumber=DOUBLE ',"description":"' (CADENA | '-') '","startDate":"' startDate=DATE '","dueDate":"' dueDate=DATE
-		//	'","priority":"' priority=(CADENA | '-') '","isPrivate":' isPrivate=CADENA ',"progress":' progress=INT ',"status":"'
-		//	statusName=CADENA '","statusText":"' statusText=CADENA '","assignedTo":"' assignedTo=CADENA '","createdDate":"'
-		//	createdDate=DATEHOUR '","completedDate":"' completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT
-		//	',"billableTime":' billableTime=INT ',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":'
-		//	timeEstimated=INT '}' ','?;
+		//	sequenceNumber=DOUBLE ',"startDate":"' startDate=(DATE | '-') '","dueDate":"' dueDate=(DATE | '-') '","isPrivate":'
+		//	isPrivate=CADENA ',"progress":' progress=INT ',"status":"' statusName=CADENA '","statusText":"' statusText=CADENA
+		//	'","assignedTo":"' assignedTo=CADENA '","createdDate":"' createdDate=DATEHOUR '","completedDate":"'
+		//	completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT ',"billableTime":' billableTime=INT
+		//	',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Task} '{"id":' taskId=INT ',"name":"' taskName=CADENA '","useCase":"' useCase=CADENA '","sequenceNumber":'
-		//sequenceNumber=DOUBLE ',"description":"' (CADENA | '-') '","startDate":"' startDate=DATE '","dueDate":"' dueDate=DATE
-		//'","priority":"' priority=(CADENA | '-') '","isPrivate":' isPrivate=CADENA ',"progress":' progress=INT ',"status":"'
-		//statusName=CADENA '","statusText":"' statusText=CADENA '","assignedTo":"' assignedTo=CADENA '","createdDate":"'
-		//createdDate=DATEHOUR '","completedDate":"' completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT
-		//',"billableTime":' billableTime=INT ',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT
-		//'}' ','?
+		//sequenceNumber=DOUBLE ',"startDate":"' startDate=(DATE | '-') '","dueDate":"' dueDate=(DATE | '-') '","isPrivate":'
+		//isPrivate=CADENA ',"progress":' progress=INT ',"status":"' statusName=CADENA '","statusText":"' statusText=CADENA
+		//'","assignedTo":"' assignedTo=CADENA '","createdDate":"' createdDate=DATEHOUR '","completedDate":"'
+		//completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT ',"billableTime":' billableTime=INT
+		//',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Task}
@@ -274,161 +309,143 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//DOUBLE
 		public RuleCall getSequenceNumberDOUBLETerminalRuleCall_8_0() { return cSequenceNumberDOUBLETerminalRuleCall_8_0; }
 		
-		//',"description":"'
-		public Keyword getDescriptionKeyword_9() { return cDescriptionKeyword_9; }
+		//',"startDate":"'
+		public Keyword getStartDateKeyword_9() { return cStartDateKeyword_9; }
 		
-		//(CADENA | '-')
-		public Alternatives getAlternatives_10() { return cAlternatives_10; }
+		//startDate=(DATE | '-')
+		public Assignment getStartDateAssignment_10() { return cStartDateAssignment_10; }
 		
-		//CADENA
-		public RuleCall getCADENATerminalRuleCall_10_0() { return cCADENATerminalRuleCall_10_0; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_10_1() { return cHyphenMinusKeyword_10_1; }
-		
-		//'","startDate":"'
-		public Keyword getStartDateKeyword_11() { return cStartDateKeyword_11; }
-		
-		//startDate=DATE
-		public Assignment getStartDateAssignment_12() { return cStartDateAssignment_12; }
+		//(DATE | '-')
+		public Alternatives getStartDateAlternatives_10_0() { return cStartDateAlternatives_10_0; }
 		
 		//DATE
-		public RuleCall getStartDateDATETerminalRuleCall_12_0() { return cStartDateDATETerminalRuleCall_12_0; }
+		public RuleCall getStartDateDATETerminalRuleCall_10_0_0() { return cStartDateDATETerminalRuleCall_10_0_0; }
+		
+		//'-'
+		public Keyword getStartDateHyphenMinusKeyword_10_0_1() { return cStartDateHyphenMinusKeyword_10_0_1; }
 		
 		//'","dueDate":"'
-		public Keyword getDueDateKeyword_13() { return cDueDateKeyword_13; }
+		public Keyword getDueDateKeyword_11() { return cDueDateKeyword_11; }
 		
-		//dueDate=DATE
-		public Assignment getDueDateAssignment_14() { return cDueDateAssignment_14; }
+		//dueDate=(DATE | '-')
+		public Assignment getDueDateAssignment_12() { return cDueDateAssignment_12; }
+		
+		//(DATE | '-')
+		public Alternatives getDueDateAlternatives_12_0() { return cDueDateAlternatives_12_0; }
 		
 		//DATE
-		public RuleCall getDueDateDATETerminalRuleCall_14_0() { return cDueDateDATETerminalRuleCall_14_0; }
-		
-		//'","priority":"'
-		public Keyword getPriorityKeyword_15() { return cPriorityKeyword_15; }
-		
-		//priority=(CADENA | '-')
-		public Assignment getPriorityAssignment_16() { return cPriorityAssignment_16; }
-		
-		//(CADENA | '-')
-		public Alternatives getPriorityAlternatives_16_0() { return cPriorityAlternatives_16_0; }
-		
-		//CADENA
-		public RuleCall getPriorityCADENATerminalRuleCall_16_0_0() { return cPriorityCADENATerminalRuleCall_16_0_0; }
+		public RuleCall getDueDateDATETerminalRuleCall_12_0_0() { return cDueDateDATETerminalRuleCall_12_0_0; }
 		
 		//'-'
-		public Keyword getPriorityHyphenMinusKeyword_16_0_1() { return cPriorityHyphenMinusKeyword_16_0_1; }
+		public Keyword getDueDateHyphenMinusKeyword_12_0_1() { return cDueDateHyphenMinusKeyword_12_0_1; }
 		
 		//'","isPrivate":'
-		public Keyword getIsPrivateKeyword_17() { return cIsPrivateKeyword_17; }
+		public Keyword getIsPrivateKeyword_13() { return cIsPrivateKeyword_13; }
 		
 		//isPrivate=CADENA
-		public Assignment getIsPrivateAssignment_18() { return cIsPrivateAssignment_18; }
+		public Assignment getIsPrivateAssignment_14() { return cIsPrivateAssignment_14; }
 		
 		//CADENA
-		public RuleCall getIsPrivateCADENATerminalRuleCall_18_0() { return cIsPrivateCADENATerminalRuleCall_18_0; }
+		public RuleCall getIsPrivateCADENATerminalRuleCall_14_0() { return cIsPrivateCADENATerminalRuleCall_14_0; }
 		
 		//',"progress":'
-		public Keyword getProgressKeyword_19() { return cProgressKeyword_19; }
+		public Keyword getProgressKeyword_15() { return cProgressKeyword_15; }
 		
 		//progress=INT
-		public Assignment getProgressAssignment_20() { return cProgressAssignment_20; }
+		public Assignment getProgressAssignment_16() { return cProgressAssignment_16; }
 		
 		//INT
-		public RuleCall getProgressINTTerminalRuleCall_20_0() { return cProgressINTTerminalRuleCall_20_0; }
+		public RuleCall getProgressINTTerminalRuleCall_16_0() { return cProgressINTTerminalRuleCall_16_0; }
 		
 		//',"status":"'
-		public Keyword getStatusKeyword_21() { return cStatusKeyword_21; }
+		public Keyword getStatusKeyword_17() { return cStatusKeyword_17; }
 		
 		//statusName=CADENA
-		public Assignment getStatusNameAssignment_22() { return cStatusNameAssignment_22; }
+		public Assignment getStatusNameAssignment_18() { return cStatusNameAssignment_18; }
 		
 		//CADENA
-		public RuleCall getStatusNameCADENATerminalRuleCall_22_0() { return cStatusNameCADENATerminalRuleCall_22_0; }
+		public RuleCall getStatusNameCADENATerminalRuleCall_18_0() { return cStatusNameCADENATerminalRuleCall_18_0; }
 		
 		//'","statusText":"'
-		public Keyword getStatusTextKeyword_23() { return cStatusTextKeyword_23; }
+		public Keyword getStatusTextKeyword_19() { return cStatusTextKeyword_19; }
 		
 		//statusText=CADENA
-		public Assignment getStatusTextAssignment_24() { return cStatusTextAssignment_24; }
+		public Assignment getStatusTextAssignment_20() { return cStatusTextAssignment_20; }
 		
 		//CADENA
-		public RuleCall getStatusTextCADENATerminalRuleCall_24_0() { return cStatusTextCADENATerminalRuleCall_24_0; }
+		public RuleCall getStatusTextCADENATerminalRuleCall_20_0() { return cStatusTextCADENATerminalRuleCall_20_0; }
 		
 		//'","assignedTo":"'
-		public Keyword getAssignedToKeyword_25() { return cAssignedToKeyword_25; }
+		public Keyword getAssignedToKeyword_21() { return cAssignedToKeyword_21; }
 		
 		//assignedTo=CADENA
-		public Assignment getAssignedToAssignment_26() { return cAssignedToAssignment_26; }
+		public Assignment getAssignedToAssignment_22() { return cAssignedToAssignment_22; }
 		
 		//CADENA
-		public RuleCall getAssignedToCADENATerminalRuleCall_26_0() { return cAssignedToCADENATerminalRuleCall_26_0; }
+		public RuleCall getAssignedToCADENATerminalRuleCall_22_0() { return cAssignedToCADENATerminalRuleCall_22_0; }
 		
 		//'","createdDate":"'
-		public Keyword getCreatedDateKeyword_27() { return cCreatedDateKeyword_27; }
+		public Keyword getCreatedDateKeyword_23() { return cCreatedDateKeyword_23; }
 		
 		//createdDate=DATEHOUR
-		public Assignment getCreatedDateAssignment_28() { return cCreatedDateAssignment_28; }
+		public Assignment getCreatedDateAssignment_24() { return cCreatedDateAssignment_24; }
 		
 		//DATEHOUR
-		public RuleCall getCreatedDateDATEHOURTerminalRuleCall_28_0() { return cCreatedDateDATEHOURTerminalRuleCall_28_0; }
+		public RuleCall getCreatedDateDATEHOURTerminalRuleCall_24_0() { return cCreatedDateDATEHOURTerminalRuleCall_24_0; }
 		
 		//'","completedDate":"'
-		public Keyword getCompletedDateKeyword_29() { return cCompletedDateKeyword_29; }
+		public Keyword getCompletedDateKeyword_25() { return cCompletedDateKeyword_25; }
 		
 		//completedDate=(DATEHOUR | '-')
-		public Assignment getCompletedDateAssignment_30() { return cCompletedDateAssignment_30; }
+		public Assignment getCompletedDateAssignment_26() { return cCompletedDateAssignment_26; }
 		
 		//(DATEHOUR | '-')
-		public Alternatives getCompletedDateAlternatives_30_0() { return cCompletedDateAlternatives_30_0; }
+		public Alternatives getCompletedDateAlternatives_26_0() { return cCompletedDateAlternatives_26_0; }
 		
 		//DATEHOUR
-		public RuleCall getCompletedDateDATEHOURTerminalRuleCall_30_0_0() { return cCompletedDateDATEHOURTerminalRuleCall_30_0_0; }
+		public RuleCall getCompletedDateDATEHOURTerminalRuleCall_26_0_0() { return cCompletedDateDATEHOURTerminalRuleCall_26_0_0; }
 		
 		//'-'
-		public Keyword getCompletedDateHyphenMinusKeyword_30_0_1() { return cCompletedDateHyphenMinusKeyword_30_0_1; }
+		public Keyword getCompletedDateHyphenMinusKeyword_26_0_1() { return cCompletedDateHyphenMinusKeyword_26_0_1; }
 		
 		//'","timeLoggedMin":'
-		public Keyword getTimeLoggedMinKeyword_31() { return cTimeLoggedMinKeyword_31; }
+		public Keyword getTimeLoggedMinKeyword_27() { return cTimeLoggedMinKeyword_27; }
 		
 		//timeLoggedMin=INT
-		public Assignment getTimeLoggedMinAssignment_32() { return cTimeLoggedMinAssignment_32; }
+		public Assignment getTimeLoggedMinAssignment_28() { return cTimeLoggedMinAssignment_28; }
 		
 		//INT
-		public RuleCall getTimeLoggedMinINTTerminalRuleCall_32_0() { return cTimeLoggedMinINTTerminalRuleCall_32_0; }
+		public RuleCall getTimeLoggedMinINTTerminalRuleCall_28_0() { return cTimeLoggedMinINTTerminalRuleCall_28_0; }
 		
 		//',"billableTime":'
-		public Keyword getBillableTimeKeyword_33() { return cBillableTimeKeyword_33; }
+		public Keyword getBillableTimeKeyword_29() { return cBillableTimeKeyword_29; }
 		
 		//billableTime=INT
-		public Assignment getBillableTimeAssignment_34() { return cBillableTimeAssignment_34; }
+		public Assignment getBillableTimeAssignment_30() { return cBillableTimeAssignment_30; }
 		
 		//INT
-		public RuleCall getBillableTimeINTTerminalRuleCall_34_0() { return cBillableTimeINTTerminalRuleCall_34_0; }
+		public RuleCall getBillableTimeINTTerminalRuleCall_30_0() { return cBillableTimeINTTerminalRuleCall_30_0; }
 		
 		//',"completedOnTime":'
-		public Keyword getCompletedOnTimeKeyword_35() { return cCompletedOnTimeKeyword_35; }
+		public Keyword getCompletedOnTimeKeyword_31() { return cCompletedOnTimeKeyword_31; }
 		
 		//completedOnTime=CADENA
-		public Assignment getCompletedOnTimeAssignment_36() { return cCompletedOnTimeAssignment_36; }
+		public Assignment getCompletedOnTimeAssignment_32() { return cCompletedOnTimeAssignment_32; }
 		
 		//CADENA
-		public RuleCall getCompletedOnTimeCADENATerminalRuleCall_36_0() { return cCompletedOnTimeCADENATerminalRuleCall_36_0; }
+		public RuleCall getCompletedOnTimeCADENATerminalRuleCall_32_0() { return cCompletedOnTimeCADENATerminalRuleCall_32_0; }
 		
 		//',"timeEstimated":'
-		public Keyword getTimeEstimatedKeyword_37() { return cTimeEstimatedKeyword_37; }
+		public Keyword getTimeEstimatedKeyword_33() { return cTimeEstimatedKeyword_33; }
 		
 		//timeEstimated=INT
-		public Assignment getTimeEstimatedAssignment_38() { return cTimeEstimatedAssignment_38; }
+		public Assignment getTimeEstimatedAssignment_34() { return cTimeEstimatedAssignment_34; }
 		
 		//INT
-		public RuleCall getTimeEstimatedINTTerminalRuleCall_38_0() { return cTimeEstimatedINTTerminalRuleCall_38_0; }
+		public RuleCall getTimeEstimatedINTTerminalRuleCall_34_0() { return cTimeEstimatedINTTerminalRuleCall_34_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_39() { return cRightCurlyBracketKeyword_39; }
-		
-		//','?
-		public Keyword getCommaKeyword_40() { return cCommaKeyword_40; }
+		public Keyword getRightCurlyBracketKeyword_35() { return cRightCurlyBracketKeyword_35; }
 	}
 	
 	
@@ -440,6 +457,7 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tDOUBLE;
 	private final TerminalRule tDATE;
 	private final TerminalRule tDATEHOUR;
+	private final TerminalRule tSPACE;
 	
 	private final Grammar grammar;
 	
@@ -458,6 +476,7 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.DOUBLE");
 		this.tDATE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.DATE");
 		this.tDATEHOUR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.DATEHOUR");
+		this.tSPACE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "co.edu.uniandes.KPIGenerator.SPACE");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -488,7 +507,7 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Root:
-	//	'[' projects+=Project+ ']';
+	//	'[' projects+=Project (',' projects+=Project)* ']';
 	public RootElements getRootAccess() {
 		return pRoot;
 	}
@@ -499,7 +518,7 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Project:
 	//	{Project}
-	//	'{"name":"' projectName=CADENA '","phases":[' phases+=Phase+ ']}' ','?;
+	//	'{"name":"' projectName=CADENA '","phases":[' phases+=Phase (',' phases+=Phase)* ']}';
 	public ProjectElements getProjectAccess() {
 		return pProject;
 	}
@@ -509,8 +528,7 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Phase:
-	//	{Phase}
-	//	'{"name":"' phaseName=CADENA '","tasks":[' tasks+=Task+ ']}' ','?;
+	//	{Phase} ','? '{"name":"' phaseName=CADENA '","tasks":[' tasks+=Task (',' tasks+=Task)* ']}';
 	public PhaseElements getPhaseAccess() {
 		return pPhase;
 	}
@@ -522,12 +540,11 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	//Task:
 	//	{Task}
 	//	'{"id":' taskId=INT ',"name":"' taskName=CADENA '","useCase":"' useCase=CADENA '","sequenceNumber":'
-	//	sequenceNumber=DOUBLE ',"description":"' (CADENA | '-') '","startDate":"' startDate=DATE '","dueDate":"' dueDate=DATE
-	//	'","priority":"' priority=(CADENA | '-') '","isPrivate":' isPrivate=CADENA ',"progress":' progress=INT ',"status":"'
-	//	statusName=CADENA '","statusText":"' statusText=CADENA '","assignedTo":"' assignedTo=CADENA '","createdDate":"'
-	//	createdDate=DATEHOUR '","completedDate":"' completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT
-	//	',"billableTime":' billableTime=INT ',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":'
-	//	timeEstimated=INT '}' ','?;
+	//	sequenceNumber=DOUBLE ',"startDate":"' startDate=(DATE | '-') '","dueDate":"' dueDate=(DATE | '-') '","isPrivate":'
+	//	isPrivate=CADENA ',"progress":' progress=INT ',"status":"' statusName=CADENA '","statusText":"' statusText=CADENA
+	//	'","assignedTo":"' assignedTo=CADENA '","createdDate":"' createdDate=DATEHOUR '","completedDate":"'
+	//	completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT ',"billableTime":' billableTime=INT
+	//	',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT '}';
 	public TaskElements getTaskAccess() {
 		return pTask;
 	}
@@ -537,8 +554,8 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal CADENA:
-	//	('a'..'z' | 'A'..'Z' | 'Á' | 'á' | 'É' | 'é' | 'Í' | 'í' | 'Ó' | 'ó' | 'Ú' | 'ú' | '-' | ' ' | '|' | '.' | '(' |
-	//	')')+ '0'..'9'*+;
+	//	('a'..'z' | 'A'..'Z' | 'Á' | 'á' | 'É' | 'é' | 'Í' | 'í' | 'Ó' | 'ó' | 'Ú' | 'ú' | '-' | ' ' | '|' | '.' | '(' | ')'
+	//	| '/' | ':')+ '0'..'9'*+;
 	public TerminalRule getCADENARule() {
 		return tCADENA;
 	}
@@ -549,17 +566,22 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		return tDOUBLE;
 	}
 	
-	//terminal DATE: //28/07/2016
-	//	'0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '0'..'9' '0'..'9';
+	//terminal DATE:
+	//	INT+ '/' INT+ '/' INT+;
 	public TerminalRule getDATERule() {
 		return tDATE;
 	}
 	
-	//terminal DATEHOUR: //28/07/2016 10:23 PM
-	//	'0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '/' '0'..'9' '0'..'9' '0'..'9' '0'..'9' ' ' '0'..'9' '0'..'9' ':' '0'..'9'
-	//	'0'..'9' (' AM' | ' PM');
+	//terminal DATEHOUR:
+	//	DATE SPACE (INT ':' INT) SPACE ('AM' | 'PM');
 	public TerminalRule getDATEHOURRule() {
 		return tDATEHOUR;
+	}
+	
+	//terminal SPACE:
+	//	' ';
+	public TerminalRule getSPACERule() {
+		return tSPACE;
 	}
 	
 	//terminal ID:

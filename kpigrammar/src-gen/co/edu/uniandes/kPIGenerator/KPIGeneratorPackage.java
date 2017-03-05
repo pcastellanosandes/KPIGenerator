@@ -224,22 +224,13 @@ public interface KPIGeneratorPackage extends EPackage
   int TASK__DUE_DATE = 5;
 
   /**
-   * The feature id for the '<em><b>Priority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__PRIORITY = 6;
-
-  /**
    * The feature id for the '<em><b>Is Private</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__IS_PRIVATE = 7;
+  int TASK__IS_PRIVATE = 6;
 
   /**
    * The feature id for the '<em><b>Progress</b></em>' attribute.
@@ -248,7 +239,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__PROGRESS = 8;
+  int TASK__PROGRESS = 7;
 
   /**
    * The feature id for the '<em><b>Status Name</b></em>' attribute.
@@ -257,7 +248,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__STATUS_NAME = 9;
+  int TASK__STATUS_NAME = 8;
 
   /**
    * The feature id for the '<em><b>Status Text</b></em>' attribute.
@@ -266,7 +257,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__STATUS_TEXT = 10;
+  int TASK__STATUS_TEXT = 9;
 
   /**
    * The feature id for the '<em><b>Assigned To</b></em>' attribute.
@@ -275,7 +266,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__ASSIGNED_TO = 11;
+  int TASK__ASSIGNED_TO = 10;
 
   /**
    * The feature id for the '<em><b>Created Date</b></em>' attribute.
@@ -284,7 +275,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__CREATED_DATE = 12;
+  int TASK__CREATED_DATE = 11;
 
   /**
    * The feature id for the '<em><b>Completed Date</b></em>' attribute.
@@ -293,7 +284,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__COMPLETED_DATE = 13;
+  int TASK__COMPLETED_DATE = 12;
 
   /**
    * The feature id for the '<em><b>Time Logged Min</b></em>' attribute.
@@ -302,7 +293,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__TIME_LOGGED_MIN = 14;
+  int TASK__TIME_LOGGED_MIN = 13;
 
   /**
    * The feature id for the '<em><b>Billable Time</b></em>' attribute.
@@ -311,7 +302,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__BILLABLE_TIME = 15;
+  int TASK__BILLABLE_TIME = 14;
 
   /**
    * The feature id for the '<em><b>Completed On Time</b></em>' attribute.
@@ -320,7 +311,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__COMPLETED_ON_TIME = 16;
+  int TASK__COMPLETED_ON_TIME = 15;
 
   /**
    * The feature id for the '<em><b>Time Estimated</b></em>' attribute.
@@ -329,7 +320,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK__TIME_ESTIMATED = 17;
+  int TASK__TIME_ESTIMATED = 16;
 
   /**
    * The number of structural features of the '<em>Task</em>' class.
@@ -338,7 +329,7 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_FEATURE_COUNT = 18;
+  int TASK_FEATURE_COUNT = 17;
 
 
   /**
@@ -501,17 +492,6 @@ public interface KPIGeneratorPackage extends EPackage
    * @generated
    */
   EAttribute getTask_DueDate();
-
-  /**
-   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getPriority <em>Priority</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Priority</em>'.
-   * @see co.edu.uniandes.kPIGenerator.Task#getPriority()
-   * @see #getTask()
-   * @generated
-   */
-  EAttribute getTask_Priority();
 
   /**
    * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getIsPrivate <em>Is Private</em>}'.
@@ -784,14 +764,6 @@ public interface KPIGeneratorPackage extends EPackage
      * @generated
      */
     EAttribute TASK__DUE_DATE = eINSTANCE.getTask_DueDate();
-
-    /**
-     * The meta object literal for the '<em><b>Priority</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TASK__PRIORITY = eINSTANCE.getTask_Priority();
 
     /**
      * The meta object literal for the '<em><b>Is Private</b></em>' attribute feature.

@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getDueDate <em>Due Date</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getPriority <em>Priority</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getIsPrivate <em>Is Private</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getProgress <em>Progress</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getStatusName <em>Status Name</em>}</li>
@@ -164,26 +163,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * @ordered
    */
   protected String dueDate = DUE_DATE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected static final String PRIORITY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPriority()
-   * @generated
-   * @ordered
-   */
-  protected String priority = PRIORITY_EDEFAULT;
 
   /**
    * The default value of the '{@link #getIsPrivate() <em>Is Private</em>}' attribute.
@@ -569,29 +548,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPriority()
-  {
-    return priority;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPriority(String newPriority)
-  {
-    String oldPriority = priority;
-    priority = newPriority;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__PRIORITY, oldPriority, priority));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getIsPrivate()
   {
     return isPrivate;
@@ -862,8 +818,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return getStartDate();
       case KPIGeneratorPackage.TASK__DUE_DATE:
         return getDueDate();
-      case KPIGeneratorPackage.TASK__PRIORITY:
-        return getPriority();
       case KPIGeneratorPackage.TASK__IS_PRIVATE:
         return getIsPrivate();
       case KPIGeneratorPackage.TASK__PROGRESS:
@@ -917,9 +871,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return;
       case KPIGeneratorPackage.TASK__DUE_DATE:
         setDueDate((String)newValue);
-        return;
-      case KPIGeneratorPackage.TASK__PRIORITY:
-        setPriority((String)newValue);
         return;
       case KPIGeneratorPackage.TASK__IS_PRIVATE:
         setIsPrivate((String)newValue);
@@ -986,9 +937,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case KPIGeneratorPackage.TASK__DUE_DATE:
         setDueDate(DUE_DATE_EDEFAULT);
         return;
-      case KPIGeneratorPackage.TASK__PRIORITY:
-        setPriority(PRIORITY_EDEFAULT);
-        return;
       case KPIGeneratorPackage.TASK__IS_PRIVATE:
         setIsPrivate(IS_PRIVATE_EDEFAULT);
         return;
@@ -1048,8 +996,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
       case KPIGeneratorPackage.TASK__DUE_DATE:
         return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
-      case KPIGeneratorPackage.TASK__PRIORITY:
-        return PRIORITY_EDEFAULT == null ? priority != null : !PRIORITY_EDEFAULT.equals(priority);
       case KPIGeneratorPackage.TASK__IS_PRIVATE:
         return IS_PRIVATE_EDEFAULT == null ? isPrivate != null : !IS_PRIVATE_EDEFAULT.equals(isPrivate);
       case KPIGeneratorPackage.TASK__PROGRESS:
@@ -1099,8 +1045,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     result.append(startDate);
     result.append(", dueDate: ");
     result.append(dueDate);
-    result.append(", priority: ");
-    result.append(priority);
     result.append(", isPrivate: ");
     result.append(isPrivate);
     result.append(", progress: ");

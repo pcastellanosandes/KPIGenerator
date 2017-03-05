@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getSequenceNumber <em>Sequence Number</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getDueDate <em>Due Date</em>}</li>
- *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getPriority <em>Priority</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getIsPrivate <em>Is Private</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getProgress <em>Progress</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getStatusName <em>Status Name</em>}</li>
@@ -195,32 +194,6 @@ public interface Task extends EObject
    * @generated
    */
   void setDueDate(String value);
-
-  /**
-   * Returns the value of the '<em><b>Priority</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Priority</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Priority</em>' attribute.
-   * @see #setPriority(String)
-   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_Priority()
-   * @model
-   * @generated
-   */
-  String getPriority();
-
-  /**
-   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getPriority <em>Priority</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Priority</em>' attribute.
-   * @see #getPriority()
-   * @generated
-   */
-  void setPriority(String value);
 
   /**
    * Returns the value of the '<em><b>Is Private</b></em>' attribute.

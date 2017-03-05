@@ -11,7 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,38 +20,19 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected KPIGeneratorGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Phase_CommaKeyword_6_q;
-	protected AbstractElementAlias match_Project_CommaKeyword_6_q;
-	protected AbstractElementAlias match_Task_CADENATerminalRuleCall_10_0_or_HyphenMinusKeyword_10_1;
-	protected AbstractElementAlias match_Task_CommaKeyword_40_q;
+	protected AbstractElementAlias match_Phase_CommaKeyword_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (KPIGeneratorGrammarAccess) access;
-		match_Phase_CommaKeyword_6_q = new TokenAlias(false, true, grammarAccess.getPhaseAccess().getCommaKeyword_6());
-		match_Project_CommaKeyword_6_q = new TokenAlias(false, true, grammarAccess.getProjectAccess().getCommaKeyword_6());
-		match_Task_CADENATerminalRuleCall_10_0_or_HyphenMinusKeyword_10_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getTaskAccess().getCADENATerminalRuleCall_10_0()), new TokenAlias(false, false, grammarAccess.getTaskAccess().getHyphenMinusKeyword_10_1()));
-		match_Task_CommaKeyword_40_q = new TokenAlias(false, true, grammarAccess.getTaskAccess().getCommaKeyword_40());
+		match_Phase_CommaKeyword_1_q = new TokenAlias(false, true, grammarAccess.getPhaseAccess().getCommaKeyword_1());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getCADENARule())
-			return getCADENAToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal CADENA: 
-	 * 	(('a'..'z'|'A'..'Z'|'Á'|'á'|'É'|'é'|'Í'|'í'|'Ó'|'ó'|'Ú'|'ú'|'-'|' '|'|'|'.'|'('|')')+ ('0'..'9')*)+
-	 * 	
-	 * ;
-	 */
-	protected String getCADENAToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -60,14 +40,8 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Phase_CommaKeyword_6_q.equals(syntax))
-				emit_Phase_CommaKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Project_CommaKeyword_6_q.equals(syntax))
-				emit_Project_CommaKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Task_CADENATerminalRuleCall_10_0_or_HyphenMinusKeyword_10_1.equals(syntax))
-				emit_Task_CADENATerminalRuleCall_10_0_or_HyphenMinusKeyword_10_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Task_CommaKeyword_40_q.equals(syntax))
-				emit_Task_CommaKeyword_40_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Phase_CommaKeyword_1_q.equals(syntax))
+				emit_Phase_CommaKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -77,42 +51,9 @@ public class KPIGeneratorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ','?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     tasks+=Task ']}' (ambiguity) (rule end)
+	 *     (rule start) (ambiguity) '{"name":"' phaseName=CADENA
 	 */
-	protected void emit_Phase_CommaKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ','?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     phases+=Phase ']}' (ambiguity) (rule end)
-	 */
-	protected void emit_Project_CommaKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     CADENA | '-'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     sequenceNumber=DOUBLE ',"description":"' (ambiguity) '","startDate":"' startDate=DATE
-	 */
-	protected void emit_Task_CADENATerminalRuleCall_10_0_or_HyphenMinusKeyword_10_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ','?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     timeEstimated=INT '}' (ambiguity) (rule end)
-	 */
-	protected void emit_Task_CommaKeyword_40_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Phase_CommaKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

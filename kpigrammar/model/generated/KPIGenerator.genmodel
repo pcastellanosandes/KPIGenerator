@@ -24,7 +24,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/sequenceNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/dueDate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/priority"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/isPrivate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/progress"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/statusName"/>

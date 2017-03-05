@@ -49,10 +49,9 @@ public class GeneratorToJSON {
 		task.setName(itemsLine[3]);
 		task.setUseCase(taskName.length==5?taskName[3]:taskName[2]);
 		task.setSequenceNumber(Double.parseDouble(taskName[taskName.length-1]));
-		task.setDescription(itemsLine[4].length()==0?"-":itemsLine[4]);
-		task.setStartDate(itemsLine[5]);
-		task.setDueDate(itemsLine[6]);
-		task.setPriority(itemsLine[7].length()==0?"-": itemsLine[7]);
+		task.setStartDate(itemsLine[5].length()==0?"-": itemsLine[5]);
+		task.setDueDate(itemsLine[6].length()==0?"-": itemsLine[6]);
+		//task.setPriority(itemsLine[7].length()==0?"-": itemsLine[7]);
 		task.setPrivate(itemsLine[8].equals("VERDADERO"));
 		task.setProgress(itemsLine[9].equals("")?0:Integer.parseInt(itemsLine[9]));
 		task.setStatus(itemsLine[10]);

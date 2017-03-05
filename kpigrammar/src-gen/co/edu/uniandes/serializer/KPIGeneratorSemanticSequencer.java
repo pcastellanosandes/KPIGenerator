@@ -55,7 +55,7 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Phase returns Phase
 	 *
 	 * Constraint:
-	 *     (phaseName=CADENA tasks+=Task+)
+	 *     (phaseName=CADENA tasks+=Task tasks+=Task*)
 	 */
 	protected void sequence_Phase(ISerializationContext context, Phase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -67,7 +67,7 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Project returns Project
 	 *
 	 * Constraint:
-	 *     (projectName=CADENA phases+=Phase+)
+	 *     (projectName=CADENA phases+=Phase phases+=Phase*)
 	 */
 	protected void sequence_Project(ISerializationContext context, Project semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -79,7 +79,7 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Root returns Root
 	 *
 	 * Constraint:
-	 *     projects+=Project+
+	 *     (projects+=Project projects+=Project*)
 	 */
 	protected void sequence_Root(ISerializationContext context, Root semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -96,9 +96,8 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         taskName=CADENA 
 	 *         useCase=CADENA 
 	 *         sequenceNumber=DOUBLE 
-	 *         startDate=DATE 
-	 *         dueDate=DATE 
-	 *         (priority=CADENA | priority='-') 
+	 *         (startDate=DATE | startDate='-') 
+	 *         (dueDate=DATE | dueDate='-') 
 	 *         isPrivate=CADENA 
 	 *         progress=INT 
 	 *         statusName=CADENA 

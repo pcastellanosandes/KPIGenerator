@@ -6,10 +6,8 @@ public class Task {
 	private String name;
 	private String useCase;
 	private double sequenceNumber;
-	private String description;
 	private String startDate;
 	private String dueDate;
-	private String priority;
 	private boolean isPrivate;
 	private int progress;
 	private String status;
@@ -47,12 +45,6 @@ public class Task {
 	public void setSequenceNumber(double sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
 	public String getStartDate() {
 		return startDate;
 	}
@@ -64,12 +56,6 @@ public class Task {
 	}
 	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
-	}
-	public String getPriority() {
-		return priority;
-	}
-	public void setPriority(String priority) {
-		this.priority = priority;
 	}
 	public boolean isPrivate() {
 		return isPrivate;
