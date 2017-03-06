@@ -19,7 +19,8 @@ public class Task {
 	private int billableTime;
 	private boolean completedOnTime;
 	private int timeEstimated;
-	//private String tags;
+	private boolean isReprocessedTask; 
+	private int idParentTask;
 	
 	public int getId() {
 		return id;
@@ -123,12 +124,18 @@ public class Task {
 	public void setTimeEstimated(int timeEstimated) {
 		this.timeEstimated = timeEstimated;
 	}
-//	public String getTags() {
-//		return tags;
-//	}
-//	public void setTags(String tags) {
-//		this.tags = tags;
-//	}
-//	
+	public boolean isReprocessedTask() {
+		return isReprocessedTask;
+	}
+	public void setReprocessedTask(boolean isReprocessedTask) {
+		this.isReprocessedTask = isReprocessedTask;
+	}
+	public int getIdParentTask() {
+		return idParentTask;
+	}
+	public void setIdParentTask(int idParentTask) {
+		this.idParentTask = idParentTask;
+	}
+	
 	
 }

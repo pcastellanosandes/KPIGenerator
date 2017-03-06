@@ -250,7 +250,13 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTimeEstimatedKeyword_33 = (Keyword)cGroup.eContents().get(33);
 		private final Assignment cTimeEstimatedAssignment_34 = (Assignment)cGroup.eContents().get(34);
 		private final RuleCall cTimeEstimatedINTTerminalRuleCall_34_0 = (RuleCall)cTimeEstimatedAssignment_34.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_35 = (Keyword)cGroup.eContents().get(35);
+		private final Keyword cIsReprocessedTaskKeyword_35 = (Keyword)cGroup.eContents().get(35);
+		private final Assignment cIsReprocessedTaskAssignment_36 = (Assignment)cGroup.eContents().get(36);
+		private final RuleCall cIsReprocessedTaskCADENATerminalRuleCall_36_0 = (RuleCall)cIsReprocessedTaskAssignment_36.eContents().get(0);
+		private final Keyword cIdParentTaskKeyword_37 = (Keyword)cGroup.eContents().get(37);
+		private final Assignment cIdParentTaskAssignment_38 = (Assignment)cGroup.eContents().get(38);
+		private final RuleCall cIdParentTaskINTTerminalRuleCall_38_0 = (RuleCall)cIdParentTaskAssignment_38.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_39 = (Keyword)cGroup.eContents().get(39);
 		
 		//Task:
 		//	{Task}
@@ -259,7 +265,8 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//	isPrivate=CADENA ',"progress":' progress=INT ',"status":"' statusName=CADENA '","statusText":"' statusText=CADENA
 		//	'","assignedTo":"' assignedTo=CADENA '","createdDate":"' createdDate=DATEHOUR '","completedDate":"'
 		//	completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT ',"billableTime":' billableTime=INT
-		//	',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT '}';
+		//	',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT ',"isReprocessedTask":'
+		//	isReprocessedTask=CADENA ',"idParentTask":' idParentTask=INT '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Task} '{"id":' taskId=INT ',"name":"' taskName=CADENA '","useCase":"' useCase=CADENA '","sequenceNumber":'
@@ -267,7 +274,8 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//isPrivate=CADENA ',"progress":' progress=INT ',"status":"' statusName=CADENA '","statusText":"' statusText=CADENA
 		//'","assignedTo":"' assignedTo=CADENA '","createdDate":"' createdDate=DATEHOUR '","completedDate":"'
 		//completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT ',"billableTime":' billableTime=INT
-		//',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT '}'
+		//',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT ',"isReprocessedTask":'
+		//isReprocessedTask=CADENA ',"idParentTask":' idParentTask=INT '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Task}
@@ -444,8 +452,26 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getTimeEstimatedINTTerminalRuleCall_34_0() { return cTimeEstimatedINTTerminalRuleCall_34_0; }
 		
+		//',"isReprocessedTask":'
+		public Keyword getIsReprocessedTaskKeyword_35() { return cIsReprocessedTaskKeyword_35; }
+		
+		//isReprocessedTask=CADENA
+		public Assignment getIsReprocessedTaskAssignment_36() { return cIsReprocessedTaskAssignment_36; }
+		
+		//CADENA
+		public RuleCall getIsReprocessedTaskCADENATerminalRuleCall_36_0() { return cIsReprocessedTaskCADENATerminalRuleCall_36_0; }
+		
+		//',"idParentTask":'
+		public Keyword getIdParentTaskKeyword_37() { return cIdParentTaskKeyword_37; }
+		
+		//idParentTask=INT
+		public Assignment getIdParentTaskAssignment_38() { return cIdParentTaskAssignment_38; }
+		
+		//INT
+		public RuleCall getIdParentTaskINTTerminalRuleCall_38_0() { return cIdParentTaskINTTerminalRuleCall_38_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_35() { return cRightCurlyBracketKeyword_35; }
+		public Keyword getRightCurlyBracketKeyword_39() { return cRightCurlyBracketKeyword_39; }
 	}
 	
 	
@@ -544,7 +570,8 @@ public class KPIGeneratorGrammarAccess extends AbstractGrammarElementFinder {
 	//	isPrivate=CADENA ',"progress":' progress=INT ',"status":"' statusName=CADENA '","statusText":"' statusText=CADENA
 	//	'","assignedTo":"' assignedTo=CADENA '","createdDate":"' createdDate=DATEHOUR '","completedDate":"'
 	//	completedDate=(DATEHOUR | '-') '","timeLoggedMin":' timeLoggedMin=INT ',"billableTime":' billableTime=INT
-	//	',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT '}';
+	//	',"completedOnTime":' completedOnTime=CADENA ',"timeEstimated":' timeEstimated=INT ',"isReprocessedTask":'
+	//	isReprocessedTask=CADENA ',"idParentTask":' idParentTask=INT '}';
 	public TaskElements getTaskAccess() {
 		return pTask;
 	}

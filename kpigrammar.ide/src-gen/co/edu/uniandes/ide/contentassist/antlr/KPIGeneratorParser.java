@@ -70,6 +70,8 @@ public class KPIGeneratorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTaskAccess().getBillableTimeAssignment_30(), "rule__Task__BillableTimeAssignment_30");
 					put(grammarAccess.getTaskAccess().getCompletedOnTimeAssignment_32(), "rule__Task__CompletedOnTimeAssignment_32");
 					put(grammarAccess.getTaskAccess().getTimeEstimatedAssignment_34(), "rule__Task__TimeEstimatedAssignment_34");
+					put(grammarAccess.getTaskAccess().getIsReprocessedTaskAssignment_36(), "rule__Task__IsReprocessedTaskAssignment_36");
+					put(grammarAccess.getTaskAccess().getIdParentTaskAssignment_38(), "rule__Task__IdParentTaskAssignment_38");
 				}
 			};
 		}

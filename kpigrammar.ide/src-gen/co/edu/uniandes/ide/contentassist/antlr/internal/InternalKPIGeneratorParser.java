@@ -22,32 +22,14 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalKPIGeneratorParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DATE", "RULE_DATEHOUR", "RULE_CADENA", "RULE_INT", "RULE_DOUBLE", "RULE_SPACE", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-'", "'['", "']'", "','", "'{\"name\":\"'", "'\",\"phases\":['", "']}'", "'\",\"tasks\":['", "'{\"id\":'", "',\"name\":\"'", "'\",\"useCase\":\"'", "'\",\"sequenceNumber\":'", "',\"startDate\":\"'", "'\",\"dueDate\":\"'", "'\",\"isPrivate\":'", "',\"progress\":'", "',\"status\":\"'", "'\",\"statusText\":\"'", "'\",\"assignedTo\":\"'", "'\",\"createdDate\":\"'", "'\",\"completedDate\":\"'", "'\",\"timeLoggedMin\":'", "',\"billableTime\":'", "',\"completedOnTime\":'", "',\"timeEstimated\":'", "'}'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DATE", "RULE_DATEHOUR", "RULE_CADENA", "RULE_INT", "RULE_DOUBLE", "RULE_SPACE", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-'", "'['", "']'", "','", "'{\"name\":\"'", "'\",\"phases\":['", "']}'", "'\",\"tasks\":['", "'{\"id\":'", "',\"name\":\"'", "'\",\"useCase\":\"'", "'\",\"sequenceNumber\":'", "',\"startDate\":\"'", "'\",\"dueDate\":\"'", "'\",\"isPrivate\":'", "',\"progress\":'", "',\"status\":\"'", "'\",\"statusText\":\"'", "'\",\"assignedTo\":\"'", "'\",\"createdDate\":\"'", "'\",\"completedDate\":\"'", "'\",\"timeLoggedMin\":'", "',\"billableTime\":'", "',\"completedOnTime\":'", "',\"timeEstimated\":'", "',\"isReprocessedTask\":'", "',\"idParentTask\":'", "'}'"
     };
-    public static final int RULE_STRING=11;
-    public static final int RULE_SL_COMMENT=13;
     public static final int T__19=19;
-    public static final int T__37=37;
-    public static final int RULE_DOUBLE=8;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
     public static final int RULE_SPACE=9;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_DATEHOUR=5;
     public static final int RULE_ID=10;
-    public static final int RULE_WS=14;
-    public static final int RULE_CADENA=6;
-    public static final int RULE_ANY_OTHER=15;
     public static final int RULE_DATE=4;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -59,10 +41,30 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=11;
+    public static final int RULE_SL_COMMENT=13;
+    public static final int T__37=37;
+    public static final int RULE_DOUBLE=8;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_DATEHOUR=5;
+    public static final int RULE_WS=14;
+    public static final int RULE_CADENA=6;
+    public static final int RULE_ANY_OTHER=15;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -5442,17 +5444,22 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__Group__35"
-    // InternalKPIGenerator.g:1835:1: rule__Task__Group__35 : rule__Task__Group__35__Impl ;
+    // InternalKPIGenerator.g:1835:1: rule__Task__Group__35 : rule__Task__Group__35__Impl rule__Task__Group__36 ;
     public final void rule__Task__Group__35() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1839:1: ( rule__Task__Group__35__Impl )
-            // InternalKPIGenerator.g:1840:2: rule__Task__Group__35__Impl
+            // InternalKPIGenerator.g:1839:1: ( rule__Task__Group__35__Impl rule__Task__Group__36 )
+            // InternalKPIGenerator.g:1840:2: rule__Task__Group__35__Impl rule__Task__Group__36
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_6);
             rule__Task__Group__35__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Task__Group__36();
 
             state._fsp--;
 
@@ -5475,21 +5482,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__Group__35__Impl"
-    // InternalKPIGenerator.g:1846:1: rule__Task__Group__35__Impl : ( '}' ) ;
+    // InternalKPIGenerator.g:1847:1: rule__Task__Group__35__Impl : ( ',\"isReprocessedTask\":' ) ;
     public final void rule__Task__Group__35__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1850:1: ( ( '}' ) )
-            // InternalKPIGenerator.g:1851:1: ( '}' )
+            // InternalKPIGenerator.g:1851:1: ( ( ',\"isReprocessedTask\":' ) )
+            // InternalKPIGenerator.g:1852:1: ( ',\"isReprocessedTask\":' )
             {
-            // InternalKPIGenerator.g:1851:1: ( '}' )
-            // InternalKPIGenerator.g:1852:2: '}'
+            // InternalKPIGenerator.g:1852:1: ( ',\"isReprocessedTask\":' )
+            // InternalKPIGenerator.g:1853:2: ',\"isReprocessedTask\":'
             {
-             before(grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_35()); 
+             before(grammarAccess.getTaskAccess().getIsReprocessedTaskKeyword_35()); 
             match(input,41,FOLLOW_2); 
-             after(grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_35()); 
+             after(grammarAccess.getTaskAccess().getIsReprocessedTaskKeyword_35()); 
 
             }
 
@@ -5511,18 +5518,333 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Task__Group__35__Impl"
 
 
+    // $ANTLR start "rule__Task__Group__36"
+    // InternalKPIGenerator.g:1862:1: rule__Task__Group__36 : rule__Task__Group__36__Impl rule__Task__Group__37 ;
+    public final void rule__Task__Group__36() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1866:1: ( rule__Task__Group__36__Impl rule__Task__Group__37 )
+            // InternalKPIGenerator.g:1867:2: rule__Task__Group__36__Impl rule__Task__Group__37
+            {
+            pushFollow(FOLLOW_34);
+            rule__Task__Group__36__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Task__Group__37();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__36"
+
+
+    // $ANTLR start "rule__Task__Group__36__Impl"
+    // InternalKPIGenerator.g:1874:1: rule__Task__Group__36__Impl : ( ( rule__Task__IsReprocessedTaskAssignment_36 ) ) ;
+    public final void rule__Task__Group__36__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1878:1: ( ( ( rule__Task__IsReprocessedTaskAssignment_36 ) ) )
+            // InternalKPIGenerator.g:1879:1: ( ( rule__Task__IsReprocessedTaskAssignment_36 ) )
+            {
+            // InternalKPIGenerator.g:1879:1: ( ( rule__Task__IsReprocessedTaskAssignment_36 ) )
+            // InternalKPIGenerator.g:1880:2: ( rule__Task__IsReprocessedTaskAssignment_36 )
+            {
+             before(grammarAccess.getTaskAccess().getIsReprocessedTaskAssignment_36()); 
+            // InternalKPIGenerator.g:1881:2: ( rule__Task__IsReprocessedTaskAssignment_36 )
+            // InternalKPIGenerator.g:1881:3: rule__Task__IsReprocessedTaskAssignment_36
+            {
+            pushFollow(FOLLOW_2);
+            rule__Task__IsReprocessedTaskAssignment_36();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTaskAccess().getIsReprocessedTaskAssignment_36()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__36__Impl"
+
+
+    // $ANTLR start "rule__Task__Group__37"
+    // InternalKPIGenerator.g:1889:1: rule__Task__Group__37 : rule__Task__Group__37__Impl rule__Task__Group__38 ;
+    public final void rule__Task__Group__37() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1893:1: ( rule__Task__Group__37__Impl rule__Task__Group__38 )
+            // InternalKPIGenerator.g:1894:2: rule__Task__Group__37__Impl rule__Task__Group__38
+            {
+            pushFollow(FOLLOW_12);
+            rule__Task__Group__37__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Task__Group__38();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__37"
+
+
+    // $ANTLR start "rule__Task__Group__37__Impl"
+    // InternalKPIGenerator.g:1901:1: rule__Task__Group__37__Impl : ( ',\"idParentTask\":' ) ;
+    public final void rule__Task__Group__37__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1905:1: ( ( ',\"idParentTask\":' ) )
+            // InternalKPIGenerator.g:1906:1: ( ',\"idParentTask\":' )
+            {
+            // InternalKPIGenerator.g:1906:1: ( ',\"idParentTask\":' )
+            // InternalKPIGenerator.g:1907:2: ',\"idParentTask\":'
+            {
+             before(grammarAccess.getTaskAccess().getIdParentTaskKeyword_37()); 
+            match(input,42,FOLLOW_2); 
+             after(grammarAccess.getTaskAccess().getIdParentTaskKeyword_37()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__37__Impl"
+
+
+    // $ANTLR start "rule__Task__Group__38"
+    // InternalKPIGenerator.g:1916:1: rule__Task__Group__38 : rule__Task__Group__38__Impl rule__Task__Group__39 ;
+    public final void rule__Task__Group__38() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1920:1: ( rule__Task__Group__38__Impl rule__Task__Group__39 )
+            // InternalKPIGenerator.g:1921:2: rule__Task__Group__38__Impl rule__Task__Group__39
+            {
+            pushFollow(FOLLOW_35);
+            rule__Task__Group__38__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Task__Group__39();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__38"
+
+
+    // $ANTLR start "rule__Task__Group__38__Impl"
+    // InternalKPIGenerator.g:1928:1: rule__Task__Group__38__Impl : ( ( rule__Task__IdParentTaskAssignment_38 ) ) ;
+    public final void rule__Task__Group__38__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1932:1: ( ( ( rule__Task__IdParentTaskAssignment_38 ) ) )
+            // InternalKPIGenerator.g:1933:1: ( ( rule__Task__IdParentTaskAssignment_38 ) )
+            {
+            // InternalKPIGenerator.g:1933:1: ( ( rule__Task__IdParentTaskAssignment_38 ) )
+            // InternalKPIGenerator.g:1934:2: ( rule__Task__IdParentTaskAssignment_38 )
+            {
+             before(grammarAccess.getTaskAccess().getIdParentTaskAssignment_38()); 
+            // InternalKPIGenerator.g:1935:2: ( rule__Task__IdParentTaskAssignment_38 )
+            // InternalKPIGenerator.g:1935:3: rule__Task__IdParentTaskAssignment_38
+            {
+            pushFollow(FOLLOW_2);
+            rule__Task__IdParentTaskAssignment_38();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getTaskAccess().getIdParentTaskAssignment_38()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__38__Impl"
+
+
+    // $ANTLR start "rule__Task__Group__39"
+    // InternalKPIGenerator.g:1943:1: rule__Task__Group__39 : rule__Task__Group__39__Impl ;
+    public final void rule__Task__Group__39() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1947:1: ( rule__Task__Group__39__Impl )
+            // InternalKPIGenerator.g:1948:2: rule__Task__Group__39__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Task__Group__39__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__39"
+
+
+    // $ANTLR start "rule__Task__Group__39__Impl"
+    // InternalKPIGenerator.g:1954:1: rule__Task__Group__39__Impl : ( '}' ) ;
+    public final void rule__Task__Group__39__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:1958:1: ( ( '}' ) )
+            // InternalKPIGenerator.g:1959:1: ( '}' )
+            {
+            // InternalKPIGenerator.g:1959:1: ( '}' )
+            // InternalKPIGenerator.g:1960:2: '}'
+            {
+             before(grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_39()); 
+            match(input,43,FOLLOW_2); 
+             after(grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_39()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__Group__39__Impl"
+
+
     // $ANTLR start "rule__Root__ProjectsAssignment_1"
-    // InternalKPIGenerator.g:1862:1: rule__Root__ProjectsAssignment_1 : ( ruleProject ) ;
+    // InternalKPIGenerator.g:1970:1: rule__Root__ProjectsAssignment_1 : ( ruleProject ) ;
     public final void rule__Root__ProjectsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1866:1: ( ( ruleProject ) )
-            // InternalKPIGenerator.g:1867:2: ( ruleProject )
+            // InternalKPIGenerator.g:1974:1: ( ( ruleProject ) )
+            // InternalKPIGenerator.g:1975:2: ( ruleProject )
             {
-            // InternalKPIGenerator.g:1867:2: ( ruleProject )
-            // InternalKPIGenerator.g:1868:3: ruleProject
+            // InternalKPIGenerator.g:1975:2: ( ruleProject )
+            // InternalKPIGenerator.g:1976:3: ruleProject
             {
              before(grammarAccess.getRootAccess().getProjectsProjectParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5553,17 +5875,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Root__ProjectsAssignment_2_1"
-    // InternalKPIGenerator.g:1877:1: rule__Root__ProjectsAssignment_2_1 : ( ruleProject ) ;
+    // InternalKPIGenerator.g:1985:1: rule__Root__ProjectsAssignment_2_1 : ( ruleProject ) ;
     public final void rule__Root__ProjectsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1881:1: ( ( ruleProject ) )
-            // InternalKPIGenerator.g:1882:2: ( ruleProject )
+            // InternalKPIGenerator.g:1989:1: ( ( ruleProject ) )
+            // InternalKPIGenerator.g:1990:2: ( ruleProject )
             {
-            // InternalKPIGenerator.g:1882:2: ( ruleProject )
-            // InternalKPIGenerator.g:1883:3: ruleProject
+            // InternalKPIGenerator.g:1990:2: ( ruleProject )
+            // InternalKPIGenerator.g:1991:3: ruleProject
             {
              before(grammarAccess.getRootAccess().getProjectsProjectParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5594,17 +5916,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Project__ProjectNameAssignment_2"
-    // InternalKPIGenerator.g:1892:1: rule__Project__ProjectNameAssignment_2 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2000:1: rule__Project__ProjectNameAssignment_2 : ( RULE_CADENA ) ;
     public final void rule__Project__ProjectNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1896:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:1897:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2004:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2005:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:1897:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:1898:3: RULE_CADENA
+            // InternalKPIGenerator.g:2005:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2006:3: RULE_CADENA
             {
              before(grammarAccess.getProjectAccess().getProjectNameCADENATerminalRuleCall_2_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -5631,17 +5953,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Project__PhasesAssignment_4"
-    // InternalKPIGenerator.g:1907:1: rule__Project__PhasesAssignment_4 : ( rulePhase ) ;
+    // InternalKPIGenerator.g:2015:1: rule__Project__PhasesAssignment_4 : ( rulePhase ) ;
     public final void rule__Project__PhasesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1911:1: ( ( rulePhase ) )
-            // InternalKPIGenerator.g:1912:2: ( rulePhase )
+            // InternalKPIGenerator.g:2019:1: ( ( rulePhase ) )
+            // InternalKPIGenerator.g:2020:2: ( rulePhase )
             {
-            // InternalKPIGenerator.g:1912:2: ( rulePhase )
-            // InternalKPIGenerator.g:1913:3: rulePhase
+            // InternalKPIGenerator.g:2020:2: ( rulePhase )
+            // InternalKPIGenerator.g:2021:3: rulePhase
             {
              before(grammarAccess.getProjectAccess().getPhasesPhaseParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -5672,17 +5994,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Project__PhasesAssignment_5_1"
-    // InternalKPIGenerator.g:1922:1: rule__Project__PhasesAssignment_5_1 : ( rulePhase ) ;
+    // InternalKPIGenerator.g:2030:1: rule__Project__PhasesAssignment_5_1 : ( rulePhase ) ;
     public final void rule__Project__PhasesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1926:1: ( ( rulePhase ) )
-            // InternalKPIGenerator.g:1927:2: ( rulePhase )
+            // InternalKPIGenerator.g:2034:1: ( ( rulePhase ) )
+            // InternalKPIGenerator.g:2035:2: ( rulePhase )
             {
-            // InternalKPIGenerator.g:1927:2: ( rulePhase )
-            // InternalKPIGenerator.g:1928:3: rulePhase
+            // InternalKPIGenerator.g:2035:2: ( rulePhase )
+            // InternalKPIGenerator.g:2036:3: rulePhase
             {
              before(grammarAccess.getProjectAccess().getPhasesPhaseParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5713,17 +6035,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Phase__PhaseNameAssignment_3"
-    // InternalKPIGenerator.g:1937:1: rule__Phase__PhaseNameAssignment_3 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2045:1: rule__Phase__PhaseNameAssignment_3 : ( RULE_CADENA ) ;
     public final void rule__Phase__PhaseNameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1941:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:1942:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2049:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2050:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:1942:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:1943:3: RULE_CADENA
+            // InternalKPIGenerator.g:2050:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2051:3: RULE_CADENA
             {
              before(grammarAccess.getPhaseAccess().getPhaseNameCADENATerminalRuleCall_3_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -5750,17 +6072,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Phase__TasksAssignment_5"
-    // InternalKPIGenerator.g:1952:1: rule__Phase__TasksAssignment_5 : ( ruleTask ) ;
+    // InternalKPIGenerator.g:2060:1: rule__Phase__TasksAssignment_5 : ( ruleTask ) ;
     public final void rule__Phase__TasksAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1956:1: ( ( ruleTask ) )
-            // InternalKPIGenerator.g:1957:2: ( ruleTask )
+            // InternalKPIGenerator.g:2064:1: ( ( ruleTask ) )
+            // InternalKPIGenerator.g:2065:2: ( ruleTask )
             {
-            // InternalKPIGenerator.g:1957:2: ( ruleTask )
-            // InternalKPIGenerator.g:1958:3: ruleTask
+            // InternalKPIGenerator.g:2065:2: ( ruleTask )
+            // InternalKPIGenerator.g:2066:3: ruleTask
             {
              before(grammarAccess.getPhaseAccess().getTasksTaskParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5791,17 +6113,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Phase__TasksAssignment_6_1"
-    // InternalKPIGenerator.g:1967:1: rule__Phase__TasksAssignment_6_1 : ( ruleTask ) ;
+    // InternalKPIGenerator.g:2075:1: rule__Phase__TasksAssignment_6_1 : ( ruleTask ) ;
     public final void rule__Phase__TasksAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1971:1: ( ( ruleTask ) )
-            // InternalKPIGenerator.g:1972:2: ( ruleTask )
+            // InternalKPIGenerator.g:2079:1: ( ( ruleTask ) )
+            // InternalKPIGenerator.g:2080:2: ( ruleTask )
             {
-            // InternalKPIGenerator.g:1972:2: ( ruleTask )
-            // InternalKPIGenerator.g:1973:3: ruleTask
+            // InternalKPIGenerator.g:2080:2: ( ruleTask )
+            // InternalKPIGenerator.g:2081:3: ruleTask
             {
              before(grammarAccess.getPhaseAccess().getTasksTaskParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5832,17 +6154,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__TaskIdAssignment_2"
-    // InternalKPIGenerator.g:1982:1: rule__Task__TaskIdAssignment_2 : ( RULE_INT ) ;
+    // InternalKPIGenerator.g:2090:1: rule__Task__TaskIdAssignment_2 : ( RULE_INT ) ;
     public final void rule__Task__TaskIdAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:1986:1: ( ( RULE_INT ) )
-            // InternalKPIGenerator.g:1987:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2094:1: ( ( RULE_INT ) )
+            // InternalKPIGenerator.g:2095:2: ( RULE_INT )
             {
-            // InternalKPIGenerator.g:1987:2: ( RULE_INT )
-            // InternalKPIGenerator.g:1988:3: RULE_INT
+            // InternalKPIGenerator.g:2095:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2096:3: RULE_INT
             {
              before(grammarAccess.getTaskAccess().getTaskIdINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5869,17 +6191,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__TaskNameAssignment_4"
-    // InternalKPIGenerator.g:1997:1: rule__Task__TaskNameAssignment_4 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2105:1: rule__Task__TaskNameAssignment_4 : ( RULE_CADENA ) ;
     public final void rule__Task__TaskNameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2001:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2002:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2109:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2110:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2002:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2003:3: RULE_CADENA
+            // InternalKPIGenerator.g:2110:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2111:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getTaskNameCADENATerminalRuleCall_4_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -5906,17 +6228,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__UseCaseAssignment_6"
-    // InternalKPIGenerator.g:2012:1: rule__Task__UseCaseAssignment_6 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2120:1: rule__Task__UseCaseAssignment_6 : ( RULE_CADENA ) ;
     public final void rule__Task__UseCaseAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2016:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2017:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2124:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2125:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2017:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2018:3: RULE_CADENA
+            // InternalKPIGenerator.g:2125:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2126:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getUseCaseCADENATerminalRuleCall_6_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -5943,17 +6265,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__SequenceNumberAssignment_8"
-    // InternalKPIGenerator.g:2027:1: rule__Task__SequenceNumberAssignment_8 : ( RULE_DOUBLE ) ;
+    // InternalKPIGenerator.g:2135:1: rule__Task__SequenceNumberAssignment_8 : ( RULE_DOUBLE ) ;
     public final void rule__Task__SequenceNumberAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2031:1: ( ( RULE_DOUBLE ) )
-            // InternalKPIGenerator.g:2032:2: ( RULE_DOUBLE )
+            // InternalKPIGenerator.g:2139:1: ( ( RULE_DOUBLE ) )
+            // InternalKPIGenerator.g:2140:2: ( RULE_DOUBLE )
             {
-            // InternalKPIGenerator.g:2032:2: ( RULE_DOUBLE )
-            // InternalKPIGenerator.g:2033:3: RULE_DOUBLE
+            // InternalKPIGenerator.g:2140:2: ( RULE_DOUBLE )
+            // InternalKPIGenerator.g:2141:3: RULE_DOUBLE
             {
              before(grammarAccess.getTaskAccess().getSequenceNumberDOUBLETerminalRuleCall_8_0()); 
             match(input,RULE_DOUBLE,FOLLOW_2); 
@@ -5980,21 +6302,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__StartDateAssignment_10"
-    // InternalKPIGenerator.g:2042:1: rule__Task__StartDateAssignment_10 : ( ( rule__Task__StartDateAlternatives_10_0 ) ) ;
+    // InternalKPIGenerator.g:2150:1: rule__Task__StartDateAssignment_10 : ( ( rule__Task__StartDateAlternatives_10_0 ) ) ;
     public final void rule__Task__StartDateAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2046:1: ( ( ( rule__Task__StartDateAlternatives_10_0 ) ) )
-            // InternalKPIGenerator.g:2047:2: ( ( rule__Task__StartDateAlternatives_10_0 ) )
+            // InternalKPIGenerator.g:2154:1: ( ( ( rule__Task__StartDateAlternatives_10_0 ) ) )
+            // InternalKPIGenerator.g:2155:2: ( ( rule__Task__StartDateAlternatives_10_0 ) )
             {
-            // InternalKPIGenerator.g:2047:2: ( ( rule__Task__StartDateAlternatives_10_0 ) )
-            // InternalKPIGenerator.g:2048:3: ( rule__Task__StartDateAlternatives_10_0 )
+            // InternalKPIGenerator.g:2155:2: ( ( rule__Task__StartDateAlternatives_10_0 ) )
+            // InternalKPIGenerator.g:2156:3: ( rule__Task__StartDateAlternatives_10_0 )
             {
              before(grammarAccess.getTaskAccess().getStartDateAlternatives_10_0()); 
-            // InternalKPIGenerator.g:2049:3: ( rule__Task__StartDateAlternatives_10_0 )
-            // InternalKPIGenerator.g:2049:4: rule__Task__StartDateAlternatives_10_0
+            // InternalKPIGenerator.g:2157:3: ( rule__Task__StartDateAlternatives_10_0 )
+            // InternalKPIGenerator.g:2157:4: rule__Task__StartDateAlternatives_10_0
             {
             pushFollow(FOLLOW_2);
             rule__Task__StartDateAlternatives_10_0();
@@ -6027,21 +6349,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__DueDateAssignment_12"
-    // InternalKPIGenerator.g:2057:1: rule__Task__DueDateAssignment_12 : ( ( rule__Task__DueDateAlternatives_12_0 ) ) ;
+    // InternalKPIGenerator.g:2165:1: rule__Task__DueDateAssignment_12 : ( ( rule__Task__DueDateAlternatives_12_0 ) ) ;
     public final void rule__Task__DueDateAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2061:1: ( ( ( rule__Task__DueDateAlternatives_12_0 ) ) )
-            // InternalKPIGenerator.g:2062:2: ( ( rule__Task__DueDateAlternatives_12_0 ) )
+            // InternalKPIGenerator.g:2169:1: ( ( ( rule__Task__DueDateAlternatives_12_0 ) ) )
+            // InternalKPIGenerator.g:2170:2: ( ( rule__Task__DueDateAlternatives_12_0 ) )
             {
-            // InternalKPIGenerator.g:2062:2: ( ( rule__Task__DueDateAlternatives_12_0 ) )
-            // InternalKPIGenerator.g:2063:3: ( rule__Task__DueDateAlternatives_12_0 )
+            // InternalKPIGenerator.g:2170:2: ( ( rule__Task__DueDateAlternatives_12_0 ) )
+            // InternalKPIGenerator.g:2171:3: ( rule__Task__DueDateAlternatives_12_0 )
             {
              before(grammarAccess.getTaskAccess().getDueDateAlternatives_12_0()); 
-            // InternalKPIGenerator.g:2064:3: ( rule__Task__DueDateAlternatives_12_0 )
-            // InternalKPIGenerator.g:2064:4: rule__Task__DueDateAlternatives_12_0
+            // InternalKPIGenerator.g:2172:3: ( rule__Task__DueDateAlternatives_12_0 )
+            // InternalKPIGenerator.g:2172:4: rule__Task__DueDateAlternatives_12_0
             {
             pushFollow(FOLLOW_2);
             rule__Task__DueDateAlternatives_12_0();
@@ -6074,17 +6396,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__IsPrivateAssignment_14"
-    // InternalKPIGenerator.g:2072:1: rule__Task__IsPrivateAssignment_14 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2180:1: rule__Task__IsPrivateAssignment_14 : ( RULE_CADENA ) ;
     public final void rule__Task__IsPrivateAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2076:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2077:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2184:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2185:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2077:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2078:3: RULE_CADENA
+            // InternalKPIGenerator.g:2185:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2186:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getIsPrivateCADENATerminalRuleCall_14_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -6111,17 +6433,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__ProgressAssignment_16"
-    // InternalKPIGenerator.g:2087:1: rule__Task__ProgressAssignment_16 : ( RULE_INT ) ;
+    // InternalKPIGenerator.g:2195:1: rule__Task__ProgressAssignment_16 : ( RULE_INT ) ;
     public final void rule__Task__ProgressAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2091:1: ( ( RULE_INT ) )
-            // InternalKPIGenerator.g:2092:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2199:1: ( ( RULE_INT ) )
+            // InternalKPIGenerator.g:2200:2: ( RULE_INT )
             {
-            // InternalKPIGenerator.g:2092:2: ( RULE_INT )
-            // InternalKPIGenerator.g:2093:3: RULE_INT
+            // InternalKPIGenerator.g:2200:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2201:3: RULE_INT
             {
              before(grammarAccess.getTaskAccess().getProgressINTTerminalRuleCall_16_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6148,17 +6470,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__StatusNameAssignment_18"
-    // InternalKPIGenerator.g:2102:1: rule__Task__StatusNameAssignment_18 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2210:1: rule__Task__StatusNameAssignment_18 : ( RULE_CADENA ) ;
     public final void rule__Task__StatusNameAssignment_18() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2106:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2107:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2214:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2215:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2107:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2108:3: RULE_CADENA
+            // InternalKPIGenerator.g:2215:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2216:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getStatusNameCADENATerminalRuleCall_18_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -6185,17 +6507,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__StatusTextAssignment_20"
-    // InternalKPIGenerator.g:2117:1: rule__Task__StatusTextAssignment_20 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2225:1: rule__Task__StatusTextAssignment_20 : ( RULE_CADENA ) ;
     public final void rule__Task__StatusTextAssignment_20() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2121:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2122:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2229:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2230:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2122:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2123:3: RULE_CADENA
+            // InternalKPIGenerator.g:2230:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2231:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getStatusTextCADENATerminalRuleCall_20_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -6222,17 +6544,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__AssignedToAssignment_22"
-    // InternalKPIGenerator.g:2132:1: rule__Task__AssignedToAssignment_22 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2240:1: rule__Task__AssignedToAssignment_22 : ( RULE_CADENA ) ;
     public final void rule__Task__AssignedToAssignment_22() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2136:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2137:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2244:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2245:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2137:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2138:3: RULE_CADENA
+            // InternalKPIGenerator.g:2245:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2246:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getAssignedToCADENATerminalRuleCall_22_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -6259,17 +6581,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__CreatedDateAssignment_24"
-    // InternalKPIGenerator.g:2147:1: rule__Task__CreatedDateAssignment_24 : ( RULE_DATEHOUR ) ;
+    // InternalKPIGenerator.g:2255:1: rule__Task__CreatedDateAssignment_24 : ( RULE_DATEHOUR ) ;
     public final void rule__Task__CreatedDateAssignment_24() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2151:1: ( ( RULE_DATEHOUR ) )
-            // InternalKPIGenerator.g:2152:2: ( RULE_DATEHOUR )
+            // InternalKPIGenerator.g:2259:1: ( ( RULE_DATEHOUR ) )
+            // InternalKPIGenerator.g:2260:2: ( RULE_DATEHOUR )
             {
-            // InternalKPIGenerator.g:2152:2: ( RULE_DATEHOUR )
-            // InternalKPIGenerator.g:2153:3: RULE_DATEHOUR
+            // InternalKPIGenerator.g:2260:2: ( RULE_DATEHOUR )
+            // InternalKPIGenerator.g:2261:3: RULE_DATEHOUR
             {
              before(grammarAccess.getTaskAccess().getCreatedDateDATEHOURTerminalRuleCall_24_0()); 
             match(input,RULE_DATEHOUR,FOLLOW_2); 
@@ -6296,21 +6618,21 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__CompletedDateAssignment_26"
-    // InternalKPIGenerator.g:2162:1: rule__Task__CompletedDateAssignment_26 : ( ( rule__Task__CompletedDateAlternatives_26_0 ) ) ;
+    // InternalKPIGenerator.g:2270:1: rule__Task__CompletedDateAssignment_26 : ( ( rule__Task__CompletedDateAlternatives_26_0 ) ) ;
     public final void rule__Task__CompletedDateAssignment_26() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2166:1: ( ( ( rule__Task__CompletedDateAlternatives_26_0 ) ) )
-            // InternalKPIGenerator.g:2167:2: ( ( rule__Task__CompletedDateAlternatives_26_0 ) )
+            // InternalKPIGenerator.g:2274:1: ( ( ( rule__Task__CompletedDateAlternatives_26_0 ) ) )
+            // InternalKPIGenerator.g:2275:2: ( ( rule__Task__CompletedDateAlternatives_26_0 ) )
             {
-            // InternalKPIGenerator.g:2167:2: ( ( rule__Task__CompletedDateAlternatives_26_0 ) )
-            // InternalKPIGenerator.g:2168:3: ( rule__Task__CompletedDateAlternatives_26_0 )
+            // InternalKPIGenerator.g:2275:2: ( ( rule__Task__CompletedDateAlternatives_26_0 ) )
+            // InternalKPIGenerator.g:2276:3: ( rule__Task__CompletedDateAlternatives_26_0 )
             {
              before(grammarAccess.getTaskAccess().getCompletedDateAlternatives_26_0()); 
-            // InternalKPIGenerator.g:2169:3: ( rule__Task__CompletedDateAlternatives_26_0 )
-            // InternalKPIGenerator.g:2169:4: rule__Task__CompletedDateAlternatives_26_0
+            // InternalKPIGenerator.g:2277:3: ( rule__Task__CompletedDateAlternatives_26_0 )
+            // InternalKPIGenerator.g:2277:4: rule__Task__CompletedDateAlternatives_26_0
             {
             pushFollow(FOLLOW_2);
             rule__Task__CompletedDateAlternatives_26_0();
@@ -6343,17 +6665,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__TimeLoggedMinAssignment_28"
-    // InternalKPIGenerator.g:2177:1: rule__Task__TimeLoggedMinAssignment_28 : ( RULE_INT ) ;
+    // InternalKPIGenerator.g:2285:1: rule__Task__TimeLoggedMinAssignment_28 : ( RULE_INT ) ;
     public final void rule__Task__TimeLoggedMinAssignment_28() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2181:1: ( ( RULE_INT ) )
-            // InternalKPIGenerator.g:2182:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2289:1: ( ( RULE_INT ) )
+            // InternalKPIGenerator.g:2290:2: ( RULE_INT )
             {
-            // InternalKPIGenerator.g:2182:2: ( RULE_INT )
-            // InternalKPIGenerator.g:2183:3: RULE_INT
+            // InternalKPIGenerator.g:2290:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2291:3: RULE_INT
             {
              before(grammarAccess.getTaskAccess().getTimeLoggedMinINTTerminalRuleCall_28_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6380,17 +6702,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__BillableTimeAssignment_30"
-    // InternalKPIGenerator.g:2192:1: rule__Task__BillableTimeAssignment_30 : ( RULE_INT ) ;
+    // InternalKPIGenerator.g:2300:1: rule__Task__BillableTimeAssignment_30 : ( RULE_INT ) ;
     public final void rule__Task__BillableTimeAssignment_30() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2196:1: ( ( RULE_INT ) )
-            // InternalKPIGenerator.g:2197:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2304:1: ( ( RULE_INT ) )
+            // InternalKPIGenerator.g:2305:2: ( RULE_INT )
             {
-            // InternalKPIGenerator.g:2197:2: ( RULE_INT )
-            // InternalKPIGenerator.g:2198:3: RULE_INT
+            // InternalKPIGenerator.g:2305:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2306:3: RULE_INT
             {
              before(grammarAccess.getTaskAccess().getBillableTimeINTTerminalRuleCall_30_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6417,17 +6739,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__CompletedOnTimeAssignment_32"
-    // InternalKPIGenerator.g:2207:1: rule__Task__CompletedOnTimeAssignment_32 : ( RULE_CADENA ) ;
+    // InternalKPIGenerator.g:2315:1: rule__Task__CompletedOnTimeAssignment_32 : ( RULE_CADENA ) ;
     public final void rule__Task__CompletedOnTimeAssignment_32() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2211:1: ( ( RULE_CADENA ) )
-            // InternalKPIGenerator.g:2212:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2319:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2320:2: ( RULE_CADENA )
             {
-            // InternalKPIGenerator.g:2212:2: ( RULE_CADENA )
-            // InternalKPIGenerator.g:2213:3: RULE_CADENA
+            // InternalKPIGenerator.g:2320:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2321:3: RULE_CADENA
             {
              before(grammarAccess.getTaskAccess().getCompletedOnTimeCADENATerminalRuleCall_32_0()); 
             match(input,RULE_CADENA,FOLLOW_2); 
@@ -6454,17 +6776,17 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Task__TimeEstimatedAssignment_34"
-    // InternalKPIGenerator.g:2222:1: rule__Task__TimeEstimatedAssignment_34 : ( RULE_INT ) ;
+    // InternalKPIGenerator.g:2330:1: rule__Task__TimeEstimatedAssignment_34 : ( RULE_INT ) ;
     public final void rule__Task__TimeEstimatedAssignment_34() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalKPIGenerator.g:2226:1: ( ( RULE_INT ) )
-            // InternalKPIGenerator.g:2227:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2334:1: ( ( RULE_INT ) )
+            // InternalKPIGenerator.g:2335:2: ( RULE_INT )
             {
-            // InternalKPIGenerator.g:2227:2: ( RULE_INT )
-            // InternalKPIGenerator.g:2228:3: RULE_INT
+            // InternalKPIGenerator.g:2335:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2336:3: RULE_INT
             {
              before(grammarAccess.getTaskAccess().getTimeEstimatedINTTerminalRuleCall_34_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6488,6 +6810,80 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
         return ;
     }
     // $ANTLR end "rule__Task__TimeEstimatedAssignment_34"
+
+
+    // $ANTLR start "rule__Task__IsReprocessedTaskAssignment_36"
+    // InternalKPIGenerator.g:2345:1: rule__Task__IsReprocessedTaskAssignment_36 : ( RULE_CADENA ) ;
+    public final void rule__Task__IsReprocessedTaskAssignment_36() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:2349:1: ( ( RULE_CADENA ) )
+            // InternalKPIGenerator.g:2350:2: ( RULE_CADENA )
+            {
+            // InternalKPIGenerator.g:2350:2: ( RULE_CADENA )
+            // InternalKPIGenerator.g:2351:3: RULE_CADENA
+            {
+             before(grammarAccess.getTaskAccess().getIsReprocessedTaskCADENATerminalRuleCall_36_0()); 
+            match(input,RULE_CADENA,FOLLOW_2); 
+             after(grammarAccess.getTaskAccess().getIsReprocessedTaskCADENATerminalRuleCall_36_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__IsReprocessedTaskAssignment_36"
+
+
+    // $ANTLR start "rule__Task__IdParentTaskAssignment_38"
+    // InternalKPIGenerator.g:2360:1: rule__Task__IdParentTaskAssignment_38 : ( RULE_INT ) ;
+    public final void rule__Task__IdParentTaskAssignment_38() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalKPIGenerator.g:2364:1: ( ( RULE_INT ) )
+            // InternalKPIGenerator.g:2365:2: ( RULE_INT )
+            {
+            // InternalKPIGenerator.g:2365:2: ( RULE_INT )
+            // InternalKPIGenerator.g:2366:3: RULE_INT
+            {
+             before(grammarAccess.getTaskAccess().getIdParentTaskINTTerminalRuleCall_38_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getTaskAccess().getIdParentTaskINTTerminalRuleCall_38_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Task__IdParentTaskAssignment_38"
 
     // Delegated rules
 
@@ -6527,5 +6923,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000080000000000L});
 
 }

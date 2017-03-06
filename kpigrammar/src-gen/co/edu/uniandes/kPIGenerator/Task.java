@@ -31,6 +31,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getBillableTime <em>Billable Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getCompletedOnTime <em>Completed On Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getTimeEstimated <em>Time Estimated</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getIsReprocessedTask <em>Is Reprocessed Task</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.Task#getIdParentTask <em>Id Parent Task</em>}</li>
  * </ul>
  *
  * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask()
@@ -480,5 +482,57 @@ public interface Task extends EObject
    * @generated
    */
   void setTimeEstimated(int value);
+
+  /**
+   * Returns the value of the '<em><b>Is Reprocessed Task</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is Reprocessed Task</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Reprocessed Task</em>' attribute.
+   * @see #setIsReprocessedTask(String)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_IsReprocessedTask()
+   * @model
+   * @generated
+   */
+  String getIsReprocessedTask();
+
+  /**
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getIsReprocessedTask <em>Is Reprocessed Task</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Reprocessed Task</em>' attribute.
+   * @see #getIsReprocessedTask()
+   * @generated
+   */
+  void setIsReprocessedTask(String value);
+
+  /**
+   * Returns the value of the '<em><b>Id Parent Task</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Id Parent Task</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Id Parent Task</em>' attribute.
+   * @see #setIdParentTask(int)
+   * @see co.edu.uniandes.kPIGenerator.KPIGeneratorPackage#getTask_IdParentTask()
+   * @model
+   * @generated
+   */
+  int getIdParentTask();
+
+  /**
+   * Sets the value of the '{@link co.edu.uniandes.kPIGenerator.Task#getIdParentTask <em>Id Parent Task</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Id Parent Task</em>' attribute.
+   * @see #getIdParentTask()
+   * @generated
+   */
+  void setIdParentTask(int value);
 
 } // Task

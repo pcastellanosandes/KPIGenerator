@@ -381,6 +381,26 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTask_IsReprocessedTask()
+  {
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTask_IdParentTask()
+  {
+    return (EAttribute)taskEClass.getEStructuralFeatures().get(18);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public KPIGeneratorFactory getKPIGeneratorFactory()
   {
     return (KPIGeneratorFactory)getEFactoryInstance();
@@ -435,6 +455,8 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
     createEAttribute(taskEClass, TASK__BILLABLE_TIME);
     createEAttribute(taskEClass, TASK__COMPLETED_ON_TIME);
     createEAttribute(taskEClass, TASK__TIME_ESTIMATED);
+    createEAttribute(taskEClass, TASK__IS_REPROCESSED_TASK);
+    createEAttribute(taskEClass, TASK__ID_PARENT_TASK);
   }
 
   /**
@@ -497,6 +519,8 @@ public class KPIGeneratorPackageImpl extends EPackageImpl implements KPIGenerato
     initEAttribute(getTask_BillableTime(), ecorePackage.getEInt(), "billableTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_CompletedOnTime(), ecorePackage.getEString(), "completedOnTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTask_TimeEstimated(), ecorePackage.getEInt(), "timeEstimated", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTask_IsReprocessedTask(), ecorePackage.getEString(), "isReprocessedTask", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTask_IdParentTask(), ecorePackage.getEInt(), "idParentTask", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

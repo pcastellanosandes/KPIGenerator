@@ -108,7 +108,9 @@ public class KPIGeneratorSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         timeLoggedMin=INT 
 	 *         billableTime=INT 
 	 *         completedOnTime=CADENA 
-	 *         timeEstimated=INT
+	 *         timeEstimated=INT 
+	 *         isReprocessedTask=CADENA 
+	 *         idParentTask=INT
 	 *     )
 	 */
 	protected void sequence_Task(ISerializationContext context, Task semanticObject) {

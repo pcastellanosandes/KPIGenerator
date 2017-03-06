@@ -323,13 +323,31 @@ public interface KPIGeneratorPackage extends EPackage
   int TASK__TIME_ESTIMATED = 16;
 
   /**
+   * The feature id for the '<em><b>Is Reprocessed Task</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__IS_REPROCESSED_TASK = 17;
+
+  /**
+   * The feature id for the '<em><b>Id Parent Task</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__ID_PARENT_TASK = 18;
+
+  /**
    * The number of structural features of the '<em>Task</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK_FEATURE_COUNT = 17;
+  int TASK_FEATURE_COUNT = 19;
 
 
   /**
@@ -615,6 +633,28 @@ public interface KPIGeneratorPackage extends EPackage
   EAttribute getTask_TimeEstimated();
 
   /**
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getIsReprocessedTask <em>Is Reprocessed Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Reprocessed Task</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getIsReprocessedTask()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_IsReprocessedTask();
+
+  /**
+   * Returns the meta object for the attribute '{@link co.edu.uniandes.kPIGenerator.Task#getIdParentTask <em>Id Parent Task</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id Parent Task</em>'.
+   * @see co.edu.uniandes.kPIGenerator.Task#getIdParentTask()
+   * @see #getTask()
+   * @generated
+   */
+  EAttribute getTask_IdParentTask();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -852,6 +892,22 @@ public interface KPIGeneratorPackage extends EPackage
      * @generated
      */
     EAttribute TASK__TIME_ESTIMATED = eINSTANCE.getTask_TimeEstimated();
+
+    /**
+     * The meta object literal for the '<em><b>Is Reprocessed Task</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__IS_REPROCESSED_TASK = eINSTANCE.getTask_IsReprocessedTask();
+
+    /**
+     * The meta object literal for the '<em><b>Id Parent Task</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TASK__ID_PARENT_TASK = eINSTANCE.getTask_IdParentTask();
 
   }
 

@@ -11,6 +11,8 @@
 '","useCase":"'=26
 ',"billableTime":'=38
 ',"completedOnTime":'=39
+',"idParentTask":'=42
+',"isReprocessedTask":'=41
 ',"name":"'=25
 ',"progress":'=31
 ',"startDate":"'=28
@@ -23,7 +25,7 @@
 ']}'=22
 '{"id":'=24
 '{"name":"'=20
-'}'=41
+'}'=43
 RULE_ANY_OTHER=15
 RULE_CADENA=6
 RULE_DATE=4
@@ -62,3 +64,5 @@ T__38=38
 T__39=39
 T__40=40
 T__41=41
+T__42=42
+T__43=43

@@ -38,6 +38,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getBillableTime <em>Billable Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getCompletedOnTime <em>Completed On Time</em>}</li>
  *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getTimeEstimated <em>Time Estimated</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getIsReprocessedTask <em>Is Reprocessed Task</em>}</li>
+ *   <li>{@link co.edu.uniandes.kPIGenerator.impl.TaskImpl#getIdParentTask <em>Id Parent Task</em>}</li>
  * </ul>
  *
  * @generated
@@ -383,6 +385,46 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * @ordered
    */
   protected int timeEstimated = TIME_ESTIMATED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIsReprocessedTask() <em>Is Reprocessed Task</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIsReprocessedTask()
+   * @generated
+   * @ordered
+   */
+  protected static final String IS_REPROCESSED_TASK_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getIsReprocessedTask() <em>Is Reprocessed Task</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIsReprocessedTask()
+   * @generated
+   * @ordered
+   */
+  protected String isReprocessedTask = IS_REPROCESSED_TASK_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getIdParentTask() <em>Id Parent Task</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdParentTask()
+   * @generated
+   * @ordered
+   */
+  protected static final int ID_PARENT_TASK_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getIdParentTask() <em>Id Parent Task</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIdParentTask()
+   * @generated
+   * @ordered
+   */
+  protected int idParentTask = ID_PARENT_TASK_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -801,6 +843,52 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getIsReprocessedTask()
+  {
+    return isReprocessedTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsReprocessedTask(String newIsReprocessedTask)
+  {
+    String oldIsReprocessedTask = isReprocessedTask;
+    isReprocessedTask = newIsReprocessedTask;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__IS_REPROCESSED_TASK, oldIsReprocessedTask, isReprocessedTask));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getIdParentTask()
+  {
+    return idParentTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIdParentTask(int newIdParentTask)
+  {
+    int oldIdParentTask = idParentTask;
+    idParentTask = newIdParentTask;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KPIGeneratorPackage.TASK__ID_PARENT_TASK, oldIdParentTask, idParentTask));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -840,6 +928,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return getCompletedOnTime();
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         return getTimeEstimated();
+      case KPIGeneratorPackage.TASK__IS_REPROCESSED_TASK:
+        return getIsReprocessedTask();
+      case KPIGeneratorPackage.TASK__ID_PARENT_TASK:
+        return getIdParentTask();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -904,6 +996,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return;
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         setTimeEstimated((Integer)newValue);
+        return;
+      case KPIGeneratorPackage.TASK__IS_REPROCESSED_TASK:
+        setIsReprocessedTask((String)newValue);
+        return;
+      case KPIGeneratorPackage.TASK__ID_PARENT_TASK:
+        setIdParentTask((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -970,6 +1068,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         setTimeEstimated(TIME_ESTIMATED_EDEFAULT);
         return;
+      case KPIGeneratorPackage.TASK__IS_REPROCESSED_TASK:
+        setIsReprocessedTask(IS_REPROCESSED_TASK_EDEFAULT);
+        return;
+      case KPIGeneratorPackage.TASK__ID_PARENT_TASK:
+        setIdParentTask(ID_PARENT_TASK_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -1018,6 +1122,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
         return COMPLETED_ON_TIME_EDEFAULT == null ? completedOnTime != null : !COMPLETED_ON_TIME_EDEFAULT.equals(completedOnTime);
       case KPIGeneratorPackage.TASK__TIME_ESTIMATED:
         return timeEstimated != TIME_ESTIMATED_EDEFAULT;
+      case KPIGeneratorPackage.TASK__IS_REPROCESSED_TASK:
+        return IS_REPROCESSED_TASK_EDEFAULT == null ? isReprocessedTask != null : !IS_REPROCESSED_TASK_EDEFAULT.equals(isReprocessedTask);
+      case KPIGeneratorPackage.TASK__ID_PARENT_TASK:
+        return idParentTask != ID_PARENT_TASK_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -1067,6 +1175,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     result.append(completedOnTime);
     result.append(", timeEstimated: ");
     result.append(timeEstimated);
+    result.append(", isReprocessedTask: ");
+    result.append(isReprocessedTask);
+    result.append(", idParentTask: ");
+    result.append(idParentTask);
     result.append(')');
     return result.toString();
   }

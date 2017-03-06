@@ -21,32 +21,14 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_CADENA", "RULE_INT", "RULE_DOUBLE", "RULE_DATE", "RULE_DATEHOUR", "RULE_SPACE", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'['", "','", "']'", "'{\"name\":\"'", "'\",\"phases\":['", "']}'", "'\",\"tasks\":['", "'{\"id\":'", "',\"name\":\"'", "'\",\"useCase\":\"'", "'\",\"sequenceNumber\":'", "',\"startDate\":\"'", "'-'", "'\",\"dueDate\":\"'", "'\",\"isPrivate\":'", "',\"progress\":'", "',\"status\":\"'", "'\",\"statusText\":\"'", "'\",\"assignedTo\":\"'", "'\",\"createdDate\":\"'", "'\",\"completedDate\":\"'", "'\",\"timeLoggedMin\":'", "',\"billableTime\":'", "',\"completedOnTime\":'", "',\"timeEstimated\":'", "'}'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_CADENA", "RULE_INT", "RULE_DOUBLE", "RULE_DATE", "RULE_DATEHOUR", "RULE_SPACE", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'['", "','", "']'", "'{\"name\":\"'", "'\",\"phases\":['", "']}'", "'\",\"tasks\":['", "'{\"id\":'", "',\"name\":\"'", "'\",\"useCase\":\"'", "'\",\"sequenceNumber\":'", "',\"startDate\":\"'", "'-'", "'\",\"dueDate\":\"'", "'\",\"isPrivate\":'", "',\"progress\":'", "',\"status\":\"'", "'\",\"statusText\":\"'", "'\",\"assignedTo\":\"'", "'\",\"createdDate\":\"'", "'\",\"completedDate\":\"'", "'\",\"timeLoggedMin\":'", "',\"billableTime\":'", "',\"completedOnTime\":'", "',\"timeEstimated\":'", "',\"isReprocessedTask\":'", "',\"idParentTask\":'", "'}'"
     };
-    public static final int RULE_STRING=11;
-    public static final int RULE_SL_COMMENT=13;
     public static final int T__19=19;
-    public static final int T__37=37;
-    public static final int RULE_DOUBLE=6;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
     public static final int RULE_SPACE=9;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_DATEHOUR=8;
     public static final int RULE_ID=10;
-    public static final int RULE_WS=14;
-    public static final int RULE_CADENA=4;
-    public static final int RULE_ANY_OTHER=15;
     public static final int RULE_DATE=7;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -58,10 +40,30 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=11;
+    public static final int RULE_SL_COMMENT=13;
+    public static final int T__37=37;
+    public static final int RULE_DOUBLE=6;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_DATEHOUR=8;
+    public static final int RULE_WS=14;
+    public static final int RULE_CADENA=4;
+    public static final int RULE_ANY_OTHER=15;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -784,7 +786,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTask"
-    // InternalKPIGenerator.g:348:1: ruleTask returns [EObject current=null] : ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= '}' ) ;
+    // InternalKPIGenerator.g:348:1: ruleTask returns [EObject current=null] : ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= ',\"isReprocessedTask\":' ( (lv_isReprocessedTask_36_0= RULE_CADENA ) ) otherlv_37= ',\"idParentTask\":' ( (lv_idParentTask_38_0= RULE_INT ) ) otherlv_39= '}' ) ;
     public final EObject ruleTask() throws RecognitionException {
         EObject current = null;
 
@@ -826,16 +828,20 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
         Token otherlv_33=null;
         Token lv_timeEstimated_34_0=null;
         Token otherlv_35=null;
+        Token lv_isReprocessedTask_36_0=null;
+        Token otherlv_37=null;
+        Token lv_idParentTask_38_0=null;
+        Token otherlv_39=null;
 
 
         	enterRule();
 
         try {
-            // InternalKPIGenerator.g:354:2: ( ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= '}' ) )
-            // InternalKPIGenerator.g:355:2: ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= '}' )
+            // InternalKPIGenerator.g:354:2: ( ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= ',\"isReprocessedTask\":' ( (lv_isReprocessedTask_36_0= RULE_CADENA ) ) otherlv_37= ',\"idParentTask\":' ( (lv_idParentTask_38_0= RULE_INT ) ) otherlv_39= '}' ) )
+            // InternalKPIGenerator.g:355:2: ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= ',\"isReprocessedTask\":' ( (lv_isReprocessedTask_36_0= RULE_CADENA ) ) otherlv_37= ',\"idParentTask\":' ( (lv_idParentTask_38_0= RULE_INT ) ) otherlv_39= '}' )
             {
-            // InternalKPIGenerator.g:355:2: ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= '}' )
-            // InternalKPIGenerator.g:356:3: () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= '}'
+            // InternalKPIGenerator.g:355:2: ( () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= ',\"isReprocessedTask\":' ( (lv_isReprocessedTask_36_0= RULE_CADENA ) ) otherlv_37= ',\"idParentTask\":' ( (lv_idParentTask_38_0= RULE_INT ) ) otherlv_39= '}' )
+            // InternalKPIGenerator.g:356:3: () otherlv_1= '{\"id\":' ( (lv_taskId_2_0= RULE_INT ) ) otherlv_3= ',\"name\":\"' ( (lv_taskName_4_0= RULE_CADENA ) ) otherlv_5= '\",\"useCase\":\"' ( (lv_useCase_6_0= RULE_CADENA ) ) otherlv_7= '\",\"sequenceNumber\":' ( (lv_sequenceNumber_8_0= RULE_DOUBLE ) ) otherlv_9= ',\"startDate\":\"' ( ( (lv_startDate_10_1= RULE_DATE | lv_startDate_10_2= '-' ) ) ) otherlv_11= '\",\"dueDate\":\"' ( ( (lv_dueDate_12_1= RULE_DATE | lv_dueDate_12_2= '-' ) ) ) otherlv_13= '\",\"isPrivate\":' ( (lv_isPrivate_14_0= RULE_CADENA ) ) otherlv_15= ',\"progress\":' ( (lv_progress_16_0= RULE_INT ) ) otherlv_17= ',\"status\":\"' ( (lv_statusName_18_0= RULE_CADENA ) ) otherlv_19= '\",\"statusText\":\"' ( (lv_statusText_20_0= RULE_CADENA ) ) otherlv_21= '\",\"assignedTo\":\"' ( (lv_assignedTo_22_0= RULE_CADENA ) ) otherlv_23= '\",\"createdDate\":\"' ( (lv_createdDate_24_0= RULE_DATEHOUR ) ) otherlv_25= '\",\"completedDate\":\"' ( ( (lv_completedDate_26_1= RULE_DATEHOUR | lv_completedDate_26_2= '-' ) ) ) otherlv_27= '\",\"timeLoggedMin\":' ( (lv_timeLoggedMin_28_0= RULE_INT ) ) otherlv_29= ',\"billableTime\":' ( (lv_billableTime_30_0= RULE_INT ) ) otherlv_31= ',\"completedOnTime\":' ( (lv_completedOnTime_32_0= RULE_CADENA ) ) otherlv_33= ',\"timeEstimated\":' ( (lv_timeEstimated_34_0= RULE_INT ) ) otherlv_35= ',\"isReprocessedTask\":' ( (lv_isReprocessedTask_36_0= RULE_CADENA ) ) otherlv_37= ',\"idParentTask\":' ( (lv_idParentTask_38_0= RULE_INT ) ) otherlv_39= '}'
             {
             // InternalKPIGenerator.g:356:3: ()
             // InternalKPIGenerator.g:357:4: 
@@ -1484,9 +1490,69 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_35=(Token)match(input,41,FOLLOW_2); 
+            otherlv_35=(Token)match(input,41,FOLLOW_5); 
 
-            			newLeafNode(otherlv_35, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_35());
+            			newLeafNode(otherlv_35, grammarAccess.getTaskAccess().getIsReprocessedTaskKeyword_35());
+            		
+            // InternalKPIGenerator.g:780:3: ( (lv_isReprocessedTask_36_0= RULE_CADENA ) )
+            // InternalKPIGenerator.g:781:4: (lv_isReprocessedTask_36_0= RULE_CADENA )
+            {
+            // InternalKPIGenerator.g:781:4: (lv_isReprocessedTask_36_0= RULE_CADENA )
+            // InternalKPIGenerator.g:782:5: lv_isReprocessedTask_36_0= RULE_CADENA
+            {
+            lv_isReprocessedTask_36_0=(Token)match(input,RULE_CADENA,FOLLOW_33); 
+
+            					newLeafNode(lv_isReprocessedTask_36_0, grammarAccess.getTaskAccess().getIsReprocessedTaskCADENATerminalRuleCall_36_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getTaskRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"isReprocessedTask",
+            						lv_isReprocessedTask_36_0,
+            						"co.edu.uniandes.KPIGenerator.CADENA");
+            				
+
+            }
+
+
+            }
+
+            otherlv_37=(Token)match(input,42,FOLLOW_11); 
+
+            			newLeafNode(otherlv_37, grammarAccess.getTaskAccess().getIdParentTaskKeyword_37());
+            		
+            // InternalKPIGenerator.g:802:3: ( (lv_idParentTask_38_0= RULE_INT ) )
+            // InternalKPIGenerator.g:803:4: (lv_idParentTask_38_0= RULE_INT )
+            {
+            // InternalKPIGenerator.g:803:4: (lv_idParentTask_38_0= RULE_INT )
+            // InternalKPIGenerator.g:804:5: lv_idParentTask_38_0= RULE_INT
+            {
+            lv_idParentTask_38_0=(Token)match(input,RULE_INT,FOLLOW_34); 
+
+            					newLeafNode(lv_idParentTask_38_0, grammarAccess.getTaskAccess().getIdParentTaskINTTerminalRuleCall_38_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getTaskRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"idParentTask",
+            						lv_idParentTask_38_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            otherlv_39=(Token)match(input,43,FOLLOW_2); 
+
+            			newLeafNode(otherlv_39, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_39());
             		
 
             }
@@ -1546,5 +1612,7 @@ public class InternalKPIGeneratorParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000080000000000L});
 
 }

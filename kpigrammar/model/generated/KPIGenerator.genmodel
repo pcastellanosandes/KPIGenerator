@@ -35,6 +35,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/billableTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/completedOnTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/timeEstimated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/isReprocessedTask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KPIGenerator.ecore#//Task/idParentTask"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

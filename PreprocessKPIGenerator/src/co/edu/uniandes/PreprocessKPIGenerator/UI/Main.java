@@ -15,7 +15,7 @@ public class Main {
 		
 		String pathJSON = absolutePath+"\\output.json";
 		GeneratorToJSON generator = new GeneratorToJSON(pathCSV, pathJSON);
-		generator.Convert();
+		generator.convert();
 		
 		System.out.println("fin del preprocesamiento");
 		

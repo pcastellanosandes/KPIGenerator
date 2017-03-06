@@ -773,9 +773,53 @@ ruleTask returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_35='}'
+		otherlv_35=',"isReprocessedTask":'
 		{
-			newLeafNode(otherlv_35, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_35());
+			newLeafNode(otherlv_35, grammarAccess.getTaskAccess().getIsReprocessedTaskKeyword_35());
+		}
+		(
+			(
+				lv_isReprocessedTask_36_0=RULE_CADENA
+				{
+					newLeafNode(lv_isReprocessedTask_36_0, grammarAccess.getTaskAccess().getIsReprocessedTaskCADENATerminalRuleCall_36_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTaskRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"isReprocessedTask",
+						lv_isReprocessedTask_36_0,
+						"co.edu.uniandes.KPIGenerator.CADENA");
+				}
+			)
+		)
+		otherlv_37=',"idParentTask":'
+		{
+			newLeafNode(otherlv_37, grammarAccess.getTaskAccess().getIdParentTaskKeyword_37());
+		}
+		(
+			(
+				lv_idParentTask_38_0=RULE_INT
+				{
+					newLeafNode(lv_idParentTask_38_0, grammarAccess.getTaskAccess().getIdParentTaskINTTerminalRuleCall_38_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTaskRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"idParentTask",
+						lv_idParentTask_38_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_39='}'
+		{
+			newLeafNode(otherlv_39, grammarAccess.getTaskAccess().getRightCurlyBracketKeyword_39());
 		}
 	)
 ;

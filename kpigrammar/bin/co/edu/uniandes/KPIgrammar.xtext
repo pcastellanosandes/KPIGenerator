@@ -16,7 +16,7 @@ Phase returns Phase:
 ;
 Task returns Task:
 	{Task}
-	'{"id":' taskId = INT ',"name":"' taskName = CADENA '","useCase":"' useCase = CADENA '","sequenceNumber":' sequenceNumber = DOUBLE ',"startDate":"' startDate = (DATE|'-') '","dueDate":"' dueDate = (DATE|'-') '","isPrivate":' isPrivate = CADENA ',"progress":' progress = INT ',"status":"' statusName = CADENA '","statusText":"' statusText = CADENA '","assignedTo":"' assignedTo = CADENA '","createdDate":"' createdDate = DATEHOUR '","completedDate":"' completedDate = (DATEHOUR|'-') '","timeLoggedMin":' timeLoggedMin = INT ',"billableTime":' billableTime = INT ',"completedOnTime":' completedOnTime = CADENA ',"timeEstimated":' timeEstimated = INT'}'
+	'{"id":' taskId = INT ',"name":"' taskName = CADENA '","useCase":"' useCase = CADENA '","sequenceNumber":' sequenceNumber = DOUBLE ',"startDate":"' startDate = (DATE|'-') '","dueDate":"' dueDate = (DATE|'-') '","isPrivate":' isPrivate = CADENA ',"progress":' progress = INT ',"status":"' statusName = CADENA '","statusText":"' statusText = CADENA '","assignedTo":"' assignedTo = CADENA '","createdDate":"' createdDate = DATEHOUR '","completedDate":"' completedDate = (DATEHOUR|'-') '","timeLoggedMin":' timeLoggedMin = INT ',"billableTime":' billableTime = INT ',"completedOnTime":' completedOnTime = CADENA ',"timeEstimated":' timeEstimated = INT',"isReprocessedTask":' isReprocessedTask = CADENA ',"idParentTask":' idParentTask = INT'}'
 ;
 
 terminal CADENA: 

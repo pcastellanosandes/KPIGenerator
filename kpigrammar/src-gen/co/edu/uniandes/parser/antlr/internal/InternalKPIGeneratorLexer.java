@@ -12,30 +12,12 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalKPIGeneratorLexer extends Lexer {
-    public static final int RULE_STRING=11;
-    public static final int RULE_SL_COMMENT=13;
     public static final int T__19=19;
-    public static final int T__37=37;
-    public static final int RULE_DOUBLE=6;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
     public static final int RULE_SPACE=9;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_DATEHOUR=8;
     public static final int RULE_ID=10;
-    public static final int RULE_WS=14;
-    public static final int RULE_CADENA=4;
-    public static final int RULE_ANY_OTHER=15;
     public static final int RULE_DATE=7;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -47,10 +29,30 @@ public class InternalKPIGeneratorLexer extends Lexer {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=11;
+    public static final int RULE_SL_COMMENT=13;
+    public static final int T__37=37;
+    public static final int RULE_DOUBLE=6;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_DATEHOUR=8;
+    public static final int RULE_WS=14;
+    public static final int RULE_CADENA=4;
+    public static final int RULE_ANY_OTHER=15;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -591,10 +593,11 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:36:7: ( '}' )
-            // InternalKPIGenerator.g:36:9: '}'
+            // InternalKPIGenerator.g:36:7: ( ',\"isReprocessedTask\":' )
+            // InternalKPIGenerator.g:36:9: ',\"isReprocessedTask\":'
             {
-            match('}'); 
+            match(",\"isReprocessedTask\":"); 
+
 
             }
 
@@ -606,15 +609,56 @@ public class InternalKPIGeneratorLexer extends Lexer {
     }
     // $ANTLR end "T__41"
 
+    // $ANTLR start "T__42"
+    public final void mT__42() throws RecognitionException {
+        try {
+            int _type = T__42;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalKPIGenerator.g:37:7: ( ',\"idParentTask\":' )
+            // InternalKPIGenerator.g:37:9: ',\"idParentTask\":'
+            {
+            match(",\"idParentTask\":"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__42"
+
+    // $ANTLR start "T__43"
+    public final void mT__43() throws RecognitionException {
+        try {
+            int _type = T__43;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalKPIGenerator.g:38:7: ( '}' )
+            // InternalKPIGenerator.g:38:9: '}'
+            {
+            match('}'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__43"
+
     // $ANTLR start "RULE_CADENA"
     public final void mRULE_CADENA() throws RecognitionException {
         try {
             int _type = RULE_CADENA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:783:13: ( ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )* )+ )
-            // InternalKPIGenerator.g:783:15: ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )* )+
+            // InternalKPIGenerator.g:827:13: ( ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )* )+ )
+            // InternalKPIGenerator.g:827:15: ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )* )+
             {
-            // InternalKPIGenerator.g:783:15: ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )* )+
+            // InternalKPIGenerator.g:827:15: ( ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )* )+
             int cnt3=0;
             loop3:
             do {
@@ -628,9 +672,9 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalKPIGenerator.g:783:16: ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )*
+            	    // InternalKPIGenerator.g:827:16: ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+ ( '0' .. '9' )*
             	    {
-            	    // InternalKPIGenerator.g:783:16: ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+
+            	    // InternalKPIGenerator.g:827:16: ( 'a' .. 'z' | 'A' .. 'Z' | '\\u00C1' | '\\u00E1' | '\\u00C9' | '\\u00E9' | '\\u00CD' | '\\u00ED' | '\\u00D3' | '\\u00F3' | '\\u00DA' | '\\u00FA' | '-' | ' ' | '|' | '.' | '(' | ')' | '/' | ':' )+
             	    int cnt1=0;
             	    loop1:
             	    do {
@@ -668,7 +712,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
             	        cnt1++;
             	    } while (true);
 
-            	    // InternalKPIGenerator.g:783:159: ( '0' .. '9' )*
+            	    // InternalKPIGenerator.g:827:159: ( '0' .. '9' )*
             	    loop2:
             	    do {
             	        int alt2=2;
@@ -681,7 +725,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
             	        switch (alt2) {
             	    	case 1 :
-            	    	    // InternalKPIGenerator.g:783:160: '0' .. '9'
+            	    	    // InternalKPIGenerator.g:827:160: '0' .. '9'
             	    	    {
             	    	    matchRange('0','9'); 
 
@@ -722,8 +766,8 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_DOUBLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:785:13: ( RULE_INT '.' RULE_INT )
-            // InternalKPIGenerator.g:785:15: RULE_INT '.' RULE_INT
+            // InternalKPIGenerator.g:829:13: ( RULE_INT '.' RULE_INT )
+            // InternalKPIGenerator.g:829:15: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -744,10 +788,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_DATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:787:11: ( ( RULE_INT )+ '/' ( RULE_INT )+ '/' ( RULE_INT )+ )
-            // InternalKPIGenerator.g:787:13: ( RULE_INT )+ '/' ( RULE_INT )+ '/' ( RULE_INT )+
+            // InternalKPIGenerator.g:831:11: ( ( RULE_INT )+ '/' ( RULE_INT )+ '/' ( RULE_INT )+ )
+            // InternalKPIGenerator.g:831:13: ( RULE_INT )+ '/' ( RULE_INT )+ '/' ( RULE_INT )+
             {
-            // InternalKPIGenerator.g:787:13: ( RULE_INT )+
+            // InternalKPIGenerator.g:831:13: ( RULE_INT )+
             int cnt4=0;
             loop4:
             do {
@@ -761,7 +805,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalKPIGenerator.g:787:13: RULE_INT
+            	    // InternalKPIGenerator.g:831:13: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -778,7 +822,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
             } while (true);
 
             match('/'); 
-            // InternalKPIGenerator.g:787:27: ( RULE_INT )+
+            // InternalKPIGenerator.g:831:27: ( RULE_INT )+
             int cnt5=0;
             loop5:
             do {
@@ -792,7 +836,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalKPIGenerator.g:787:27: RULE_INT
+            	    // InternalKPIGenerator.g:831:27: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -809,7 +853,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
             } while (true);
 
             match('/'); 
-            // InternalKPIGenerator.g:787:41: ( RULE_INT )+
+            // InternalKPIGenerator.g:831:41: ( RULE_INT )+
             int cnt6=0;
             loop6:
             do {
@@ -823,7 +867,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalKPIGenerator.g:787:41: RULE_INT
+            	    // InternalKPIGenerator.g:831:41: RULE_INT
             	    {
             	    mRULE_INT(); 
 
@@ -855,8 +899,8 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_DATEHOUR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:789:15: ( RULE_DATE RULE_SPACE RULE_INT ':' RULE_INT RULE_SPACE ( 'AM' | 'PM' ) )
-            // InternalKPIGenerator.g:789:17: RULE_DATE RULE_SPACE RULE_INT ':' RULE_INT RULE_SPACE ( 'AM' | 'PM' )
+            // InternalKPIGenerator.g:833:15: ( RULE_DATE RULE_SPACE RULE_INT ':' RULE_INT RULE_SPACE ( 'AM' | 'PM' ) )
+            // InternalKPIGenerator.g:833:17: RULE_DATE RULE_SPACE RULE_INT ':' RULE_INT RULE_SPACE ( 'AM' | 'PM' )
             {
             mRULE_DATE(); 
             mRULE_SPACE(); 
@@ -864,7 +908,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
             match(':'); 
             mRULE_INT(); 
             mRULE_SPACE(); 
-            // InternalKPIGenerator.g:789:71: ( 'AM' | 'PM' )
+            // InternalKPIGenerator.g:833:71: ( 'AM' | 'PM' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -882,7 +926,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalKPIGenerator.g:789:72: 'AM'
+                    // InternalKPIGenerator.g:833:72: 'AM'
                     {
                     match("AM"); 
 
@@ -890,7 +934,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalKPIGenerator.g:789:77: 'PM'
+                    // InternalKPIGenerator.g:833:77: 'PM'
                     {
                     match("PM"); 
 
@@ -914,8 +958,8 @@ public class InternalKPIGeneratorLexer extends Lexer {
     // $ANTLR start "RULE_SPACE"
     public final void mRULE_SPACE() throws RecognitionException {
         try {
-            // InternalKPIGenerator.g:791:21: ( ' ' )
-            // InternalKPIGenerator.g:791:23: ' '
+            // InternalKPIGenerator.g:835:21: ( ' ' )
+            // InternalKPIGenerator.g:835:23: ' '
             {
             match(' '); 
 
@@ -932,10 +976,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:793:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalKPIGenerator.g:793:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalKPIGenerator.g:837:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalKPIGenerator.g:837:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalKPIGenerator.g:793:11: ( '^' )?
+            // InternalKPIGenerator.g:837:11: ( '^' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -944,7 +988,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalKPIGenerator.g:793:11: '^'
+                    // InternalKPIGenerator.g:837:11: '^'
                     {
                     match('^'); 
 
@@ -962,7 +1006,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalKPIGenerator.g:793:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalKPIGenerator.g:837:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop9:
             do {
                 int alt9=2;
@@ -1011,10 +1055,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:795:10: ( ( '0' .. '9' )+ )
-            // InternalKPIGenerator.g:795:12: ( '0' .. '9' )+
+            // InternalKPIGenerator.g:839:10: ( ( '0' .. '9' )+ )
+            // InternalKPIGenerator.g:839:12: ( '0' .. '9' )+
             {
-            // InternalKPIGenerator.g:795:12: ( '0' .. '9' )+
+            // InternalKPIGenerator.g:839:12: ( '0' .. '9' )+
             int cnt10=0;
             loop10:
             do {
@@ -1028,7 +1072,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalKPIGenerator.g:795:13: '0' .. '9'
+            	    // InternalKPIGenerator.g:839:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1060,10 +1104,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:797:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalKPIGenerator.g:797:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalKPIGenerator.g:841:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalKPIGenerator.g:841:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalKPIGenerator.g:797:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalKPIGenerator.g:841:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1081,10 +1125,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalKPIGenerator.g:797:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalKPIGenerator.g:841:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalKPIGenerator.g:797:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalKPIGenerator.g:841:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -1100,7 +1144,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalKPIGenerator.g:797:21: '\\\\' .
+                    	    // InternalKPIGenerator.g:841:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1108,7 +1152,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalKPIGenerator.g:797:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalKPIGenerator.g:841:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1133,10 +1177,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalKPIGenerator.g:797:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalKPIGenerator.g:841:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalKPIGenerator.g:797:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalKPIGenerator.g:841:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop12:
                     do {
                         int alt12=3;
@@ -1152,7 +1196,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // InternalKPIGenerator.g:797:54: '\\\\' .
+                    	    // InternalKPIGenerator.g:841:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1160,7 +1204,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalKPIGenerator.g:797:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalKPIGenerator.g:841:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1203,12 +1247,12 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:799:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalKPIGenerator.g:799:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalKPIGenerator.g:843:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalKPIGenerator.g:843:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalKPIGenerator.g:799:24: ( options {greedy=false; } : . )*
+            // InternalKPIGenerator.g:843:24: ( options {greedy=false; } : . )*
             loop14:
             do {
                 int alt14=2;
@@ -1233,7 +1277,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalKPIGenerator.g:799:52: .
+            	    // InternalKPIGenerator.g:843:52: .
             	    {
             	    matchAny(); 
 
@@ -1263,12 +1307,12 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:801:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalKPIGenerator.g:801:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalKPIGenerator.g:845:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalKPIGenerator.g:845:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalKPIGenerator.g:801:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalKPIGenerator.g:845:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop15:
             do {
                 int alt15=2;
@@ -1281,7 +1325,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalKPIGenerator.g:801:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalKPIGenerator.g:845:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1301,7 +1345,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalKPIGenerator.g:801:40: ( ( '\\r' )? '\\n' )?
+            // InternalKPIGenerator.g:845:40: ( ( '\\r' )? '\\n' )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -1310,9 +1354,9 @@ public class InternalKPIGeneratorLexer extends Lexer {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalKPIGenerator.g:801:41: ( '\\r' )? '\\n'
+                    // InternalKPIGenerator.g:845:41: ( '\\r' )? '\\n'
                     {
-                    // InternalKPIGenerator.g:801:41: ( '\\r' )?
+                    // InternalKPIGenerator.g:845:41: ( '\\r' )?
                     int alt16=2;
                     int LA16_0 = input.LA(1);
 
@@ -1321,7 +1365,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
                     }
                     switch (alt16) {
                         case 1 :
-                            // InternalKPIGenerator.g:801:41: '\\r'
+                            // InternalKPIGenerator.g:845:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1353,10 +1397,10 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:803:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalKPIGenerator.g:803:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalKPIGenerator.g:847:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalKPIGenerator.g:847:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalKPIGenerator.g:803:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalKPIGenerator.g:847:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt18=0;
             loop18:
             do {
@@ -1410,8 +1454,8 @@ public class InternalKPIGeneratorLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalKPIGenerator.g:805:16: ( . )
-            // InternalKPIGenerator.g:805:18: .
+            // InternalKPIGenerator.g:849:16: ( . )
+            // InternalKPIGenerator.g:849:18: .
             {
             matchAny(); 
 
@@ -1426,8 +1470,8 @@ public class InternalKPIGeneratorLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalKPIGenerator.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | RULE_CADENA | RULE_DOUBLE | RULE_DATE | RULE_DATEHOUR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt19=37;
+        // InternalKPIGenerator.g:1:8: ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | RULE_CADENA | RULE_DOUBLE | RULE_DATE | RULE_DATEHOUR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt19=39;
         alt19 = dfa19.predict(input);
         switch (alt19) {
             case 1 :
@@ -1613,77 +1657,91 @@ public class InternalKPIGeneratorLexer extends Lexer {
                 }
                 break;
             case 27 :
-                // InternalKPIGenerator.g:1:166: RULE_CADENA
+                // InternalKPIGenerator.g:1:166: T__42
+                {
+                mT__42(); 
+
+                }
+                break;
+            case 28 :
+                // InternalKPIGenerator.g:1:172: T__43
+                {
+                mT__43(); 
+
+                }
+                break;
+            case 29 :
+                // InternalKPIGenerator.g:1:178: RULE_CADENA
                 {
                 mRULE_CADENA(); 
 
                 }
                 break;
-            case 28 :
-                // InternalKPIGenerator.g:1:178: RULE_DOUBLE
+            case 30 :
+                // InternalKPIGenerator.g:1:190: RULE_DOUBLE
                 {
                 mRULE_DOUBLE(); 
 
                 }
                 break;
-            case 29 :
-                // InternalKPIGenerator.g:1:190: RULE_DATE
+            case 31 :
+                // InternalKPIGenerator.g:1:202: RULE_DATE
                 {
                 mRULE_DATE(); 
 
                 }
                 break;
-            case 30 :
-                // InternalKPIGenerator.g:1:200: RULE_DATEHOUR
+            case 32 :
+                // InternalKPIGenerator.g:1:212: RULE_DATEHOUR
                 {
                 mRULE_DATEHOUR(); 
 
                 }
                 break;
-            case 31 :
-                // InternalKPIGenerator.g:1:214: RULE_ID
+            case 33 :
+                // InternalKPIGenerator.g:1:226: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 32 :
-                // InternalKPIGenerator.g:1:222: RULE_INT
+            case 34 :
+                // InternalKPIGenerator.g:1:234: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 33 :
-                // InternalKPIGenerator.g:1:231: RULE_STRING
+            case 35 :
+                // InternalKPIGenerator.g:1:243: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 34 :
-                // InternalKPIGenerator.g:1:243: RULE_ML_COMMENT
+            case 36 :
+                // InternalKPIGenerator.g:1:255: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 35 :
-                // InternalKPIGenerator.g:1:259: RULE_SL_COMMENT
+            case 37 :
+                // InternalKPIGenerator.g:1:271: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 36 :
-                // InternalKPIGenerator.g:1:275: RULE_WS
+            case 38 :
+                // InternalKPIGenerator.g:1:287: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 37 :
-                // InternalKPIGenerator.g:1:283: RULE_ANY_OTHER
+            case 39 :
+                // InternalKPIGenerator.g:1:295: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1697,17 +1755,17 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
     protected DFA19 dfa19 = new DFA19(this);
     static final String DFA19_eotS =
-        "\2\uffff\1\24\1\26\2\21\1\32\1\uffff\1\33\1\40\1\21\1\33\1\uffff\1\21\1\33\16\uffff\2\33\3\uffff\1\40\2\uffff\2\33\11\uffff\1\31\1\uffff\1\33\1\uffff\1\33\21\uffff\1\111\4\uffff";
+        "\2\uffff\1\24\1\26\2\21\1\32\1\uffff\1\33\1\40\1\21\1\33\1\uffff\1\21\1\33\16\uffff\2\33\3\uffff\1\40\2\uffff\2\33\12\uffff\1\31\1\uffff\1\33\1\uffff\1\33\23\uffff\1\114\4\uffff";
     static final String DFA19_eofS =
-        "\113\uffff";
+        "\116\uffff";
     static final String DFA19_minS =
-        "\1\0\1\uffff\1\42\1\175\1\42\1\0\1\40\1\uffff\1\60\1\56\1\101\1\52\1\uffff\1\0\1\11\4\uffff\1\142\3\uffff\1\151\1\0\4\uffff\2\60\2\uffff\1\60\1\56\2\uffff\1\0\1\11\2\uffff\1\164\6\uffff\1\141\1\57\1\0\1\uffff\1\0\1\141\1\uffff\1\141\1\uffff\1\145\3\uffff\1\157\1\60\1\162\6\uffff\1\40\4\uffff";
+        "\1\0\1\uffff\1\42\1\175\1\42\1\0\1\40\1\uffff\1\60\1\56\1\101\1\52\1\uffff\1\0\1\11\4\uffff\1\142\3\uffff\1\151\1\0\4\uffff\2\60\2\uffff\1\60\1\56\2\uffff\1\0\1\11\2\uffff\1\164\4\uffff\1\144\2\uffff\1\141\1\57\1\0\1\uffff\1\0\1\141\3\uffff\1\141\1\uffff\1\145\3\uffff\1\157\1\60\1\162\6\uffff\1\40\4\uffff";
     static final String DFA19_maxS =
-        "\1\uffff\1\uffff\1\42\1\175\1\42\1\uffff\1\u00fa\1\uffff\1\172\1\71\1\172\1\57\1\uffff\1\uffff\1\40\4\uffff\1\164\3\uffff\1\156\1\uffff\4\uffff\2\172\2\uffff\2\71\2\uffff\1\uffff\1\40\2\uffff\1\164\6\uffff\1\165\1\71\1\uffff\1\uffff\1\uffff\1\141\1\uffff\1\151\1\uffff\1\164\3\uffff\1\162\1\71\1\164\6\uffff\1\71\4\uffff";
+        "\1\uffff\1\uffff\1\42\1\175\1\42\1\uffff\1\u00fa\1\uffff\1\172\1\71\1\172\1\57\1\uffff\1\uffff\1\40\4\uffff\1\164\3\uffff\1\156\1\uffff\4\uffff\2\172\2\uffff\2\71\2\uffff\1\uffff\1\40\2\uffff\1\164\4\uffff\1\163\2\uffff\1\165\1\71\1\uffff\1\uffff\1\uffff\1\141\3\uffff\1\151\1\uffff\1\164\3\uffff\1\162\1\71\1\164\6\uffff\1\71\4\uffff";
     static final String DFA19_acceptS =
-        "\1\uffff\1\1\5\uffff\1\32\4\uffff\1\37\2\uffff\1\33\1\44\1\45\1\1\1\uffff\1\2\1\6\1\3\2\uffff\1\41\1\15\1\33\1\32\2\uffff\1\37\1\40\2\uffff\1\34\1\42\2\uffff\1\44\1\11\1\uffff\1\20\1\27\1\30\1\31\1\4\1\10\3\uffff\1\43\2\uffff\1\5\1\uffff\1\12\1\uffff\1\16\1\17\1\23\3\uffff\1\7\1\26\1\13\1\22\1\24\1\25\1\uffff\1\14\1\21\1\35\1\36";
+        "\1\uffff\1\1\5\uffff\1\34\4\uffff\1\41\2\uffff\1\35\1\46\1\47\1\1\1\uffff\1\2\1\6\1\3\2\uffff\1\43\1\15\1\35\1\34\2\uffff\1\41\1\42\2\uffff\1\36\1\44\2\uffff\1\46\1\11\1\uffff\1\20\1\27\1\30\1\31\1\uffff\1\4\1\10\3\uffff\1\45\2\uffff\1\32\1\33\1\5\1\uffff\1\12\1\uffff\1\16\1\17\1\23\3\uffff\1\7\1\26\1\13\1\22\1\24\1\25\1\uffff\1\14\1\21\1\37\1\40";
     static final String DFA19_specialS =
-        "\1\0\4\uffff\1\3\7\uffff\1\1\12\uffff\1\4\14\uffff\1\6\14\uffff\1\5\1\uffff\1\2\26\uffff}>";
+        "\1\4\4\uffff\1\0\7\uffff\1\5\12\uffff\1\3\14\uffff\1\1\15\uffff\1\2\1\uffff\1\6\30\uffff}>";
     static final String[] DFA19_transitionS = {
             "\11\21\2\20\2\21\1\20\22\21\1\16\1\21\1\5\4\21\1\15\2\17\2\21\1\2\1\6\1\17\1\13\12\11\1\17\6\21\32\10\1\1\1\21\1\3\1\12\1\14\1\21\32\10\1\4\1\17\1\7\103\21\1\17\7\21\1\17\3\21\1\17\5\21\1\17\6\21\1\17\6\21\1\17\7\21\1\17\3\21\1\17\5\21\1\17\6\21\1\17\uff05\21",
             "",
@@ -1728,12 +1786,12 @@ public class InternalKPIGeneratorLexer extends Lexer {
             "",
             "",
             "",
-            "\1\53\1\54\12\uffff\1\50\1\uffff\1\52\2\uffff\1\51\1\55",
+            "\1\53\1\54\5\uffff\1\56\4\uffff\1\50\1\uffff\1\52\2\uffff\1\51\1\55",
             "",
             "",
             "",
-            "\1\57\4\uffff\1\56",
-            "\42\31\1\60\uffdd\31",
+            "\1\60\4\uffff\1\57",
+            "\42\31\1\61\uffdd\31",
             "",
             "",
             "",
@@ -1742,44 +1800,47 @@ public class InternalKPIGeneratorLexer extends Lexer {
             "\12\35\7\uffff\32\36\4\uffff\1\37\1\uffff\32\36",
             "",
             "",
-            "\12\61",
+            "\12\62",
             "\1\43\1\41\12\42",
             "",
             "",
-            "\40\63\1\64\7\63\2\64\3\63\3\64\12\62\1\64\6\63\32\64\6\63\32\64\1\63\1\64\104\63\1\64\7\63\1\64\3\63\1\64\5\63\1\64\6\63\1\64\6\63\1\64\7\63\1\64\3\63\1\64\5\63\1\64\6\63\1\64\uff05\63",
+            "\40\64\1\65\7\64\2\65\3\64\3\65\12\63\1\65\6\64\32\65\6\64\32\65\1\64\1\65\104\64\1\65\7\64\1\65\3\64\1\65\5\64\1\65\6\64\1\65\6\64\1\65\7\64\1\65\3\64\1\65\5\64\1\65\6\64\1\65\uff05\64",
             "\2\47\2\uffff\1\47\22\uffff\1\46",
             "",
             "",
-            "\1\65",
+            "\1\66",
+            "",
+            "",
+            "",
+            "",
+            "\1\70\16\uffff\1\67",
+            "",
+            "",
+            "\1\77\1\uffff\1\100\1\75\4\uffff\1\76\6\uffff\1\71\2\uffff\1\74\1\72\1\73",
+            "\1\101\12\62",
+            "\40\64\1\65\7\64\2\65\3\64\3\65\12\63\1\65\6\64\32\65\6\64\32\65\1\64\1\65\104\64\1\65\7\64\1\65\3\64\1\65\5\64\1\65\6\64\1\65\6\64\1\65\7\64\1\65\3\64\1\65\5\64\1\65\6\64\1\65\uff05\64",
+            "",
+            "\40\64\1\65\7\64\2\65\3\64\3\65\12\63\1\65\6\64\32\65\6\64\32\65\1\64\1\65\104\64\1\65\7\64\1\65\3\64\1\65\5\64\1\65\6\64\1\65\6\64\1\65\7\64\1\65\3\64\1\65\5\64\1\65\6\64\1\65\uff05\64",
+            "\1\102",
+            "",
+            "",
+            "",
+            "\1\103\7\uffff\1\104",
+            "",
+            "\1\105\16\uffff\1\106",
+            "",
+            "",
+            "",
+            "\1\110\2\uffff\1\107",
+            "\12\111",
+            "\1\112\1\uffff\1\113",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\74\1\uffff\1\75\1\72\4\uffff\1\73\6\uffff\1\66\2\uffff\1\71\1\67\1\70",
-            "\1\76\12\61",
-            "\40\63\1\64\7\63\2\64\3\63\3\64\12\62\1\64\6\63\32\64\6\63\32\64\1\63\1\64\104\63\1\64\7\63\1\64\3\63\1\64\5\63\1\64\6\63\1\64\6\63\1\64\7\63\1\64\3\63\1\64\5\63\1\64\6\63\1\64\uff05\63",
-            "",
-            "\40\63\1\64\7\63\2\64\3\63\3\64\12\62\1\64\6\63\32\64\6\63\32\64\1\63\1\64\104\63\1\64\7\63\1\64\3\63\1\64\5\63\1\64\6\63\1\64\6\63\1\64\7\63\1\64\3\63\1\64\5\63\1\64\6\63\1\64\uff05\63",
-            "\1\77",
-            "",
-            "\1\100\7\uffff\1\101",
-            "",
-            "\1\102\16\uffff\1\103",
-            "",
-            "",
-            "",
-            "\1\105\2\uffff\1\104",
-            "\12\106",
-            "\1\107\1\uffff\1\110",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\112\17\uffff\12\106",
+            "\1\115\17\uffff\12\111",
             "",
             "",
             "",
@@ -1816,13 +1877,63 @@ public class InternalKPIGeneratorLexer extends Lexer {
             this.transition = DFA19_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | RULE_CADENA | RULE_DOUBLE | RULE_DATE | RULE_DATEHOUR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | RULE_CADENA | RULE_DOUBLE | RULE_DATE | RULE_DATEHOUR | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA19_5 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA19_5==',') ) {s = 24;}
+
+                        else if ( ((LA19_5>='\u0000' && LA19_5<='+')||(LA19_5>='-' && LA19_5<='\uFFFF')) ) {s = 25;}
+
+                        else s = 17;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA19_37 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA19_37>='0' && LA19_37<='9')) ) {s = 51;}
+
+                        else if ( ((LA19_37>='\u0000' && LA19_37<='\u001F')||(LA19_37>='!' && LA19_37<='\'')||(LA19_37>='*' && LA19_37<=',')||(LA19_37>=';' && LA19_37<='@')||(LA19_37>='[' && LA19_37<='`')||LA19_37=='{'||(LA19_37>='}' && LA19_37<='\u00C0')||(LA19_37>='\u00C2' && LA19_37<='\u00C8')||(LA19_37>='\u00CA' && LA19_37<='\u00CC')||(LA19_37>='\u00CE' && LA19_37<='\u00D2')||(LA19_37>='\u00D4' && LA19_37<='\u00D9')||(LA19_37>='\u00DB' && LA19_37<='\u00E0')||(LA19_37>='\u00E2' && LA19_37<='\u00E8')||(LA19_37>='\u00EA' && LA19_37<='\u00EC')||(LA19_37>='\u00EE' && LA19_37<='\u00F2')||(LA19_37>='\u00F4' && LA19_37<='\u00F9')||(LA19_37>='\u00FB' && LA19_37<='\uFFFF')) ) {s = 52;}
+
+                        else if ( (LA19_37==' '||(LA19_37>='(' && LA19_37<=')')||(LA19_37>='-' && LA19_37<='/')||LA19_37==':'||(LA19_37>='A' && LA19_37<='Z')||(LA19_37>='a' && LA19_37<='z')||LA19_37=='|'||LA19_37=='\u00C1'||LA19_37=='\u00C9'||LA19_37=='\u00CD'||LA19_37=='\u00D3'||LA19_37=='\u00DA'||LA19_37=='\u00E1'||LA19_37=='\u00E9'||LA19_37=='\u00ED'||LA19_37=='\u00F3'||LA19_37=='\u00FA') ) {s = 53;}
+
+                        else s = 27;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA19_51 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA19_51>='\u0000' && LA19_51<='\u001F')||(LA19_51>='!' && LA19_51<='\'')||(LA19_51>='*' && LA19_51<=',')||(LA19_51>=';' && LA19_51<='@')||(LA19_51>='[' && LA19_51<='`')||LA19_51=='{'||(LA19_51>='}' && LA19_51<='\u00C0')||(LA19_51>='\u00C2' && LA19_51<='\u00C8')||(LA19_51>='\u00CA' && LA19_51<='\u00CC')||(LA19_51>='\u00CE' && LA19_51<='\u00D2')||(LA19_51>='\u00D4' && LA19_51<='\u00D9')||(LA19_51>='\u00DB' && LA19_51<='\u00E0')||(LA19_51>='\u00E2' && LA19_51<='\u00E8')||(LA19_51>='\u00EA' && LA19_51<='\u00EC')||(LA19_51>='\u00EE' && LA19_51<='\u00F2')||(LA19_51>='\u00F4' && LA19_51<='\u00F9')||(LA19_51>='\u00FB' && LA19_51<='\uFFFF')) ) {s = 52;}
+
+                        else if ( (LA19_51==' '||(LA19_51>='(' && LA19_51<=')')||(LA19_51>='-' && LA19_51<='/')||LA19_51==':'||(LA19_51>='A' && LA19_51<='Z')||(LA19_51>='a' && LA19_51<='z')||LA19_51=='|'||LA19_51=='\u00C1'||LA19_51=='\u00C9'||LA19_51=='\u00CD'||LA19_51=='\u00D3'||LA19_51=='\u00DA'||LA19_51=='\u00E1'||LA19_51=='\u00E9'||LA19_51=='\u00ED'||LA19_51=='\u00F3'||LA19_51=='\u00FA') ) {s = 53;}
+
+                        else if ( ((LA19_51>='0' && LA19_51<='9')) ) {s = 51;}
+
+                        else s = 27;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA19_24 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA19_24=='\"') ) {s = 49;}
+
+                        else if ( ((LA19_24>='\u0000' && LA19_24<='!')||(LA19_24>='#' && LA19_24<='\uFFFF')) ) {s = 25;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
                         int LA19_0 = input.LA(1);
 
                         s = -1;
@@ -1862,7 +1973,7 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 5 : 
                         int LA19_13 = input.LA(1);
 
                         s = -1;
@@ -1872,65 +1983,15 @@ public class InternalKPIGeneratorLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
-                        int LA19_52 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA19_52>='\u0000' && LA19_52<='\u001F')||(LA19_52>='!' && LA19_52<='\'')||(LA19_52>='*' && LA19_52<=',')||(LA19_52>=';' && LA19_52<='@')||(LA19_52>='[' && LA19_52<='`')||LA19_52=='{'||(LA19_52>='}' && LA19_52<='\u00C0')||(LA19_52>='\u00C2' && LA19_52<='\u00C8')||(LA19_52>='\u00CA' && LA19_52<='\u00CC')||(LA19_52>='\u00CE' && LA19_52<='\u00D2')||(LA19_52>='\u00D4' && LA19_52<='\u00D9')||(LA19_52>='\u00DB' && LA19_52<='\u00E0')||(LA19_52>='\u00E2' && LA19_52<='\u00E8')||(LA19_52>='\u00EA' && LA19_52<='\u00EC')||(LA19_52>='\u00EE' && LA19_52<='\u00F2')||(LA19_52>='\u00F4' && LA19_52<='\u00F9')||(LA19_52>='\u00FB' && LA19_52<='\uFFFF')) ) {s = 51;}
-
-                        else if ( ((LA19_52>='0' && LA19_52<='9')) ) {s = 50;}
-
-                        else if ( (LA19_52==' '||(LA19_52>='(' && LA19_52<=')')||(LA19_52>='-' && LA19_52<='/')||LA19_52==':'||(LA19_52>='A' && LA19_52<='Z')||(LA19_52>='a' && LA19_52<='z')||LA19_52=='|'||LA19_52=='\u00C1'||LA19_52=='\u00C9'||LA19_52=='\u00CD'||LA19_52=='\u00D3'||LA19_52=='\u00DA'||LA19_52=='\u00E1'||LA19_52=='\u00E9'||LA19_52=='\u00ED'||LA19_52=='\u00F3'||LA19_52=='\u00FA') ) {s = 52;}
-
-                        else s = 27;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA19_5 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA19_5==',') ) {s = 24;}
-
-                        else if ( ((LA19_5>='\u0000' && LA19_5<='+')||(LA19_5>='-' && LA19_5<='\uFFFF')) ) {s = 25;}
-
-                        else s = 17;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA19_24 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA19_24=='\"') ) {s = 48;}
-
-                        else if ( ((LA19_24>='\u0000' && LA19_24<='!')||(LA19_24>='#' && LA19_24<='\uFFFF')) ) {s = 25;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
-                        int LA19_50 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA19_50>='\u0000' && LA19_50<='\u001F')||(LA19_50>='!' && LA19_50<='\'')||(LA19_50>='*' && LA19_50<=',')||(LA19_50>=';' && LA19_50<='@')||(LA19_50>='[' && LA19_50<='`')||LA19_50=='{'||(LA19_50>='}' && LA19_50<='\u00C0')||(LA19_50>='\u00C2' && LA19_50<='\u00C8')||(LA19_50>='\u00CA' && LA19_50<='\u00CC')||(LA19_50>='\u00CE' && LA19_50<='\u00D2')||(LA19_50>='\u00D4' && LA19_50<='\u00D9')||(LA19_50>='\u00DB' && LA19_50<='\u00E0')||(LA19_50>='\u00E2' && LA19_50<='\u00E8')||(LA19_50>='\u00EA' && LA19_50<='\u00EC')||(LA19_50>='\u00EE' && LA19_50<='\u00F2')||(LA19_50>='\u00F4' && LA19_50<='\u00F9')||(LA19_50>='\u00FB' && LA19_50<='\uFFFF')) ) {s = 51;}
-
-                        else if ( (LA19_50==' '||(LA19_50>='(' && LA19_50<=')')||(LA19_50>='-' && LA19_50<='/')||LA19_50==':'||(LA19_50>='A' && LA19_50<='Z')||(LA19_50>='a' && LA19_50<='z')||LA19_50=='|'||LA19_50=='\u00C1'||LA19_50=='\u00C9'||LA19_50=='\u00CD'||LA19_50=='\u00D3'||LA19_50=='\u00DA'||LA19_50=='\u00E1'||LA19_50=='\u00E9'||LA19_50=='\u00ED'||LA19_50=='\u00F3'||LA19_50=='\u00FA') ) {s = 52;}
-
-                        else if ( ((LA19_50>='0' && LA19_50<='9')) ) {s = 50;}
-
-                        else s = 27;
-
-                        if ( s>=0 ) return s;
-                        break;
                     case 6 : 
-                        int LA19_37 = input.LA(1);
+                        int LA19_53 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA19_37>='0' && LA19_37<='9')) ) {s = 50;}
+                        if ( ((LA19_53>='\u0000' && LA19_53<='\u001F')||(LA19_53>='!' && LA19_53<='\'')||(LA19_53>='*' && LA19_53<=',')||(LA19_53>=';' && LA19_53<='@')||(LA19_53>='[' && LA19_53<='`')||LA19_53=='{'||(LA19_53>='}' && LA19_53<='\u00C0')||(LA19_53>='\u00C2' && LA19_53<='\u00C8')||(LA19_53>='\u00CA' && LA19_53<='\u00CC')||(LA19_53>='\u00CE' && LA19_53<='\u00D2')||(LA19_53>='\u00D4' && LA19_53<='\u00D9')||(LA19_53>='\u00DB' && LA19_53<='\u00E0')||(LA19_53>='\u00E2' && LA19_53<='\u00E8')||(LA19_53>='\u00EA' && LA19_53<='\u00EC')||(LA19_53>='\u00EE' && LA19_53<='\u00F2')||(LA19_53>='\u00F4' && LA19_53<='\u00F9')||(LA19_53>='\u00FB' && LA19_53<='\uFFFF')) ) {s = 52;}
 
-                        else if ( ((LA19_37>='\u0000' && LA19_37<='\u001F')||(LA19_37>='!' && LA19_37<='\'')||(LA19_37>='*' && LA19_37<=',')||(LA19_37>=';' && LA19_37<='@')||(LA19_37>='[' && LA19_37<='`')||LA19_37=='{'||(LA19_37>='}' && LA19_37<='\u00C0')||(LA19_37>='\u00C2' && LA19_37<='\u00C8')||(LA19_37>='\u00CA' && LA19_37<='\u00CC')||(LA19_37>='\u00CE' && LA19_37<='\u00D2')||(LA19_37>='\u00D4' && LA19_37<='\u00D9')||(LA19_37>='\u00DB' && LA19_37<='\u00E0')||(LA19_37>='\u00E2' && LA19_37<='\u00E8')||(LA19_37>='\u00EA' && LA19_37<='\u00EC')||(LA19_37>='\u00EE' && LA19_37<='\u00F2')||(LA19_37>='\u00F4' && LA19_37<='\u00F9')||(LA19_37>='\u00FB' && LA19_37<='\uFFFF')) ) {s = 51;}
+                        else if ( ((LA19_53>='0' && LA19_53<='9')) ) {s = 51;}
 
-                        else if ( (LA19_37==' '||(LA19_37>='(' && LA19_37<=')')||(LA19_37>='-' && LA19_37<='/')||LA19_37==':'||(LA19_37>='A' && LA19_37<='Z')||(LA19_37>='a' && LA19_37<='z')||LA19_37=='|'||LA19_37=='\u00C1'||LA19_37=='\u00C9'||LA19_37=='\u00CD'||LA19_37=='\u00D3'||LA19_37=='\u00DA'||LA19_37=='\u00E1'||LA19_37=='\u00E9'||LA19_37=='\u00ED'||LA19_37=='\u00F3'||LA19_37=='\u00FA') ) {s = 52;}
+                        else if ( (LA19_53==' '||(LA19_53>='(' && LA19_53<=')')||(LA19_53>='-' && LA19_53<='/')||LA19_53==':'||(LA19_53>='A' && LA19_53<='Z')||(LA19_53>='a' && LA19_53<='z')||LA19_53=='|'||LA19_53=='\u00C1'||LA19_53=='\u00C9'||LA19_53=='\u00CD'||LA19_53=='\u00D3'||LA19_53=='\u00DA'||LA19_53=='\u00E1'||LA19_53=='\u00E9'||LA19_53=='\u00ED'||LA19_53=='\u00F3'||LA19_53=='\u00FA') ) {s = 53;}
 
                         else s = 27;
 
