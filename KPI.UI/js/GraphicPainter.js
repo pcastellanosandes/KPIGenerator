@@ -1,27 +1,31 @@
 
 function generateGraph(){
 	var projectInfo;
-	var projects = getDataByProject();
+	var projects = getAllDataByProjects();
 	var idGraph;
 	var y, name;
 	for(iProj =0; iProj<projects.length; iProj++)
 	{
 		idGraph = iProj+1;
-		name = projects[iProj].name;
-		projectInfo = getGraphData(projects[iProj].MonthsTask,name);
+		processProject(projects[iProj], 'EffectivenessGraph'+idGraph, 'ReprocessedEfficiencyGraph'+idGraph);	
+	}
+}
+
+function processProject(project, graphTask, graphReprocessedTask)
+{
+	name = project.name;
+	projectInfo = getGraphData(project.MonthsTask,name);
+	y = [];
+	y.push(projectInfo.yAxis);
+	paintGraph(ReprocessedEfficiencyGraph, 'Grafica de eficacia del proyecto '+name, projectInfo.xAxis, y);
+	
+	if(projects[iProj].MonthsReprocessedTask !== undefined)
+	{
+		projectInfo = getGraphData(project.MonthsReprocessedTask,name);
 		y = [];
 		y.push(projectInfo.yAxis);
-		paintGraph('EffectivenessGraph'+idGraph, 'Grafica de eficacia del proyecto '+name, projectInfo.xAxis, y);
-		
-		if(projects[iProj].MonthsReprocessedTask !== undefined)
-		{
-			projectInfo = getGraphData(projects[iProj].MonthsReprocessedTask,name);
-			y = [];
-			y.push(projectInfo.yAxis);
-			paintGraph('ReprocessedEfficiencyGraph'+idGraph, 'Grafica de preprocesos internos  del proyecto '+name, projectInfo.xAxis, y);
-		}
+		paintGraph(graphReprocessedTask, 'Grafica de preprocesos internos  del proyecto '+name, projectInfo.xAxis, y);
 	}
-	
 }
 
 function getGraphData(months, projName)
@@ -34,7 +38,7 @@ function getGraphData(months, projName)
 	var month, year, size=months.length;
 	
 	data.yAxis.name = projName;
-	for(posM=0; posM< months.length; posM++)
+	for(posM=0; posM< size; posM++)
 	{
 		date.Month = months[posM].Month; 
 		date.Year = months[posM].Year;	
