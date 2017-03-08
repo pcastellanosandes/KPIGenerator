@@ -18,7 +18,7 @@ function generateGraph(){
 			projectInfo = getGraphData(projects[iProj].MonthsReprocessedTask,name);
 			y = [];
 			y.push(projectInfo.yAxis);
-			paintGraph('ReprocessedEfficiencyGraph'+idGraph, 'Grafica de peprocesos internos  del proyecto '+name, projectInfo.xAxis, y);
+			paintGraph('ReprocessedEfficiencyGraph'+idGraph, 'Grafica de preprocesos internos  del proyecto '+name, projectInfo.xAxis, y);
 		}
 	}
 	

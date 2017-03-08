@@ -15,11 +15,12 @@
 		</script>
 	</head>
 	<body>
-		<div id="EffectivenessGraph1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="ReprocessedEfficiencyGraph1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="EffectivenessGraph2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="ReprocessedEfficiencyGraph2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="EffectivenessGraph3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="ReprocessedEfficiencyGraph3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		[% var count=1;
+		for(project in kpiGenerator!Root.all[0].projects){%]
+		<div id="EffectivenessGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		s
+		<div id="ReprocessedEfficiencyGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		[%count = count+1;
+		}%]
 	</body>
 </html>

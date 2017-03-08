@@ -1,6 +1,6 @@
-[%
- var projects = kpiGenerator!Project.all;
-%]
+[%operation kpiGenerator!Project generateGraph() {%]
+	
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -14,15 +14,14 @@
 		<script src="js/modelDataProcessor.js"></script>
 		<script src="js/GraphicPainter.js"></script>
 		<script type="text/javascript">
-			$("body").ready(generateGraph);
+			//$("body").ready(generateGraph);
 		</script>
 	</head>
 	<body>
-		[% var count=1;
-		for(project in kpiGenerator!Root.all[0].projects){%]
-		<div id="EffectivenessGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="ReprocessedEfficiencyGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		[%count = count+1;
-		}%]
+		<div id="EffectivenessGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		<div id="ReprocessedEfficiencyGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+	[%=self.projectName%]
 	</body>
 </html>
+
+[%} %]
