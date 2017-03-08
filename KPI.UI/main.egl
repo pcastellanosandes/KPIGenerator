@@ -1,0 +1,6 @@
+[% 
+	var templateJS:Template:= TemplateFactory.load('utilJS.egl');
+	var templateHtml:Template:= TemplateFactory.load('graphicsGenerator.egl');
+	templateJS.generate('js/util.js');
+	templateHtml.generate('Javadoc.html');
+%]
