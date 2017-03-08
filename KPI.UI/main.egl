@@ -1,16 +1,16 @@
-[% import "graphicsGeneratorByProject.egl";
+[% 
 	var templateJS:Template:= TemplateFactory.load('modelDataProcessor.egl');
 	var templateHtml:Template:= TemplateFactory.load('graphicsIndexGenerator.egl');
 	templateJS.generate('js/modelDataProcessor.js');
 	templateHtml.generate('index.html');
 	//generación de html individuales
-	
-	var count=1;
-	for(project in kpiGenerator!Root.all[0].projects)
-	{
-		var templateHtmlByProject:Template:= TemplateFactory.load('graphicsGeneratorByProject.egl');
-		templateHtmlByProject.generate("project"+count+".html");
-		project.generateGraph();
+	var count = 1;
+	for(project in kpiGenerator!Root.all[0].projects){
+		var t:Template:= TemplateFactory.load('GraphicsByProject.egl');
+		t.populate('project', project);
+		t.generate('ProjectChart'+count+'.html');
 		count++;
 	}
+	
+	
 %]
