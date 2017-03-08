@@ -1,0 +1,160 @@
+function getDataByProject(){
+	 var projectsData = [];
+	 var projData;
+	 var projects = convertToJSON();
+	 
+	 for(iProj=0; iProj < projects.length; iProj++)
+	 {
+	 	projData ={};
+	 	projData.name = projects[iProj].name;
+	 	projData.TaskMaxDate = {};
+	 	projData.TaskMaxDate.Month = 01;
+		projData.TaskMaxDate.Year = 0001
+		
+		projData.ReprocessedTaskMaxDate = {};
+	 	projData.ReprocessedTaskMaxDate.Month = 01;
+		projData.ReprocessedTaskMaxDate.Year = 0001
+		
+	 	for(iPhase=0; iPhase < projects[iProj].phases.length; iPhase++)	
+	 	{
+	 		projData = getProjectData(projects[iProj].phases[iPhase].tasks, projData);
+	 	}
+	 	if(projData.TaskMaxDate.Year>0001)
+	 		findMonthData(projData, projData.TaskMaxDate.Text, false); //para obligar la creación del mes limite en caso de faltar
+ 		if(projData.ReprocessedTaskMaxDate.Year>0001)
+	 		findMonthData(projData, projData.ReprocessedTaskMaxDate.Text, true); //para obligar la creación del mes limite en caso de faltar
+	 		
+	 	if(projData.MonthsTask !== undefined)	
+	 		projData.MonthsTask.sort(orderDates);
+ 		if(projData.MonthsReprocessedTask !== undefined)
+	 		projData.MonthsReprocessedTask.sort(orderDates);
+	 	projectsData.push(projData);
+	 } 
+	 
+	 return projectsData;
+}
+
+function getProjectData(tasks, projData)
+{
+	var taskDataByMonth;
+	var task;
+	var dateConverted;
+	var possibleMaxDateLimit;
+	
+	for(i=0; i < tasks.length; i++)
+	{
+		task = tasks[i];
+		dateConverted = convertDate(task.createdDate);
+		validateMaxDate(projData,task.completedDate,task.isReprocessedTask);
+		taskDataByMonth = findMonthData(projData, dateConverted.Text, task.isReprocessedTask);
+		taskDataByMonth.Month = dateConverted.Month;
+		taskDataByMonth.Year = dateConverted.Year;
+		taskDataByMonth.Efficiency += task.timeEstimated === 0 ? 0 : task.timeLoggedMin/task.timeEstimated;
+		taskDataByMonth.CountEfficiency++;
+	} 	
+	
+	return projData;
+}
+ 
+function validateMaxDate(projData, possibleMaxDate, isReprocessedTask)
+{
+ 		var possibleMaxDateLimit = convertDate(possibleMaxDate);
+ 		if(!isReprocessedTask)
+			projData.TaskMaxDate = orderDates(projData.TaskMaxDate, possibleMaxDateLimit) == -1 ? possibleMaxDateLimit :  projData.TaskMaxDate;
+		else
+			projData.ReprocessedTaskMaxDate = orderDates(projData.ReprocessedTaskMaxDate, possibleMaxDateLimit) == -1 ? possibleMaxDateLimit :  projData.ReprocessedTaskMaxDate;
+ }
+ 
+ function findMonthData(projData, monthToFind, isReprocessedTask)
+ {
+ 	if(!isReprocessedTask)
+ 		return FindMonthToTask(projData, monthToFind);
+ 	else
+ 		return FindMonthToReprocessedTask(projData, monthToFind);	
+}
+
+function FindMonthToTask(projData, monthToFind)
+{
+ 	if(projData.MonthsTask === undefined)
+ 		projData.MonthsTask = [];
+ 	
+ 	var task = 	FindMonth(projData.MonthsTask, monthToFind);
+ 	
+ 	if(task === undefined){
+ 		task = createMothData(monthToFind);
+ 		projData.MonthsTask.push(task);
+ 	}
+ 	return task;
+}
+ 
+function FindMonthToReprocessedTask(projData, monthToFind)
+{
+ 	if(projData.MonthsReprocessedTask === undefined)
+ 		projData.MonthsReprocessedTask = [];
+ 	
+ 	var task = 	FindMonth(projData.MonthsReprocessedTask, monthToFind);
+ 	
+ 	if(task === undefined){
+ 		task = createMothData(monthToFind);
+ 		projData.MonthsReprocessedTask.push(task);
+ 	}
+ 	return task;
+ }
+ 
+function FindMonth(listMonth, monthToFind)
+ {
+ 	var response;
+ 	for(j=0; j< listMonth.length; j++)
+ 	{
+ 		if(listMonth[j].DateText === monthToFind)
+ 		{
+ 			response = listMonth[j];
+ 			break;
+ 		}
+ 	}
+ 	return response;
+ }
+ 
+function createMothData(month)
+{
+ 	var response = {};
+ 	response.DateText = month;
+ 	response.Efficiency = 0;
+ 	response.CountEfficiency = 0; 
+ 	return response;
+ }
+  
+function convertToJSON()
+{
+	 var posPhase=0;
+	 var projects = [];
+	 var project;   
+	 var task;
+	 var phase;
+ 	[%for(project in kpiGenerator!Root.all[0].projects){%]
+ 		project={};
+	 	project.name = "[%=project.projectName%]"
+	 	posPhase = 0;
+	 	[%for(phase in project.phases){%]
+	 		project.phases = [];
+	 		phase = {}
+	 		phase.name = "[%=phase.phaseName%]"
+	 		phase.tasks = [];
+	 		[%for(task in phase.tasks){%]
+	 			task = {};
+	 			task.name = "[%=task.taskName%]";
+	 			task.createdDate = "[%=task.createdDate%]";
+	 			task.completedDate = "[%=task.completedDate%]";
+	 			task.timeLoggedMin = [%=task.timeLoggedMin%];
+	 			task.timeEstimated = [%=task.timeEstimated%];
+	 			task.isReprocessedTask = [%=task.isReprocessedTask%];
+	 			phase.tasks.push(task);
+	 		[%}%]	
+	 		project.phases.push(phase);
+	 		posPhase++;
+	 	[%}%]
+	 	projects.push(project);
+	 [%}%]
+	 
+	 return projects;
+}

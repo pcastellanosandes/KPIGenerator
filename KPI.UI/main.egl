@@ -1,6 +1,6 @@
 [% 
-	var templateJS:Template:= TemplateFactory.load('utilJS.egl');
+	var templateJS:Template:= TemplateFactory.load('modelDataProcessor.egl');
 	var templateHtml:Template:= TemplateFactory.load('graphicsGenerator.egl');
-	templateJS.generate('js/util.js');
-	templateHtml.generate('Javadoc.html');
+	templateJS.generate('js/modelDataProcessor.js');
+	templateHtml.generate('index.html');
 %]
