@@ -1,4 +1,5 @@
-function getDataByProject(){
+function getDataByProject()
+{
 	 var projectsData = [];
 	 var projData;
 	 var projects = convertToJSON();
@@ -49,8 +50,8 @@ function getProjectData(tasks, projData)
 		taskDataByMonth = findMonthData(projData, dateConverted.Text, task.isReprocessedTask);
 		taskDataByMonth.Month = dateConverted.Month;
 		taskDataByMonth.Year = dateConverted.Year;
-		taskDataByMonth.Efficiency += task.timeEstimated === 0 ? 0 : task.timeLoggedMin/task.timeEstimated;
-		taskDataByMonth.CountEfficiency++;
+		taskDataByMonth.Effectiveness += task.timeEstimated === 0 ? 0 : task.timeLoggedMin/task.timeEstimated;
+		taskDataByMonth.CountEffectiveness++;
 	} 	
 	
 	return projData;
@@ -119,8 +120,8 @@ function createMothData(month)
 {
  	var response = {};
  	response.DateText = month;
- 	response.Efficiency = 0;
- 	response.CountEfficiency = 0; 
+ 	response.Effectiveness = 0;
+ 	response.CountEffectiveness = 0; 
  	return response;
  }
   

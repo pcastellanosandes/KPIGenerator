@@ -14,11 +14,15 @@
 		<script src="js/modelDataProcessor.js"></script>
 		<script src="js/GraphicPainter.js"></script>
 		<script type="text/javascript">
-			$("#EfficiencyGraph").ready(getDataByProject);
+			$("body").ready(generateGraph);
 		</script>
 	</head>
 	<body>
-		<div id="EfficiencyGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		<div id="ReprocessedEfficiencyGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		[% var count=1;
+		for(project in kpiGenerator!Root.all[0].projects){%]
+		<div id="EffectivenessGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		<div id="ReprocessedEfficiencyGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		[%count = count+1;
+		}%]
 	</body>
 </html>
