@@ -75,7 +75,7 @@ public class GeneratorToJSON {
 		task.setTimeLoggedMin(itemsLine[19].equals("")?0:Integer.parseInt(itemsLine[19]));
 		task.setBillableTime(itemsLine[20].equals("")?0:Integer.parseInt(itemsLine[20]));
 		task.setCompletedOnTime(itemsLine[22].equals("VERDADERO"));
-		task.setTimeEstimated(itemsLine[22].equals("")?0:Integer.parseInt(itemsLine[23]));		
+		task.setTimeEstimated(itemsLine[23].equals("")?0:Integer.parseInt(itemsLine[23]));		
 		
 		phase.addTask(task);
 	}

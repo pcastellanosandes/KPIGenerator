@@ -13,7 +13,7 @@ public class Main {
 		 
 		String pathCSV = absolutePath+"\\input.csv";
 		
-		String pathJSON = absolutePath+"\\output.json";
+		String pathJSON = absolutePath+"\\models.kpi";
 		GeneratorToJSON generator = new GeneratorToJSON(pathCSV, pathJSON);
 		generator.convert();
 		
