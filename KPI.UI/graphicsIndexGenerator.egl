@@ -17,10 +17,10 @@
 	<body>
 		[% var count=1;
 		for(project in kpiGenerator!Root.all[0].projects){%]
-		<div id="EffectivenessGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		s
-		<div id="ReprocessedEfficiencyGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		[%count = count+1;
+			<a href="ProjectChart[%=count%].html"><h1 style="text-align:center">Graficas del proyecto [%=project.projectName%]</h1></a>
+			<div id="EffectivenessGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			<div id="ReprocessedEfficiencyGraph[%=count%]" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+			[%count = count+1;
 		}%]
 	</body>
 </html>

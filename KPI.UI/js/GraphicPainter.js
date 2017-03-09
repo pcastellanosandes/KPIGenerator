@@ -3,7 +3,6 @@ function generateGraph(){
 	var projectInfo;
 	var projects = getAllDataByProjects();
 	var idGraph;
-	var y, name;
 	for(iProj =0; iProj<projects.length; iProj++)
 	{
 		idGraph = iProj+1;
@@ -11,20 +10,30 @@ function generateGraph(){
 	}
 }
 
+function generateByProject(project){
+	var projectInfo;
+	var projData = getDataByProject(project);
+	processProject(projData, 'EffectivenessGraph', 'ReprocessedEfficiencyGraph');	
+	
+}
+
 function processProject(project, graphTask, graphReprocessedTask)
 {
-	name = project.name;
+	var name = project.name;
 	projectInfo = getGraphData(project.MonthsTask,name);
-	y = [];
+	var y = [];
 	y.push(projectInfo.yAxis);
-	paintGraph(ReprocessedEfficiencyGraph, 'Grafica de eficacia del proyecto '+name, projectInfo.xAxis, y);
+	paintGraph(graphTask, 'Grafica de eficacia', projectInfo.xAxis, y);
 	
-	if(projects[iProj].MonthsReprocessedTask !== undefined)
+	if(project.MonthsReprocessedTask !== undefined)
 	{
 		projectInfo = getGraphData(project.MonthsReprocessedTask,name);
 		y = [];
 		y.push(projectInfo.yAxis);
-		paintGraph(graphReprocessedTask, 'Grafica de preprocesos internos  del proyecto '+name, projectInfo.xAxis, y);
+		paintGraph(graphReprocessedTask, 'Grafica de reprocesos internos', projectInfo.xAxis, y);
+	}else
+	{
+		$("#"+graphReprocessedTask).hide();
 	}
 }
 

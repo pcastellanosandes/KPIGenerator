@@ -35,6 +35,39 @@ function getAllDataByProjects()
 	 return projectsData;
 }
 
+function getDataByProject(project)
+{
+	 var projectsData = [];
+	 var projData;	 
+	
+	 projData ={};
+	 projData.name = project.name;
+	 projData.TaskMaxDate = {};
+	 projData.TaskMaxDate.Month = 01;
+	 projData.TaskMaxDate.Year = 0001
+		
+	 projData.ReprocessedTaskMaxDate = {};
+	 projData.ReprocessedTaskMaxDate.Month = 01;
+	 projData.ReprocessedTaskMaxDate.Year = 0001
+		
+	 for(iPhase=0; iPhase < project.phases.length; iPhase++)	
+	 {
+	 	projData = getProjectData(project.phases[iPhase].tasks, projData);
+	 }
+	 
+	 if(projData.TaskMaxDate.Year>0001)
+	 	findMonthData(projData, projData.TaskMaxDate.Text, false); //para obligar la creación del mes limite en caso de faltar
+ 	 if(projData.ReprocessedTaskMaxDate.Year>0001)
+	 	findMonthData(projData, projData.ReprocessedTaskMaxDate.Text, true); //para obligar la creación del mes limite en caso de faltar
+	 		
+	 if(projData.MonthsTask !== undefined)	
+	 	projData.MonthsTask.sort(orderDates);
+ 	 if(projData.MonthsReprocessedTask !== undefined)
+	 	projData.MonthsReprocessedTask.sort(orderDates);
+	 
+	 return projData;
+}
+
 function getProjectData(tasks, projData)
 {
 	var taskDataByMonth;

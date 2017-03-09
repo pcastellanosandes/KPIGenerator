@@ -42,15 +42,13 @@
 		}
 		$("body").ready(function(){
 			var project = convertProjectToJSON();
-			processProject(project, 'EffectivenessGraph','ReprocessedEfficiencyGraph');
+			generateByProject(project);
 		});
 		</script>
 	</head>
 	<body>
-		
+		<h1 style="text-align:center">Graficas del proyecto PORVENIR</h1>
 		<div id="EffectivenessGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		
 		<div id="ReprocessedEfficiencyGraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-		
 	</body>
 </html>
